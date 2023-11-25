@@ -1,11 +1,11 @@
 /**
- * The DnD5e game system for Foundry Virtual Tabletop
+ * The GeneFunk2090 game system for Foundry Virtual Tabletop
  * A system for playing the fifth edition of the world's most popular role-playing game.
  * Author: Atropos
  * Software License: MIT
  * Content License: https://www.dndbeyond.com/attachments/39j2li89/SRD5.1-CCBY4.0License.pdf
- * Repository: https://github.com/foundryvtt/dnd5e
- * Issue Tracker: https://github.com/foundryvtt/dnd5e/issues
+ * Repository: https://github.com/foundryvtt/genefunk2090
+ * Issue Tracker: https://github.com/foundryvtt/genefunk2090/issues
  */
 
 // Import Configuration
@@ -27,7 +27,7 @@ import {ModuleArt} from "./module/module-art.mjs";
 /*  Define Module Structure                     */
 /* -------------------------------------------- */
 
-globalThis.dnd5e = {
+globalThis.genefunk2090 = {
   applications,
   canvas,
   config: DND5E,
@@ -44,8 +44,8 @@ globalThis.dnd5e = {
 /* -------------------------------------------- */
 
 Hooks.once("init", function() {
-  globalThis.dnd5e = game.dnd5e = Object.assign(game.system, globalThis.dnd5e);
-  console.log(`DnD5e | Initializing the DnD5e Game System - Version ${dnd5e.version}\n${DND5E.ASCII}`);
+  globalThis.genefunk2090 = game.genefunk2090 = Object.assign(game.system, globalThis.genefunk2090);
+  console.log(`GeneFunk2090 | Initializing the GeneFunk2090 Game System - Version ${genefunk2090.version}\n${DND5E.ASCII}`);
 
   // Record Configuration Values
   CONFIG.DND5E = DND5E;
@@ -59,20 +59,20 @@ Hooks.once("init", function() {
   CONFIG.Dice.D20Roll = dice.D20Roll;
   CONFIG.MeasuredTemplate.defaults.angle = 53.13; // 5e cone RAW should be 53.13 degrees
   CONFIG.ui.combat = applications.combat.CombatTracker5e;
-  game.dnd5e.isV10 = game.release.generation < 11;
+  game.genefunk2090.isV10 = game.release.generation < 11;
 
   // Register System Settings
   registerSystemSettings();
 
   // Validation strictness.
-  if ( game.dnd5e.isV10 ) _determineValidationStrictness();
+  if ( game.genefunk2090.isV10 ) _determineValidationStrictness();
 
   // Configure module art.
-  game.dnd5e.moduleArt = new ModuleArt();
+  game.genefunk2090.moduleArt = new ModuleArt();
 
   // Remove honor & sanity from configuration if they aren't enabled
-  if ( !game.settings.get("dnd5e", "honorScore") ) delete DND5E.abilities.hon;
-  if ( !game.settings.get("dnd5e", "sanityScore") ) delete DND5E.abilities.san;
+  if ( !game.settings.get("genefunk2090", "honorScore") ) delete DND5E.abilities.hon;
+  if ( !game.settings.get("genefunk2090", "sanityScore") ) delete DND5E.abilities.san;
 
   // Configure trackable & consumable attributes.
   _configureTrackableAttributes();
@@ -86,40 +86,40 @@ Hooks.once("init", function() {
   CONFIG.Dice.rolls.push(dice.DamageRoll);
 
   // Hook up system data types
-  const modelType = game.dnd5e.isV10 ? "systemDataModels" : "dataModels";
+  const modelType = game.genefunk2090.isV10 ? "systemDataModels" : "dataModels";
   CONFIG.Actor[modelType] = dataModels.actor.config;
   CONFIG.Item[modelType] = dataModels.item.config;
   CONFIG.JournalEntryPage[modelType] = dataModels.journal.config;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("dnd5e", applications.actor.ActorSheet5eCharacter, {
+  Actors.registerSheet("genefunk2090", applications.actor.ActorSheet5eCharacter, {
     types: ["character"],
     makeDefault: true,
     label: "DND5E.SheetClassCharacter"
   });
-  Actors.registerSheet("dnd5e", applications.actor.ActorSheet5eNPC, {
+  Actors.registerSheet("genefunk2090", applications.actor.ActorSheet5eNPC, {
     types: ["npc"],
     makeDefault: true,
     label: "DND5E.SheetClassNPC"
   });
-  Actors.registerSheet("dnd5e", applications.actor.ActorSheet5eVehicle, {
+  Actors.registerSheet("genefunk2090", applications.actor.ActorSheet5eVehicle, {
     types: ["vehicle"],
     makeDefault: true,
     label: "DND5E.SheetClassVehicle"
   });
-  Actors.registerSheet("dnd5e", applications.actor.GroupActorSheet, {
+  Actors.registerSheet("genefunk2090", applications.actor.GroupActorSheet, {
     types: ["group"],
     makeDefault: true,
     label: "DND5E.SheetClassGroup"
   });
 
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("dnd5e", applications.item.ItemSheet5e, {
+  Items.registerSheet("genefunk2090", applications.item.ItemSheet5e, {
     makeDefault: true,
     label: "DND5E.SheetClassItem"
   });
-  DocumentSheetConfig.registerSheet(JournalEntryPage, "dnd5e", applications.journal.JournalClassPageSheet, {
+  DocumentSheetConfig.registerSheet(JournalEntryPage, "genefunk2090", applications.journal.JournalClassPageSheet, {
     label: "DND5E.SheetClassClassSummary",
     types: ["class"]
   });
@@ -136,7 +136,7 @@ Hooks.once("init", function() {
  * @internal
  */
 function _determineValidationStrictness() {
-  dataModels.SystemDataModel._enableV10Validation = game.settings.get("dnd5e", "strictValidation");
+  dataModels.SystemDataModel._enableV10Validation = game.settings.get("genefunk2090", "strictValidation");
 }
 
 /**
@@ -147,9 +147,9 @@ async function _configureValidationStrictness() {
   if ( !game.user.isGM ) return;
   const invalidDocuments = game.actors.invalidDocumentIds.size + game.items.invalidDocumentIds.size
     + game.scenes.invalidDocumentIds.size;
-  const strictValidation = game.settings.get("dnd5e", "strictValidation");
+  const strictValidation = game.settings.get("genefunk2090", "strictValidation");
   if ( invalidDocuments && strictValidation ) {
-    await game.settings.set("dnd5e", "strictValidation", false);
+    await game.settings.set("genefunk2090", "strictValidation", false);
     game.socket.emit("reload");
     foundry.utils.debouncedReload();
   }
@@ -228,11 +228,11 @@ function _configureConsumableAttributes() {
  */
 Hooks.once("setup", function() {
   CONFIG.DND5E.trackableAttributes = expandAttributeList(CONFIG.DND5E.trackableAttributes);
-  game.dnd5e.moduleArt.registerModuleArt();
+  game.genefunk2090.moduleArt.registerModuleArt();
 
   // Apply custom compendium styles to the SRD rules compendium.
-  if ( !game.dnd5e.isV10 ) {
-    const rules = game.packs.get("dnd5e.rules");
+  if ( !game.genefunk2090.isV10 ) {
+    const rules = game.packs.get("genefunk2090.rules");
     rules.applicationClass = applications.journal.SRDCompendium;
   }
 });
@@ -266,12 +266,12 @@ Hooks.once("i18nInit", () => utils.performPreLocalization(CONFIG.DND5E));
  * Once the entire VTT framework is initialized, check to see if we should perform a data migration
  */
 Hooks.once("ready", function() {
-  if ( game.dnd5e.isV10 ) {
+  if ( game.genefunk2090.isV10 ) {
     // Configure validation strictness.
     _configureValidationStrictness();
 
     // Apply custom compendium styles to the SRD rules compendium.
-    const rules = game.packs.get("dnd5e.rules");
+    const rules = game.packs.get("genefunk2090.rules");
     rules.apps = [new applications.journal.SRDCompendium(rules)];
   }
 
@@ -285,9 +285,9 @@ Hooks.once("ready", function() {
 
   // Determine whether a system migration is required and feasible
   if ( !game.user.isGM ) return;
-  const cv = game.settings.get("dnd5e", "systemMigrationVersion") || game.world.flags.dnd5e?.version;
+  const cv = game.settings.get("genefunk2090", "systemMigrationVersion") || game.world.flags.genefunk2090?.version;
   const totalDocuments = game.actors.size + game.scenes.size + game.items.size;
-  if ( !cv && totalDocuments === 0 ) return game.settings.set("dnd5e", "systemMigrationVersion", game.system.version);
+  if ( !cv && totalDocuments === 0 ) return game.settings.set("genefunk2090", "systemMigrationVersion", game.system.version);
   if ( cv && !isNewerVersion(game.system.flags.needsMigrationVersion, cv) ) return;
 
   // Perform the migration
@@ -302,7 +302,7 @@ Hooks.once("ready", function() {
 /* -------------------------------------------- */
 
 Hooks.on("canvasInit", gameCanvas => {
-  gameCanvas.grid.diagonalRule = game.settings.get("dnd5e", "diagonalMovement");
+  gameCanvas.grid.diagonalRule = game.settings.get("genefunk2090", "diagonalMovement");
   SquareGrid.prototype.measureDistances = canvas.measureDistances;
 });
 

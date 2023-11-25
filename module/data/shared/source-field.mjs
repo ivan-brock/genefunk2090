@@ -37,7 +37,7 @@ export default class SourceField extends SchemaField {
     Object.defineProperty(obj, "toString", {
       value: () => {
         foundry.utils.logCompatibilityWarning("Source has been converted to an object, the label can now be accessed "
-         + "using the `source#label` property.", { since: "DnD5e 2.4", until: "DnD5e 2.6" });
+         + "using the `source#label` property.", { since: "GeneFunk2090 2.4", until: "GeneFunk2090 2.6" });
         return obj.label;
       },
       enumerable: false

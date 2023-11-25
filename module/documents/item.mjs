@@ -815,7 +815,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     options = foundry.utils.mergeObject({
       configureDialog: true,
       createMessage: true,
-      "flags.dnd5e.use": {type: this.type, itemId: this.id, itemUuid: this.uuid}
+      "flags.genefunk2090.use": {type: this.type, itemId: this.id, itemUuid: this.uuid}
     }, options);
 
     // Define follow-up actions resulting from the item usage
@@ -828,14 +828,14 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     /**
      * A hook event that fires before an item usage is configured.
-     * @function dnd5e.preUseItem
+     * @function genefunk2090.preUseItem
      * @memberof hookEvents
      * @param {Item5e} item                  Item being used.
      * @param {ItemUseConfiguration} config  Configuration data for the item usage being prepared.
      * @param {ItemUseOptions} options       Additional options used for configuring item usage.
      * @returns {boolean}                    Explicitly return `false` to prevent item from being used.
      */
-    if ( Hooks.call("dnd5e.preUseItem", item, config, options) === false ) return;
+    if ( Hooks.call("genefunk2090.preUseItem", item, config, options) === false ) return;
 
     // Are any default values necessitating a prompt?
     const needsConfiguration = Object.values(config).includes(true);
@@ -865,18 +865,18 @@ export default class Item5e extends SystemDocumentMixin(Item) {
         item.prepareFinalAttributes();
       }
     }
-    if ( item.type === "spell" ) foundry.utils.mergeObject(options.flags, {"dnd5e.use.spellLevel": item.system.level});
+    if ( item.type === "spell" ) foundry.utils.mergeObject(options.flags, {"genefunk2090.use.spellLevel": item.system.level});
 
     /**
      * A hook event that fires before an item's resource consumption has been calculated.
-     * @function dnd5e.preItemUsageConsumption
+     * @function genefunk2090.preItemUsageConsumption
      * @memberof hookEvents
      * @param {Item5e} item                  Item being used.
      * @param {ItemUseConfiguration} config  Configuration data for the item usage being prepared.
      * @param {ItemUseOptions} options       Additional options used for configuring item usage.
      * @returns {boolean}                    Explicitly return `false` to prevent item from being used.
      */
-    if ( Hooks.call("dnd5e.preItemUsageConsumption", item, config, options) === false ) return;
+    if ( Hooks.call("genefunk2090.preItemUsageConsumption", item, config, options) === false ) return;
 
     // Determine whether the item can be used by testing for resource consumption
     const usage = item._getUsageUpdates(config);
@@ -885,7 +885,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     /**
      * A hook event that fires after an item's resource consumption has been calculated but before any
      * changes have been made.
-     * @function dnd5e.itemUsageConsumption
+     * @function genefunk2090.itemUsageConsumption
      * @memberof hookEvents
      * @param {Item5e} item                     Item being used.
      * @param {ItemUseConfiguration} config     Configuration data for the item usage being prepared.
@@ -897,7 +897,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
      * @param {Set<string>} usage.deleteIds     Item ids for those which consumption will delete.
      * @returns {boolean}                       Explicitly return `false` to prevent item from being used.
      */
-    if ( Hooks.call("dnd5e.itemUsageConsumption", item, config, options, usage) === false ) return;
+    if ( Hooks.call("genefunk2090.itemUsageConsumption", item, config, options, usage) === false ) return;
 
     // Commit pending data updates
     const { actorUpdates, itemUpdates, resourceUpdates, deleteIds } = usage;
@@ -913,7 +913,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     let templates;
     if ( config.createMeasuredTemplate ) {
       try {
-        templates = await (dnd5e.canvas.AbilityTemplate.fromItem(item))?.drawPreview();
+        templates = await (genefunk2090.canvas.AbilityTemplate.fromItem(item))?.drawPreview();
       } catch(err) {
         Hooks.onError("Item5e#use", err, {
           msg: game.i18n.localize("DND5E.PlaceTemplateError"),
@@ -925,14 +925,14 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     /**
      * A hook event that fires when an item is used, after the measured template has been created if one is needed.
-     * @function dnd5e.useItem
+     * @function genefunk2090.useItem
      * @memberof hookEvents
      * @param {Item5e} item                                Item being used.
      * @param {ItemUseConfiguration} config                Configuration data for the roll.
      * @param {ItemUseOptions} options                     Additional options for configuring item usage.
      * @param {MeasuredTemplateDocument[]|null} templates  The measured templates if they were created.
      */
-    Hooks.callAll("dnd5e.useItem", item, config, options, templates ?? null);
+    Hooks.callAll("genefunk2090.useItem", item, config, options, templates ?? null);
 
     return cardData;
   }
@@ -1206,7 +1206,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
       isTool: this.type === "tool",
       hasAbilityCheck: this.hasAbilityCheck
     };
-    const html = await renderTemplate("systems/dnd5e/templates/chat/item-card.hbs", templateData);
+    const html = await renderTemplate("systems/genefunk2090/templates/chat/item-card.hbs", templateData);
 
     // Create the ChatMessage data object
     const chatData = {
@@ -1220,7 +1220,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     // If the Item was destroyed in the process of displaying its card - embed the item data in the chat message
     if ( (this.type === "consumable") && !this.actor.items.has(this.id) ) {
-      chatData.flags["dnd5e.itemData"] = templateData.item.toObject();
+      chatData.flags["genefunk2090.itemData"] = templateData.item.toObject();
     }
 
     // Merge in the flags from options
@@ -1228,13 +1228,13 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     /**
      * A hook event that fires before an item chat card is created.
-     * @function dnd5e.preDisplayCard
+     * @function genefunk2090.preDisplayCard
      * @memberof hookEvents
      * @param {Item5e} item             Item for which the chat card is being displayed.
      * @param {object} chatData         Data used to create the chat message.
      * @param {ItemUseOptions} options  Options which configure the display of the item chat card.
      */
-    Hooks.callAll("dnd5e.preDisplayCard", this, chatData, options);
+    Hooks.callAll("genefunk2090.preDisplayCard", this, chatData, options);
 
     // Apply the roll mode to adjust message visibility
     ChatMessage.applyRollMode(chatData, options.rollMode ?? game.settings.get("core", "rollMode"));
@@ -1244,13 +1244,13 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     /**
      * A hook event that fires after an item chat card is created.
-     * @function dnd5e.displayCard
+     * @function genefunk2090.displayCard
      * @memberof hookEvents
      * @param {Item5e} item              Item for which the chat card is being displayed.
      * @param {ChatMessage|object} card  The created ChatMessage instance or ChatMessageData depending on whether
      *                                   options.createMessage was set to `true`.
      */
-    Hooks.callAll("dnd5e.displayCard", this, card);
+    Hooks.callAll("genefunk2090.displayCard", this, card);
 
     return card;
   }
@@ -1297,7 +1297,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
    * @returns {Promise<D20Roll|null>}       A Promise which resolves to the created Roll instance
    */
   async rollAttack(options={}) {
-    const flags = this.actor.flags.dnd5e ?? {};
+    const flags = this.actor.flags.genefunk2090 ?? {};
     if ( !this.hasAttack ) throw new Error("You may not place an Attack Roll with this Item.");
     let title = `${this.name} - ${game.i18n.localize("DND5E.AttackRoll")}`;
 
@@ -1341,7 +1341,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
         left: window.innerWidth - 710
       },
       messageData: {
-        "flags.dnd5e.roll": {type: "attack", itemId: this.id, itemUuid: this.uuid},
+        "flags.genefunk2090.roll": {type: "attack", itemId: this.id, itemUuid: this.uuid},
         speaker: ChatMessage.getSpeaker({actor: this.actor})
       }
     }, options);
@@ -1349,26 +1349,26 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     /**
      * A hook event that fires before an attack is rolled for an Item.
-     * @function dnd5e.preRollAttack
+     * @function genefunk2090.preRollAttack
      * @memberof hookEvents
      * @param {Item5e} item                  Item for which the roll is being performed.
      * @param {D20RollConfiguration} config  Configuration data for the pending roll.
      * @returns {boolean}                    Explicitly return false to prevent the roll from being performed.
      */
-    if ( Hooks.call("dnd5e.preRollAttack", this, rollConfig) === false ) return;
+    if ( Hooks.call("genefunk2090.preRollAttack", this, rollConfig) === false ) return;
 
     const roll = await d20Roll(rollConfig);
     if ( roll === null ) return null;
 
     /**
      * A hook event that fires after an attack has been rolled for an Item.
-     * @function dnd5e.rollAttack
+     * @function genefunk2090.rollAttack
      * @memberof hookEvents
      * @param {Item5e} item          Item for which the roll was performed.
      * @param {D20Roll} roll         The resulting roll.
      * @param {object[]} ammoUpdate  Updates that will be applied to ammo Items as a result of this attack.
      */
-    Hooks.callAll("dnd5e.rollAttack", this, roll, ammoUpdate);
+    Hooks.callAll("genefunk2090.rollAttack", this, roll, ammoUpdate);
 
     // Commit ammunition consumption on attack rolls resource consumption if the attack roll was made
     if ( ammoUpdate.length ) await this.actor?.updateEmbeddedDocuments("Item", ammoUpdate);
@@ -1392,7 +1392,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
   async rollDamage({critical, event=null, spellLevel=null, versatile=false, options={}}={}) {
     if ( !this.hasDamage ) throw new Error("You may not make a Damage Roll with this Item.");
     const messageData = {
-      "flags.dnd5e.roll": {type: "damage", itemId: this.id, itemUuid: this.uuid},
+      "flags.genefunk2090.roll": {type: "damage", itemId: this.id, itemUuid: this.uuid},
       speaker: ChatMessage.getSpeaker({actor: this.actor})
     };
 
@@ -1423,7 +1423,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     // Adjust damage from versatile usage
     if ( versatile && dmg.versatile ) {
       parts[0] = dmg.versatile;
-      messageData["flags.dnd5e.roll"].versatile = true;
+      messageData["flags.genefunk2090.roll"].versatile = true;
     }
 
     // Scale damage from up-casting spells
@@ -1457,7 +1457,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     // Factor in extra critical damage dice from the Barbarian's "Brutal Critical"
     if ( this.system.actionType === "mwak" ) {
-      rollConfig.criticalBonusDice = this.actor.getFlag("dnd5e", "meleeCriticalDamageDice") ?? 0;
+      rollConfig.criticalBonusDice = this.actor.getFlag("genefunk2090", "meleeCriticalDamageDice") ?? 0;
     }
 
     // Factor in extra weapon-specific critical damage
@@ -1468,24 +1468,24 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     /**
      * A hook event that fires before a damage is rolled for an Item.
-     * @function dnd5e.preRollDamage
+     * @function genefunk2090.preRollDamage
      * @memberof hookEvents
      * @param {Item5e} item                     Item for which the roll is being performed.
      * @param {DamageRollConfiguration} config  Configuration data for the pending roll.
      * @returns {boolean}                       Explicitly return false to prevent the roll from being performed.
      */
-    if ( Hooks.call("dnd5e.preRollDamage", this, rollConfig) === false ) return;
+    if ( Hooks.call("genefunk2090.preRollDamage", this, rollConfig) === false ) return;
 
     const roll = await damageRoll(rollConfig);
 
     /**
      * A hook event that fires after a damage has been rolled for an Item.
-     * @function dnd5e.rollDamage
+     * @function genefunk2090.rollDamage
      * @memberof hookEvents
      * @param {Item5e} item      Item for which the roll was performed.
      * @param {DamageRoll} roll  The resulting roll.
      */
-    if ( roll ) Hooks.callAll("dnd5e.rollDamage", this, roll);
+    if ( roll ) Hooks.callAll("genefunk2090.rollDamage", this, roll);
 
     // Call the roll helper utility
     return roll;
@@ -1580,7 +1580,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     /**
      * A hook event that fires before a formula is rolled for an Item.
-     * @function dnd5e.preRollFormula
+     * @function genefunk2090.preRollFormula
      * @memberof hookEvents
      * @param {Item5e} item                 Item for which the roll is being performed.
      * @param {object} config               Configuration data for the pending roll.
@@ -1589,7 +1589,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
      * @param {boolean} config.chatMessage  Should a chat message be created for this roll?
      * @returns {boolean}                   Explicitly return false to prevent the roll from being performed.
      */
-    if ( Hooks.call("dnd5e.preRollFormula", this, rollConfig) === false ) return;
+    if ( Hooks.call("genefunk2090.preRollFormula", this, rollConfig) === false ) return;
 
     const roll = await new Roll(rollConfig.formula, rollConfig.data).roll({async: true});
 
@@ -1598,18 +1598,18 @@ export default class Item5e extends SystemDocumentMixin(Item) {
         speaker: ChatMessage.getSpeaker({actor: this.actor}),
         flavor: `${this.name} - ${game.i18n.localize("DND5E.OtherFormula")}`,
         rollMode: game.settings.get("core", "rollMode"),
-        messageData: {"flags.dnd5e.roll": {type: "other", itemId: this.id, itemUuid: this.uuid}}
+        messageData: {"flags.genefunk2090.roll": {type: "other", itemId: this.id, itemUuid: this.uuid}}
       });
     }
 
     /**
      * A hook event that fires after a formula has been rolled for an Item.
-     * @function dnd5e.rollFormula
+     * @function genefunk2090.rollFormula
      * @memberof hookEvents
      * @param {Item5e} item  Item for which the roll was performed.
      * @param {Roll} roll    The resulting roll.
      */
-    Hooks.callAll("dnd5e.rollFormula", this, roll);
+    Hooks.callAll("genefunk2090.rollFormula", this, roll);
 
     return roll;
   }
@@ -1633,7 +1633,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     /**
      * A hook event that fires before the Item is rolled to recharge.
-     * @function dnd5e.preRollRecharge
+     * @function genefunk2090.preRollRecharge
      * @memberof hookEvents
      * @param {Item5e} item                 Item for which the roll is being performed.
      * @param {object} config               Configuration data for the pending roll.
@@ -1643,7 +1643,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
      * @param {boolean} config.chatMessage  Should a chat message be created for this roll?
      * @returns {boolean}                   Explicitly return false to prevent the roll from being performed.
      */
-    if ( Hooks.call("dnd5e.preRollRecharge", this, rollConfig) === false ) return;
+    if ( Hooks.call("genefunk2090.preRollRecharge", this, rollConfig) === false ) return;
 
     const roll = await new Roll(rollConfig.formula, rollConfig.data).roll({async: true});
     const success = roll.total >= rollConfig.target;
@@ -1658,13 +1658,13 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     /**
      * A hook event that fires after the Item has rolled to recharge, but before any changes have been performed.
-     * @function dnd5e.rollRecharge
+     * @function genefunk2090.rollRecharge
      * @memberof hookEvents
      * @param {Item5e} item  Item for which the roll was performed.
      * @param {Roll} roll    The resulting roll.
      * @returns {boolean}    Explicitly return false to prevent the item from being recharged.
      */
-    if ( Hooks.call("dnd5e.rollRecharge", this, roll) === false ) return roll;
+    if ( Hooks.call("genefunk2090.rollRecharge", this, roll) === false ) return roll;
 
     // Update the Item data
     if ( success ) this.update({"system.recharge.charged": true});
@@ -1758,7 +1758,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     if ( !( isTargetted || game.user.isGM || actor.isOwner ) ) return;
 
     // Get the Item from stored flag data or by the item ID on the Actor
-    const storedData = message.getFlag("dnd5e", "itemData");
+    const storedData = message.getFlag("genefunk2090", "itemData");
     const item = storedData ? new this(storedData, {parent: actor}) : actor.items.get(card.dataset.itemId);
     if ( !item ) {
       ui.notifications.error(game.i18n.format("DND5E.ActionWarningNoItem", {
@@ -1798,7 +1798,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
         await item.rollToolCheck({event}); break;
       case "placeTemplate":
         try {
-          await dnd5e.canvas.AbilityTemplate.fromItem(item, {"flags.dnd5e.spellLevel": spellLevel})?.drawPreview();
+          await genefunk2090.canvas.AbilityTemplate.fromItem(item, {"flags.genefunk2090.spellLevel": spellLevel})?.drawPreview();
         } catch(err) {
           Hooks.onError("Item5e._onChatCardAction", err, {
             msg: game.i18n.localize("DND5E.PlaceTemplateError"),
@@ -2166,13 +2166,13 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     /**
      * A hook event that fires before the item data for a scroll is created.
-     * @function dnd5e.preCreateScrollFromSpell
+     * @function genefunk2090.preCreateScrollFromSpell
      * @memberof hookEvents
      * @param {object} itemData    The initial item data of the spell to convert to a scroll
      * @param {object} [options]   Additional options that modify the created scroll
      * @returns {boolean}          Explicitly return false to prevent the scroll to be created.
      */
-    if ( Hooks.call("dnd5e.preCreateScrollFromSpell", itemData, options) === false ) return;
+    if ( Hooks.call("genefunk2090.preCreateScrollFromSpell", itemData, options) === false ) return;
 
     let {
       actionType, description, source, activation, duration, target,
@@ -2224,12 +2224,12 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     /**
      * A hook event that fires after the item data for a scroll is created but before the item is returned.
-     * @function dnd5e.createScrollFromSpell
+     * @function genefunk2090.createScrollFromSpell
      * @memberof hookEvents
      * @param {Item5e|object} spell       The spell or item data to be made into a scroll.
      * @param {object} spellScrollData    The final item data used to make the scroll.
      */
-    Hooks.callAll("dnd5e.createScrollFromSpell", spell, spellScrollData);
+    Hooks.callAll("genefunk2090.createScrollFromSpell", spell, spellScrollData);
     return new this(spellScrollData);
   }
 

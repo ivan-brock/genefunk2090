@@ -5,7 +5,7 @@
         <img class="profile" src="{{actor.img}}" data-tooltip="{{actor.name}}" data-edit="img"/>
 
         <section class="header-details flexrow">
-            {{> "dnd5e.actor-warnings"}}
+            {{> "genefunk2090.actor-warnings"}}
 
             <h1 class="charname">
                 <input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'DND5E.Name' }}"/>
@@ -217,23 +217,23 @@
                 </div>
 
                 {{!-- Traits --}}
-                {{> "dnd5e.actor-traits"}}
+                {{> "genefunk2090.actor-traits"}}
             </section>
         </div>
 
         {{!-- Features Tab --}}
         <div class="tab features flexcol" data-group="primary" data-tab="features">
-            {{> "dnd5e.actor-features" sections=features}}
+            {{> "genefunk2090.actor-features" sections=features}}
         </div>
 
         {{!-- Spellbook Tab --}}
         <div class="tab spellbook flexcol" data-group="primary" data-tab="spellbook">
-            {{> "dnd5e.actor-spellbook"}}
+            {{> "genefunk2090.actor-spellbook"}}
         </div>
 
         {{!-- Effects Tab --}}
         <div class="tab effects flexcol" data-group="primary" data-tab="effects">
-            {{> "dnd5e.active-effects"}}
+            {{> "genefunk2090.active-effects"}}
         </div>
 
         {{!-- Biography Tab --}}

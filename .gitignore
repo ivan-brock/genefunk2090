@@ -1,6 +1,6 @@
 # Build Artifacts
-dnd5e-compiled*
-dnd5e.lock
+genefunk2090-compiled*
+genefunk2090.lock
 
 # IDE
 .idea/

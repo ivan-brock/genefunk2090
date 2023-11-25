@@ -6,8 +6,8 @@ export default class SourceConfig extends DocumentSheet {
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["dnd5e", "source-config", "dialog"],
-      template: "systems/dnd5e/templates/apps/source-config.hbs",
+      classes: ["genefunk2090", "source-config", "dialog"],
+      template: "systems/genefunk2090/templates/apps/source-config.hbs",
       width: 400,
       height: "auto",
       sheetConfig: false,

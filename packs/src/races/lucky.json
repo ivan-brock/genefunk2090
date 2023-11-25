@@ -88,7 +88,7 @@
       "_id": "3ZXTUDl62zDpvpai",
       "changes": [
         {
-          "key": "flags.dnd5e.halflingLucky",
+          "key": "flags.genefunk2090.halflingLucky",
           "mode": 5,
           "value": "true",
           "priority": null
@@ -117,12 +117,12 @@
   "folder": null,
   "sort": 0,
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.3.1",
     "coreVersion": "10.303",
     "createdTime": 1661787234467,
     "modifiedTime": 1699461251311,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!items!LOMdcNAGWh5xpfm4"
 }

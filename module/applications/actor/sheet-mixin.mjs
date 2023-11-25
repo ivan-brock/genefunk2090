@@ -138,7 +138,7 @@ export const ActorSheetMixin = Base => class extends Base {
       summary.slideUp(200, () => summary.remove());
       this._expanded.delete(item.id);
     } else {
-      const summary = $(await renderTemplate("systems/dnd5e/templates/items/parts/item-summary.hbs", chatData));
+      const summary = $(await renderTemplate("systems/genefunk2090/templates/items/parts/item-summary.hbs", chatData));
       li.append(summary.hide());
       summary.slideDown(200);
       this._expanded.add(item.id);

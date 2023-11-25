@@ -557,7 +557,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.p2zChy24ZJdVqMSH"
+          "sourceId": "Compendium.genefunk2090.items.p2zChy24ZJdVqMSH"
         }
       },
       "_stats": {
@@ -655,7 +655,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.j1cPfWFNvxGoex9Z"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.j1cPfWFNvxGoex9Z"
         }
       },
       "_stats": {
@@ -753,7 +753,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.0gl43AC57cvJaW7D"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.0gl43AC57cvJaW7D"
         }
       },
       "_stats": {
@@ -885,7 +885,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.2YdfjN1PIIrSHZii"
+          "sourceId": "Compendium.genefunk2090.items.2YdfjN1PIIrSHZii"
         }
       },
       "_stats": {
@@ -983,7 +983,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.hkmTEk6klT6QL4K4"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.hkmTEk6klT6QL4K4"
         }
       },
       "_stats": {
@@ -1220,19 +1220,19 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.spells.aU62xVUBYkAQWIHv"
+          "sourceId": "Compendium.genefunk2090.spells.aU62xVUBYkAQWIHv"
         }
       },
       "img": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
       "effects": [],
       "folder": null,
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.0",
         "coreVersion": "10.279",
         "createdTime": 1661787234168,
         "modifiedTime": 1661791116635,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!ZM1P6LoYSwMiIJN9.aU62xVUBYkAQWIHv"
     },
@@ -1332,19 +1332,19 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.spells.zwGsAv6kmwzYGhh3"
+          "sourceId": "Compendium.genefunk2090.spells.zwGsAv6kmwzYGhh3"
         }
       },
       "img": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
       "effects": [],
       "folder": null,
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.0",
         "coreVersion": "10.279",
         "createdTime": 1661787234247,
         "modifiedTime": 1661791116636,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!ZM1P6LoYSwMiIJN9.zwGsAv6kmwzYGhh3"
     },
@@ -1444,19 +1444,19 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.spells.UDUnlfPsOAbq2RSE"
+          "sourceId": "Compendium.genefunk2090.spells.UDUnlfPsOAbq2RSE"
         }
       },
       "img": "icons/magic/air/air-burst-spiral-blue-gray.webp",
       "effects": [],
       "folder": null,
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.0",
         "coreVersion": "10.279",
         "createdTime": 1661787234147,
         "modifiedTime": 1661791116636,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!ZM1P6LoYSwMiIJN9.UDUnlfPsOAbq2RSE"
     },
@@ -1556,19 +1556,19 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.spells.A3q2gTNqG6fvNGrv"
+          "sourceId": "Compendium.genefunk2090.spells.A3q2gTNqG6fvNGrv"
         }
       },
       "img": "icons/magic/control/debuff-energy-hold-teal-blue.webp",
       "effects": [],
       "folder": null,
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.0",
         "coreVersion": "10.279",
         "createdTime": 1661787234086,
         "modifiedTime": 1661791116636,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!ZM1P6LoYSwMiIJN9.A3q2gTNqG6fvNGrv"
     }
@@ -1581,12 +1581,12 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.1.0",
     "coreVersion": "10.291",
     "createdTime": 1661787232890,
     "modifiedTime": 1672596101511,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!actors!ZM1P6LoYSwMiIJN9"
 }

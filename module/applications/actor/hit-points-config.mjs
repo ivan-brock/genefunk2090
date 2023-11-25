@@ -19,8 +19,8 @@ export default class ActorHitPointsConfig extends BaseConfigSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["dnd5e", "actor-hit-points-config"],
-      template: "systems/dnd5e/templates/apps/hit-points-config.hbs",
+      classes: ["genefunk2090", "actor-hit-points-config"],
+      template: "systems/genefunk2090/templates/apps/hit-points-config.hbs",
       width: 320,
       height: "auto",
       sheetConfig: false

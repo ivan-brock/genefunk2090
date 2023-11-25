@@ -11,7 +11,7 @@ export default class ActorSheet5eCharacter extends ActorSheet5e {
   /** @inheritDoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["dnd5e", "sheet", "actor", "character"]
+      classes: ["genefunk2090", "sheet", "actor", "character"]
     });
   }
 
@@ -36,14 +36,14 @@ export default class ActorSheet5eCharacter extends ActorSheet5e {
 
     const classes = this.actor.itemTypes.class;
     return foundry.utils.mergeObject(context, {
-      disableExperience: game.settings.get("dnd5e", "disableExperienceTracking"),
+      disableExperience: game.settings.get("genefunk2090", "disableExperienceTracking"),
       classLabels: classes.map(c => c.name).join(", "),
       labels: {
         type: context.system.details.type.label
       },
       multiclassLabels: classes.map(c => [c.subclass?.name ?? "", c.name, c.system.levels].filterJoin(" ")).join(", "),
       weightUnit: game.i18n.localize(`DND5E.Abbreviation${
-        game.settings.get("dnd5e", "metricWeightUnits") ? "Kg" : "Lbs"}`),
+        game.settings.get("genefunk2090", "metricWeightUnits") ? "Kg" : "Lbs"}`),
       encumbrance: context.system.attributes.encumbrance
     });
   }
@@ -269,7 +269,7 @@ export default class ActorSheet5eCharacter extends ActorSheet5e {
     const classId = event.target.closest(".item")?.dataset.itemId;
     if ( !delta || !classId ) return;
     const classItem = this.actor.items.get(classId);
-    if ( !game.settings.get("dnd5e", "disableAdvancements") ) {
+    if ( !game.settings.get("genefunk2090", "disableAdvancements") ) {
       const manager = AdvancementManager.forLevelChange(this.actor, classId, delta);
       if ( manager.steps.length ) {
         if ( delta > 0 ) return manager.render(true);
@@ -347,7 +347,7 @@ export default class ActorSheet5eCharacter extends ActorSheet5e {
       const cls = this.actor.itemTypes.class.find(c => c.identifier === itemData.system.identifier);
       if ( cls ) {
         const priorLevel = cls.system.levels;
-        if ( !game.settings.get("dnd5e", "disableAdvancements") ) {
+        if ( !game.settings.get("genefunk2090", "disableAdvancements") ) {
           const manager = AdvancementManager.forLevelChange(this.actor, cls.id, itemData.system.levels);
           if ( manager.steps.length ) {
             manager.render(true);

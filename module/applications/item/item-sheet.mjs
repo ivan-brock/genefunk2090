@@ -34,7 +34,7 @@ export default class ItemSheet5e extends ItemSheet {
     return foundry.utils.mergeObject(super.defaultOptions, {
       width: 560,
       height: 500,
-      classes: ["dnd5e", "sheet", "item"],
+      classes: ["genefunk2090", "sheet", "item"],
       resizable: true,
       scrollY: [
         ".tab[data-tab=details]",
@@ -73,7 +73,7 @@ export default class ItemSheet5e extends ItemSheet {
 
   /** @inheritdoc */
   get template() {
-    return `systems/dnd5e/templates/items/${this.item.type}.hbs`;
+    return `systems/genefunk2090/templates/items/${this.item.type}.hbs`;
   }
 
   /* -------------------------------------------- */
@@ -270,7 +270,7 @@ export default class ItemSheet5e extends ItemSheet {
 
     // Attributes
     else if ( consume.type === "attribute" ) {
-      const attrData = game.dnd5e.isV10 ? actor.system : actor.type;
+      const attrData = game.genefunk2090.isV10 ? actor.system : actor.type;
       return TokenDocument.implementation.getConsumedAttributes(attrData).reduce((obj, attr) => {
         obj[attr] = attr;
         return obj;
@@ -458,7 +458,7 @@ export default class ItemSheet5e extends ItemSheet {
     }
 
     // Check class identifier
-    if ( formData.system?.identifier && !dnd5e.utils.validators.isValidIdentifier(formData.system.identifier) ) {
+    if ( formData.system?.identifier && !genefunk2090.utils.validators.isValidIdentifier(formData.system.identifier) ) {
       formData.system.identifier = this.item._source.system.identifier;
       this.form.querySelector("input[name='system.identifier']").value = formData.system.identifier;
       ui.notifications.error("DND5E.IdentifierError", {localize: true});
@@ -479,7 +479,7 @@ export default class ItemSheet5e extends ItemSheet {
       html.find(".config-button").click(this._onConfigMenu.bind(this));
       html.find(".damage-control").click(this._onDamageControl.bind(this));
       html.find(".effect-control").click(ev => {
-        const unsupported = game.dnd5e.isV10 && this.item.isOwned;
+        const unsupported = game.genefunk2090.isV10 && this.item.isOwned;
         if ( unsupported ) return ui.notifications.warn("Managing Active Effects within an Owned Item is not currently supported and will be added in a subsequent update.");
         ActiveEffect5e.onManageActiveEffect(ev, this.item);
       });
@@ -497,12 +497,12 @@ export default class ItemSheet5e extends ItemSheet {
     const contextOptions = this._getAdvancementContextMenuOptions();
     /**
      * A hook event that fires when the context menu for the advancements list is constructed.
-     * @function dnd5e.getItemAdvancementContext
+     * @function genefunk2090.getItemAdvancementContext
      * @memberof hookEvents
      * @param {jQuery} html                      The HTML element to which the context options are attached.
      * @param {ContextMenuEntry[]} entryOptions  The context menu entries.
      */
-    Hooks.call("dnd5e.getItemAdvancementContext", html, contextOptions);
+    Hooks.call("genefunk2090.getItemAdvancementContext", html, contextOptions);
     if ( contextOptions ) new ContextMenu(html, ".advancement-item", contextOptions);
   }
 
@@ -639,14 +639,14 @@ export default class ItemSheet5e extends ItemSheet {
 
     /**
      * A hook event that fires when some useful data is dropped onto an ItemSheet5e.
-     * @function dnd5e.dropItemSheetData
+     * @function genefunk2090.dropItemSheetData
      * @memberof hookEvents
      * @param {Item5e} item                  The Item5e
      * @param {ItemSheet5e} sheet            The ItemSheet5e application
      * @param {object} data                  The data that has been dropped onto the sheet
      * @returns {boolean}                    Explicitly return `false` to prevent normal drop handling.
      */
-    const allowed = Hooks.call("dnd5e.dropItemSheetData", item, this, data);
+    const allowed = Hooks.call("genefunk2090.dropItemSheetData", item, this, data);
     if ( allowed === false ) return;
 
     switch ( data.type ) {
@@ -714,7 +714,7 @@ export default class ItemSheet5e extends ItemSheet {
     }
 
     if ( !advancements.length ) return false;
-    if ( this.item.isEmbedded && !game.settings.get("dnd5e", "disableAdvancements") ) {
+    if ( this.item.isEmbedded && !game.settings.get("genefunk2090", "disableAdvancements") ) {
       const manager = AdvancementManager.forNewAdvancement(this.item.actor, this.item.id, advancements);
       if ( manager.steps.length ) return manager.render(true);
     }
@@ -739,10 +739,10 @@ export default class ItemSheet5e extends ItemSheet {
     let manager;
     if ( ["edit", "delete", "duplicate"].includes(action) && !advancement ) return;
     switch (action) {
-      case "add": return game.dnd5e.applications.advancement.AdvancementSelection.createDialog(this.item);
+      case "add": return game.genefunk2090.applications.advancement.AdvancementSelection.createDialog(this.item);
       case "edit": return new advancement.constructor.metadata.apps.config(advancement).render(true);
       case "delete":
-        if ( this.item.isEmbedded && !game.settings.get("dnd5e", "disableAdvancements") ) {
+        if ( this.item.isEmbedded && !game.settings.get("genefunk2090", "disableAdvancements") ) {
           manager = AdvancementManager.forDeletedAdvancement(this.item.actor, this.item.id, id);
           if ( manager.steps.length ) return manager.render(true);
         }

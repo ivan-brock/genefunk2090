@@ -129,7 +129,7 @@ export default class SpellData extends SystemDataModel.mixin(
 
   /** @inheritdoc */
   get _typeCriticalThreshold() {
-    return this.parent?.actor?.flags.dnd5e?.spellCriticalThreshold ?? Infinity;
+    return this.parent?.actor?.flags.genefunk2090?.spellCriticalThreshold ?? Infinity;
   }
 
   /* -------------------------------------------- */

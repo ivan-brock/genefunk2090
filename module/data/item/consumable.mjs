@@ -67,7 +67,7 @@ export default class ConsumableData extends SystemDataModel.mixin(
    * @returns {number}
    */
   get proficiencyMultiplier() {
-    const isProficient = this.parent?.actor?.getFlag("dnd5e", "tavernBrawlerFeat");
+    const isProficient = this.parent?.actor?.getFlag("genefunk2090", "tavernBrawlerFeat");
     return isProficient ? 1 : 0;
   }
 }

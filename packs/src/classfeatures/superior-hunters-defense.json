@@ -7,7 +7,7 @@
   "type": "feat",
   "system": {
     "description": {
-      "value": "<p>At 15th level, you gain one of the following features of your choice.</p><p>@Compendium[dnd5e.classfeatures.laVHAIOKIsUeezWd]{Evasion}</p><p>@Compendium[dnd5e.classfeatures.Xf763cJoDHPPWSGG]{Stand Against the Tide}</p><p>@Compendium[dnd5e.classfeatures.7pyZjz5vlUWV01qQ]{Uncanny Dodge}</p>",
+      "value": "<p>At 15th level, you gain one of the following features of your choice.</p><p>@Compendium[genefunk2090.classfeatures.laVHAIOKIsUeezWd]{Evasion}</p><p>@Compendium[genefunk2090.classfeatures.Xf763cJoDHPPWSGG]{Stand Against the Tide}</p><p>@Compendium[genefunk2090.classfeatures.7pyZjz5vlUWV01qQ]{Uncanny Dodge}</p>",
       "chat": "",
       "unidentified": ""
     },
@@ -83,12 +83,12 @@
   "folder": null,
   "sort": 0,
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.1.2",
     "coreVersion": "10.291",
     "createdTime": 1661787234391,
     "modifiedTime": 1674435873389,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!items!a0Sq88dgnREcIMfl"
 }

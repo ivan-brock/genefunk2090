@@ -100,7 +100,7 @@
     {
       "label": "Stone of Good Luck",
       "icon": "icons/commodities/gems/gem-faceted-octagon-yellow.webp",
-      "origin": "Compendium.dnd5e.items.296Zgo9RhltWShE1",
+      "origin": "Compendium.genefunk2090.items.296Zgo9RhltWShE1",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -138,12 +138,12 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.2.2",
     "coreVersion": "10.303",
     "createdTime": 1661787233443,
     "modifiedTime": 1690481250206,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!items!296Zgo9RhltWShE1"
 }

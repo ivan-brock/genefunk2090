@@ -68,7 +68,7 @@
 
     <ol class="item-list">
     {{#each section.spells as |item i|}}
-    {{#dnd5e-itemContext item as |ctx|}}
+    {{#genefunk2090-itemContext item as |ctx|}}
         <li class="item flexrow {{#if ctx.isExpanded}}expanded{{/if}}" data-item-id="{{item.id}}">
             <div class="item-name flexrow rollable">
                 <div class="item-image" tabindex="0" role="button" aria-label="{{item.name}}" style="background-image: url('{{item.img}}')"></div>
@@ -110,10 +110,10 @@
             {{/if}}
 
             {{#if ctx.isExpanded}}
-                {{> "dnd5e.item-summary" (lookup @root.expandedData item.id)}}
+                {{> "genefunk2090.item-summary" (lookup @root.expandedData item.id)}}
             {{/if}}
         </li>
-    {{/dnd5e-itemContext}}
+    {{/genefunk2090-itemContext}}
     {{/each}}
     </ol>
 {{else}}

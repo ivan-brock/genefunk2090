@@ -18,8 +18,8 @@ export default class ActorAbilityConfig extends BaseConfigSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["dnd5e"],
-      template: "systems/dnd5e/templates/apps/ability-config.hbs",
+      classes: ["genefunk2090"],
+      template: "systems/genefunk2090/templates/apps/ability-config.hbs",
       width: 500,
       height: "auto"
     });

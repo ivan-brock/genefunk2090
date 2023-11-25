@@ -5,7 +5,7 @@ import { ModuleArtConfig } from "./module-art.mjs";
  */
 export default function registerSystemSettings() {
   // Internal System Migration Version
-  game.settings.register("dnd5e", "systemMigrationVersion", {
+  game.settings.register("genefunk2090", "systemMigrationVersion", {
     name: "System Migration Version",
     scope: "world",
     config: false,
@@ -14,7 +14,7 @@ export default function registerSystemSettings() {
   });
 
   // Rest Recovery Rules
-  game.settings.register("dnd5e", "restVariant", {
+  game.settings.register("genefunk2090", "restVariant", {
     name: "SETTINGS.5eRestN",
     hint: "SETTINGS.5eRestL",
     scope: "world",
@@ -29,7 +29,7 @@ export default function registerSystemSettings() {
   });
 
   // Diagonal Movement Rule
-  game.settings.register("dnd5e", "diagonalMovement", {
+  game.settings.register("genefunk2090", "diagonalMovement", {
     name: "SETTINGS.5eDiagN",
     hint: "SETTINGS.5eDiagL",
     scope: "world",
@@ -45,7 +45,7 @@ export default function registerSystemSettings() {
   });
 
   // Allow rotating square templates
-  game.settings.register("dnd5e", "gridAlignedSquareTemplates", {
+  game.settings.register("genefunk2090", "gridAlignedSquareTemplates", {
     name: "SETTINGS.5eGridAlignedSquareTemplatesN",
     hint: "SETTINGS.5eGridAlignedSquareTemplatesL",
     scope: "world",
@@ -55,7 +55,7 @@ export default function registerSystemSettings() {
   });
 
   // Proficiency modifier type
-  game.settings.register("dnd5e", "proficiencyModifier", {
+  game.settings.register("genefunk2090", "proficiencyModifier", {
     name: "SETTINGS.5eProfN",
     hint: "SETTINGS.5eProfL",
     scope: "world",
@@ -69,7 +69,7 @@ export default function registerSystemSettings() {
   });
 
   // Allow feats during Ability Score Improvements
-  game.settings.register("dnd5e", "allowFeats", {
+  game.settings.register("genefunk2090", "allowFeats", {
     name: "SETTINGS.5eFeatsN",
     hint: "SETTINGS.5eFeatsL",
     scope: "world",
@@ -79,7 +79,7 @@ export default function registerSystemSettings() {
   });
 
   // Use Honor ability score
-  game.settings.register("dnd5e", "honorScore", {
+  game.settings.register("genefunk2090", "honorScore", {
     name: "SETTINGS.5eHonorN",
     hint: "SETTINGS.5eHonorL",
     scope: "world",
@@ -90,7 +90,7 @@ export default function registerSystemSettings() {
   });
 
   // Use Sanity ability score
-  game.settings.register("dnd5e", "sanityScore", {
+  game.settings.register("genefunk2090", "sanityScore", {
     name: "SETTINGS.5eSanityN",
     hint: "SETTINGS.5eSanityL",
     scope: "world",
@@ -101,7 +101,7 @@ export default function registerSystemSettings() {
   });
 
   // Apply Dexterity as Initiative Tiebreaker
-  game.settings.register("dnd5e", "initiativeDexTiebreaker", {
+  game.settings.register("genefunk2090", "initiativeDexTiebreaker", {
     name: "SETTINGS.5eInitTBN",
     hint: "SETTINGS.5eInitTBL",
     scope: "world",
@@ -111,7 +111,7 @@ export default function registerSystemSettings() {
   });
 
   // Record Currency Weight
-  game.settings.register("dnd5e", "currencyWeight", {
+  game.settings.register("genefunk2090", "currencyWeight", {
     name: "SETTINGS.5eCurWtN",
     hint: "SETTINGS.5eCurWtL",
     scope: "world",
@@ -121,7 +121,7 @@ export default function registerSystemSettings() {
   });
 
   // Disable Experience Tracking
-  game.settings.register("dnd5e", "disableExperienceTracking", {
+  game.settings.register("genefunk2090", "disableExperienceTracking", {
     name: "SETTINGS.5eNoExpN",
     hint: "SETTINGS.5eNoExpL",
     scope: "world",
@@ -131,7 +131,7 @@ export default function registerSystemSettings() {
   });
 
   // Disable Advancements
-  game.settings.register("dnd5e", "disableAdvancements", {
+  game.settings.register("genefunk2090", "disableAdvancements", {
     name: "SETTINGS.5eNoAdvancementsN",
     hint: "SETTINGS.5eNoAdvancementsL",
     scope: "world",
@@ -141,7 +141,7 @@ export default function registerSystemSettings() {
   });
 
   // Collapse Item Cards (by default)
-  game.settings.register("dnd5e", "autoCollapseItemCards", {
+  game.settings.register("genefunk2090", "autoCollapseItemCards", {
     name: "SETTINGS.5eAutoCollapseCardN",
     hint: "SETTINGS.5eAutoCollapseCardL",
     scope: "client",
@@ -154,7 +154,7 @@ export default function registerSystemSettings() {
   });
 
   // Allow Polymorphing
-  game.settings.register("dnd5e", "allowPolymorphing", {
+  game.settings.register("genefunk2090", "allowPolymorphing", {
     name: "SETTINGS.5eAllowPolymorphingN",
     hint: "SETTINGS.5eAllowPolymorphingL",
     scope: "world",
@@ -164,7 +164,7 @@ export default function registerSystemSettings() {
   });
 
   // Polymorph Settings
-  game.settings.register("dnd5e", "polymorphSettings", {
+  game.settings.register("genefunk2090", "polymorphSettings", {
     scope: "client",
     default: {
       keepPhysical: false,
@@ -193,7 +193,7 @@ export default function registerSystemSettings() {
   });
 
   // Metric Unit Weights
-  game.settings.register("dnd5e", "metricWeightUnits", {
+  game.settings.register("genefunk2090", "metricWeightUnits", {
     name: "SETTINGS.5eMetricN",
     hint: "SETTINGS.5eMetricL",
     scope: "world",
@@ -203,7 +203,7 @@ export default function registerSystemSettings() {
   });
 
   // Critical Damage Modifiers
-  game.settings.register("dnd5e", "criticalDamageModifiers", {
+  game.settings.register("genefunk2090", "criticalDamageModifiers", {
     name: "SETTINGS.5eCriticalModifiersN",
     hint: "SETTINGS.5eCriticalModifiersL",
     scope: "world",
@@ -213,7 +213,7 @@ export default function registerSystemSettings() {
   });
 
   // Critical Damage Maximize
-  game.settings.register("dnd5e", "criticalDamageMaxDice", {
+  game.settings.register("genefunk2090", "criticalDamageMaxDice", {
     name: "SETTINGS.5eCriticalMaxDiceN",
     hint: "SETTINGS.5eCriticalMaxDiceL",
     scope: "world",
@@ -223,7 +223,7 @@ export default function registerSystemSettings() {
   });
 
   // Strict validation
-  game.settings.register("dnd5e", "strictValidation", {
+  game.settings.register("genefunk2090", "strictValidation", {
     scope: "world",
     config: false,
     type: Boolean,
@@ -231,7 +231,7 @@ export default function registerSystemSettings() {
   });
 
   // Dynamic art.
-  game.settings.registerMenu("dnd5e", "moduleArtConfiguration", {
+  game.settings.registerMenu("genefunk2090", "moduleArtConfiguration", {
     name: "DND5E.ModuleArtConfigN",
     label: "DND5E.ModuleArtConfigL",
     hint: "DND5E.ModuleArtConfigH",
@@ -240,13 +240,13 @@ export default function registerSystemSettings() {
     restricted: true
   });
 
-  game.settings.register("dnd5e", "moduleArtConfiguration", {
+  game.settings.register("genefunk2090", "moduleArtConfiguration", {
     name: "Module Art Configuration",
     scope: "world",
     config: false,
     type: Object,
     default: {
-      dnd5e: {
+      genefunk2090: {
         portraits: true,
         tokens: true
       }

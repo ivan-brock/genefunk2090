@@ -70,7 +70,7 @@
 "TYPES.Item.weapon": "Weapon",
 "TYPES.Item.weaponPl": "Weapons",
 
-"DND5E.title": "DnD5e Game System",
+"DND5E.title": "GeneFunk2090 Game System",
 "DND5E.AbbreviationCR": "CR",
 "DND5E.AbbreviationConc": "Conc.",
 "DND5E.AbbreviationDC": "DC",
@@ -648,7 +648,7 @@
 "DND5E.Filter": "Filter",
 "DND5E.FilterNoSpells": "No spells found for this set of filters.",
 "DND5E.NoSpellLevels": "This character has no spellcaster levels, but you may add spells manually.",
-"DND5E.FlagsInstructions": "Configure character features and traits which fine-tune behaviors of the DnD5e system.",
+"DND5E.FlagsInstructions": "Configure character features and traits which fine-tune behaviors of the GeneFunk2090 system.",
 "DND5E.FlagsSave": "Update Special Traits",
 "DND5E.FlagsTitle": "Configure Special Traits",
 "DND5E.FlagsDiamondSoul": "Diamond Soul",
@@ -1358,7 +1358,7 @@
 
 "MIGRATION.5eBegin": "Applying DnD5E System Migration for version {version}. Please be patient and do not close your game or shut down your server.",
 "MIGRATION.5eComplete": "DnD5E System Migration to version {version} completed!",
-"MIGRATION.5eVersionTooOldWarning": "Your DnD5e system data is from too old a Foundry version and cannot be reliably migrated to the latest version. The process will be attempted, but errors may occur.",
+"MIGRATION.5eVersionTooOldWarning": "Your GeneFunk2090 system data is from too old a Foundry version and cannot be reliably migrated to the latest version. The process will be attempted, but errors may occur.",
 
 "SETTINGS.5eAllowPolymorphingL": "Allow players to polymorph their own actors.",
 "SETTINGS.5eAllowPolymorphingN": "Allow Polymorphing",

@@ -539,7 +539,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.hkmTEk6klT6QL4K4"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.hkmTEk6klT6QL4K4"
         }
       },
       "_stats": {
@@ -642,7 +642,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.net3yBKQoxl8bZ4r"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.net3yBKQoxl8bZ4r"
         }
       },
       "_stats": {
@@ -740,7 +740,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.kyVgQNSa12loxVvr"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.kyVgQNSa12loxVvr"
         }
       },
       "_stats": {
@@ -975,7 +975,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.bGSW8IuWURWiWtxr"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.bGSW8IuWURWiWtxr"
         }
       },
       "_stats": {
@@ -1089,19 +1089,19 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.spells.2yHXEcrRbadZDr5M"
+          "sourceId": "Compendium.genefunk2090.spells.2yHXEcrRbadZDr5M"
         }
       },
       "img": "icons/magic/light/explosion-star-large-orange.webp",
       "effects": [],
       "folder": null,
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.0",
         "coreVersion": "10.279",
         "createdTime": 1661787234061,
         "modifiedTime": 1661791116872,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!oJCOB9X2BPsBkWW5.2yHXEcrRbadZDr5M"
     }
@@ -1114,12 +1114,12 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.1.0",
     "coreVersion": "10.291",
     "createdTime": 1661787233166,
     "modifiedTime": 1672596106455,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!actors!oJCOB9X2BPsBkWW5"
 }

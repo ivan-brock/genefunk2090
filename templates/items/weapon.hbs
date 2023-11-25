@@ -24,7 +24,7 @@
                     </select>
                 </li>
                 <li>
-                    {{> "dnd5e.item-source"}}
+                    {{> "genefunk2090.item-source"}}
                 </li>
             </ul>
         </div>
@@ -41,7 +41,7 @@
     <section class="sheet-body">
 
         {{!-- Description Tab --}}
-        {{> "dnd5e.item-description"}}
+        {{> "genefunk2090.item-description"}}
 
         {{!-- Details Tab --}}
         <div class="tab details" data-group="primary" data-tab="details">
@@ -110,23 +110,23 @@
                 </div>
             </div>
 
-            {{> "dnd5e.item-mountable"}}
+            {{> "genefunk2090.item-mountable"}}
             {{/if}}
 
             <h3 class="form-header">{{ localize "DND5E.ItemWeaponUsage" }}</h3>
 
             {{!-- Item Activation Template --}}
-            {{> "dnd5e.item-activation"}}
+            {{> "genefunk2090.item-activation"}}
 
             <h3 class="form-header">{{ localize "DND5E.ItemWeaponAttack" }}</h3>
 
             {{!-- Item Action Template --}}
-            {{> "dnd5e.item-action"}}
+            {{> "genefunk2090.item-action"}}
         </div>
 
         {{!-- Effects Tab --}}
         <div class="tab effects flexcol" data-group="primary" data-tab="effects">
-            {{> "dnd5e.active-effects"}}
+            {{> "genefunk2090.active-effects"}}
         </div>
     </section>
 </form>

@@ -551,7 +551,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.QOWoa60SwvsQJifN"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.QOWoa60SwvsQJifN"
         }
       },
       "_stats": {
@@ -649,7 +649,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.uxFQ3TxO3isW5WKK"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.uxFQ3TxO3isW5WKK"
         }
       },
       "_stats": {
@@ -747,7 +747,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.MFuiImIvLzYA3osc"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.MFuiImIvLzYA3osc"
         }
       },
       "_stats": {
@@ -845,7 +845,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.KTsFgSQlDetDDm1f"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.KTsFgSQlDetDDm1f"
         }
       },
       "_stats": {
@@ -943,7 +943,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.Hc6MqLQhPTI1KOvm"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.Hc6MqLQhPTI1KOvm"
         }
       },
       "_stats": {
@@ -1041,7 +1041,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.nahRRxck9R5GVVFS"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.nahRRxck9R5GVVFS"
         }
       },
       "_stats": {
@@ -1139,7 +1139,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.EqoLg8T8EHvhJgKE"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.EqoLg8T8EHvhJgKE"
         }
       },
       "_stats": {
@@ -1289,12 +1289,12 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.1.0",
     "coreVersion": "10.291",
     "createdTime": 1661787232725,
     "modifiedTime": 1672596096160,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!actors!Hm4o2FgPZsdbXjLq"
 }

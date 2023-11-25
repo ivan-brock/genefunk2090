@@ -16,7 +16,7 @@ export default class ItemGrantAdvancement extends Advancement {
         configuration: ItemGrantConfigurationData
       },
       order: 40,
-      icon: "systems/dnd5e/icons/svg/item-grant.svg",
+      icon: "systems/genefunk2090/icons/svg/item-grant.svg",
       title: game.i18n.localize("DND5E.AdvancementItemGrantTitle"),
       hint: game.i18n.localize("DND5E.AdvancementItemGrantHint"),
       apps: {
@@ -49,7 +49,7 @@ export default class ItemGrantAdvancement extends Advancement {
   summaryForLevel(level, { configMode=false }={}) {
     // Link to compendium items
     if ( !this.value.added || configMode ) {
-      return this.configuration.items.reduce((html, uuid) => html + dnd5e.utils.linkForUuid(uuid), "");
+      return this.configuration.items.reduce((html, uuid) => html + genefunk2090.utils.linkForUuid(uuid), "");
     }
 
     // Link to items on the actor
@@ -96,8 +96,8 @@ export default class ItemGrantAdvancement extends Advancement {
         if ( !source ) continue;
         itemData = source.clone({
           _id: foundry.utils.randomID(),
-          "flags.dnd5e.sourceId": uuid,
-          "flags.dnd5e.advancementOrigin": `${this.item.id}.${this.id}`
+          "flags.genefunk2090.sourceId": uuid,
+          "flags.genefunk2090.advancementOrigin": `${this.item.id}.${this.id}`
         }, {keepId: true}).toObject();
       }
       if ( itemData.type === "spell" ) foundry.utils.mergeObject(itemData, spellChanges);
@@ -116,7 +116,7 @@ export default class ItemGrantAdvancement extends Advancement {
     const updates = {};
     for ( const item of data.items ) {
       this.actor.updateSource({items: [item]});
-      updates[item._id] = item.flags.dnd5e.sourceId;
+      updates[item._id] = item.flags.genefunk2090.sourceId;
     }
     this.updateSource({[this.storagePath(level)]: updates});
   }

@@ -16,8 +16,8 @@ export async function create5eMacro(dropData, slot) {
       foundry.utils.mergeObject(macroData, {
         name: itemData.name,
         img: itemData.img,
-        command: `dnd5e.documents.macro.rollItem("${itemData.name}")`,
-        flags: {"dnd5e.itemMacro": true}
+        command: `genefunk2090.documents.macro.rollItem("${itemData.name}")`,
+        flags: {"genefunk2090.itemMacro": true}
       });
       break;
     case "ActiveEffect":
@@ -29,8 +29,8 @@ export async function create5eMacro(dropData, slot) {
       foundry.utils.mergeObject(macroData, {
         name: effectData.label,
         img: effectData.icon,
-        command: `dnd5e.documents.macro.toggleEffect("${effectData.label}")`,
-        flags: {"dnd5e.effectMacro": true}
+        command: `genefunk2090.documents.macro.toggleEffect("${effectData.label}")`,
+        flags: {"genefunk2090.effectMacro": true}
       });
       break;
     default:

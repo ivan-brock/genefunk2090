@@ -1,6 +1,6 @@
 <form autocomplete="off">
   <div class="left-column">
-    {{> "dnd5e.advancement-controls"}}
+    {{> "genefunk2090.advancement-controls"}}
     <div class="form-group">
       <label>{{localize "DND5E.AdvancementHint"}}</label>
       <textarea name="configuration.hint">{{configuration.hint}}</textarea>
@@ -65,7 +65,7 @@
         <p class="hint">{{localize "DND5E.AdvancementItemChoiceSpellLevelHint"}}</p>
       </div>
 
-      {{> "dnd5e.advancement-spell-config"}}
+      {{> "genefunk2090.advancement-spell-config"}}
     {{/if}}
 
     <div class="drop-target">
@@ -74,7 +74,7 @@
         <ol class="item-list">
         {{#each configuration.pool}}
           <li class="item flexrow" data-item-uuid="{{this}}">
-            <div class="item-name">{{{dnd5e-linkForUuid this}}}</div>
+            <div class="item-name">{{{genefunk2090-linkForUuid this}}}</div>
             <div class="item-controls flexrow">
               <a class="item-control item-action" data-action="delete" title="{{localize 'DND5E.ItemDelete'}}">
                 <i class="fas fa-trash"></i>

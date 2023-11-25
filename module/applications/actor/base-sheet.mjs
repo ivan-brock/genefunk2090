@@ -92,8 +92,8 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
 
   /** @override */
   get template() {
-    if ( !game.user.isGM && this.actor.limited ) return "systems/dnd5e/templates/actors/limited-sheet.hbs";
-    return `systems/dnd5e/templates/actors/${this.actor.type}-sheet.hbs`;
+    if ( !game.user.isGM && this.actor.limited ) return "systems/genefunk2090/templates/actors/limited-sheet.hbs";
+    return `systems/genefunk2090/templates/actors/${this.actor.type}-sheet.hbs`;
   }
 
   /* -------------------------------------------- */
@@ -205,7 +205,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
     }, {});
 
     // Proficiency
-    labels.proficiency = game.settings.get("dnd5e", "proficiencyModifier") === "dice"
+    labels.proficiency = game.settings.get("genefunk2090", "proficiencyModifier") === "dice"
       ? `d${this.actor.system.attributes.prof * 2}`
       : `+${this.actor.system.attributes.prof}`;
 
@@ -743,7 +743,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
       const effect = this.actor.effects.get(element.dataset.effectId);
       if ( !effect ) return;
       ui.context.menuItems = this._getActiveEffectContextOptions(effect);
-      Hooks.call("dnd5e.getActiveEffectContextOptions", effect, ui.context.menuItems);
+      Hooks.call("genefunk2090.getActiveEffectContextOptions", effect, ui.context.menuItems);
     }
 
     // Items
@@ -751,7 +751,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
       const item = this.actor.items.get(element.dataset.itemId);
       if ( !item ) return;
       ui.context.menuItems = this._getItemContextOptions(item);
-      Hooks.call("dnd5e.getItemContextOptions", item, ui.context.menuItems);
+      Hooks.call("genefunk2090.getItemContextOptions", item, ui.context.menuItems);
     }
   }
 
@@ -859,7 +859,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
 
   /** @override */
   async _onDropActor(event, data) {
-    const canPolymorph = game.user.isGM || (this.actor.isOwner && game.settings.get("dnd5e", "allowPolymorphing"));
+    const canPolymorph = game.user.isGM || (this.actor.isOwner && game.settings.get("genefunk2090", "allowPolymorphing"));
     if ( !canPolymorph ) return false;
 
     // Get the target actor
@@ -873,8 +873,8 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
       html.find("input").each((i, el) => {
         options[el.name] = el.checked;
       });
-      const settings = foundry.utils.mergeObject(game.settings.get("dnd5e", "polymorphSettings") ?? {}, options);
-      game.settings.set("dnd5e", "polymorphSettings", settings);
+      const settings = foundry.utils.mergeObject(game.settings.get("genefunk2090", "polymorphSettings") ?? {}, options);
+      game.settings.set("genefunk2090", "polymorphSettings", settings);
       return settings;
     };
 
@@ -882,7 +882,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
     return new Dialog({
       title: game.i18n.localize("DND5E.PolymorphPromptTitle"),
       content: {
-        options: game.settings.get("dnd5e", "polymorphSettings"),
+        options: game.settings.get("genefunk2090", "polymorphSettings"),
         settings: CONFIG.DND5E.polymorphSettings,
         effectSettings: CONFIG.DND5E.polymorphEffectSettings,
         isToken: this.actor.isToken
@@ -924,9 +924,9 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
         }
       }
     }, {
-      classes: ["dialog", "dnd5e", "polymorph"],
+      classes: ["dialog", "genefunk2090", "polymorph"],
       width: 900,
-      template: "systems/dnd5e/templates/apps/polymorph-prompt.hbs"
+      template: "systems/genefunk2090/templates/apps/polymorph-prompt.hbs"
     }).render(true);
   }
 
@@ -945,7 +945,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
     let items = itemData instanceof Array ? itemData : [itemData];
     const itemsWithoutAdvancement = items.filter(i => !i.system.advancement?.length);
     const multipleAdvancements = (items.length - itemsWithoutAdvancement.length) > 1;
-    if ( multipleAdvancements && !game.settings.get("dnd5e", "disableAdvancements") ) {
+    if ( multipleAdvancements && !game.settings.get("genefunk2090", "disableAdvancements") ) {
       ui.notifications.warn(game.i18n.format("DND5E.WarnCantAddMultipleAdvancements"));
       items = itemsWithoutAdvancement;
     }
@@ -994,7 +994,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
     if ( stacked ) return false;
 
     // Bypass normal creation flow for any items with advancement
-    if ( itemData.system.advancement?.length && !game.settings.get("dnd5e", "disableAdvancements") ) {
+    if ( itemData.system.advancement?.length && !game.settings.get("genefunk2090", "disableAdvancements") ) {
       const manager = AdvancementManager.forNewItem(this.actor, itemData);
       if ( manager.steps.length ) {
         manager.render(true);
@@ -1211,7 +1211,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
     if ( !item ) return;
 
     // If item has advancement, handle it separately
-    if ( !game.settings.get("dnd5e", "disableAdvancements") ) {
+    if ( !game.settings.get("genefunk2090", "disableAdvancements") ) {
       const manager = AdvancementManager.forDeletedItem(this.actor, item.id);
       if ( manager.steps.length ) {
         try {

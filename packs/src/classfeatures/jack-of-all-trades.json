@@ -84,7 +84,7 @@
       "_id": "K4xQzXl1Z4zMnyOa",
       "changes": [
         {
-          "key": "flags.dnd5e.jackOfAllTrades",
+          "key": "flags.genefunk2090.jackOfAllTrades",
           "mode": 5,
           "value": "true",
           "priority": null
@@ -113,12 +113,12 @@
   "folder": null,
   "sort": 0,
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.1.0",
     "coreVersion": "10.291",
     "createdTime": 1661787234402,
     "modifiedTime": 1672334906819,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!items!ezWijmCnlnQ9ZRX2"
 }

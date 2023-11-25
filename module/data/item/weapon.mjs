@@ -116,7 +116,7 @@ export default class WeaponData extends SystemDataModel.mixin(
 
   /** @inheritdoc */
   get _typeCriticalThreshold() {
-    return this.parent?.actor?.flags.dnd5e?.weaponCriticalThreshold ?? Infinity;
+    return this.parent?.actor?.flags.genefunk2090?.weaponCriticalThreshold ?? Infinity;
   }
 
   /* -------------------------------------------- */
@@ -145,7 +145,7 @@ export default class WeaponData extends SystemDataModel.mixin(
     const itemProf = config[this.weaponType];
     const actorProfs = actor.system.traits?.weaponProf?.value ?? new Set();
     const natural = this.weaponType === "natural";
-    const improvised = (this.weaponType === "improv") && !!actor.getFlag("dnd5e", "tavernBrawlerFeat");
+    const improvised = (this.weaponType === "improv") && !!actor.getFlag("genefunk2090", "tavernBrawlerFeat");
     const isProficient = natural || improvised || actorProfs.has(itemProf) || actorProfs.has(this.baseItem);
     return Number(isProficient);
   }

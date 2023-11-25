@@ -22,7 +22,7 @@ export default class CreatureTypeField extends foundry.data.fields.SchemaField {
 
     Object.defineProperty(obj, "label", {
       get() {
-        return dnd5e.documents.Actor5e.formatCreatureType(this);
+        return genefunk2090.documents.Actor5e.formatCreatureType(this);
       },
       enumerable: false
     });

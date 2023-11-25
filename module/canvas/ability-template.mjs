@@ -35,7 +35,7 @@ export default class AbilityTemplate extends MeasuredTemplate {
    */
   static fromItem(item, options={}) {
     const target = item.system.target ?? {};
-    const templateShape = dnd5e.config.areaTargetTypes[target.type]?.template;
+    const templateShape = genefunk2090.config.areaTargetTypes[target.type]?.template;
     if ( !templateShape ) return null;
 
     // Prepare template data
@@ -47,7 +47,7 @@ export default class AbilityTemplate extends MeasuredTemplate {
       x: 0,
       y: 0,
       fillColor: game.user.color,
-      flags: { dnd5e: { origin: item.uuid, spellLevel: item.system.level } }
+      flags: { genefunk2090: { origin: item.uuid, spellLevel: item.system.level } }
     }, options);
 
     // Additional type-specific data
@@ -57,7 +57,7 @@ export default class AbilityTemplate extends MeasuredTemplate {
         break;
       case "rect": // 5e rectangular AoEs are always cubes
         templateData.width = target.value;
-        if ( game.settings.get("dnd5e", "gridAlignedSquareTemplates") ) {
+        if ( game.settings.get("genefunk2090", "gridAlignedSquareTemplates") ) {
           templateData.distance = Math.hypot(target.value, target.value);
           templateData.direction = 45;
         } else {

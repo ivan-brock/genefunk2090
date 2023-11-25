@@ -19,7 +19,7 @@ export default class AbilityScoreImprovementAdvancement extends Advancement {
         value: AbilityScoreImprovementValueData
       },
       order: 20,
-      icon: "systems/dnd5e/icons/svg/ability-score-improvement.svg",
+      icon: "systems/genefunk2090/icons/svg/ability-score-improvement.svg",
       title: game.i18n.localize("DND5E.AdvancementAbilityScoreImprovementTitle"),
       hint: game.i18n.localize("DND5E.AdvancementAbilityScoreImprovementHint"),
       validItemTypes: new Set(["background", "class", "race"]),
@@ -50,7 +50,7 @@ export default class AbilityScoreImprovementAdvancement extends Advancement {
    * @type {boolean}
    */
   get allowFeat() {
-    return (this.item.type === "class") && game.settings.get("dnd5e", "allowFeats");
+    return (this.item.type === "class") && game.settings.get("genefunk2090", "allowFeats");
   }
 
   /* -------------------------------------------- */
@@ -159,8 +159,8 @@ export default class AbilityScoreImprovementAdvancement extends Advancement {
         if ( source ) {
           itemData = source.clone({
             _id: foundry.utils.randomID(),
-            "flags.dnd5e.sourceId": data.featUuid,
-            "flags.dnd5e.advancementOrigin": `${this.item.id}.${this.id}`
+            "flags.genefunk2090.sourceId": data.featUuid,
+            "flags.genefunk2090.advancementOrigin": `${this.item.id}.${this.id}`
           }, {keepId: true}).toObject();
         }
       }

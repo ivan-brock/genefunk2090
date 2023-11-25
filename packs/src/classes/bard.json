@@ -5,7 +5,7 @@
   "img": "icons/skills/toxins/cup-goblet-poisoned-spilled.webp",
   "system": {
     "description": {
-      "value": "<p>As a bard, you gain the following class features.</p><h3>Hit Points</h3><p><strong>Hit Dice:</strong> 1d8 per bard level<br /><strong>Hit Points at 1st Level:</strong> 8 + your Constitution modifier<br /><strong>Hit Points at Higher Levels:</strong> 1d8 (or 5) + your Constitution modifier per bard level after 1st</p><h3>Proficiencies</h3><p><strong>Armor:</strong> Light armor<br /><strong>Weapons:</strong> Simple weapons, hand crossbows, longswords, rapiers, shortswords<br /><strong>Tools:</strong> Three musical instruments of your choice<br /><strong>Saving Throws:</strong> Dexterity, Charisma<br /><strong>Skills:</strong> Choose any three</p><h3>Equipment</h3><p>You start with the following equipment, in addition to the equipment granted by your background:</p><ul><li>(a) a rapier, (b) a longsword, or (c) any simple weapon</li><li>(a) a diplomat's pack or (b) an entertainer's pack</li><li>(a) a lute or (b) any other musical instrument</li><li>Leather armor and a dagger</li></ul><h1>Bard Advancement</h1><table border=\"0\"><thead><tr><td>Level</td><td>Proficiency Bonus</td><td>Features</td></tr></thead><tbody><tr><td>1st</td><td>+2</td><td>@Compendium[dnd5e.classfeatures.u4NLajXETJhJU31v]{Spellcasting}, @Compendium[dnd5e.classfeatures.hpLNiGq7y67d2EHA]{Bardic Inspiration (d6)}</td></tr><tr><td>2nd</td><td>+2</td><td>@Compendium[dnd5e.classfeatures.ezWijmCnlnQ9ZRX2]{Jack of All Trades}, @Compendium[dnd5e.classfeatures.he8RpPXwSl2lVSIk]{Song of Rest (d6)}</td></tr><tr><td>3rd</td><td>+2</td><td>@Compendium[dnd5e.classfeatures.ILhzFHiRrqgQ9dFJ]{Bard College} @Compendium[dnd5e.classfeatures.aQLg7BWdRnm4Hr9S]{Expertise}</td></tr><tr><td>4th</td><td>+2</td><td>@Compendium[dnd5e.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td></tr><tr><td>5th</td><td>+3</td><td>@Compendium[dnd5e.classfeatures.hpLNiGq7y67d2EHA]{Bardic Inspiration (d8)}, @Compendium[dnd5e.classfeatures.3VDZGs5Ug3hIE322]{Font of Inspiration}</td></tr><tr><td>6th</td><td>+3</td><td>@Compendium[dnd5e.classfeatures.SEJmsjkEhdAZ90ki]{Countercharm}, Bard College feature</td></tr><tr><td>7th</td><td>+3</td><td>4th Level Spell Slot</td></tr><tr><td>8th</td><td>+3</td><td>@Compendium[dnd5e.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td></tr><tr><td>9th</td><td>+4</td><td>5th Level Spell Slot @Compendium[dnd5e.classfeatures.he8RpPXwSl2lVSIk]{Song of Rest (d8)}</td></tr><tr><td>10th</td><td>+4</td><td>@Compendium[dnd5e.classfeatures.hpLNiGq7y67d2EHA]{Bardic Inspiration (d10)}, @Compendium[dnd5e.classfeatures.aQLg7BWdRnm4Hr9S]{Expertise}, @Compendium[dnd5e.classfeatures.aonJ2YjkqkYB9WYB]{Magical Secrets}</td></tr><tr><td>11th</td><td>+4</td><td>6th Level Spell Slot</td></tr><tr><td>12th</td><td>+4</td><td>@Compendium[dnd5e.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td></tr><tr><td>13th</td><td>+5</td><td>7th Level Spell Slot, @Compendium[dnd5e.classfeatures.he8RpPXwSl2lVSIk]{Song of Rest (d10)}</td></tr><tr><td>14th</td><td>+5</td><td>@Compendium[dnd5e.classfeatures.aonJ2YjkqkYB9WYB]{Magical Secrets}, Bard College feature</td></tr><tr><td>15th</td><td>+5</td><td>8th Level Spell Slot, @Compendium[dnd5e.classfeatures.hpLNiGq7y67d2EHA]{Bardic Inspiration (d12)}</td></tr><tr><td>16th</td><td>+5</td><td>@Compendium[dnd5e.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td></tr><tr><td>17th</td><td>+6</td><td>9th Level Spell Slot, @Compendium[dnd5e.classfeatures.he8RpPXwSl2lVSIk]{Song of Rest (d12)}</td></tr><tr><td>18th</td><td>+6</td><td>@Compendium[dnd5e.classfeatures.aonJ2YjkqkYB9WYB]{Magical Secrets}</td></tr><tr><td>19th</td><td>+6</td><td>@Compendium[dnd5e.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td></tr><tr><td>20th</td><td>+6</td><td>@Compendium[dnd5e.classfeatures.GBYN5rH4nh1ocRlY]{Superior Inspiration}</td></tr></tbody></table><h1>Bard Colleges</h1><p>@Compendium[dnd5e.subclasses.MNvsEc4D2ccX7dQT]{College of Lore}</p>",
+      "value": "<p>As a bard, you gain the following class features.</p><h3>Hit Points</h3><p><strong>Hit Dice:</strong> 1d8 per bard level<br /><strong>Hit Points at 1st Level:</strong> 8 + your Constitution modifier<br /><strong>Hit Points at Higher Levels:</strong> 1d8 (or 5) + your Constitution modifier per bard level after 1st</p><h3>Proficiencies</h3><p><strong>Armor:</strong> Light armor<br /><strong>Weapons:</strong> Simple weapons, hand crossbows, longswords, rapiers, shortswords<br /><strong>Tools:</strong> Three musical instruments of your choice<br /><strong>Saving Throws:</strong> Dexterity, Charisma<br /><strong>Skills:</strong> Choose any three</p><h3>Equipment</h3><p>You start with the following equipment, in addition to the equipment granted by your background:</p><ul><li>(a) a rapier, (b) a longsword, or (c) any simple weapon</li><li>(a) a diplomat's pack or (b) an entertainer's pack</li><li>(a) a lute or (b) any other musical instrument</li><li>Leather armor and a dagger</li></ul><h1>Bard Advancement</h1><table border=\"0\"><thead><tr><td>Level</td><td>Proficiency Bonus</td><td>Features</td></tr></thead><tbody><tr><td>1st</td><td>+2</td><td>@Compendium[genefunk2090.classfeatures.u4NLajXETJhJU31v]{Spellcasting}, @Compendium[genefunk2090.classfeatures.hpLNiGq7y67d2EHA]{Bardic Inspiration (d6)}</td></tr><tr><td>2nd</td><td>+2</td><td>@Compendium[genefunk2090.classfeatures.ezWijmCnlnQ9ZRX2]{Jack of All Trades}, @Compendium[genefunk2090.classfeatures.he8RpPXwSl2lVSIk]{Song of Rest (d6)}</td></tr><tr><td>3rd</td><td>+2</td><td>@Compendium[genefunk2090.classfeatures.ILhzFHiRrqgQ9dFJ]{Bard College} @Compendium[genefunk2090.classfeatures.aQLg7BWdRnm4Hr9S]{Expertise}</td></tr><tr><td>4th</td><td>+2</td><td>@Compendium[genefunk2090.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td></tr><tr><td>5th</td><td>+3</td><td>@Compendium[genefunk2090.classfeatures.hpLNiGq7y67d2EHA]{Bardic Inspiration (d8)}, @Compendium[genefunk2090.classfeatures.3VDZGs5Ug3hIE322]{Font of Inspiration}</td></tr><tr><td>6th</td><td>+3</td><td>@Compendium[genefunk2090.classfeatures.SEJmsjkEhdAZ90ki]{Countercharm}, Bard College feature</td></tr><tr><td>7th</td><td>+3</td><td>4th Level Spell Slot</td></tr><tr><td>8th</td><td>+3</td><td>@Compendium[genefunk2090.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td></tr><tr><td>9th</td><td>+4</td><td>5th Level Spell Slot @Compendium[genefunk2090.classfeatures.he8RpPXwSl2lVSIk]{Song of Rest (d8)}</td></tr><tr><td>10th</td><td>+4</td><td>@Compendium[genefunk2090.classfeatures.hpLNiGq7y67d2EHA]{Bardic Inspiration (d10)}, @Compendium[genefunk2090.classfeatures.aQLg7BWdRnm4Hr9S]{Expertise}, @Compendium[genefunk2090.classfeatures.aonJ2YjkqkYB9WYB]{Magical Secrets}</td></tr><tr><td>11th</td><td>+4</td><td>6th Level Spell Slot</td></tr><tr><td>12th</td><td>+4</td><td>@Compendium[genefunk2090.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td></tr><tr><td>13th</td><td>+5</td><td>7th Level Spell Slot, @Compendium[genefunk2090.classfeatures.he8RpPXwSl2lVSIk]{Song of Rest (d10)}</td></tr><tr><td>14th</td><td>+5</td><td>@Compendium[genefunk2090.classfeatures.aonJ2YjkqkYB9WYB]{Magical Secrets}, Bard College feature</td></tr><tr><td>15th</td><td>+5</td><td>8th Level Spell Slot, @Compendium[genefunk2090.classfeatures.hpLNiGq7y67d2EHA]{Bardic Inspiration (d12)}</td></tr><tr><td>16th</td><td>+5</td><td>@Compendium[genefunk2090.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td></tr><tr><td>17th</td><td>+6</td><td>9th Level Spell Slot, @Compendium[genefunk2090.classfeatures.he8RpPXwSl2lVSIk]{Song of Rest (d12)}</td></tr><tr><td>18th</td><td>+6</td><td>@Compendium[genefunk2090.classfeatures.aonJ2YjkqkYB9WYB]{Magical Secrets}</td></tr><tr><td>19th</td><td>+6</td><td>@Compendium[genefunk2090.classfeatures.s0Cc2zcX0JzIgam5]{Ability Score Improvement}</td></tr><tr><td>20th</td><td>+6</td><td>@Compendium[genefunk2090.classfeatures.GBYN5rH4nh1ocRlY]{Superior Inspiration}</td></tr></tbody></table><h1>Bard Colleges</h1><p>@Compendium[genefunk2090.subclasses.MNvsEc4D2ccX7dQT]{College of Lore}</p>",
       "chat": "",
       "unidentified": ""
     },
@@ -25,7 +25,7 @@
         "configuration": {},
         "value": {},
         "title": "Hit Points",
-        "icon": "systems/dnd5e/icons/svg/hit-points.svg",
+        "icon": "systems/genefunk2090/icons/svg/hit-points.svg",
         "_id": "pILgW7YYeRvTfJS6"
       },
       {
@@ -217,8 +217,8 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.classfeatures.u4NLajXETJhJU31v",
-            "Compendium.dnd5e.classfeatures.hpLNiGq7y67d2EHA"
+            "Compendium.genefunk2090.classfeatures.u4NLajXETJhJU31v",
+            "Compendium.genefunk2090.classfeatures.hpLNiGq7y67d2EHA"
           ],
           "optional": false,
           "spell": {
@@ -233,15 +233,15 @@
         "value": {},
         "level": 1,
         "title": "Features",
-        "icon": "systems/dnd5e/icons/svg/item-grant.svg",
+        "icon": "systems/genefunk2090/icons/svg/item-grant.svg",
         "_id": "oNNPhAIeXhAweeBN"
       },
       {
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.classfeatures.ezWijmCnlnQ9ZRX2",
-            "Compendium.dnd5e.classfeatures.he8RpPXwSl2lVSIk"
+            "Compendium.genefunk2090.classfeatures.ezWijmCnlnQ9ZRX2",
+            "Compendium.genefunk2090.classfeatures.he8RpPXwSl2lVSIk"
           ],
           "optional": false,
           "spell": {
@@ -256,15 +256,15 @@
         "value": {},
         "level": 2,
         "title": "Features",
-        "icon": "systems/dnd5e/icons/svg/item-grant.svg",
+        "icon": "systems/genefunk2090/icons/svg/item-grant.svg",
         "_id": "V3KCwHELag3C3YVj"
       },
       {
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.classfeatures.ILhzFHiRrqgQ9dFJ",
-            "Compendium.dnd5e.classfeatures.aQLg7BWdRnm4Hr9S"
+            "Compendium.genefunk2090.classfeatures.ILhzFHiRrqgQ9dFJ",
+            "Compendium.genefunk2090.classfeatures.aQLg7BWdRnm4Hr9S"
           ],
           "optional": false,
           "spell": {
@@ -279,14 +279,14 @@
         "value": {},
         "level": 3,
         "title": "Features",
-        "icon": "systems/dnd5e/icons/svg/item-grant.svg",
+        "icon": "systems/genefunk2090/icons/svg/item-grant.svg",
         "_id": "MSF1wogSoeJqfxAR"
       },
       {
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.classfeatures.3VDZGs5Ug3hIE322"
+            "Compendium.genefunk2090.classfeatures.3VDZGs5Ug3hIE322"
           ],
           "optional": false,
           "spell": {
@@ -301,14 +301,14 @@
         "value": {},
         "level": 5,
         "title": "Features",
-        "icon": "systems/dnd5e/icons/svg/item-grant.svg",
+        "icon": "systems/genefunk2090/icons/svg/item-grant.svg",
         "_id": "I7HqKmtMcat8Dm08"
       },
       {
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.classfeatures.SEJmsjkEhdAZ90ki"
+            "Compendium.genefunk2090.classfeatures.SEJmsjkEhdAZ90ki"
           ],
           "optional": false,
           "spell": {
@@ -323,14 +323,14 @@
         "value": {},
         "level": 6,
         "title": "Features",
-        "icon": "systems/dnd5e/icons/svg/item-grant.svg",
+        "icon": "systems/genefunk2090/icons/svg/item-grant.svg",
         "_id": "UThCJ6mGUL0XQUb8"
       },
       {
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.classfeatures.aonJ2YjkqkYB9WYB"
+            "Compendium.genefunk2090.classfeatures.aonJ2YjkqkYB9WYB"
           ],
           "optional": false,
           "spell": {
@@ -345,14 +345,14 @@
         "value": {},
         "level": 10,
         "title": "Features",
-        "icon": "systems/dnd5e/icons/svg/item-grant.svg",
+        "icon": "systems/genefunk2090/icons/svg/item-grant.svg",
         "_id": "2fX3mtdNC16A1z7S"
       },
       {
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.classfeatures.GBYN5rH4nh1ocRlY"
+            "Compendium.genefunk2090.classfeatures.GBYN5rH4nh1ocRlY"
           ],
           "optional": false,
           "spell": {
@@ -367,7 +367,7 @@
         "value": {},
         "level": 20,
         "title": "Features",
-        "icon": "systems/dnd5e/icons/svg/item-grant.svg",
+        "icon": "systems/genefunk2090/icons/svg/item-grant.svg",
         "_id": "ZwU2MLhnY219t78q"
       },
       {
@@ -398,7 +398,7 @@
         },
         "value": {},
         "title": "Magical Secrets",
-        "icon": "systems/dnd5e/icons/svg/item-choice.svg",
+        "icon": "systems/genefunk2090/icons/svg/item-choice.svg",
         "_id": "EC1yNAV6khHilOhz"
       },
       {
@@ -430,7 +430,7 @@
         },
         "value": {},
         "title": "Bardic Inspiration Die",
-        "icon": "systems/dnd5e/icons/svg/scale-value.svg",
+        "icon": "systems/genefunk2090/icons/svg/scale-value.svg",
         "_id": "0Ybu5yMjplpTAHiE"
       },
       {
@@ -462,7 +462,7 @@
         },
         "value": {},
         "title": "Song of Rest Die",
-        "icon": "systems/dnd5e/icons/svg/scale-value.svg",
+        "icon": "systems/genefunk2090/icons/svg/scale-value.svg",
         "_id": "TK2RAm9EFQtVjDrU"
       },
       {
@@ -487,7 +487,7 @@
         },
         "value": {},
         "title": "Cantrips Known",
-        "icon": "systems/dnd5e/icons/svg/scale-value.svg",
+        "icon": "systems/genefunk2090/icons/svg/scale-value.svg",
         "_id": "ovKbtrhfIkYTuThu"
       },
       {
@@ -551,7 +551,7 @@
         },
         "value": {},
         "title": "Spells Known",
-        "icon": "systems/dnd5e/icons/svg/scale-value.svg",
+        "icon": "systems/genefunk2090/icons/svg/scale-value.svg",
         "_id": "9FXWVh7OmbPr1iR9"
       },
       {
@@ -572,7 +572,7 @@
         },
         "level": 4,
         "title": "Ability Score Improvement",
-        "icon": "systems/dnd5e/icons/svg/ability-score-improvement.svg",
+        "icon": "systems/genefunk2090/icons/svg/ability-score-improvement.svg",
         "_id": "sbzvEEntzYcE5JfN"
       },
       {
@@ -593,7 +593,7 @@
         },
         "level": 8,
         "title": "Ability Score Improvement",
-        "icon": "systems/dnd5e/icons/svg/ability-score-improvement.svg",
+        "icon": "systems/genefunk2090/icons/svg/ability-score-improvement.svg",
         "_id": "adpq4VPJ5oVt8m06"
       },
       {
@@ -614,7 +614,7 @@
         },
         "level": 12,
         "title": "Ability Score Improvement",
-        "icon": "systems/dnd5e/icons/svg/ability-score-improvement.svg",
+        "icon": "systems/genefunk2090/icons/svg/ability-score-improvement.svg",
         "_id": "jl333Hy4RIPs6J9p"
       },
       {
@@ -635,7 +635,7 @@
         },
         "level": 16,
         "title": "Ability Score Improvement",
-        "icon": "systems/dnd5e/icons/svg/ability-score-improvement.svg",
+        "icon": "systems/genefunk2090/icons/svg/ability-score-improvement.svg",
         "_id": "Eweg6iXNJ6qIC6rY"
       },
       {
@@ -700,12 +700,12 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.3.1",
     "coreVersion": "10.303",
     "createdTime": 1661787234279,
     "modifiedTime": 1699386023408,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!items!ILvRZGEx3aXqSVUt"
 }

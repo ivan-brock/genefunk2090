@@ -8,7 +8,7 @@ export default class ActorSheet5eVehicle extends ActorSheet5e {
   /** @inheritDoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["dnd5e", "sheet", "actor", "vehicle"]
+      classes: ["genefunk2090", "sheet", "actor", "vehicle"]
     });
   }
 
@@ -43,13 +43,13 @@ export default class ActorSheet5eVehicle extends ActorSheet5e {
     // Compute currency weight
     const totalCoins = Object.values(actorData.system.currency).reduce((acc, denom) => acc + denom, 0);
 
-    const currencyPerWeight = game.settings.get("dnd5e", "metricWeightUnits")
+    const currencyPerWeight = game.settings.get("genefunk2090", "metricWeightUnits")
       ? CONFIG.DND5E.encumbrance.currencyPerWeight.metric
       : CONFIG.DND5E.encumbrance.currencyPerWeight.imperial;
     totalWeight += totalCoins / currencyPerWeight;
 
     // Vehicle weights are an order of magnitude greater.
-    totalWeight /= game.settings.get("dnd5e", "metricWeightUnits")
+    totalWeight /= game.settings.get("genefunk2090", "metricWeightUnits")
       ? CONFIG.DND5E.encumbrance.vehicleWeightMultiplier.metric
       : CONFIG.DND5E.encumbrance.vehicleWeightMultiplier.imperial;
 
@@ -222,7 +222,7 @@ export default class ActorSheet5eVehicle extends ActorSheet5e {
       this._prepareCrewedItem(item, ctx);
 
       // Handle cargo explicitly
-      const isCargo = item.flags.dnd5e?.vehicleCargo === true;
+      const isCargo = item.flags.genefunk2090?.vehicleCargo === true;
       if ( isCargo ) {
         totalWeight += (item.system.weight || 0) * item.system.quantity;
         cargo.cargo.items.push(item);
@@ -378,7 +378,7 @@ export default class ActorSheet5eVehicle extends ActorSheet5e {
   async _onDropSingleItem(itemData) {
     const cargoTypes = ["weapon", "equipment", "consumable", "tool", "loot", "backpack"];
     const isCargo = cargoTypes.includes(itemData.type) && (this._tabs[0].active === "cargo");
-    foundry.utils.setProperty(itemData, "flags.dnd5e.vehicleCargo", isCargo);
+    foundry.utils.setProperty(itemData, "flags.genefunk2090.vehicleCargo", isCargo);
     return super._onDropSingleItem(itemData);
   }
 

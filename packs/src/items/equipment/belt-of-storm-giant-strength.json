@@ -100,7 +100,7 @@
     {
       "label": "Belt of Storm Giant Strength",
       "icon": "icons/equipment/waist/sash-cloth-gold-purple.webp",
-      "origin": "Compendium.dnd5e.items.wBYmPQG3nZfD88aP",
+      "origin": "Compendium.genefunk2090.items.wBYmPQG3nZfD88aP",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -133,12 +133,12 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.2.2",
     "coreVersion": "10.303",
     "createdTime": 1661787233955,
     "modifiedTime": 1690480557337,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!items!wBYmPQG3nZfD88aP"
 }

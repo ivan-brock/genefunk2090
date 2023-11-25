@@ -125,7 +125,7 @@
       },
       "icon": "icons/equipment/finger/ring-cabochon-silver-gold-red.webp",
       "label": "Ring of Protection",
-      "origin": "Compendium.dnd5e.items.QtmVEreNIWEVOoLR",
+      "origin": "Compendium.genefunk2090.items.QtmVEreNIWEVOoLR",
       "transfer": true,
       "flags": {},
       "tint": null,
@@ -140,12 +140,12 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.2.2",
     "coreVersion": "10.303",
     "createdTime": 1661787233653,
     "modifiedTime": 1690481162093,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!items!QtmVEreNIWEVOoLR"
 }

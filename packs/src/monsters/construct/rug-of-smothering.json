@@ -544,7 +544,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.KMQAgNxBCAHrd2JU"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.KMQAgNxBCAHrd2JU"
         }
       },
       "_stats": {
@@ -642,7 +642,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.0npeEcwmiVMdwGMV"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.0npeEcwmiVMdwGMV"
         }
       },
       "_stats": {
@@ -740,7 +740,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.kyVgQNSa12loxVvr"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.kyVgQNSa12loxVvr"
         }
       },
       "_stats": {
@@ -890,12 +890,12 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.1.0",
     "coreVersion": "10.291",
     "createdTime": 1661787232954,
     "modifiedTime": 1672596103163,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!actors!f6HaKROPIcBRmSd1"
 }

@@ -2,13 +2,13 @@
   "scripts": {
     "build": "npm run build:code && npm run build:css && npm run build:db",
     "build:clean": "node ./utils/packs.mjs package clean",
-    "build:code": "rollup dnd5e.mjs -f es -o dnd5e-compiled.mjs -p node-resolve -m --sourcemapFile dnd5e.mjs",
-    "build:css": "lessc less/dnd5e.less dnd5e.css",
+    "build:code": "rollup genefunk2090.mjs -f es -o genefunk2090-compiled.mjs -p node-resolve -m --sourcemapFile genefunk2090.mjs",
+    "build:css": "lessc less/genefunk2090.less genefunk2090.css",
     "build:db": "node ./utils/packs.mjs package pack --nedb",
     "build:json": "node ./utils/packs.mjs package unpack --nedb",
     "lint": "eslint --ext .mjs ./",
     "lint:fix": "eslint --ext .mjs ./ --fix",
-    "watch": "less-watch-compiler less/ ./ dnd5e.less"
+    "watch": "less-watch-compiler less/ ./ genefunk2090.less"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.22.15",

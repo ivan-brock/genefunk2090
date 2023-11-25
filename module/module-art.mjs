@@ -39,7 +39,7 @@ export class ModuleArt {
       if ( !artPath ) continue;
       try {
         const mapping = await foundry.utils.fetchJsonWithTimeout(artPath);
-        await this.#parseArtMapping(module.id, mapping, flags["dnd5e-art-credit"]);
+        await this.#parseArtMapping(module.id, mapping, flags["genefunk2090-art-credit"]);
       } catch( e ) {
         console.error(e);
       }
@@ -47,7 +47,7 @@ export class ModuleArt {
 
     // Load system mapping.
     try {
-      const mapping = await foundry.utils.fetchJsonWithTimeout("systems/dnd5e/json/fa-token-mapping.json");
+      const mapping = await foundry.utils.fetchJsonWithTimeout("systems/genefunk2090/json/fa-token-mapping.json");
       const credit = `
         <em>
           Token artwork by
@@ -71,7 +71,7 @@ export class ModuleArt {
    * @returns {Promise<void>}
    */
   async #parseArtMapping(moduleId, mapping, credit) {
-    let settings = game.settings.get("dnd5e", "moduleArtConfiguration")?.[moduleId];
+    let settings = game.settings.get("genefunk2090", "moduleArtConfiguration")?.[moduleId];
     settings ??= {portraits: true, tokens: true};
     for ( const [packName, actors] of Object.entries(mapping) ) {
       const pack = game.packs.get(packName);
@@ -99,7 +99,7 @@ export class ModuleArt {
    */
   static getModuleArtPath(module) {
     const flags = module.flags?.[module.id];
-    const artPath = flags?.["dnd5e-art"];
+    const artPath = flags?.["genefunk2090-art"];
     if ( !artPath || !module.active ) return null;
     return artPath;
   }
@@ -111,7 +111,7 @@ export class ModuleArt {
 export class ModuleArtConfig extends FormApplication {
   /** @inheritdoc */
   constructor(object={}, options={}) {
-    object = foundry.utils.mergeObject(game.settings.get("dnd5e", "moduleArtConfiguration"), object, {inplace: false});
+    object = foundry.utils.mergeObject(game.settings.get("genefunk2090", "moduleArtConfiguration"), object, {inplace: false});
     super(object, options);
   }
 
@@ -122,7 +122,7 @@ export class ModuleArtConfig extends FormApplication {
     return foundry.utils.mergeObject(super.defaultOptions, {
       title: game.i18n.localize("DND5E.ModuleArtConfigL"),
       id: "module-art-config",
-      template: "systems/dnd5e/templates/apps/module-art-config.html",
+      template: "systems/genefunk2090/templates/apps/module-art-config.html",
       popOut: true,
       width: 600,
       height: "auto"
@@ -141,7 +141,7 @@ export class ModuleArtConfig extends FormApplication {
       context.config.push({label: module.title, id: module.id, ...settings});
     }
     context.config.sort((a, b) => a.label.localeCompare(b.label, game.i18n.lang));
-    context.config.unshift({label: game.system.title, id: game.system.id, ...this.object.dnd5e});
+    context.config.unshift({label: game.system.title, id: game.system.id, ...this.object.genefunk2090});
     return context;
   }
 
@@ -149,7 +149,7 @@ export class ModuleArtConfig extends FormApplication {
 
   /** @inheritdoc */
   async _updateObject(event, formData) {
-    await game.settings.set("dnd5e", "moduleArtConfiguration", foundry.utils.expandObject(formData));
+    await game.settings.set("genefunk2090", "moduleArtConfiguration", foundry.utils.expandObject(formData));
     return SettingsConfig.reloadConfirm({world: true});
   }
 }

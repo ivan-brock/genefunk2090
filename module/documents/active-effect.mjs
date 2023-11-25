@@ -14,7 +14,7 @@ export default class ActiveEffect5e extends ActiveEffect {
   /** @inheritdoc */
   apply(actor, change) {
     if ( this.isSuppressed ) return null;
-    if ( change.key.startsWith("flags.dnd5e.") ) change = this._prepareFlagChange(actor, change);
+    if ( change.key.startsWith("flags.genefunk2090.") ) change = this._prepareFlagChange(actor, change);
     return super.apply(actor, change);
   }
 
@@ -53,7 +53,7 @@ export default class ActiveEffect5e extends ActiveEffect {
    */
   _prepareFlagChange(actor, change) {
     const { key, value } = change;
-    const data = CONFIG.DND5E.characterFlags[key.replace("flags.dnd5e.", "")];
+    const data = CONFIG.DND5E.characterFlags[key.replace("flags.genefunk2090.", "")];
     if ( !data ) return change;
 
     // Set flag to initial value if it isn't present
@@ -82,8 +82,8 @@ export default class ActiveEffect5e extends ActiveEffect {
   determineSuppression() {
     this.isSuppressed = false;
     if ( this.disabled || (this.parent.documentName !== "Actor") || !this.origin ) return;
-    // Deliberately avoiding using fromUuidSync here, see: https://github.com/foundryvtt/dnd5e/pull/1980
-    const parsed = game.dnd5e.isV10 ? _parseUuid(this.origin) : parseUuid(this.origin);
+    // Deliberately avoiding using fromUuidSync here, see: https://github.com/foundryvtt/genefunk2090/pull/1980
+    const parsed = game.genefunk2090.isV10 ? _parseUuid(this.origin) : parseUuid(this.origin);
     if ( !parsed ) return;
     const { collection, documentId: parentId, embedded } = parsed;
     let item;
@@ -171,7 +171,7 @@ export default class ActiveEffect5e extends ActiveEffect {
 
     // Iterate over active effects, classifying them into categories
     for ( let e of effects ) {
-      if ( game.dnd5e.isV10 ) e._getSourceName(); // Trigger a lookup for the source name
+      if ( game.genefunk2090.isV10 ) e._getSourceName(); // Trigger a lookup for the source name
       if ( e.isSuppressed ) categories.suppressed.effects.push(e);
       else if ( e.disabled ) categories.inactive.effects.push(e);
       else if ( e.isTemporary ) categories.temporary.effects.push(e);

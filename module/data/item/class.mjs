@@ -128,6 +128,6 @@ export default class ClassData extends SystemDataModel.mixin(ItemDescriptionTemp
       needsMigration = true;
     }
 
-    if ( needsMigration ) foundry.utils.setProperty(source, "flags.dnd5e.persistSourceMigration", true);
+    if ( needsMigration ) foundry.utils.setProperty(source, "flags.genefunk2090.persistSourceMigration", true);
   }
 }

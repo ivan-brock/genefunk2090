@@ -8,10 +8,10 @@ export default class ItemChoiceConfig extends AdvancementConfig {
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["dnd5e", "advancement", "item-choice", "two-column"],
+      classes: ["genefunk2090", "advancement", "item-choice", "two-column"],
       dragDrop: [{ dropSelector: ".drop-target" }],
       dropKeyPath: "pool",
-      template: "systems/dnd5e/templates/advancement/item-choice-config.hbs",
+      template: "systems/genefunk2090/templates/advancement/item-choice-config.hbs",
       width: 540
     });
   }

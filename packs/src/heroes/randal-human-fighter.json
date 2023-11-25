@@ -527,7 +527,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.aa9KuBy4dst7WIW9"
+          "sourceId": "Compendium.genefunk2090.items.aa9KuBy4dst7WIW9"
         }
       },
       "img": "icons/tools/instruments/flute-simple-wood.webp",
@@ -629,7 +629,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.classfeatures.zSlV0O2rQMdoq6pB"
+          "sourceId": "Compendium.genefunk2090.classfeatures.zSlV0O2rQMdoq6pB"
         }
       },
       "img": "icons/equipment/shield/heater-stone-orange.webp",
@@ -639,12 +639,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.4.0",
         "coreVersion": "10.303",
         "createdTime": null,
         "modifiedTime": 1699987492174,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!2Pdtnswo8Nj2nafY.xhSq81g4w9vTE0nK"
     },
@@ -731,7 +731,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.kP9t6MAeUvBBmoM3"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.kP9t6MAeUvBBmoM3"
         }
       },
       "img": "icons/skills/melee/unarmed-punch-fist.webp",
@@ -741,12 +741,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.4.0",
         "coreVersion": "10.303",
         "createdTime": null,
         "modifiedTime": 1699987492173,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!2Pdtnswo8Nj2nafY.r7UallZJjcIFsz8i"
     },
@@ -848,12 +848,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011647487,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!2Pdtnswo8Nj2nafY.6kg0dYblyeGcoclF"
     },
@@ -974,7 +974,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.3cymOVja8jXbzrdT"
+          "sourceId": "Compendium.genefunk2090.items.3cymOVja8jXbzrdT"
         }
       },
       "img": "icons/weapons/bows/longbow-leather-green.webp",
@@ -1110,7 +1110,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.10ZP2Bu3vnCuYMIB"
+          "sourceId": "Compendium.genefunk2090.items.10ZP2Bu3vnCuYMIB"
         }
       },
       "img": "icons/weapons/swords/greatsword-crossguard-steel.webp",
@@ -1482,7 +1482,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.yHcr3vlkmtInELj2"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.yHcr3vlkmtInELj2"
         }
       },
       "img": "icons/equipment/shield/oval-wooden-boss-steel.webp",
@@ -1543,7 +1543,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.H8YCd689ezlD26aT"
+          "sourceId": "Compendium.genefunk2090.items.H8YCd689ezlD26aT"
         }
       },
       "img": "icons/containers/bags/pack-simple-leather.webp",
@@ -1604,7 +1604,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.9bWTRRDym06PzSAf"
+          "sourceId": "Compendium.genefunk2090.items.9bWTRRDym06PzSAf"
         }
       },
       "img": "icons/containers/bags/coinpouch-simple-tan.webp",
@@ -1614,12 +1614,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640341,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!2Pdtnswo8Nj2nafY.Z4bdbM4ROqwPcSli"
     },
@@ -1657,7 +1657,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.14pNRT4sZy9rgvhb"
+          "sourceId": "Compendium.genefunk2090.items.14pNRT4sZy9rgvhb"
         }
       },
       "img": "icons/tools/smithing/hammer-sledge-steel-grey.webp",
@@ -1710,7 +1710,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.DNOSEAvF4Oh1DlWy"
+          "sourceId": "Compendium.genefunk2090.items.DNOSEAvF4Oh1DlWy"
         }
       },
       "img": "icons/sundries/lights/torch-black.webp",
@@ -1720,12 +1720,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640351,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!2Pdtnswo8Nj2nafY.BQIFmKZfFgM3XQPq"
     },
@@ -1816,7 +1816,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.Uv0ilmzbWvqmlCVH"
+          "sourceId": "Compendium.genefunk2090.items.Uv0ilmzbWvqmlCVH"
         }
       },
       "img": "icons/sundries/survival/wetskin-leather-purple.webp",
@@ -1826,12 +1826,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640358,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!2Pdtnswo8Nj2nafY.ASK21hDnn53hojQo"
     },
@@ -1922,7 +1922,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.QXmaarJ4X8P0C1HV"
+          "sourceId": "Compendium.genefunk2090.items.QXmaarJ4X8P0C1HV"
         }
       },
       "img": "icons/sundries/survival/rope-wrapped-brown.webp",
@@ -1983,7 +1983,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.4MtQKPn9qMWCFjDA"
+          "sourceId": "Compendium.genefunk2090.items.4MtQKPn9qMWCFjDA"
         }
       },
       "img": "icons/containers/ammunition/arrows-quiver-black.webp",
@@ -2036,7 +2036,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.DVXmyetZuvxbzAwW"
+          "sourceId": "Compendium.genefunk2090.items.DVXmyetZuvxbzAwW"
         }
       },
       "img": "icons/sundries/flags/banner-worn-blue.webp",
@@ -2089,7 +2089,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.V13fjV5oSmvbRdgP"
+          "sourceId": "Compendium.genefunk2090.items.V13fjV5oSmvbRdgP"
         }
       },
       "img": "icons/tools/cooking/fork-steel-grey.webp",
@@ -2099,12 +2099,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640365,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!2Pdtnswo8Nj2nafY.C47RdG1DyqBhG1aB"
     },
@@ -2225,7 +2225,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.eO7Fbv5WBk5zvGOc"
+          "sourceId": "Compendium.genefunk2090.items.eO7Fbv5WBk5zvGOc"
         }
       },
       "img": "icons/weapons/axes/axe-broad-black.webp",
@@ -2331,7 +2331,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.f4w4GxBi0nYXmhX4"
+          "sourceId": "Compendium.genefunk2090.items.f4w4GxBi0nYXmhX4"
         }
       },
       "img": "icons/consumables/meat/hock-leg-pink-brown.webp",
@@ -2341,12 +2341,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011640371,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!2Pdtnswo8Nj2nafY.XlBuqgctFFNNx8Xn"
     },
@@ -2437,7 +2437,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.TqyvIglHDj5kfohR"
+          "sourceId": "Compendium.genefunk2090.items.TqyvIglHDj5kfohR"
         }
       },
       "img": "icons/sundries/survival/stake-rough-simple-brown.webp",
@@ -2447,12 +2447,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011647493,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!2Pdtnswo8Nj2nafY.rRBxjDaj0KZoEySZ"
     },
@@ -2548,7 +2548,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.BnOCLuNWhVvzHLjl"
+          "sourceId": "Compendium.genefunk2090.items.BnOCLuNWhVvzHLjl"
         }
       },
       "img": "icons/sundries/lights/torch-black.webp",
@@ -2558,12 +2558,12 @@
         "default": 0
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.3",
         "coreVersion": "10.290",
         "createdTime": null,
         "modifiedTime": 1670011647502,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!2Pdtnswo8Nj2nafY.puS6D5ZXmiKePl1F"
     },
@@ -2601,7 +2601,7 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.V5UAjT3ed6sDNtgm"
+          "sourceId": "Compendium.genefunk2090.items.V5UAjT3ed6sDNtgm"
         }
       },
       "img": "icons/tools/hand/pickaxe-steel-white.webp",
@@ -2646,12 +2646,12 @@
       },
       "flags": {},
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.1.0",
         "coreVersion": "10.291",
         "createdTime": 1673040183979,
         "modifiedTime": 1673040617213,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_id": "iODPoFlvprdu59Ga",
       "_key": "!actors.items!2Pdtnswo8Nj2nafY.iODPoFlvprdu59Ga"
@@ -2663,7 +2663,7 @@
       "img": "icons/skills/melee/hand-grip-sword-red.webp",
       "system": {
         "description": {
-          "value": "<p>As a fighter, you gain the following class features.</p>\n<h3>Hit Points</h3>\n<p><strong>Hit Dice:</strong> 1d10 per fighter level<br /><strong>Hit Points at 1st Level:</strong> 10 + your Constitution modifier<br /><strong>Hit Points at Higher Levels:</strong> 1d10 (or 6) + your Constitution modifier per fighter level after 1st</p>\n<h3>Proficiencies</h3>\n<p><strong>Armor:</strong> All armor, shields<br /><strong>Weapons:</strong> Simple weapons, martial weapons<br /><strong>Tools:</strong> None<br /><strong>Saving Throws:</strong> Strength, Constitution<br /><strong>Skills:</strong> Choose two skills from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival</p>\n<h3>Equipment</h3>\n<p>You start with the following equipment, in addition to the equipment granted by your background:</p>\n<ul>\n<li>(a) chain mail or (b) leather armor, longbow, and 20 arrows</li>\n<li>(a) a martial weapon and a shield or (b) two martial weapons</li>\n<li>(a) a light crossbow and 20 bolts or (b) two handaxes</li>\n<li>(a) a dungeoneer's pack or (b) an explorer's pack</li>\n</ul>\n<h1>Fighter Advancement</h1>\n<table>\n<thead>\n<tr>\n<td>Level</td>\n<td>Proficiency Bonus</td>\n<td>Features</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+2</td>\n<td>@Compendium[dnd5e.classfeatures.fbExzwNwEAl2kW9c]{Fighting Style}, @Compendium[dnd5e.classfeatures.nTjmWbyHweXuIqwc]{Second Wind}</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>@Compendium[dnd5e.classfeatures.xF1VTcJ3AdkbTsdQ]{Action Surge}</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>@Compendium[dnd5e.classfeatures.ax8M0X0q1GGWM26j]{Martial Archetype}</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+2</td>\n<td>@Compendium[dnd5e.classfeatures.sPy2OLoN7JaAcMl4]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>@Compendium[dnd5e.classfeatures.q9g1MLXuLZyxjQMg]{Extra Attack}</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+3</td>\n<td>@Compendium[dnd5e.classfeatures.sPy2OLoN7JaAcMl4]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+3</td>\n<td>Martial Archetype feature</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+3</td>\n<td>@Compendium[dnd5e.classfeatures.sPy2OLoN7JaAcMl4]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+4</td>\n<td>@Compendium[dnd5e.classfeatures.653ZHbNcmm7ZGXbw]{Indomitable}</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+4</td>\n<td>Martial Archetype feature</td>\n</tr>\n<tr>\n<td>11th</td>\n<td>+4</td>\n<td>@Compendium[dnd5e.classfeatures.q9g1MLXuLZyxjQMg]{Extra Attack (2)}</td>\n</tr>\n<tr>\n<td>12th</td>\n<td>+4</td>\n<td>@Compendium[dnd5e.classfeatures.sPy2OLoN7JaAcMl4]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>13th</td>\n<td>+5</td>\n<td>@Compendium[dnd5e.classfeatures.653ZHbNcmm7ZGXbw]{Indomitable (2 uses)}</td>\n</tr>\n<tr>\n<td>14th</td>\n<td>+5</td>\n<td>@Compendium[dnd5e.classfeatures.sPy2OLoN7JaAcMl4]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>15th</td>\n<td>+5</td>\n<td>Martial Archetype feature</td>\n</tr>\n<tr>\n<td>16th</td>\n<td>+5</td>\n<td>@Compendium[dnd5e.classfeatures.sPy2OLoN7JaAcMl4]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>17th</td>\n<td>+6</td>\n<td>@Compendium[dnd5e.classfeatures.xF1VTcJ3AdkbTsdQ]{Action Surge (2 uses)}, @Compendium[dnd5e.classfeatures.653ZHbNcmm7ZGXbw]{Indomitable (3 uses)}</td>\n</tr>\n<tr>\n<td>18th</td>\n<td>+6</td>\n<td>Martial Archetype feature</td>\n</tr>\n<tr>\n<td>19th</td>\n<td>+6</td>\n<td>@Compendium[dnd5e.classfeatures.sPy2OLoN7JaAcMl4]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>20th</td>\n<td>+6</td>\n<td>@Compendium[dnd5e.classfeatures.q9g1MLXuLZyxjQMg]{Extra Attack (3)}</td>\n</tr>\n</tbody>\n</table>\n<h1>Martial Archetypes</h1>\n<p>Different fighters choose different approaches to perfecting their fighting prowess. The martial archetype you choose to emulate reflects your approach.</p>\n<p>@Compendium[dnd5e.subclasses.sprHbe7cRg9osTzf]{Champion}</p>",
+          "value": "<p>As a fighter, you gain the following class features.</p>\n<h3>Hit Points</h3>\n<p><strong>Hit Dice:</strong> 1d10 per fighter level<br /><strong>Hit Points at 1st Level:</strong> 10 + your Constitution modifier<br /><strong>Hit Points at Higher Levels:</strong> 1d10 (or 6) + your Constitution modifier per fighter level after 1st</p>\n<h3>Proficiencies</h3>\n<p><strong>Armor:</strong> All armor, shields<br /><strong>Weapons:</strong> Simple weapons, martial weapons<br /><strong>Tools:</strong> None<br /><strong>Saving Throws:</strong> Strength, Constitution<br /><strong>Skills:</strong> Choose two skills from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival</p>\n<h3>Equipment</h3>\n<p>You start with the following equipment, in addition to the equipment granted by your background:</p>\n<ul>\n<li>(a) chain mail or (b) leather armor, longbow, and 20 arrows</li>\n<li>(a) a martial weapon and a shield or (b) two martial weapons</li>\n<li>(a) a light crossbow and 20 bolts or (b) two handaxes</li>\n<li>(a) a dungeoneer's pack or (b) an explorer's pack</li>\n</ul>\n<h1>Fighter Advancement</h1>\n<table>\n<thead>\n<tr>\n<td>Level</td>\n<td>Proficiency Bonus</td>\n<td>Features</td>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1st</td>\n<td>+2</td>\n<td>@Compendium[genefunk2090.classfeatures.fbExzwNwEAl2kW9c]{Fighting Style}, @Compendium[genefunk2090.classfeatures.nTjmWbyHweXuIqwc]{Second Wind}</td>\n</tr>\n<tr>\n<td>2nd</td>\n<td>+2</td>\n<td>@Compendium[genefunk2090.classfeatures.xF1VTcJ3AdkbTsdQ]{Action Surge}</td>\n</tr>\n<tr>\n<td>3rd</td>\n<td>+2</td>\n<td>@Compendium[genefunk2090.classfeatures.ax8M0X0q1GGWM26j]{Martial Archetype}</td>\n</tr>\n<tr>\n<td>4th</td>\n<td>+2</td>\n<td>@Compendium[genefunk2090.classfeatures.sPy2OLoN7JaAcMl4]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>5th</td>\n<td>+3</td>\n<td>@Compendium[genefunk2090.classfeatures.q9g1MLXuLZyxjQMg]{Extra Attack}</td>\n</tr>\n<tr>\n<td>6th</td>\n<td>+3</td>\n<td>@Compendium[genefunk2090.classfeatures.sPy2OLoN7JaAcMl4]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>7th</td>\n<td>+3</td>\n<td>Martial Archetype feature</td>\n</tr>\n<tr>\n<td>8th</td>\n<td>+3</td>\n<td>@Compendium[genefunk2090.classfeatures.sPy2OLoN7JaAcMl4]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>9th</td>\n<td>+4</td>\n<td>@Compendium[genefunk2090.classfeatures.653ZHbNcmm7ZGXbw]{Indomitable}</td>\n</tr>\n<tr>\n<td>10th</td>\n<td>+4</td>\n<td>Martial Archetype feature</td>\n</tr>\n<tr>\n<td>11th</td>\n<td>+4</td>\n<td>@Compendium[genefunk2090.classfeatures.q9g1MLXuLZyxjQMg]{Extra Attack (2)}</td>\n</tr>\n<tr>\n<td>12th</td>\n<td>+4</td>\n<td>@Compendium[genefunk2090.classfeatures.sPy2OLoN7JaAcMl4]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>13th</td>\n<td>+5</td>\n<td>@Compendium[genefunk2090.classfeatures.653ZHbNcmm7ZGXbw]{Indomitable (2 uses)}</td>\n</tr>\n<tr>\n<td>14th</td>\n<td>+5</td>\n<td>@Compendium[genefunk2090.classfeatures.sPy2OLoN7JaAcMl4]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>15th</td>\n<td>+5</td>\n<td>Martial Archetype feature</td>\n</tr>\n<tr>\n<td>16th</td>\n<td>+5</td>\n<td>@Compendium[genefunk2090.classfeatures.sPy2OLoN7JaAcMl4]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>17th</td>\n<td>+6</td>\n<td>@Compendium[genefunk2090.classfeatures.xF1VTcJ3AdkbTsdQ]{Action Surge (2 uses)}, @Compendium[genefunk2090.classfeatures.653ZHbNcmm7ZGXbw]{Indomitable (3 uses)}</td>\n</tr>\n<tr>\n<td>18th</td>\n<td>+6</td>\n<td>Martial Archetype feature</td>\n</tr>\n<tr>\n<td>19th</td>\n<td>+6</td>\n<td>@Compendium[genefunk2090.classfeatures.sPy2OLoN7JaAcMl4]{Ability Score Improvement}</td>\n</tr>\n<tr>\n<td>20th</td>\n<td>+6</td>\n<td>@Compendium[genefunk2090.classfeatures.q9g1MLXuLZyxjQMg]{Extra Attack (3)}</td>\n</tr>\n</tbody>\n</table>\n<h1>Martial Archetypes</h1>\n<p>Different fighters choose different approaches to perfecting their fighting prowess. The martial archetype you choose to emulate reflects your approach.</p>\n<p>@Compendium[genefunk2090.subclasses.sprHbe7cRg9osTzf]{Champion}</p>",
           "chat": "",
           "unidentified": ""
         },
@@ -2685,15 +2685,15 @@
               "1": "max"
             },
             "title": "Hit Points",
-            "icon": "systems/dnd5e/icons/svg/hit-points.svg",
+            "icon": "systems/genefunk2090/icons/svg/hit-points.svg",
             "_id": "yhZd0KJPJERAWGgA"
           },
           {
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.fbExzwNwEAl2kW9c",
-                "Compendium.dnd5e.classfeatures.nTjmWbyHweXuIqwc"
+                "Compendium.genefunk2090.classfeatures.fbExzwNwEAl2kW9c",
+                "Compendium.genefunk2090.classfeatures.nTjmWbyHweXuIqwc"
               ],
               "optional": false,
               "spell": {
@@ -2707,20 +2707,20 @@
             },
             "value": {
               "added": {
-                "xBoN1auJaGal3hva": "Compendium.dnd5e.classfeatures.fbExzwNwEAl2kW9c",
-                "QYbinNgLV2ZYxX2c": "Compendium.dnd5e.classfeatures.nTjmWbyHweXuIqwc"
+                "xBoN1auJaGal3hva": "Compendium.genefunk2090.classfeatures.fbExzwNwEAl2kW9c",
+                "QYbinNgLV2ZYxX2c": "Compendium.genefunk2090.classfeatures.nTjmWbyHweXuIqwc"
               }
             },
             "level": 1,
             "title": "Features",
-            "icon": "systems/dnd5e/icons/svg/item-grant.svg",
+            "icon": "systems/genefunk2090/icons/svg/item-grant.svg",
             "_id": "PwWJCRoUIftcpy47"
           },
           {
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.xF1VTcJ3AdkbTsdQ"
+                "Compendium.genefunk2090.classfeatures.xF1VTcJ3AdkbTsdQ"
               ],
               "optional": false,
               "spell": {
@@ -2735,14 +2735,14 @@
             "value": {},
             "level": 2,
             "title": "Features",
-            "icon": "systems/dnd5e/icons/svg/item-grant.svg",
+            "icon": "systems/genefunk2090/icons/svg/item-grant.svg",
             "_id": "pxHWfZrwT5tdCH61"
           },
           {
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.ax8M0X0q1GGWM26j"
+                "Compendium.genefunk2090.classfeatures.ax8M0X0q1GGWM26j"
               ],
               "optional": false,
               "spell": {
@@ -2757,14 +2757,14 @@
             "value": {},
             "level": 3,
             "title": "Features",
-            "icon": "systems/dnd5e/icons/svg/item-grant.svg",
+            "icon": "systems/genefunk2090/icons/svg/item-grant.svg",
             "_id": "tdk8Hj5vUKl7Uz2a"
           },
           {
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.q9g1MLXuLZyxjQMg"
+                "Compendium.genefunk2090.classfeatures.q9g1MLXuLZyxjQMg"
               ],
               "optional": false,
               "spell": {
@@ -2779,14 +2779,14 @@
             "value": {},
             "level": 5,
             "title": "Features",
-            "icon": "systems/dnd5e/icons/svg/item-grant.svg",
+            "icon": "systems/genefunk2090/icons/svg/item-grant.svg",
             "_id": "1UqvFqvQRr0Mzk3K"
           },
           {
             "type": "ItemGrant",
             "configuration": {
               "items": [
-                "Compendium.dnd5e.classfeatures.653ZHbNcmm7ZGXbw"
+                "Compendium.genefunk2090.classfeatures.653ZHbNcmm7ZGXbw"
               ],
               "optional": false,
               "spell": {
@@ -2801,7 +2801,7 @@
             "value": {},
             "level": 9,
             "title": "Features",
-            "icon": "systems/dnd5e/icons/svg/item-grant.svg",
+            "icon": "systems/genefunk2090/icons/svg/item-grant.svg",
             "_id": "hu99eLBFUHiOOKdl"
           },
           {
@@ -2814,12 +2814,12 @@
               "allowDrops": true,
               "type": "feat",
               "pool": [
-                "Compendium.dnd5e.classfeatures.8YwPFv3UAPjWVDNf",
-                "Compendium.dnd5e.classfeatures.zSlV0O2rQMdoq6pB",
-                "Compendium.dnd5e.classfeatures.hCop9uJrWhF1QPb4",
-                "Compendium.dnd5e.classfeatures.3Nc6u9pyStByuJsm",
-                "Compendium.dnd5e.classfeatures.06NVMYf58Z76O85O",
-                "Compendium.dnd5e.classfeatures.mHcSjcHJ8oZu3hkb"
+                "Compendium.genefunk2090.classfeatures.8YwPFv3UAPjWVDNf",
+                "Compendium.genefunk2090.classfeatures.zSlV0O2rQMdoq6pB",
+                "Compendium.genefunk2090.classfeatures.hCop9uJrWhF1QPb4",
+                "Compendium.genefunk2090.classfeatures.3Nc6u9pyStByuJsm",
+                "Compendium.genefunk2090.classfeatures.06NVMYf58Z76O85O",
+                "Compendium.genefunk2090.classfeatures.mHcSjcHJ8oZu3hkb"
               ],
               "spell": {
                 "ability": "",
@@ -2838,12 +2838,12 @@
             "value": {
               "added": {
                 "1": {
-                  "dpXCnkmf6mF4qivf": "Compendium.dnd5e.classfeatures.zSlV0O2rQMdoq6pB"
+                  "dpXCnkmf6mF4qivf": "Compendium.genefunk2090.classfeatures.zSlV0O2rQMdoq6pB"
                 }
               }
             },
             "title": "Fighting Style",
-            "icon": "systems/dnd5e/icons/svg/item-choice.svg",
+            "icon": "systems/genefunk2090/icons/svg/item-choice.svg",
             "_id": "3hmYTgl5rz8Y5Z0I"
           },
           {
@@ -2868,7 +2868,7 @@
             },
             "value": {},
             "title": "Indomitable Uses",
-            "icon": "systems/dnd5e/icons/svg/scale-value.svg",
+            "icon": "systems/genefunk2090/icons/svg/scale-value.svg",
             "_id": "B7YpSu4cVsEbHbrv"
           },
           {
@@ -2890,7 +2890,7 @@
             },
             "value": {},
             "title": "Action Surge Uses",
-            "icon": "systems/dnd5e/icons/svg/scale-value.svg",
+            "icon": "systems/genefunk2090/icons/svg/scale-value.svg",
             "_id": "kxiasN1v8KFm9nse"
           },
           {
@@ -2912,7 +2912,7 @@
             },
             "level": 4,
             "title": "Ability Score Improvement",
-            "icon": "systems/dnd5e/icons/svg/ability-score-improvement.svg",
+            "icon": "systems/genefunk2090/icons/svg/ability-score-improvement.svg",
             "_id": "rvfuW71lYEeJW7HS"
           },
           {
@@ -2934,7 +2934,7 @@
             },
             "level": 8,
             "title": "Ability Score Improvement",
-            "icon": "systems/dnd5e/icons/svg/ability-score-improvement.svg",
+            "icon": "systems/genefunk2090/icons/svg/ability-score-improvement.svg",
             "_id": "g49SXigwmpaZW0Hm"
           },
           {
@@ -2956,7 +2956,7 @@
             },
             "level": 12,
             "title": "Ability Score Improvement",
-            "icon": "systems/dnd5e/icons/svg/ability-score-improvement.svg",
+            "icon": "systems/genefunk2090/icons/svg/ability-score-improvement.svg",
             "_id": "gXVE2mfohi6iErff"
           },
           {
@@ -2978,7 +2978,7 @@
             },
             "level": 16,
             "title": "Ability Score Improvement",
-            "icon": "systems/dnd5e/icons/svg/ability-score-improvement.svg",
+            "icon": "systems/genefunk2090/icons/svg/ability-score-improvement.svg",
             "_id": "GdBOLIPXmNSWRSmO"
           },
           {
@@ -3183,16 +3183,16 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.classes.ABEBgWyRhVlDUIfq"
+          "sourceId": "Compendium.genefunk2090.classes.ABEBgWyRhVlDUIfq"
         }
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.4.0",
         "coreVersion": "10.303",
         "createdTime": 1661787234279,
         "modifiedTime": 1699993381263,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!2Pdtnswo8Nj2nafY.TixRV4Wr5ruxXRpf"
     },
@@ -3205,7 +3205,7 @@
       "type": "feat",
       "system": {
         "description": {
-          "value": "<p>You adopt a particular style of fighting as your specialty. Choose one of the following options from the appropriate class list. You can't take a Fighting Style option more than once, even if you later get to choose again.</p>\n<p>@Compendium[dnd5e.classfeatures.8YwPFv3UAPjWVDNf]{Archery}</p>\n<p>@Compendium[dnd5e.classfeatures.zSlV0O2rQMdoq6pB]{Defense}</p>\n<p>@Compendium[dnd5e.classfeatures.hCop9uJrWhF1QPb4]{Dueling}</p>\n<p>@Compendium[dnd5e.classfeatures.3Nc6u9pyStByuJsm]{Great Weapon Fighting}</p>\n<p>@Compendium[dnd5e.classfeatures.06NVMYf58Z76O85O]{Protection}</p>\n<p>@Compendium[dnd5e.classfeatures.mHcSjcHJ8oZu3hkb]{Two Weapon Fighting}</p>",
+          "value": "<p>You adopt a particular style of fighting as your specialty. Choose one of the following options from the appropriate class list. You can't take a Fighting Style option more than once, even if you later get to choose again.</p>\n<p>@Compendium[genefunk2090.classfeatures.8YwPFv3UAPjWVDNf]{Archery}</p>\n<p>@Compendium[genefunk2090.classfeatures.zSlV0O2rQMdoq6pB]{Defense}</p>\n<p>@Compendium[genefunk2090.classfeatures.hCop9uJrWhF1QPb4]{Dueling}</p>\n<p>@Compendium[genefunk2090.classfeatures.3Nc6u9pyStByuJsm]{Great Weapon Fighting}</p>\n<p>@Compendium[genefunk2090.classfeatures.06NVMYf58Z76O85O]{Protection}</p>\n<p>@Compendium[genefunk2090.classfeatures.mHcSjcHJ8oZu3hkb]{Two Weapon Fighting}</p>",
           "chat": "",
           "unidentified": ""
         },
@@ -3281,8 +3281,8 @@
       },
       "sort": 0,
       "flags": {
-        "dnd5e": {
-          "sourceId": "Compendium.dnd5e.classfeatures.fbExzwNwEAl2kW9c",
+        "genefunk2090": {
+          "sourceId": "Compendium.genefunk2090.classfeatures.fbExzwNwEAl2kW9c",
           "advancementOrigin": "TixRV4Wr5ruxXRpf.PwWJCRoUIftcpy47"
         }
       },
@@ -3290,12 +3290,12 @@
       "effects": [],
       "folder": null,
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.4.0",
         "coreVersion": "10.303",
         "createdTime": 1661787234404,
         "modifiedTime": 1699987492174,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!2Pdtnswo8Nj2nafY.xBoN1auJaGal3hva"
     },
@@ -3390,20 +3390,20 @@
       "folder": null,
       "sort": 0,
       "flags": {
-        "dnd5e": {
-          "sourceId": "Compendium.dnd5e.classfeatures.nTjmWbyHweXuIqwc",
+        "genefunk2090": {
+          "sourceId": "Compendium.genefunk2090.classfeatures.nTjmWbyHweXuIqwc",
           "advancementOrigin": "TixRV4Wr5ruxXRpf.PwWJCRoUIftcpy47"
         }
       },
       "img": "icons/magic/life/heart-glowing-red.webp",
       "effects": [],
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.2.2",
         "coreVersion": "10.303",
         "createdTime": 1661787234421,
         "modifiedTime": 1691519178770,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!2Pdtnswo8Nj2nafY.QYbinNgLV2ZYxX2c"
     },
@@ -3491,8 +3491,8 @@
         }
       },
       "flags": {
-        "dnd5e": {
-          "sourceId": "Compendium.dnd5e.classfeatures.zSlV0O2rQMdoq6pB",
+        "genefunk2090": {
+          "sourceId": "Compendium.genefunk2090.classfeatures.zSlV0O2rQMdoq6pB",
           "advancementOrigin": "TixRV4Wr5ruxXRpf.3hmYTgl5rz8Y5Z0I"
         }
       },
@@ -3531,12 +3531,12 @@
       "folder": null,
       "sort": 0,
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.4.0",
         "coreVersion": "10.303",
         "createdTime": 1661787234445,
         "modifiedTime": 1699987492174,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!2Pdtnswo8Nj2nafY.dpXCnkmf6mF4qivf"
     },
@@ -3648,16 +3648,16 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.races.ydP3QzCmur55mtY2"
+          "sourceId": "Compendium.genefunk2090.races.ydP3QzCmur55mtY2"
         }
       },
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.4.0",
         "coreVersion": "10.303",
         "createdTime": 1677180079259,
         "modifiedTime": 1699993381263,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "sort": 0,
       "folder": null,
@@ -3688,7 +3688,7 @@
       },
       "icon": "icons/equipment/shield/heater-stone-orange.webp",
       "label": "Fighting Style: Defense",
-      "origin": "Compendium.dnd5e.heroes.2Pdtnswo8Nj2nafY.Item.dpXCnkmf6mF4qivf",
+      "origin": "Compendium.genefunk2090.heroes.2Pdtnswo8Nj2nafY.Item.dpXCnkmf6mF4qivf",
       "tint": null,
       "transfer": false,
       "sort": 0,
@@ -3703,12 +3703,12 @@
   "flags": {},
   "_id": "2Pdtnswo8Nj2nafY",
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.4.0",
     "coreVersion": "10.303",
     "createdTime": 1661787232150,
     "modifiedTime": 1699993381280,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!actors!2Pdtnswo8Nj2nafY"
 }

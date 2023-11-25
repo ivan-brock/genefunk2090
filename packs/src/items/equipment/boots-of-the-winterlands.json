@@ -100,7 +100,7 @@
     {
       "label": "Boots of the Winterlands",
       "icon": "icons/equipment/feet/boots-leather-banded-furred.webp",
-      "origin": "Compendium.dnd5e.items.RDPFmUR9exTEXFc8",
+      "origin": "Compendium.genefunk2090.items.RDPFmUR9exTEXFc8",
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -133,12 +133,12 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.2.2",
     "coreVersion": "10.303",
     "createdTime": 1661787233655,
     "modifiedTime": 1690480634095,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!items!RDPFmUR9exTEXFc8"
 }

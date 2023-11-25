@@ -1513,7 +1513,7 @@ preLocalize("weaponProperties", { sort: true });
  * @enum {string}
  */
 DND5E.sourcePacks = {
-  ITEMS: "dnd5e.items"
+  ITEMS: "genefunk2090.items"
 };
 
 /* -------------------------------------------- */
@@ -1736,7 +1736,7 @@ preLocalize("languages", { key: "label" });
 preLocalize("languages.standard.children", { sort: true });
 preLocalize("languages.exotic.children", { key: "label", sort: true });
 preLocalize("languages.exotic.children.primordial.children", { sort: true });
-patchConfig("languages", "label", { since: "DnD5e 2.4", until: "DnD5e 2.6" });
+patchConfig("languages", "label", { since: "GeneFunk2090 2.4", until: "GeneFunk2090 2.6" });
 
 /* -------------------------------------------- */
 
@@ -1816,7 +1816,7 @@ DND5E.traits = {
       title: "DND5E.ClassSaves",
       localization: "DND5E.TraitSavesPlural"
     },
-    icon: "systems/dnd5e/icons/svg/trait-saves.svg",
+    icon: "systems/genefunk2090/icons/svg/trait-saves.svg",
     actorKeyPath: "system.abilities",
     configKey: "abilities",
     labelKeyPath: "label"
@@ -1826,7 +1826,7 @@ DND5E.traits = {
       title: "DND5E.Skills",
       localization: "DND5E.TraitSkillsPlural"
     },
-    icon: "systems/dnd5e/icons/svg/trait-skills.svg",
+    icon: "systems/genefunk2090/icons/svg/trait-skills.svg",
     actorKeyPath: "system.skills",
     labelKeyPath: "label",
     expertise: true
@@ -1836,14 +1836,14 @@ DND5E.traits = {
       title: "DND5E.Languages",
       localization: "DND5E.TraitLanguagesPlural"
     },
-    icon: "systems/dnd5e/icons/svg/trait-languages.svg"
+    icon: "systems/genefunk2090/icons/svg/trait-languages.svg"
   },
   armor: {
     labels: {
       title: "DND5E.TraitArmorProf",
       localization: "DND5E.TraitArmorPlural"
     },
-    icon: "systems/dnd5e/icons/svg/trait-armor-proficiencies.svg",
+    icon: "systems/genefunk2090/icons/svg/trait-armor-proficiencies.svg",
     actorKeyPath: "system.traits.armorProf",
     configKey: "armorProficiencies",
     subtypes: { keyPath: "armor.type", ids: ["armorIds", "shieldIds"] }
@@ -1853,7 +1853,7 @@ DND5E.traits = {
       title: "DND5E.TraitWeaponProf",
       localization: "DND5E.TraitWeaponPlural"
     },
-    icon: "systems/dnd5e/icons/svg/trait-weapon-proficiencies.svg",
+    icon: "systems/genefunk2090/icons/svg/trait-weapon-proficiencies.svg",
     actorKeyPath: "system.traits.weaponProf",
     configKey: "weaponProficiencies",
     subtypes: { keyPath: "weaponType", ids: ["weaponIds"] }
@@ -1863,7 +1863,7 @@ DND5E.traits = {
       title: "DND5E.TraitToolProf",
       localization: "DND5E.TraitToolPlural"
     },
-    icon: "systems/dnd5e/icons/svg/trait-tool-proficiencies.svg",
+    icon: "systems/genefunk2090/icons/svg/trait-tool-proficiencies.svg",
     actorKeyPath: "system.tools",
     configKey: "toolProficiencies",
     subtypes: { keyPath: "toolType", ids: ["toolIds"] },
@@ -1876,7 +1876,7 @@ DND5E.traits = {
       title: "DND5E.DamImm",
       localization: "DND5E.TraitDIPlural"
     },
-    icon: "systems/dnd5e/icons/svg/trait-damage-immunities.svg",
+    icon: "systems/genefunk2090/icons/svg/trait-damage-immunities.svg",
     configKey: "damageTypes"
   },
   dr: {
@@ -1884,7 +1884,7 @@ DND5E.traits = {
       title: "DND5E.DamRes",
       localization: "DND5E.TraitDRPlural"
     },
-    icon: "systems/dnd5e/icons/svg/trait-damage-resistances.svg",
+    icon: "systems/genefunk2090/icons/svg/trait-damage-resistances.svg",
     configKey: "damageTypes"
   },
   dv: {
@@ -1892,7 +1892,7 @@ DND5E.traits = {
       title: "DND5E.DamVuln",
       localization: "DND5E.TraitDVPlural"
     },
-    icon: "systems/dnd5e/icons/svg/trait-damage-vulnerabilities.svg",
+    icon: "systems/genefunk2090/icons/svg/trait-damage-vulnerabilities.svg",
     configKey: "damageTypes"
   },
   ci: {
@@ -1900,7 +1900,7 @@ DND5E.traits = {
       title: "DND5E.ConImm",
       localization: "DND5E.TraitCIPlural"
     },
-    icon: "systems/dnd5e/icons/svg/trait-condition-immunities.svg",
+    icon: "systems/genefunk2090/icons/svg/trait-condition-immunities.svg",
     configKey: "conditionTypes"
   }
 };

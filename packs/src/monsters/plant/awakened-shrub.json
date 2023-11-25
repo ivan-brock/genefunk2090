@@ -667,7 +667,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.kyVgQNSa12loxVvr"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.kyVgQNSa12loxVvr"
         }
       },
       "_stats": {
@@ -689,12 +689,12 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.1.0",
     "coreVersion": "10.291",
     "createdTime": 1661787232973,
     "modifiedTime": 1672596103587,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!actors!gaSTr7DFZJLmgI2J"
 }

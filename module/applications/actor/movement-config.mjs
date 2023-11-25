@@ -8,8 +8,8 @@ export default class ActorMovementConfig extends BaseConfigSheet {
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["dnd5e"],
-      template: "systems/dnd5e/templates/apps/movement-config.hbs",
+      classes: ["genefunk2090"],
+      template: "systems/genefunk2090/templates/apps/movement-config.hbs",
       width: 300,
       height: "auto",
       sheetConfig: false,

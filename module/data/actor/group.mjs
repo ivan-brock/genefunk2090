@@ -2,7 +2,7 @@ import SystemDataModel from "../abstract.mjs";
 import CurrencyTemplate from "../shared/currency.mjs";
 
 /**
- * A data model and API layer which handles the schema and functionality of "group" type Actors in the dnd5e system.
+ * A data model and API layer which handles the schema and functionality of "group" type Actors in the genefunk2090 system.
  * @mixes CurrencyTemplate
  *
  * @property {object} description
@@ -16,7 +16,7 @@ import CurrencyTemplate from "../shared/currency.mjs";
  * @property {number} attributes.movement.air    Base movement speed through the air.
  *
  * @example Create a new Group
- * const g = new dnd5e.documents.Actor5e({
+ * const g = new genefunk2090.documents.Actor5e({
  *  type: "group",
  *  name: "Test Group",
  *  system: {

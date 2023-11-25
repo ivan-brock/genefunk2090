@@ -22,8 +22,8 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.races.cnTbpPPeGW7vGjOV",
-            "Compendium.dnd5e.races.4v2PiBrAbqDizdSJ"
+            "Compendium.genefunk2090.races.cnTbpPPeGW7vGjOV",
+            "Compendium.genefunk2090.races.4v2PiBrAbqDizdSJ"
           ],
           "optional": false,
           "spell": {
@@ -38,7 +38,7 @@
         "value": {},
         "level": 0,
         "title": "Grant Items",
-        "icon": "systems/dnd5e/icons/svg/item-grant.svg",
+        "icon": "systems/genefunk2090/icons/svg/item-grant.svg",
         "_id": "9SgUOZ9mjqyA8Q2d"
       },
       {
@@ -193,12 +193,12 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.4.0",
     "coreVersion": "10.303",
     "createdTime": 1677179211328,
     "modifiedTime": 1699987871524,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "sort": 0,
   "folder": null,

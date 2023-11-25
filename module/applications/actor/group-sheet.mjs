@@ -21,8 +21,8 @@ export default class GroupActorSheet extends ActorSheetMixin(ActorSheet) {
   /** @inheritDoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["dnd5e", "sheet", "actor", "group"],
-      template: "systems/dnd5e/templates/actors/group-sheet.hbs",
+      classes: ["genefunk2090", "sheet", "actor", "group"],
+      template: "systems/genefunk2090/templates/actors/group-sheet.hbs",
       tabs: [{navSelector: ".tabs", contentSelector: ".sheet-body", initial: "members"}],
       scrollY: [".inventory .inventory-list"],
       width: 620,
@@ -137,7 +137,7 @@ export default class GroupActorSheet extends ActorSheetMixin(ActorSheet) {
       m.hp.current = hp.value + (hp.temp || 0);
       m.hp.max = Math.max(0, hp.max + (hp.tempmax || 0));
       m.hp.pct = Math.clamped((m.hp.current / m.hp.max) * 100, 0, 100).toFixed(2);
-      m.hp.color = dnd5e.documents.Actor5e.getHPColor(m.hp.current, m.hp.max).css;
+      m.hp.color = genefunk2090.documents.Actor5e.getHPColor(m.hp.current, m.hp.max).css;
       stats.currentHP += m.hp.current;
       stats.maxHP += m.hp.max;
 
@@ -331,7 +331,7 @@ export default class GroupActorSheet extends ActorSheetMixin(ActorSheet) {
     const item = this.actor.items.get(element.dataset.itemId);
     if ( !item ) return;
     ui.context.menuItems = this._getItemContextOptions(item);
-    Hooks.call("dnd5e.getItemContextOptions", item, ui.context.menuItems);
+    Hooks.call("genefunk2090.getItemContextOptions", item, ui.context.menuItems);
   }
 
   /* -------------------------------------------- */

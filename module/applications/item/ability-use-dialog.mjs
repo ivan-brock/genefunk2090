@@ -8,7 +8,7 @@
 export default class AbilityUseDialog extends Dialog {
   constructor(item, dialogData={}, options={}) {
     super(dialogData, options);
-    this.options.classes = ["dnd5e", "dialog"];
+    this.options.classes = ["genefunk2090", "dialog"];
 
     /**
      * Store a reference to the Item document being used
@@ -49,7 +49,7 @@ export default class AbilityUseDialog extends Dialog {
     this._getAbilityUseWarnings(data);
 
     // Render the ability usage template
-    const html = await renderTemplate("systems/dnd5e/templates/apps/ability-use.hbs", data);
+    const html = await renderTemplate("systems/genefunk2090/templates/apps/ability-use.hbs", data);
 
     // Create the Dialog and return data as a Promise
     const isSpell = item.type === "spell";

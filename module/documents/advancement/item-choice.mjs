@@ -16,7 +16,7 @@ export default class ItemChoiceAdvancement extends ItemGrantAdvancement {
         configuration: ItemChoiceConfigurationData
       },
       order: 50,
-      icon: "systems/dnd5e/icons/svg/item-choice.svg",
+      icon: "systems/genefunk2090/icons/svg/item-choice.svg",
       title: game.i18n.localize("DND5E.AdvancementItemChoiceTitle"),
       hint: game.i18n.localize("DND5E.AdvancementItemChoiceHint"),
       multiLevel: true,
@@ -58,7 +58,7 @@ export default class ItemChoiceAdvancement extends ItemGrantAdvancement {
   summaryForLevel(level, { configMode=false }={}) {
     const items = this.value.added?.[level];
     if ( !items || configMode ) return "";
-    return Object.values(items).reduce((html, uuid) => html + game.dnd5e.utils.linkForUuid(uuid), "");
+    return Object.values(items).reduce((html, uuid) => html + game.genefunk2090.utils.linkForUuid(uuid), "");
   }
 
   /* -------------------------------------------- */

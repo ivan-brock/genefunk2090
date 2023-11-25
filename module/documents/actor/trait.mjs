@@ -358,7 +358,7 @@ export function traitLabel(trait, count) {
 export function keyLabel(key, config={}) {
   if ( foundry.utils.getType(config) === "string" ) {
     foundry.utils.logCompatibilityWarning("Trait.keyLabel(trait, key) is now Trait.keyLabel(key, { trait }).", {
-      since: "DnD5e 2.4", until: "DnD5e 2.6"
+      since: "GeneFunk2090 2.4", until: "GeneFunk2090 2.6"
     });
     const tmp = config;
     config = { trait: key };

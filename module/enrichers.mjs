@@ -393,7 +393,7 @@ function rollAction(event) {
       options.ability = ability;
       return actor.rollToolCheck(tool, options);
     default:
-      return console.warn(`DnD5e | Unknown roll type ${type} provided.`);
+      return console.warn(`GeneFunk2090 | Unknown roll type ${type} provided.`);
   }
 }
 
@@ -410,7 +410,7 @@ async function rollDamage(event, speaker) {
   const { formula, damageType } = target.dataset;
 
   const title = game.i18n.localize("DND5E.DamageRoll");
-  const messageData = { "flags.dnd5e.roll.type": "damage", speaker };
+  const messageData = { "flags.genefunk2090.roll.type": "damage", speaker };
   const rollConfig = {
     parts: [formula],
     flavor: `${title} (${game.i18n.localize(CONFIG.DND5E.damageTypes[damageType] ?? damageType)})`,
@@ -419,7 +419,7 @@ async function rollDamage(event, speaker) {
     messageData
   };
 
-  if ( Hooks.call("dnd5e.preRollDamage", undefined, rollConfig) === false ) return;
+  if ( Hooks.call("genefunk2090.preRollDamage", undefined, rollConfig) === false ) return;
   const roll = await damageRoll(rollConfig);
-  if ( roll ) Hooks.callAll("dnd5e.rollDamage", undefined, roll);
+  if ( roll ) Hooks.callAll("genefunk2090.rollDamage", undefined, roll);
 }

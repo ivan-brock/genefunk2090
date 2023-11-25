@@ -22,7 +22,7 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.classfeatures.CkbbAckeCtyHXEnL"
+            "Compendium.genefunk2090.classfeatures.CkbbAckeCtyHXEnL"
           ],
           "optional": false,
           "spell": {
@@ -43,7 +43,7 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.classfeatures.0Jgf8fYY2ExwgQpN"
+            "Compendium.genefunk2090.classfeatures.0Jgf8fYY2ExwgQpN"
           ],
           "optional": false,
           "spell": {
@@ -64,7 +64,7 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.classfeatures.M6VSMzVtKPhh8B0i"
+            "Compendium.genefunk2090.classfeatures.M6VSMzVtKPhh8B0i"
           ],
           "optional": false,
           "spell": {
@@ -85,7 +85,7 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.classfeatures.xzD9zlRP6dUxCtCl"
+            "Compendium.genefunk2090.classfeatures.xzD9zlRP6dUxCtCl"
           ],
           "optional": false,
           "spell": {
@@ -116,12 +116,12 @@
   "flags": {},
   "_id": "uGuDQX9Mz3oHNHkU",
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.1.0",
     "coreVersion": "10.291",
     "createdTime": 1661787234297,
     "modifiedTime": 1671220973531,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!items!uGuDQX9Mz3oHNHkU"
 }

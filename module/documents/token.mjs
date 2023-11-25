@@ -20,7 +20,7 @@ export default class TokenDocument5e extends TokenDocument {
 
   /** @inheritdoc */
   static getTrackedAttributes(data, _path=[]) {
-    if ( !game.dnd5e.isV10 ) return super.getTrackedAttributes(data, _path);
+    if ( !game.genefunk2090.isV10 ) return super.getTrackedAttributes(data, _path);
     if ( data instanceof foundry.abstract.DataModel ) return this._getTrackedAttributesFromSchema(data.schema, _path);
     const attributes = super.getTrackedAttributes(data, _path);
     if ( _path.length ) return attributes;

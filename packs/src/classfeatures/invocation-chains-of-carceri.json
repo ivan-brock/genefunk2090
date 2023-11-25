@@ -7,7 +7,7 @@
   "type": "feat",
   "system": {
     "description": {
-      "value": "<p>You can cast @Compendium[dnd5e.spells.l9Ju5KE7bbn3WpTm]{Hold Monster} at will - targeting a celestial, fiend, or elemental - without expending a spell slot or material components. You must finish a long rest before you can use this invocation on the same creature again.</p>",
+      "value": "<p>You can cast @Compendium[genefunk2090.spells.l9Ju5KE7bbn3WpTm]{Hold Monster} at will - targeting a celestial, fiend, or elemental - without expending a spell slot or material components. You must finish a long rest before you can use this invocation on the same creature again.</p>",
       "chat": "",
       "unidentified": ""
     },
@@ -83,12 +83,12 @@
   "folder": null,
   "sort": 0,
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.1.0",
     "coreVersion": "10.291",
     "createdTime": 1661787234371,
     "modifiedTime": 1672334786402,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!items!Phy02H5x0TKHd7T3"
 }

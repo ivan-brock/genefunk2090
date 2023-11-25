@@ -35,8 +35,8 @@ export default class AdvancementConfig extends FormApplication {
   /** @inheritDoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["dnd5e", "advancement", "dialog"],
-      template: "systems/dnd5e/templates/advancement/advancement-config.hbs",
+      classes: ["genefunk2090", "advancement", "dialog"],
+      template: "systems/genefunk2090/templates/advancement/advancement-config.hbs",
       width: 400,
       height: "auto",
       submitOnChange: true,

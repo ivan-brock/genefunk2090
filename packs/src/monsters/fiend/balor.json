@@ -551,7 +551,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.EmlE1a0rhucK2UT1"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.EmlE1a0rhucK2UT1"
         }
       },
       "_stats": {
@@ -654,7 +654,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.LJTY3nl1cp9go4eT"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.LJTY3nl1cp9go4eT"
         }
       },
       "_stats": {
@@ -752,7 +752,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.Hc6MqLQhPTI1KOvm"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.Hc6MqLQhPTI1KOvm"
         }
       },
       "_stats": {
@@ -850,7 +850,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.nahRRxck9R5GVVFS"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.nahRRxck9R5GVVFS"
         }
       },
       "_stats": {
@@ -948,7 +948,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.EqoLg8T8EHvhJgKE"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.EqoLg8T8EHvhJgKE"
         }
       },
       "_stats": {
@@ -1046,7 +1046,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.PPzVD90vab60FqCt"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.PPzVD90vab60FqCt"
         }
       },
       "_stats": {
@@ -1182,7 +1182,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.10ZP2Bu3vnCuYMIB"
+          "sourceId": "Compendium.genefunk2090.items.10ZP2Bu3vnCuYMIB"
         }
       },
       "_stats": {
@@ -1318,7 +1318,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.items.QKTyxoO0YDnAsbYe"
+          "sourceId": "Compendium.genefunk2090.items.QKTyxoO0YDnAsbYe"
         }
       },
       "_stats": {
@@ -1340,12 +1340,12 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.1.0",
     "coreVersion": "10.291",
     "createdTime": 1661787233232,
     "modifiedTime": 1672596108544,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!actors!uZ8NrRenwYZ4qNf6"
 }

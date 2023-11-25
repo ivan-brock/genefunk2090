@@ -23,7 +23,7 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.dnd5e.races.cnTbpPPeGW7vGjOV"
+            "Compendium.genefunk2090.races.cnTbpPPeGW7vGjOV"
           ],
           "optional": false,
           "spell": {
@@ -150,12 +150,12 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.4.0",
     "coreVersion": "10.303",
     "createdTime": 1677181061205,
     "modifiedTime": 1699987889302,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "sort": 0,
   "folder": null,

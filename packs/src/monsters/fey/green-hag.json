@@ -537,7 +537,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.4Fap14HgvAwTAZuD"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.4Fap14HgvAwTAZuD"
         }
       },
       "_stats": {
@@ -635,7 +635,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.hkmTEk6klT6QL4K4"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.hkmTEk6klT6QL4K4"
         }
       },
       "_stats": {
@@ -733,7 +733,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.zZkNtL97hn1P6OJC"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.zZkNtL97hn1P6OJC"
         }
       },
       "_stats": {
@@ -959,7 +959,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.s7kqggp9VLDb39nu"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.s7kqggp9VLDb39nu"
         }
       },
       "_stats": {
@@ -1057,7 +1057,7 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.monsterfeatures.FRIASnssihfMTZ7q"
+          "sourceId": "Compendium.genefunk2090.monsterfeatures.FRIASnssihfMTZ7q"
         }
       },
       "_stats": {
@@ -1166,19 +1166,19 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.spells.CAxSzHWizrafT033"
+          "sourceId": "Compendium.genefunk2090.spells.CAxSzHWizrafT033"
         }
       },
       "img": "icons/magic/fire/projectile-meteor-salvo-strong-blue.webp",
       "effects": [],
       "folder": null,
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.0",
         "coreVersion": "10.279",
         "createdTime": 1661787234094,
         "modifiedTime": 1661791116911,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!saq6WM959pKHuaqP.CAxSzHWizrafT033"
     },
@@ -1278,19 +1278,19 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.spells.oIzA2MEHwxhtQneU"
+          "sourceId": "Compendium.genefunk2090.spells.oIzA2MEHwxhtQneU"
         }
       },
       "img": "icons/magic/control/hypnosis-mesmerism-eye.webp",
       "effects": [],
       "folder": null,
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.0",
         "coreVersion": "10.279",
         "createdTime": 1661787234224,
         "modifiedTime": 1661791116912,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!saq6WM959pKHuaqP.oIzA2MEHwxhtQneU"
     },
@@ -1395,19 +1395,19 @@
       "sort": 0,
       "flags": {
         "core": {
-          "sourceId": "Compendium.dnd5e.spells.cdrYKaFi98YWaBMw"
+          "sourceId": "Compendium.genefunk2090.spells.cdrYKaFi98YWaBMw"
         }
       },
       "img": "icons/skills/toxins/cup-goblet-poisoned-spilled.webp",
       "effects": [],
       "folder": null,
       "_stats": {
-        "systemId": "dnd5e",
+        "systemId": "genefunk2090",
         "systemVersion": "2.0.0",
         "coreVersion": "10.279",
         "createdTime": 1661787234175,
         "modifiedTime": 1661791116912,
-        "lastModifiedBy": "dnd5ebuilder0000"
+        "lastModifiedBy": "genefunk2090builder0000"
       },
       "_key": "!actors.items!saq6WM959pKHuaqP.cdrYKaFi98YWaBMw"
     }
@@ -1420,12 +1420,12 @@
   },
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
+    "systemId": "genefunk2090",
     "systemVersion": "2.1.0",
     "coreVersion": "10.291",
     "createdTime": 1661787233213,
     "modifiedTime": 1672596107911,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "lastModifiedBy": "genefunk2090builder0000"
   },
   "_key": "!actors!saq6WM959pKHuaqP"
 }
