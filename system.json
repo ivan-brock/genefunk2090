@@ -8,8 +8,8 @@
     "verified": "11"
   },
   "url": "https://github.com/foundryvtt/genefunk2090/",
-  "manifest": "D:\OneDrive\Development\GitHub\genefunk2090\system.json",
-  "download": "D:\OneDrive\Development\GitHub\genefunk2090\.zip",
+  "manifest": "https://raw.githubusercontent.com/ivan-brock/genefunk2090/HelloWorld/system.json",
+  "download": "https://github.com/ivan-brock/genefunk2090/archive/refs/tags/HelloWorld.zip",
   "authors": [
     {
       "name": "Doof",
