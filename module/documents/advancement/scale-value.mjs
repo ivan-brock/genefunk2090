@@ -16,8 +16,8 @@ export default class ScaleValueAdvancement extends Advancement {
       },
       order: 60,
       icon: "systems/genefunk2090/icons/svg/scale-value.svg",
-      title: game.i18n.localize("DND5E.AdvancementScaleValueTitle"),
-      hint: game.i18n.localize("DND5E.AdvancementScaleValueHint"),
+      title: game.i18n.localize("GENEFUNK2090.AdvancementScaleValueTitle"),
+      hint: game.i18n.localize("GENEFUNK2090.AdvancementScaleValueHint"),
       multiLevel: true,
       validItemTypes: new Set(["background", "class", "race", "subclass"]),
       apps: {

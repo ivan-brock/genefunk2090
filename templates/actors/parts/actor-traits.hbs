@@ -1,6 +1,6 @@
 <div class="traits">
     <div class="form-group">
-        <label>{{localize "DND5E.Size"}}</label>
+        <label>{{localize "GENEFUNK2090.Size"}}</label>
         <select class="actor-size" name="system.traits.size">
             {{#select system.traits.size}}
             {{#each config.actorSizes as |label size|}}
@@ -12,9 +12,9 @@
 
     {{#if isCharacter}}
     <div class="form-group">
-        <label>{{localize "DND5E.CreatureType"}}</label>
+        <label>{{localize "GENEFUNK2090.CreatureType"}}</label>
         {{#if system.details.race.id}}
-          <a class="config-button" data-action="type" data-tooltip="DND5E.CreatureTypeConfig">
+          <a class="config-button" data-action="type" data-tooltip="GENEFUNK2090.CreatureTypeConfig">
               <i class="fas fa-cog"></i>
           </a>
         {{/if}}
@@ -28,8 +28,8 @@
 
     {{#unless isVehicle}}
     <div class="form-group">
-        <label>{{localize "DND5E.Senses"}}</label>
-        <a class="config-button" data-action="senses" data-tooltip="DND5E.SensesConfig">
+        <label>{{localize "GENEFUNK2090.Senses"}}</label>
+        <a class="config-button" data-action="senses" data-tooltip="GENEFUNK2090.SensesConfig">
             <i class="fas fa-cog"></i>
         </a>
         <ul class="traits-list">
@@ -40,9 +40,9 @@
     </div>
 
     <div class="form-group {{traits.traits.languages.cssClass}}">
-        <label>{{localize "DND5E.Languages"}}</label>
+        <label>{{localize "GENEFUNK2090.Languages"}}</label>
         <a class="trait-selector" data-trait="languages"
-           data-tooltip="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.Languages')}}" tabindex="0">
+           data-tooltip="{{localize 'GENEFUNK2090.TraitConfig' trait=(localize 'GENEFUNK2090.Languages')}}" tabindex="0">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -54,9 +54,9 @@
     {{/unless}}
 
     <div class="form-group {{traits.traits.di.cssClass}}">
-        <label>{{localize "DND5E.DamImm"}}</label>
+        <label>{{localize "GENEFUNK2090.DamImm"}}</label>
         <a class="trait-selector" data-trait="di"
-           data-tooltip="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.DamImm')}}" tabindex="0">
+           data-tooltip="{{localize 'GENEFUNK2090.TraitConfig' trait=(localize 'GENEFUNK2090.DamImm')}}" tabindex="0">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -67,9 +67,9 @@
     </div>
 
     <div class="form-group {{traits.traits.dr.cssClass}}">
-        <label>{{localize "DND5E.DamRes"}}</label>
+        <label>{{localize "GENEFUNK2090.DamRes"}}</label>
         <a class="trait-selector" data-trait="dr"
-           data-tooltip="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.DamRes')}}" tabindex="0">
+           data-tooltip="{{localize 'GENEFUNK2090.TraitConfig' trait=(localize 'GENEFUNK2090.DamRes')}}" tabindex="0">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -80,9 +80,9 @@
     </div>
 
     <div class="form-group {{traits.traits.dv.cssClass}}">
-        <label>{{localize "DND5E.DamVuln"}}</label>
+        <label>{{localize "GENEFUNK2090.DamVuln"}}</label>
         <a class="trait-selector" data-trait="dv"
-           data-tooltip="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.DamVuln')}}">
+           data-tooltip="{{localize 'GENEFUNK2090.TraitConfig' trait=(localize 'GENEFUNK2090.DamVuln')}}">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -93,9 +93,9 @@
     </div>
 
     <div class="form-group {{traits.traits.ci.cssClass}}">
-        <label>{{localize "DND5E.ConImm"}}</label>
+        <label>{{localize "GENEFUNK2090.ConImm"}}</label>
         <a class="trait-selector" data-trait="ci"
-           data-tooltip="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.ConImm')}}">
+           data-tooltip="{{localize 'GENEFUNK2090.TraitConfig' trait=(localize 'GENEFUNK2090.ConImm')}}">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -107,9 +107,9 @@
 
     {{#if isCharacter}}
     <div class="form-group {{traits.traits.weaponProf.cssClass}}">
-        <label>{{localize "DND5E.TraitWeaponProf"}}</label>
+        <label>{{localize "GENEFUNK2090.TraitWeaponProf"}}</label>
         <a class="trait-selector" data-trait="weapon"
-           data-tooltip="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.TraitWeaponProf')}}">
+           data-tooltip="{{localize 'GENEFUNK2090.TraitConfig' trait=(localize 'GENEFUNK2090.TraitWeaponProf')}}">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -120,9 +120,9 @@
     </div>
 
     <div class="form-group {{traits.traits.armorProf.cssClass}}">
-        <label>{{localize "DND5E.TraitArmorProf"}}</label>
+        <label>{{localize "GENEFUNK2090.TraitArmorProf"}}</label>
         <a class="trait-selector" data-trait="armor"
-           data-tooltip="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.TraitArmorProf')}}">
+           data-tooltip="{{localize 'GENEFUNK2090.TraitConfig' trait=(localize 'GENEFUNK2090.TraitArmorProf')}}">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -133,9 +133,9 @@
     </div>
 
     <div class="form-group {{traits.traits.toolProf.cssClass}}">
-        <label>{{localize "DND5E.TraitToolProf"}}</label>
+        <label>{{localize "GENEFUNK2090.TraitToolProf"}}</label>
         <a class="trait-selector" data-trait="tool"
-           data-tooltip="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.TraitToolProf')}}">
+           data-tooltip="{{localize 'GENEFUNK2090.TraitConfig' trait=(localize 'GENEFUNK2090.TraitToolProf')}}">
             <i class="fas fa-edit"></i>
         </a>
         <ul class="traits-list">
@@ -145,7 +145,7 @@
                 <input type="hidden" name="system.tools.{{@key}}.ability" value="{{ability}}">
                 <a class="proficiency-toggle tool-proficiency" data-tooltip="{{hover}}">{{{icon}}}</a>
                 <h4 class="tool-name rollable">{{label}}</h4>
-                <a class="config-button" data-action="tool" data-tooltip="DND5E.ToolConfigure">
+                <a class="config-button" data-action="tool" data-tooltip="GENEFUNK2090.ToolConfigure">
                     <i class="fas fa-cog"></i>
                 </a>
             </li>
@@ -156,9 +156,9 @@
 
     {{#unless isVehicle}}
     <div class="form-group ">
-        <label>{{localize "DND5E.SpecialTraits"}}</label>
+        <label>{{localize "GENEFUNK2090.SpecialTraits"}}</label>
         <a class="config-button" data-action="flags"
-           data-tooltip="{{localize 'DND5E.TraitConfig' trait=(localize 'DND5E.SpecialTraits')}}">
+           data-tooltip="{{localize 'GENEFUNK2090.TraitConfig' trait=(localize 'GENEFUNK2090.SpecialTraits')}}">
             <i class="fas fa-cog"></i>
         </a>
     </div>

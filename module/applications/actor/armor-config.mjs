@@ -31,7 +31,7 @@ export default class ActorArmorConfig extends BaseConfigSheet {
 
   /** @inheritdoc */
   get title() {
-    return `${game.i18n.localize("DND5E.ArmorConfig")}: ${this.document.name}`;
+    return `${game.i18n.localize("GENEFUNK2090.ArmorConfig")}: ${this.document.name}`;
   }
 
   /* -------------------------------------------- */
@@ -42,16 +42,16 @@ export default class ActorArmorConfig extends BaseConfigSheet {
     const isFlat = ["flat", "natural"].includes(ac.calc);
 
     // Get configuration data for the calculation mode, reset to flat if configuration is unavailable
-    let cfg = CONFIG.DND5E.armorClasses[ac.calc];
+    let cfg = CONFIG.GENEFUNK2090.armorClasses[ac.calc];
     if ( !cfg ) {
       ac.calc = "flat";
-      cfg = CONFIG.DND5E.armorClasses.flat;
+      cfg = CONFIG.GENEFUNK2090.armorClasses.flat;
       this.clone.updateSource({ "system.attributes.ac.calc": "flat" });
     }
 
     return {
       ac, isFlat,
-      calculations: CONFIG.DND5E.armorClasses,
+      calculations: CONFIG.GENEFUNK2090.armorClasses,
       valueDisabled: !isFlat,
       formula: ac.calc === "custom" ? ac.formula : cfg.formula,
       formulaDisabled: ac.calc !== "custom"

@@ -5,7 +5,7 @@ import { FormulaField } from "../../fields.mjs";
  * Data model template for item actions.
  *
  * @property {string} ability             Ability score to use when determining modifier.
- * @property {string} actionType          Action type as defined in `DND5E.itemActionTypes`.
+ * @property {string} actionType          Action type as defined in `GENEFUNK2090.itemActionTypes`.
  * @property {string} attackBonus         Numeric or dice bonus to attack rolls.
  * @property {string} chatFlavor          Extra text displayed in chat.
  * @property {object} critical            Information on how critical hits are handled.
@@ -26,35 +26,35 @@ export default class ActionTemplate extends SystemDataModel {
   static defineSchema() {
     return {
       ability: new foundry.data.fields.StringField({
-        required: true, nullable: true, initial: null, label: "DND5E.AbilityModifier"
+        required: true, nullable: true, initial: null, label: "GENEFUNK2090.AbilityModifier"
       }),
       actionType: new foundry.data.fields.StringField({
-        required: true, nullable: true, initial: null, label: "DND5E.ItemActionType"
+        required: true, nullable: true, initial: null, label: "GENEFUNK2090.ItemActionType"
       }),
-      attackBonus: new FormulaField({required: true, label: "DND5E.ItemAttackBonus"}),
-      chatFlavor: new foundry.data.fields.StringField({required: true, label: "DND5E.ChatFlavor"}),
+      attackBonus: new FormulaField({required: true, label: "GENEFUNK2090.ItemAttackBonus"}),
+      chatFlavor: new foundry.data.fields.StringField({required: true, label: "GENEFUNK2090.ChatFlavor"}),
       critical: new foundry.data.fields.SchemaField({
         threshold: new foundry.data.fields.NumberField({
-          required: true, integer: true, initial: null, positive: true, label: "DND5E.ItemCritThreshold"
+          required: true, integer: true, initial: null, positive: true, label: "GENEFUNK2090.ItemCritThreshold"
         }),
-        damage: new FormulaField({required: true, label: "DND5E.ItemCritExtraDamage"})
+        damage: new FormulaField({required: true, label: "GENEFUNK2090.ItemCritExtraDamage"})
       }),
       damage: new foundry.data.fields.SchemaField({
         parts: new foundry.data.fields.ArrayField(new foundry.data.fields.ArrayField(
           new foundry.data.fields.StringField({nullable: true})
         ), {required: true}),
-        versatile: new FormulaField({required: true, label: "DND5E.VersatileDamage"})
-      }, {label: "DND5E.Damage"}),
-      formula: new FormulaField({required: true, label: "DND5E.OtherFormula"}),
+        versatile: new FormulaField({required: true, label: "GENEFUNK2090.VersatileDamage"})
+      }, {label: "GENEFUNK2090.Damage"}),
+      formula: new FormulaField({required: true, label: "GENEFUNK2090.OtherFormula"}),
       save: new foundry.data.fields.SchemaField({
-        ability: new foundry.data.fields.StringField({required: true, blank: true, label: "DND5E.Ability"}),
+        ability: new foundry.data.fields.StringField({required: true, blank: true, label: "GENEFUNK2090.Ability"}),
         dc: new foundry.data.fields.NumberField({
-          required: true, min: 0, integer: true, label: "DND5E.AbbreviationDC"
+          required: true, min: 0, integer: true, label: "GENEFUNK2090.AbbreviationDC"
         }),
         scaling: new foundry.data.fields.StringField({
-          required: true, blank: false, initial: "spell", label: "DND5E.ScalingFormula"
+          required: true, blank: false, initial: "spell", label: "GENEFUNK2090.ScalingFormula"
         })
-      }, {label: "DND5E.SavingThrow"})
+      }, {label: "GENEFUNK2090.SavingThrow"})
     };
   }
 

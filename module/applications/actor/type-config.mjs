@@ -25,7 +25,7 @@ export default class ActorTypeConfig extends DocumentSheet {
 
   /** @inheritdoc */
   get title() {
-    return `${game.i18n.localize("DND5E.CreatureTypeTitle")}: ${this.object.name}`;
+    return `${game.i18n.localize("GENEFUNK2090.CreatureTypeTitle")}: ${this.object.name}`;
   }
 
   /* -------------------------------------------- */
@@ -53,7 +53,7 @@ export default class ActorTypeConfig extends DocumentSheet {
     // Get current value or new default
     let attr = foundry.utils.getProperty(this.object, this.options.keyPath);
     if ( foundry.utils.getType(attr) !== "Object" ) attr = {
-      value: (attr in CONFIG.DND5E.creatureTypes) ? attr : "humanoid",
+      value: (attr in CONFIG.GENEFUNK2090.creatureTypes) ? attr : "humanoid",
       subtype: "",
       swarm: "",
       custom: ""
@@ -61,7 +61,7 @@ export default class ActorTypeConfig extends DocumentSheet {
 
     // Populate choices
     const types = {};
-    for ( let [k, v] of Object.entries(CONFIG.DND5E.creatureTypes) ) {
+    for ( let [k, v] of Object.entries(CONFIG.GENEFUNK2090.creatureTypes) ) {
       types[k] = {
         label: game.i18n.localize(v),
         chosen: attr.value === k
@@ -73,14 +73,14 @@ export default class ActorTypeConfig extends DocumentSheet {
       types: types,
       custom: {
         value: attr.custom,
-        label: game.i18n.localize("DND5E.CreatureTypeSelectorCustom"),
+        label: game.i18n.localize("GENEFUNK2090.CreatureTypeSelectorCustom"),
         chosen: attr.value === "custom"
       },
       showCustom: Object.hasOwn(attr, "custom"),
       showSwarm: Object.hasOwn(attr, "swarm"),
       subtype: attr.subtype,
       swarm: attr.swarm,
-      sizes: Array.from(Object.entries(CONFIG.DND5E.actorSizes)).reverse().reduce((obj, e) => {
+      sizes: Array.from(Object.entries(CONFIG.GENEFUNK2090.actorSizes)).reverse().reduce((obj, e) => {
         obj[e[0]] = e[1];
         return obj;
       }, {}),
@@ -110,7 +110,7 @@ export default class ActorTypeConfig extends DocumentSheet {
       // Disable editing any type field if one of them is overridden by an Active Effect.
       html.find("input, select").each((i, el) => {
         el.disabled = true;
-        el.dataset.tooltip = "DND5E.ActiveEffectOverrideWarning";
+        el.dataset.tooltip = "GENEFUNK2090.ActiveEffectOverrideWarning";
       });
     }
   }

@@ -20,7 +20,7 @@ export default class ActorSheetFlags extends BaseConfigSheet {
 
   /** @inheritDoc */
   get title() {
-    return `${game.i18n.localize("DND5E.FlagsTitle")}: ${this.object.name}`;
+    return `${game.i18n.localize("GENEFUNK2090.FlagsTitle")}: ${this.object.name}`;
   }
 
   /* -------------------------------------------- */
@@ -61,7 +61,7 @@ export default class ActorSheetFlags extends BaseConfigSheet {
   _getFlags() {
     const flags = {};
     const baseData = this.document.toJSON();
-    for ( let [k, v] of Object.entries(CONFIG.DND5E.characterFlags) ) {
+    for ( let [k, v] of Object.entries(CONFIG.GENEFUNK2090.characterFlags) ) {
       if ( !flags.hasOwnProperty(v.section) ) flags[v.section] = {};
       let flag = foundry.utils.deepClone(v);
       flag.type = v.type.name;
@@ -83,18 +83,18 @@ export default class ActorSheetFlags extends BaseConfigSheet {
   _getBonuses() {
     const src = this.object.toObject();
     const bonuses = [
-      {name: "system.bonuses.mwak.attack", label: "DND5E.BonusMWAttack"},
-      {name: "system.bonuses.mwak.damage", label: "DND5E.BonusMWDamage"},
-      {name: "system.bonuses.rwak.attack", label: "DND5E.BonusRWAttack"},
-      {name: "system.bonuses.rwak.damage", label: "DND5E.BonusRWDamage"},
-      {name: "system.bonuses.msak.attack", label: "DND5E.BonusMSAttack"},
-      {name: "system.bonuses.msak.damage", label: "DND5E.BonusMSDamage"},
-      {name: "system.bonuses.rsak.attack", label: "DND5E.BonusRSAttack"},
-      {name: "system.bonuses.rsak.damage", label: "DND5E.BonusRSDamage"},
-      {name: "system.bonuses.abilities.check", label: "DND5E.BonusAbilityCheck"},
-      {name: "system.bonuses.abilities.save", label: "DND5E.BonusAbilitySave"},
-      {name: "system.bonuses.abilities.skill", label: "DND5E.BonusAbilitySkill"},
-      {name: "system.bonuses.spell.dc", label: "DND5E.BonusSpellDC"}
+      {name: "system.bonuses.mwak.attack", label: "GENEFUNK2090.BonusMWAttack"},
+      {name: "system.bonuses.mwak.damage", label: "GENEFUNK2090.BonusMWDamage"},
+      {name: "system.bonuses.rwak.attack", label: "GENEFUNK2090.BonusRWAttack"},
+      {name: "system.bonuses.rwak.damage", label: "GENEFUNK2090.BonusRWDamage"},
+      {name: "system.bonuses.msak.attack", label: "GENEFUNK2090.BonusMSAttack"},
+      {name: "system.bonuses.msak.damage", label: "GENEFUNK2090.BonusMSDamage"},
+      {name: "system.bonuses.rsak.attack", label: "GENEFUNK2090.BonusRSAttack"},
+      {name: "system.bonuses.rsak.damage", label: "GENEFUNK2090.BonusRSDamage"},
+      {name: "system.bonuses.abilities.check", label: "GENEFUNK2090.BonusAbilityCheck"},
+      {name: "system.bonuses.abilities.save", label: "GENEFUNK2090.BonusAbilitySave"},
+      {name: "system.bonuses.abilities.skill", label: "GENEFUNK2090.BonusAbilitySkill"},
+      {name: "system.bonuses.spell.dc", label: "GENEFUNK2090.BonusSpellDC"}
     ];
     for ( let b of bonuses ) {
       b.value = foundry.utils.getProperty(src, b.name) || "";

@@ -289,7 +289,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
   get usageScaling() {
     const { level, preparation, consume } = this.system;
     const isLeveled = (this.type === "spell") && (level > 0);
-    if ( isLeveled && CONFIG.DND5E.spellUpcastModes.includes(preparation.mode) ) return "slot";
+    if ( isLeveled && CONFIG.GENEFUNK2090.spellUpcastModes.includes(preparation.mode) ) return "slot";
     else if ( isLeveled && this.hasResource && consume.scale ) return "resource";
     return null;
   }
@@ -300,7 +300,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
    * Spellcasting details for a class or subclass.
    *
    * @typedef {object} SpellcastingDescription
-   * @property {string} type              Spellcasting type as defined in ``CONFIG.DND5E.spellcastingTypes`.
+   * @property {string} type              Spellcasting type as defined in ``CONFIG.GENEFUNK2090.spellcastingTypes`.
    * @property {string|null} progression  Progression within the specified spellcasting type if supported.
    * @property {string} ability           Ability used when casting spells from this class or subclass.
    * @property {number|null} levels       Number of levels of this class or subclass's class if embedded.
@@ -325,8 +325,8 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     finalSC.levels = this.isEmbedded ? (this.system.levels ?? this.class?.system.levels) : null;
 
     // Temp method for determining spellcasting type until this data is available directly using advancement
-    if ( CONFIG.DND5E.spellcastingTypes[finalSC.progression] ) finalSC.type = finalSC.progression;
-    else finalSC.type = Object.entries(CONFIG.DND5E.spellcastingTypes).find(([type, data]) => {
+    if ( CONFIG.GENEFUNK2090.spellcastingTypes[finalSC.progression] ) finalSC.type = finalSC.progression;
+    else finalSC.type = Object.entries(CONFIG.GENEFUNK2090.spellcastingTypes).find(([type, data]) => {
       return !!data.progression?.[finalSC.progression];
     })?.[0];
 
@@ -343,7 +343,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     const requireEquipped = (this.type !== "consumable")
       || ["rod", "trinket", "wand"].includes(this.system.consumableType);
     if ( requireEquipped && (this.system.equipped === false) ) return true;
-    return this.system.attunement === CONFIG.DND5E.attunementTypes.REQUIRED;
+    return this.system.attunement === CONFIG.GENEFUNK2090.attunementTypes.REQUIRED;
   }
 
   /* -------------------------------------------- */
@@ -386,7 +386,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
    * @protected
    */
   _prepareEquipment() {
-    this.labels.armor = this.system.armor.value ? `${this.system.armor.value} ${game.i18n.localize("DND5E.AC")}` : "";
+    this.labels.armor = this.system.armor.value ? `${this.system.armor.value} ${game.i18n.localize("GENEFUNK2090.AC")}` : "";
   }
 
   /* -------------------------------------------- */
@@ -397,13 +397,13 @@ export default class Item5e extends SystemDocumentMixin(Item) {
    */
   _prepareFeat() {
     const act = this.system.activation;
-    const types = CONFIG.DND5E.abilityActivationTypes;
-    if ( act?.type === types.legendary ) this.labels.featType = game.i18n.localize("DND5E.LegendaryActionLabel");
-    else if ( act?.type === types.lair ) this.labels.featType = game.i18n.localize("DND5E.LairActionLabel");
+    const types = CONFIG.GENEFUNK2090.abilityActivationTypes;
+    if ( act?.type === types.legendary ) this.labels.featType = game.i18n.localize("GENEFUNK2090.LegendaryActionLabel");
+    else if ( act?.type === types.lair ) this.labels.featType = game.i18n.localize("GENEFUNK2090.LairActionLabel");
     else if ( act?.type ) {
-      this.labels.featType = game.i18n.localize(this.system.damage.length ? "DND5E.Attack" : "DND5E.Action");
+      this.labels.featType = game.i18n.localize(this.system.damage.length ? "GENEFUNK2090.Attack" : "GENEFUNK2090.Action");
     }
-    else this.labels.featType = game.i18n.localize("DND5E.Passive");
+    else this.labels.featType = game.i18n.localize("GENEFUNK2090.Passive");
   }
 
   /* -------------------------------------------- */
@@ -413,14 +413,14 @@ export default class Item5e extends SystemDocumentMixin(Item) {
    * @protected
    */
   _prepareSpell() {
-    const tags = Object.fromEntries(Object.entries(CONFIG.DND5E.spellTags).map(([k, v]) => {
+    const tags = Object.fromEntries(Object.entries(CONFIG.GENEFUNK2090.spellTags).map(([k, v]) => {
       v.tag = true;
       return [k, v];
     }));
-    const attributes = {...CONFIG.DND5E.spellComponents, ...tags};
+    const attributes = {...CONFIG.GENEFUNK2090.spellComponents, ...tags};
     this.system.preparation.mode ||= "prepared";
-    this.labels.level = CONFIG.DND5E.spellLevels[this.system.level];
-    this.labels.school = CONFIG.DND5E.spellSchools[this.system.school];
+    this.labels.level = CONFIG.GENEFUNK2090.spellLevels[this.system.level];
+    this.labels.school = CONFIG.GENEFUNK2090.spellSchools[this.system.school];
     this.labels.components = Object.entries(this.system.components).reduce((obj, [c, active]) => {
       const config = attributes[c];
       if ( !config || (active !== true) ) return obj;
@@ -442,7 +442,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
    */
   _prepareActivation() {
     if ( !("activation" in this.system) ) return;
-    const C = CONFIG.DND5E;
+    const C = CONFIG.GENEFUNK2090;
 
     // Ability Activation Label
     const act = this.system.activation ?? {};
@@ -468,12 +468,12 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     if ( [null, "touch", "self"].includes(rng.units) ) rng.value = rng.long = null;
     if ( this.isActive && rng.units ) {
       this.labels.range = [rng.value, rng.long ? `/ ${rng.long}` : null, C.distanceUnits[rng.units]].filterJoin(" ");
-    } else this.labels.range = game.i18n.localize("DND5E.None");
+    } else this.labels.range = game.i18n.localize("GENEFUNK2090.None");
 
     // Recharge Label
     let chg = this.system.recharge ?? {};
     const chgSuffix = `${chg.value}${parseInt(chg.value) < 6 ? "+" : ""}`;
-    this.labels.recharge = `${game.i18n.localize("DND5E.Recharge")} [${chgSuffix}]`;
+    this.labels.recharge = `${game.i18n.localize("GENEFUNK2090.Recharge")} [${chgSuffix}]`;
   }
 
   /* -------------------------------------------- */
@@ -486,7 +486,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     if ( !("actionType" in this.system) ) return;
     let dmg = this.system.damage || {};
     if ( dmg.parts ) {
-      const types = CONFIG.DND5E.damageTypes;
+      const types = CONFIG.GENEFUNK2090.damageTypes;
       this.labels.damage = dmg.parts.map(d => d[0]).join(" + ").replace(/\+ -/g, "- ");
       this.labels.damageTypes = dmg.parts.map(d => types[d[1]]).join(", ");
     }
@@ -503,7 +503,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     this.advancement = {
       byId: {},
       byLevel: Object.fromEntries(
-        Array.fromRange(CONFIG.DND5E.maxLevel + 1, minAdvancementLevel).map(l => [l, []])
+        Array.fromRange(CONFIG.GENEFUNK2090.maxLevel + 1, minAdvancementLevel).map(l => [l, []])
       ),
       byType: {},
       needingConfiguration: []
@@ -554,8 +554,8 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     // Action usage
     if ( "actionType" in this.system ) {
-      this.labels.abilityCheck = game.i18n.format("DND5E.AbilityPromptTitle", {
-        ability: CONFIG.DND5E.abilities[this.system.ability]?.label ?? ""
+      this.labels.abilityCheck = game.i18n.format("GENEFUNK2090.AbilityPromptTitle", {
+        ability: CONFIG.GENEFUNK2090.abilities[this.system.ability]?.label ?? ""
       });
 
       // Saving throws
@@ -585,7 +585,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
   getDerivedDamageLabel() {
     if ( !this.hasDamage || !this.isOwned ) return [];
     const rollData = this.getRollData();
-    const damageLabels = { ...CONFIG.DND5E.damageTypes, ...CONFIG.DND5E.healingTypes };
+    const damageLabels = { ...CONFIG.GENEFUNK2090.damageTypes, ...CONFIG.GENEFUNK2090.healingTypes };
     const derivedDamage = this.system.damage?.parts?.map(damagePart => {
       let formula;
       try {
@@ -622,8 +622,8 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     }
 
     // Update labels
-    const abl = CONFIG.DND5E.abilities[save.ability]?.label ?? "";
-    this.labels.save = game.i18n.format("DND5E.SaveDC", {dc: save.dc || "", ability: abl});
+    const abl = CONFIG.GENEFUNK2090.abilities[save.ability]?.label ?? "";
+    this.labels.save = game.i18n.format("GENEFUNK2090.SaveDC", {dc: save.dc || "", ability: abl});
     return save.dc;
   }
 
@@ -696,12 +696,12 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     if ( !uses?.max ) return;
     let max = uses.max;
     if ( this.isOwned && !Number.isNumeric(max) ) {
-      const property = game.i18n.localize("DND5E.UsesMax");
+      const property = game.i18n.localize("GENEFUNK2090.UsesMax");
       try {
         const rollData = this.getRollData({ deterministic: true });
         max = Roll.safeEval(this.replaceFormulaData(max, rollData, { property }));
       } catch(e) {
-        const message = game.i18n.format("DND5E.FormulaMalformedError", { property, name: this.name });
+        const message = game.i18n.format("GENEFUNK2090.FormulaMalformedError", { property, name: this.name });
         this.actor._preparationWarnings.push({ message, link: this.uuid, type: "error" });
         console.error(message, e);
         return;
@@ -723,12 +723,12 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     // If this is an owned item and the value is not numeric, we need to calculate it
     if ( this.isOwned && !Number.isNumeric(value) ) {
-      const property = game.i18n.localize("DND5E.Duration");
+      const property = game.i18n.localize("GENEFUNK2090.Duration");
       try {
         const rollData = this.getRollData({ deterministic: true });
         value = Roll.safeEval(this.replaceFormulaData(value, rollData, { property }));
       } catch(e) {
-        const message = game.i18n.format("DND5E.FormulaMalformedError", { property, name: this.name });
+        const message = game.i18n.format("GENEFUNK2090.FormulaMalformedError", { property, name: this.name });
         this.actor._preparationWarnings.push({ message, link: this.uuid, type: "error" });
         console.error(message, e);
         return;
@@ -738,7 +738,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     // Now that duration value is a number, set the label
     if ( ["inst", "perm"].includes(duration.units) ) duration.value = null;
-    this.labels.duration = [duration.value, CONFIG.DND5E.timePeriods[duration.units]].filterJoin(" ");
+    this.labels.duration = [duration.value, CONFIG.GENEFUNK2090.timePeriods[duration.units]].filterJoin(" ");
   }
 
   /* -------------------------------------------- */
@@ -765,7 +765,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     });
     if ( (missingReferences.size > 0) && this.actor ) {
       const listFormatter = new Intl.ListFormat(game.i18n.lang, { style: "long", type: "conjunction" });
-      const message = game.i18n.format("DND5E.FormulaMissingReferenceWarn", {
+      const message = game.i18n.format("GENEFUNK2090.FormulaMissingReferenceWarn", {
         property, name: this.name, references: listFormatter.format(missingReferences)
       });
       this.actor._preparationWarnings.push({ message, link: this.uuid, type: "warning" });
@@ -916,7 +916,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
         templates = await (genefunk2090.canvas.AbilityTemplate.fromItem(item))?.drawPreview();
       } catch(err) {
         Hooks.onError("Item5e#use", err, {
-          msg: game.i18n.localize("DND5E.PlaceTemplateError"),
+          msg: game.i18n.localize("GENEFUNK2090.PlaceTemplateError"),
           log: "error",
           notify: "error"
         });
@@ -1003,9 +1003,9 @@ export default class Item5e extends SystemDocumentMixin(Item) {
       const level = this.actor?.system.spells[config.slotLevel];
       const spells = Number(level?.value ?? 0);
       if ( spells === 0 ) {
-        const labelKey = config.slotLevel === "pact" ? "DND5E.SpellProgPact" : `DND5E.SpellLevel${this.system.level}`;
+        const labelKey = config.slotLevel === "pact" ? "GENEFUNK2090.SpellProgPact" : `GENEFUNK2090.SpellLevel${this.system.level}`;
         const label = game.i18n.localize(labelKey);
-        ui.notifications.warn(game.i18n.format("DND5E.SpellCastNoSlots", {name: this.name, level: label}));
+        ui.notifications.warn(game.i18n.format("GENEFUNK2090.SpellCastNoSlots", {name: this.name, level: label}));
         return false;
       }
       actorUpdates[`system.spells.${config.slotLevel}.value`] = Math.max(spells - 1, 0);
@@ -1059,7 +1059,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     // If the item was not used, return a warning
     if ( !used ) {
-      ui.notifications.warn(game.i18n.format("DND5E.ItemNoUses", {name: this.name}));
+      ui.notifications.warn(game.i18n.format("GENEFUNK2090.ItemNoUses", {name: this.name}));
       return false;
     }
   }
@@ -1081,9 +1081,9 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     if ( !consume.type ) return;
 
     // No consumed target
-    const typeLabel = CONFIG.DND5E.abilityConsumptionTypes[consume.type];
+    const typeLabel = CONFIG.GENEFUNK2090.abilityConsumptionTypes[consume.type];
     if ( !consume.target ) {
-      ui.notifications.warn(game.i18n.format("DND5E.ConsumeWarningNoResource", {name: this.name, type: typeLabel}));
+      ui.notifications.warn(game.i18n.format("GENEFUNK2090.ConsumeWarningNoResource", {name: this.name, type: typeLabel}));
       return false;
     }
 
@@ -1120,14 +1120,14 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     // Verify that a consumed resource is available
     if ( resource === undefined ) {
-      ui.notifications.warn(game.i18n.format("DND5E.ConsumeWarningNoSource", {name: this.name, type: typeLabel}));
+      ui.notifications.warn(game.i18n.format("GENEFUNK2090.ConsumeWarningNoSource", {name: this.name, type: typeLabel}));
       return false;
     }
 
     // Verify that the required quantity is available
     let remaining = quantity - amount;
     if ( remaining < 0 ) {
-      ui.notifications.warn(game.i18n.format("DND5E.ConsumeWarningNoQuantity", {name: this.name, type: typeLabel}));
+      ui.notifications.warn(game.i18n.format("GENEFUNK2090.ConsumeWarningNoQuantity", {name: this.name, type: typeLabel}));
       return false;
     }
 
@@ -1299,7 +1299,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
   async rollAttack(options={}) {
     const flags = this.actor.flags.genefunk2090 ?? {};
     if ( !this.hasAttack ) throw new Error("You may not place an Attack Roll with this Item.");
-    let title = `${this.name} - ${game.i18n.localize("DND5E.AttackRoll")}`;
+    let title = `${this.name} - ${game.i18n.localize("GENEFUNK2090.AttackRoll")}`;
 
     // Get the parts and rollData for this item's attack
     const {parts, rollData} = this.getAttackToHit();
@@ -1324,7 +1324,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     // Flags
     const elvenAccuracy = (flags.elvenAccuracy
-      && CONFIG.DND5E.characterFlags.elvenAccuracy.abilities.includes(this.abilityMod)) || undefined;
+      && CONFIG.GENEFUNK2090.characterFlags.elvenAccuracy.abilities.includes(this.abilityMod)) || undefined;
 
     // Compose roll options
     const rollConfig = foundry.utils.mergeObject({
@@ -1403,7 +1403,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     if ( spellLevel ) rollData.item.level = spellLevel;
 
     // Configure the damage roll
-    const actionFlavor = game.i18n.localize(this.system.actionType === "heal" ? "DND5E.Healing" : "DND5E.DamageRoll");
+    const actionFlavor = game.i18n.localize(this.system.actionType === "heal" ? "GENEFUNK2090.Healing" : "GENEFUNK2090.DamageRoll");
     const title = `${this.name} - ${actionFlavor}`;
     const rollConfig = {
       actor: this.actor,
@@ -1596,7 +1596,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     if ( rollConfig.chatMessage ) {
       roll.toMessage({
         speaker: ChatMessage.getSpeaker({actor: this.actor}),
-        flavor: `${this.name} - ${game.i18n.localize("DND5E.OtherFormula")}`,
+        flavor: `${this.name} - ${game.i18n.localize("GENEFUNK2090.OtherFormula")}`,
         rollMode: game.settings.get("core", "rollMode"),
         messageData: {"flags.genefunk2090.roll": {type: "other", itemId: this.id, itemUuid: this.uuid}}
       });
@@ -1649,9 +1649,9 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     const success = roll.total >= rollConfig.target;
 
     if ( rollConfig.chatMessage ) {
-      const resultMessage = game.i18n.localize(`DND5E.ItemRecharge${success ? "Success" : "Failure"}`);
+      const resultMessage = game.i18n.localize(`GENEFUNK2090.ItemRecharge${success ? "Success" : "Failure"}`);
       roll.toMessage({
-        flavor: `${game.i18n.format("DND5E.ItemRechargeCheck", {name: this.name})} - ${resultMessage}`,
+        flavor: `${game.i18n.format("GENEFUNK2090.ItemRechargeCheck", {name: this.name})} - ${resultMessage}`,
         speaker: ChatMessage.getSpeaker({actor: this.actor, token: this.actor.token})
       });
     }
@@ -1761,7 +1761,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     const storedData = message.getFlag("genefunk2090", "itemData");
     const item = storedData ? new this(storedData, {parent: actor}) : actor.items.get(card.dataset.itemId);
     if ( !item ) {
-      ui.notifications.error(game.i18n.format("DND5E.ActionWarningNoItem", {
+      ui.notifications.error(game.i18n.format("GENEFUNK2090.ActionWarningNoItem", {
         item: card.dataset.itemId, name: actor.name
       }));
       return null;
@@ -1801,7 +1801,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
           await genefunk2090.canvas.AbilityTemplate.fromItem(item, {"flags.genefunk2090.spellLevel": spellLevel})?.drawPreview();
         } catch(err) {
           Hooks.onError("Item5e._onChatCardAction", err, {
-            msg: game.i18n.localize("DND5E.PlaceTemplateError"),
+            msg: game.i18n.localize("GENEFUNK2090.PlaceTemplateError"),
             log: "error",
             notify: "error"
           });
@@ -1868,7 +1868,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
   static _getChatCardTargets(card) {
     let targets = canvas.tokens.controlled.filter(t => !!t.actor);
     if ( !targets.length && game.user.character ) targets = targets.concat(game.user.character.getActiveTokens());
-    if ( !targets.length ) ui.notifications.warn("DND5E.ActionWarningNoToken", {localize: true});
+    if ( !targets.length ) ui.notifications.warn("GENEFUNK2090.ActionWarningNoToken", {localize: true});
     return targets;
   }
 
@@ -1889,8 +1889,8 @@ export default class Item5e extends SystemDocumentMixin(Item) {
   createAdvancement(type, data={}, { showConfig=true, source=false }={}) {
     if ( !this.system.advancement ) return this;
 
-    const Advancement = CONFIG.DND5E.advancementTypes[type];
-    if ( !Advancement ) throw new Error(`${type} not found in CONFIG.DND5E.advancementTypes`);
+    const Advancement = CONFIG.GENEFUNK2090.advancementTypes[type];
+    if ( !Advancement ) throw new Error(`${type} not found in CONFIG.GENEFUNK2090.advancementTypes`);
 
     if ( !Advancement.metadata.validItemTypes.has(this.type) || !Advancement.availableForItem(this) ) {
       throw new Error(`${type} advancement cannot be added to ${this.name}`);
@@ -2049,22 +2049,22 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     // Check to make sure the updated class level isn't below zero
     if ( changed.system.levels <= 0 ) {
-      ui.notifications.warn("DND5E.MaxClassLevelMinimumWarn", {localize: true});
+      ui.notifications.warn("GENEFUNK2090.MaxClassLevelMinimumWarn", {localize: true});
       changed.system.levels = 1;
     }
 
     // Check to make sure the updated class level doesn't exceed level cap
-    if ( changed.system.levels > CONFIG.DND5E.maxLevel ) {
-      ui.notifications.warn(game.i18n.format("DND5E.MaxClassLevelExceededWarn", {max: CONFIG.DND5E.maxLevel}));
-      changed.system.levels = CONFIG.DND5E.maxLevel;
+    if ( changed.system.levels > CONFIG.GENEFUNK2090.maxLevel ) {
+      ui.notifications.warn(game.i18n.format("GENEFUNK2090.MaxClassLevelExceededWarn", {max: CONFIG.GENEFUNK2090.maxLevel}));
+      changed.system.levels = CONFIG.GENEFUNK2090.maxLevel;
     }
     if ( !this.isEmbedded || (this.parent.type !== "character") ) return;
 
     // Check to ensure the updated character doesn't exceed level cap
     const newCharacterLevel = this.actor.system.details.level + (changed.system.levels - this.system.levels);
-    if ( newCharacterLevel > CONFIG.DND5E.maxLevel ) {
-      ui.notifications.warn(game.i18n.format("DND5E.MaxCharacterLevelExceededWarn", {max: CONFIG.DND5E.maxLevel}));
-      changed.system.levels -= newCharacterLevel - CONFIG.DND5E.maxLevel;
+    if ( newCharacterLevel > CONFIG.GENEFUNK2090.maxLevel ) {
+      ui.notifications.warn(game.i18n.format("GENEFUNK2090.MaxCharacterLevelExceededWarn", {max: CONFIG.GENEFUNK2090.maxLevel}));
+      changed.system.levels -= newCharacterLevel - CONFIG.GENEFUNK2090.maxLevel;
     }
   }
 
@@ -2180,7 +2180,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     } = itemData.system;
 
     // Get scroll data
-    const scrollUuid = `Compendium.${CONFIG.DND5E.sourcePacks.ITEMS}.${CONFIG.DND5E.spellScrollIds[level]}`;
+    const scrollUuid = `Compendium.${CONFIG.GENEFUNK2090.sourcePacks.ITEMS}.${CONFIG.GENEFUNK2090.spellScrollIds[level]}`;
     const scrollItem = await fromUuid(scrollUuid);
     const scrollData = scrollItem.toObject();
     delete scrollData._id;
@@ -2195,10 +2195,10 @@ export default class Item5e extends SystemDocumentMixin(Item) {
     // Create a composite description from the scroll description and the spell details
     const desc = `
       ${scrollIntro}
-      <hr><h3>${itemData.name} (${game.i18n.format("DND5E.LevelNumber", {level})})</h3>
-      ${(components.concentration ? `<p><em>${game.i18n.localize("DND5E.ScrollRequiresConcentration")}</em></p>` : "")}
+      <hr><h3>${itemData.name} (${game.i18n.format("GENEFUNK2090.LevelNumber", {level})})</h3>
+      ${(components.concentration ? `<p><em>${game.i18n.localize("GENEFUNK2090.ScrollRequiresConcentration")}</em></p>` : "")}
       <hr>${description.value}<hr>
-      <h3>${game.i18n.localize("DND5E.ScrollDetails")}</h3><hr>${scrollDetails}
+      <h3>${game.i18n.localize("GENEFUNK2090.ScrollDetails")}</h3><hr>${scrollDetails}
     `;
 
     // Used a fixed attack modifier and saving throw according to the level of spell scroll.
@@ -2213,7 +2213,7 @@ export default class Item5e extends SystemDocumentMixin(Item) {
 
     // Create the spell scroll data
     const spellScrollData = foundry.utils.mergeObject(scrollData, {
-      name: `${game.i18n.localize("DND5E.SpellScroll")}: ${itemData.name}`,
+      name: `${game.i18n.localize("GENEFUNK2090.SpellScroll")}: ${itemData.name}`,
       img: itemData.img,
       system: {
         description: {value: desc.trim()}, source, actionType, activation, duration, target,

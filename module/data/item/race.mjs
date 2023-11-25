@@ -18,8 +18,8 @@ export default class RaceData extends SystemDataModel.mixin(ItemDescriptionTempl
   /** @inheritdoc */
   static defineSchema() {
     return this.mergeSchema(super.defineSchema(), {
-      identifier: new IdentifierField({label: "DND5E.Identifier"}),
-      advancement: new foundry.data.fields.ArrayField(new AdvancementField(), {label: "DND5E.AdvancementTitle"}),
+      identifier: new IdentifierField({label: "GENEFUNK2090.Identifier"}),
+      advancement: new foundry.data.fields.ArrayField(new AdvancementField(), {label: "GENEFUNK2090.AdvancementTitle"}),
       movement: new MovementField(),
       senses: new SensesField(),
       type: new CreatureTypeField({ swarm: false }, { initial: { value: "humanoid" } })
@@ -42,8 +42,8 @@ export default class RaceData extends SystemDataModel.mixin(ItemDescriptionTempl
    * @returns {Object<string>}
    */
   get movementLabels() {
-    const units = CONFIG.DND5E.movementUnits[this.movement.units || Object.keys(CONFIG.DND5E.movementUnits)[0]];
-    return Object.entries(CONFIG.DND5E.movementTypes).reduce((obj, [k, label]) => {
+    const units = CONFIG.GENEFUNK2090.movementUnits[this.movement.units || Object.keys(CONFIG.GENEFUNK2090.movementUnits)[0]];
+    return Object.entries(CONFIG.GENEFUNK2090.movementTypes).reduce((obj, [k, label]) => {
       const value = this.movement[k];
       if ( value ) obj[k] = `${label} ${value} ${units}`;
       return obj;
@@ -57,8 +57,8 @@ export default class RaceData extends SystemDataModel.mixin(ItemDescriptionTempl
    * @returns {Object<string>}
    */
   get sensesLabels() {
-    const units = CONFIG.DND5E.movementUnits[this.senses.units || Object.keys(CONFIG.DND5E.movementUnits)[0]];
-    return Object.entries(CONFIG.DND5E.senses).reduce((arr, [k, label]) => {
+    const units = CONFIG.GENEFUNK2090.movementUnits[this.senses.units || Object.keys(CONFIG.GENEFUNK2090.movementUnits)[0]];
+    return Object.entries(CONFIG.GENEFUNK2090.senses).reduce((arr, [k, label]) => {
       const value = this.senses[k];
       if ( value ) arr.push(`${label} ${value} ${units}`);
       return arr;
@@ -95,7 +95,7 @@ export default class RaceData extends SystemDataModel.mixin(ItemDescriptionTempl
       { type: "Trait", configuration: { grants: ["languages:standard:common"] } }
     ];
     this.parent.updateSource({"system.advancement": toCreate.map(c => {
-      const AdvancementClass = CONFIG.DND5E.advancementTypes[c.type];
+      const AdvancementClass = CONFIG.GENEFUNK2090.advancementTypes[c.type];
       return new AdvancementClass(c, { parent: this.parent }).toObject();
     })});
   }

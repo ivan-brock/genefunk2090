@@ -16,7 +16,7 @@ export default class AbilityScoreImprovementConfig extends AdvancementConfig {
 
   /** @inheritdoc */
   getData() {
-    const abilities = Object.entries(CONFIG.DND5E.abilities).reduce((obj, [key, data]) => {
+    const abilities = Object.entries(CONFIG.GENEFUNK2090.abilities).reduce((obj, [key, data]) => {
       if ( !this.advancement.canImprove(key) ) return obj;
       const fixed = this.advancement.configuration.fixed[key] ?? 0;
       obj[key] = {
@@ -35,7 +35,7 @@ export default class AbilityScoreImprovementConfig extends AdvancementConfig {
       points: {
         key: "points",
         name: "configuration.points",
-        label: game.i18n.localize("DND5E.AdvancementAbilityScoreImprovementPoints"),
+        label: game.i18n.localize("GENEFUNK2090.AdvancementAbilityScoreImprovementPoints"),
         min: 0,
         value: this.advancement.configuration.points,
         canIncrease: true,

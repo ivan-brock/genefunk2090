@@ -1,11 +1,11 @@
 <form autocomplete="off">
   {{> "genefunk2090.advancement-controls"}}
   <div class="form-group">
-    <label>{{localize "DND5E.AdvancementItemGrantOptional"}}</label>
+    <label>{{localize "GENEFUNK2090.AdvancementItemGrantOptional"}}</label>
     <div class="form-fields">
       <input type="checkbox" name="configuration.optional" {{checked configuration.optional}}>
     </div>
-    <p class="hint">{{localize "DND5E.AdvancementItemGrantOptionalHint"}}</p>
+    <p class="hint">{{localize "GENEFUNK2090.AdvancementItemGrantOptionalHint"}}</p>
   </div>
 
   {{#if showSpellConfig}}
@@ -20,7 +20,7 @@
         <li class="item flexrow" data-item-uuid="{{this}}">
           <div class="item-name">{{{genefunk2090-linkForUuid this}}}</div>
           <div class="item-controls flexrow">
-            <a class="item-control item-action" data-action="delete" data-tooltip="DND5E.ItemDelete">
+            <a class="item-control item-action" data-action="delete" data-tooltip="GENEFUNK2090.ItemDelete">
               <i class="fas fa-trash"></i>
             </a>
           </div>
@@ -29,6 +29,6 @@
       </ol>
     </ol>
 
-    <p class="hint centered">{{localize "DND5E.AdvancementItemGrantDropHint"}}</p>
+    <p class="hint centered">{{localize "GENEFUNK2090.AdvancementItemGrantDropHint"}}</p>
   </div>
 </form>

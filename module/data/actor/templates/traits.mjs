@@ -33,11 +33,11 @@ export default class TraitsField {
    */
   static get common() {
     return {
-      size: new foundry.data.fields.StringField({required: true, initial: "med", label: "DND5E.Size"}),
-      di: this.makeDamageTrait({label: "DND5E.DamImm"}),
-      dr: this.makeDamageTrait({label: "DND5E.DamRes"}),
-      dv: this.makeDamageTrait({label: "DND5E.DamVuln"}),
-      ci: this.makeSimpleTrait({label: "DND5E.ConImm"})
+      size: new foundry.data.fields.StringField({required: true, initial: "med", label: "GENEFUNK2090.Size"}),
+      di: this.makeDamageTrait({label: "GENEFUNK2090.DamImm"}),
+      dr: this.makeDamageTrait({label: "GENEFUNK2090.DamRes"}),
+      dv: this.makeDamageTrait({label: "GENEFUNK2090.DamVuln"}),
+      ci: this.makeSimpleTrait({label: "GENEFUNK2090.ConImm"})
     };
   }
 
@@ -51,7 +51,7 @@ export default class TraitsField {
    */
   static get creature() {
     return {
-      languages: this.makeSimpleTrait({label: "DND5E.Languages"})
+      languages: this.makeSimpleTrait({label: "GENEFUNK2090.Languages"})
     };
   }
 
@@ -69,9 +69,9 @@ export default class TraitsField {
     return new foundry.data.fields.SchemaField({
       ...extraFields,
       value: new foundry.data.fields.SetField(
-        new foundry.data.fields.StringField(), {label: "DND5E.TraitsChosen", initial}
+        new foundry.data.fields.StringField(), {label: "GENEFUNK2090.TraitsChosen", initial}
       ),
-      custom: new foundry.data.fields.StringField({required: true, label: "DND5E.Special"})
+      custom: new foundry.data.fields.StringField({required: true, label: "GENEFUNK2090.Special"})
     }, schemaOptions);
   }
 
@@ -89,7 +89,7 @@ export default class TraitsField {
     return this.makeSimpleTrait(schemaOptions, {initial, extraFields: {
       ...extraFields,
       bypasses: new foundry.data.fields.SetField(new foundry.data.fields.StringField(), {
-        label: "DND5E.DamagePhysicalBypass", hint: "DND5E.DamagePhysicalBypassHint", initial: initialBypasses
+        label: "GENEFUNK2090.DamagePhysicalBypass", hint: "GENEFUNK2090.DamagePhysicalBypassHint", initial: initialBypasses
       })
     }});
   }

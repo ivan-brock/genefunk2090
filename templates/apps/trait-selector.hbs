@@ -3,7 +3,7 @@
 
     {{#if customPath}}
         <div class="form-group stacked">
-            <label>{{localize "DND5E.TraitSelectorSpecial"}}</label>
+            <label>{{localize "GENEFUNK2090.TraitSelectorSpecial"}}</label>
             <div class="form-fields">
                 <input type="text" name="{{customPath}}" value="{{custom}}">
             </div>
@@ -11,10 +11,10 @@
     {{/if}}
 
     {{#if bypassesPath}}
-        <h3>{{localize "DND5E.DamagePhysicalBypass"}}</h3>
-        <p class="note">{{localize "DND5E.DamagePhysicalBypassHint"}}</p>
+        <h3>{{localize "GENEFUNK2090.DamagePhysicalBypass"}}</h3>
+        <p class="note">{{localize "GENEFUNK2090.DamagePhysicalBypassHint"}}</p>
         {{> "genefunk2090.trait-list" choices=bypasses prefix="bypasses"}}
     {{/if}}
 
-    <button type="submit"><i class="far fa-save"></i> {{localize "DND5E.TraitSave"}}</button>
+    <button type="submit"><i class="far fa-save"></i> {{localize "GENEFUNK2090.TraitSave"}}</button>
 </form>

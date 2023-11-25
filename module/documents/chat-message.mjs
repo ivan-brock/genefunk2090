@@ -74,31 +74,31 @@ export function addChatMessageContextOptions(html, options) {
   };
   options.push(
     {
-      name: game.i18n.localize("DND5E.ChatContextDamage"),
+      name: game.i18n.localize("GENEFUNK2090.ChatContextDamage"),
       icon: '<i class="fas fa-user-minus"></i>',
       condition: canApply,
       callback: li => applyChatCardDamage(li, 1)
     },
     {
-      name: game.i18n.localize("DND5E.ChatContextHealing"),
+      name: game.i18n.localize("GENEFUNK2090.ChatContextHealing"),
       icon: '<i class="fas fa-user-plus"></i>',
       condition: canApply,
       callback: li => applyChatCardDamage(li, -1)
     },
     {
-      name: game.i18n.localize("DND5E.ChatContextTempHP"),
+      name: game.i18n.localize("GENEFUNK2090.ChatContextTempHP"),
       icon: '<i class="fas fa-user-clock"></i>',
       condition: canApply,
       callback: li => applyChatCardTemp(li)
     },
     {
-      name: game.i18n.localize("DND5E.ChatContextDoubleDamage"),
+      name: game.i18n.localize("GENEFUNK2090.ChatContextDoubleDamage"),
       icon: '<i class="fas fa-user-injured"></i>',
       condition: canApply,
       callback: li => applyChatCardDamage(li, 2)
     },
     {
-      name: game.i18n.localize("DND5E.ChatContextHalfDamage"),
+      name: game.i18n.localize("GENEFUNK2090.ChatContextHalfDamage"),
       icon: '<i class="fas fa-user-shield"></i>',
       condition: canApply,
       callback: li => applyChatCardDamage(li, 0.5)

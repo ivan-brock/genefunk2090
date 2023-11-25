@@ -17,8 +17,8 @@ export default class ItemChoiceAdvancement extends ItemGrantAdvancement {
       },
       order: 50,
       icon: "systems/genefunk2090/icons/svg/item-choice.svg",
-      title: game.i18n.localize("DND5E.AdvancementItemChoiceTitle"),
-      hint: game.i18n.localize("DND5E.AdvancementItemChoiceHint"),
+      title: game.i18n.localize("GENEFUNK2090.AdvancementItemChoiceTitle"),
+      hint: game.i18n.localize("GENEFUNK2090.AdvancementItemChoiceHint"),
       multiLevel: true,
       apps: {
         config: ItemChoiceConfig,
@@ -49,7 +49,7 @@ export default class ItemChoiceAdvancement extends ItemGrantAdvancement {
 
   /** @inheritdoc */
   titleForLevel(level, { configMode=false }={}) {
-    return `${this.title} <em>(${game.i18n.localize("DND5E.AdvancementChoices")})</em>`;
+    return `${this.title} <em>(${game.i18n.localize("GENEFUNK2090.AdvancementChoices")})</em>`;
   }
 
   /* -------------------------------------------- */
@@ -90,19 +90,19 @@ export default class ItemChoiceAdvancement extends ItemGrantAdvancement {
     // Type restriction is set and the item type does not match the selected type
     if ( type && (type !== item.type) ) {
       const typeLabel = game.i18n.localize(CONFIG.Item.typeLabels[restriction]);
-      if ( strict ) throw new Error(game.i18n.format("DND5E.AdvancementItemChoiceTypeWarning", {type: typeLabel}));
+      if ( strict ) throw new Error(game.i18n.format("GENEFUNK2090.AdvancementItemChoiceTypeWarning", {type: typeLabel}));
       return false;
     }
 
     // If additional type restrictions applied, make sure they are valid
     if ( (type === "feat") && restriction.type ) {
-      const typeConfig = CONFIG.DND5E.featureTypes[restriction.type];
+      const typeConfig = CONFIG.GENEFUNK2090.featureTypes[restriction.type];
       const subtype = typeConfig.subtypes?.[restriction.subtype];
       let errorLabel;
       if ( restriction.type !== item.system.type.value ) errorLabel = typeConfig.label;
       else if ( subtype && (restriction.subtype !== item.system.type.subtype) ) errorLabel = subtype;
       if ( errorLabel ) {
-        if ( strict ) throw new Error(game.i18n.format("DND5E.AdvancementItemChoiceTypeWarning", {type: errorLabel}));
+        if ( strict ) throw new Error(game.i18n.format("GENEFUNK2090.AdvancementItemChoiceTypeWarning", {type: errorLabel}));
         return false;
       }
     }
@@ -110,8 +110,8 @@ export default class ItemChoiceAdvancement extends ItemGrantAdvancement {
     // If spell level is restricted, ensure the spell is of the appropriate level
     const l = parseInt(restriction.level);
     if ( (type === "spell") && !Number.isNaN(l) && (item.system.level !== l) ) {
-      const level = CONFIG.DND5E.spellLevels[l];
-      if ( strict ) throw new Error(game.i18n.format("DND5E.AdvancementItemChoiceSpellLevelSpecificWarning", {level}));
+      const level = CONFIG.GENEFUNK2090.spellLevels[l];
+      if ( strict ) throw new Error(game.i18n.format("GENEFUNK2090.AdvancementItemChoiceSpellLevelSpecificWarning", {level}));
       return false;
     }
 

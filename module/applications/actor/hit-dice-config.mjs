@@ -19,7 +19,7 @@ export default class ActorHitDiceConfig extends BaseConfigSheet {
 
   /** @inheritDoc */
   get title() {
-    return `${game.i18n.localize("DND5E.HitDiceConfig")}: ${this.object.name}`;
+    return `${game.i18n.localize("GENEFUNK2090.HitDiceConfig")}: ${this.object.name}`;
   }
 
   /* -------------------------------------------- */

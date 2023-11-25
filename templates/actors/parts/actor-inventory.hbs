@@ -2,9 +2,9 @@
     {{#unless isNPC}}
     <ol class="currency flexrow">
         <h3>
-            {{localize "DND5E.Currency"}}
+            {{localize "GENEFUNK2090.Currency"}}
             <a class="action-button currency-convert {{rollableClass}}" data-action="convertCurrency"
-               data-tooltip="DND5E.CurrencyConvert">
+               data-tooltip="GENEFUNK2090.CurrencyConvert">
                 <i class="fas fa-coins"></i>
             </a>
         </h3>
@@ -16,13 +16,13 @@
     {{/unless}}
     {{#if isCharacter}}
     <div class="attunement">
-      <label>{{localize "DND5E.Attunement"}}</label>
+      <label>{{localize "GENEFUNK2090.Attunement"}}</label>
       <span class="attunement-value">{{system.attributes.attunement.value}}</span>
       <span class="sep"> / </span>
-      <span class="attunement-max" {{#if overrides.attunement}}data-tooltip="DND5E.ActiveEffectOverrideWarning"{{/if}}>
+      <span class="attunement-max" {{#if overrides.attunement}}data-tooltip="GENEFUNK2090.ActiveEffectOverrideWarning"{{/if}}>
         {{system.attributes.attunement.max}}
         {{#unless (or overrides.attunement (not editable))}}
-        <a class="attunement-max-override" data-tooltip="DND5E.AttunementOverride">
+        <a class="attunement-max-override" data-tooltip="GENEFUNK2090.AttunementOverride">
           <i class="fa-solid fa-edit"></i>
         </a>
         {{/unless}}
@@ -32,10 +32,10 @@
 
     {{#if inventoryFilters}}
     <ul class="filter-list flexrow" data-filter="inventory">
-        <li class="filter-item" data-filter="action">{{localize "DND5E.Action"}}</li>
-        <li class="filter-item" data-filter="bonus">{{localize "DND5E.BonusAction"}}</li>
-        <li class="filter-item" data-filter="reaction">{{localize "DND5E.Reaction"}}</li>
-        <li class="filter-item" data-filter="equipped">{{localize "DND5E.Equipped"}}</li>
+        <li class="filter-item" data-filter="action">{{localize "GENEFUNK2090.Action"}}</li>
+        <li class="filter-item" data-filter="bonus">{{localize "GENEFUNK2090.BonusAction"}}</li>
+        <li class="filter-item" data-filter="reaction">{{localize "GENEFUNK2090.Reaction"}}</li>
+        <li class="filter-item" data-filter="equipped">{{localize "GENEFUNK2090.Equipped"}}</li>
     </ul>
     {{/if}}
 </div>
@@ -51,18 +51,18 @@
             {{/each}}
         {{else}}
             {{#if ../isCharacter}}
-                <div class="item-detail item-weight">{{localize "DND5E.Weight"}}</div>
+                <div class="item-detail item-weight">{{localize "GENEFUNK2090.Weight"}}</div>
             {{/if}}
-            <div class="item-detail item-quantity">{{localize "DND5E.QuantityAbbr"}}</div>
-            <div class="item-detail item-uses">{{localize "DND5E.Charges"}}</div>
-            <div class="item-detail item-action">{{localize "DND5E.Usage"}}</div>
+            <div class="item-detail item-quantity">{{localize "GENEFUNK2090.QuantityAbbr"}}</div>
+            <div class="item-detail item-uses">{{localize "GENEFUNK2090.Charges"}}</div>
+            <div class="item-detail item-action">{{localize "GENEFUNK2090.Usage"}}</div>
         {{/if}}
 
         {{#if ../owner}}
         <div class="item-controls flexrow">
-            <a class="item-control item-create" data-action="itemCreate" data-tooltip="DND5E.ItemCreate"
+            <a class="item-control item-create" data-action="itemCreate" data-tooltip="GENEFUNK2090.ItemCreate"
                {{#each section.dataset as |v k|}}data-{{k}}="{{v}}"{{/each}}>
-                <i class="fas fa-plus"></i> {{localize "DND5E.Add"}}
+                <i class="fas fa-plus"></i> {{localize "GENEFUNK2090.Add"}}
             </a>
         </div>
         {{/if}}
@@ -144,11 +144,11 @@
                 </a>
                 {{/if}}
                 {{#unless section.editableName}}
-                <a class="item-control item-edit" data-action="itemEdit" data-tooltip="DND5E.ItemEdit">
+                <a class="item-control item-edit" data-action="itemEdit" data-tooltip="GENEFUNK2090.ItemEdit">
                     <i class="fas fa-edit"></i>
                 </a>
                 {{/unless}}
-                <a class="item-control item-delete" data-action="itemDelete" data-tooltip="DND5E.ItemDelete">
+                <a class="item-control item-delete" data-action="itemDelete" data-tooltip="GENEFUNK2090.ItemDelete">
                     <i class="fas fa-trash"></i>
                 </a>
             </div>

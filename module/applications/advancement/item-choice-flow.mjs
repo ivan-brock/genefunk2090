@@ -139,7 +139,7 @@ export default class ItemChoiceFlow extends ItemGrantFlow {
     for ( const [level, data] of Object.entries(this.advancement.value.added ?? {}) ) {
       if ( level >= this.level ) continue;
       if ( Object.values(data).includes(item.uuid) ) {
-        ui.notifications.error("DND5E.AdvancementItemChoicePreviouslyChosenWarning", {localize: true});
+        ui.notifications.error("GENEFUNK2090.AdvancementItemChoicePreviouslyChosenWarning", {localize: true});
         return null;
       }
     }
@@ -149,8 +149,8 @@ export default class ItemChoiceFlow extends ItemGrantFlow {
     if ( (this.advancement.configuration.type === "spell") && spellLevel === "available" ) {
       const maxSlot = this._maxSpellSlotLevel();
       if ( item.system.level > maxSlot ) {
-        ui.notifications.error(game.i18n.format("DND5E.AdvancementItemChoiceSpellLevelAvailableWarning", {
-          level: CONFIG.DND5E.spellLevels[maxSlot]
+        ui.notifications.error(game.i18n.format("GENEFUNK2090.AdvancementItemChoiceSpellLevelAvailableWarning", {
+          level: CONFIG.GENEFUNK2090.spellLevels[maxSlot]
         }));
         return null;
       }
@@ -181,7 +181,7 @@ export default class ItemChoiceFlow extends ItemGrantFlow {
     // For advancements on classes or subclasses, use the largest slot available for that class
     if ( spellcasting ) {
       const progression = { slot: 0, pact: {} };
-      const maxSpellLevel = CONFIG.DND5E.SPELL_SLOT_TABLE[CONFIG.DND5E.SPELL_SLOT_TABLE.length - 1].length;
+      const maxSpellLevel = CONFIG.GENEFUNK2090.SPELL_SLOT_TABLE[CONFIG.GENEFUNK2090.SPELL_SLOT_TABLE.length - 1].length;
       spells = Object.fromEntries(Array.fromRange(maxSpellLevel, 1).map(l => [`spell${l}`, {}]));
       Actor5e.computeClassProgression(progression, this.advancement.item, { spellcasting });
       Actor5e.prepareSpellcastingSlots(spells, spellcasting.type, progression);

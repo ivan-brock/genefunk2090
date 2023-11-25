@@ -27,7 +27,7 @@ export default class AdvancementMigrationDialog extends Dialog {
     }));
     return new Promise(async (resolve, reject) => {
       const dialog = new this({
-        title: `${game.i18n.localize("DND5E.AdvancementMigrationTitle")}: ${item.name}`,
+        title: `${game.i18n.localize("GENEFUNK2090.AdvancementMigrationTitle")}: ${item.name}`,
         content: await renderTemplate(
           "systems/genefunk2090/templates/advancement/advancement-migration-dialog.hbs",
           { item, advancements: advancementContext }
@@ -35,7 +35,7 @@ export default class AdvancementMigrationDialog extends Dialog {
         buttons: {
           continue: {
             icon: '<i class="fas fa-check"></i>',
-            label: game.i18n.localize("DND5E.AdvancementMigrationConfirm"),
+            label: game.i18n.localize("GENEFUNK2090.AdvancementMigrationConfirm"),
             callback: html => resolve(advancements.filter(a => html.querySelector(`[name="${a.id}"]`)?.checked))
           },
           cancel: {

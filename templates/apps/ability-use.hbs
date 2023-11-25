@@ -7,7 +7,7 @@
 
     {{#if (eq scaling "resource")}}
     <div class="form-group">
-        <label>{{ localize "DND5E.ConsumeScalingLabel" }}</label>
+        <label>{{ localize "GENEFUNK2090.ConsumeScalingLabel" }}</label>
         <div class="form-fields">
             <select name="resourceAmount">
                 {{selectOptions resourceOptions selected=resourceAmount localize=true}}
@@ -18,7 +18,7 @@
 
     {{#if (eq scaling "slot")}}
     <div class="form-group">
-        <label>{{ localize "DND5E.SpellCastUpcast" }}</label>
+        <label>{{ localize "GENEFUNK2090.SpellCastUpcast" }}</label>
         <div class="form-fields">
             <select name="slotLevel">
                 {{#select slotLevel}}
@@ -32,7 +32,7 @@
 
     <div class="form-group">
         <label class="checkbox">
-            <input type="checkbox" name="consumeSpellSlot" {{checked consumeSpellSlot}}>{{localize "DND5E.SpellCastConsume"}}
+            <input type="checkbox" name="consumeSpellSlot" {{checked consumeSpellSlot}}>{{localize "GENEFUNK2090.SpellCastConsume"}}
         </label>
     </div>
     {{/if}}
@@ -40,7 +40,7 @@
     {{#if (ne consumeUsage null)}}
     <div class="form-group">
         <label class="checkbox">
-            <input type="checkbox" name="consumeUsage" {{checked consumeUsage}}>{{localize "DND5E.AbilityUseConsume"}}
+            <input type="checkbox" name="consumeUsage" {{checked consumeUsage}}>{{localize "GENEFUNK2090.AbilityUseConsume"}}
         </label>
     </div>
     {{/if}}
@@ -48,7 +48,7 @@
     {{#if (ne consumeResource null)}}
     <div class="form-group">
         <label class="checkbox">
-            <input type="checkbox" name="consumeResource" {{checked consumeResource}}>{{localize "DND5E.ConsumeResource"}}
+            <input type="checkbox" name="consumeResource" {{checked consumeResource}}>{{localize "GENEFUNK2090.ConsumeResource"}}
         </label>
     </div>
     {{/if}}
@@ -56,7 +56,7 @@
     {{#if (ne createMeasuredTemplate null)}}
     <div class="form-group">
         <label class="checkbox">
-            <input type="checkbox" name="createMeasuredTemplate" {{checked createMeasuredTemplate}}>{{localize "DND5E.PlaceTemplate"}}
+            <input type="checkbox" name="createMeasuredTemplate" {{checked createMeasuredTemplate}}>{{localize "GENEFUNK2090.PlaceTemplate"}}
         </label>
     </div>
     {{/if}}

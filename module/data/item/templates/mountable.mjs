@@ -18,21 +18,21 @@ export default class MountableTemplate extends SystemDataModel {
     return {
       armor: new foundry.data.fields.SchemaField({
         value: new foundry.data.fields.NumberField({
-          required: true, integer: true, min: 0, label: "DND5E.ArmorClass"
+          required: true, integer: true, min: 0, label: "GENEFUNK2090.ArmorClass"
         })
-      }, {label: "DND5E.ArmorClass"}),
+      }, {label: "GENEFUNK2090.ArmorClass"}),
       hp: new foundry.data.fields.SchemaField({
         value: new foundry.data.fields.NumberField({
-          required: true, integer: true, min: 0, label: "DND5E.HitPointsCurrent"
+          required: true, integer: true, min: 0, label: "GENEFUNK2090.HitPointsCurrent"
         }),
         max: new foundry.data.fields.NumberField({
-          required: true, integer: true, min: 0, label: "DND5E.HitPointsMax"
+          required: true, integer: true, min: 0, label: "GENEFUNK2090.HitPointsMax"
         }),
         dt: new foundry.data.fields.NumberField({
-          required: true, integer: true, min: 0, label: "DND5E.DamageThreshold"
+          required: true, integer: true, min: 0, label: "GENEFUNK2090.DamageThreshold"
         }),
-        conditions: new foundry.data.fields.StringField({required: true, label: "DND5E.HealthConditions"})
-      }, {label: "DND5E.HitPoints"})
+        conditions: new foundry.data.fields.StringField({required: true, label: "GENEFUNK2090.HealthConditions"})
+      }, {label: "GENEFUNK2090.HitPoints"})
     };
   }
 }

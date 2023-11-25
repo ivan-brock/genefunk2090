@@ -11,12 +11,12 @@ const { SchemaField, StringField } = foundry.data.fields;
 export default class SourceField extends SchemaField {
   constructor(fields={}, options={}) {
     super({
-      book: new StringField({label: "DND5E.SourceBook"}),
-      page: new StringField({label: "DND5E.SourcePage"}),
-      custom: new StringField({label: "DND5E.SourceCustom"}),
-      license: new StringField({label: "DND5E.SourceLicense"}),
+      book: new StringField({label: "GENEFUNK2090.SourceBook"}),
+      page: new StringField({label: "GENEFUNK2090.SourcePage"}),
+      custom: new StringField({label: "GENEFUNK2090.SourceCustom"}),
+      license: new StringField({label: "GENEFUNK2090.SourceLicense"}),
       ...fields
-    }, { label: "DND5E.Source", ...options });
+    }, { label: "GENEFUNK2090.Source", ...options });
   }
 
   /* -------------------------------------------- */
@@ -29,8 +29,8 @@ export default class SourceField extends SchemaField {
       get() {
         if ( this.custom ) return this.custom;
         const page = Number.isNumeric(this.page)
-          ? game.i18n.format("DND5E.SourcePageDisplay", { page: this.page }) : this.page;
-        return game.i18n.format("DND5E.SourceDisplay", { book: this.book ?? "", page: page ?? "" }).trim();
+          ? game.i18n.format("GENEFUNK2090.SourcePageDisplay", { page: this.page }) : this.page;
+        return game.i18n.format("GENEFUNK2090.SourceDisplay", { book: this.book ?? "", page: page ?? "" }).trim();
       },
       enumerable: false
     });

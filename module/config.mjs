@@ -2,10 +2,10 @@ import * as advancement from "./documents/advancement/_module.mjs";
 import { preLocalize } from "./utils.mjs";
 
 // Namespace Configuration Values
-const DND5E = {};
+const GENEFUNK2090 = {};
 
 // ASCII Artwork
-DND5E.ASCII = `_______________________________
+GENEFUNK2090.ASCII = `_______________________________
 ______      ______ _____ _____
 |  _  \\___  |  _  \\  ___|  ___|
 | | | ( _ ) | | | |___ \\| |__
@@ -31,57 +31,57 @@ _______________________________`;
  * The set of Ability Scores used within the system.
  * @enum {AbilityConfiguration}
  */
-DND5E.abilities = {
+GENEFUNK2090.abilities = {
   str: {
-    label: "DND5E.AbilityStr",
-    abbreviation: "DND5E.AbilityStrAbbr",
+    label: "GENEFUNK2090.AbilityStr",
+    abbreviation: "GENEFUNK2090.AbilityStrAbbr",
     type: "physical",
     fullKey: "strength"
   },
   dex: {
-    label: "DND5E.AbilityDex",
-    abbreviation: "DND5E.AbilityDexAbbr",
+    label: "GENEFUNK2090.AbilityDex",
+    abbreviation: "GENEFUNK2090.AbilityDexAbbr",
     type: "physical",
     fullKey: "dexterity"
   },
   con: {
-    label: "DND5E.AbilityCon",
-    abbreviation: "DND5E.AbilityConAbbr",
+    label: "GENEFUNK2090.AbilityCon",
+    abbreviation: "GENEFUNK2090.AbilityConAbbr",
     type: "physical",
     fullKey: "constitution"
   },
   int: {
-    label: "DND5E.AbilityInt",
-    abbreviation: "DND5E.AbilityIntAbbr",
+    label: "GENEFUNK2090.AbilityInt",
+    abbreviation: "GENEFUNK2090.AbilityIntAbbr",
     type: "mental",
     fullKey: "intelligence",
     defaults: { vehicle: 0 }
   },
   wis: {
-    label: "DND5E.AbilityWis",
-    abbreviation: "DND5E.AbilityWisAbbr",
+    label: "GENEFUNK2090.AbilityWis",
+    abbreviation: "GENEFUNK2090.AbilityWisAbbr",
     type: "mental",
     fullKey: "wisdom",
     defaults: { vehicle: 0 }
   },
   cha: {
-    label: "DND5E.AbilityCha",
-    abbreviation: "DND5E.AbilityChaAbbr",
+    label: "GENEFUNK2090.AbilityCha",
+    abbreviation: "GENEFUNK2090.AbilityChaAbbr",
     type: "mental",
     fullKey: "charisma",
     defaults: { vehicle: 0 }
   },
   hon: {
-    label: "DND5E.AbilityHon",
-    abbreviation: "DND5E.AbilityHonAbbr",
+    label: "GENEFUNK2090.AbilityHon",
+    abbreviation: "GENEFUNK2090.AbilityHonAbbr",
     type: "mental",
     fullKey: "honor",
     defaults: { npc: "cha", vehicle: 0 },
     improvement: false
   },
   san: {
-    label: "DND5E.AbilitySan",
-    abbreviation: "DND5E.AbilitySanAbbr",
+    label: "GENEFUNK2090.AbilitySan",
+    abbreviation: "GENEFUNK2090.AbilitySanAbbr",
     type: "mental",
     fullKey: "sanity",
     defaults: { npc: "wis", vehicle: 0 },
@@ -94,13 +94,13 @@ preLocalize("abilities", { keys: ["label", "abbreviation"] });
  * Configure which ability score is used as the default modifier for initiative rolls.
  * @type {string}
  */
-DND5E.initiativeAbility = "dex";
+GENEFUNK2090.initiativeAbility = "dex";
 
 /**
  * Configure which ability score is used when calculating hit points per level.
  * @type {string}
  */
-DND5E.hitPointsAbility = "con";
+GENEFUNK2090.hitPointsAbility = "con";
 
 /* -------------------------------------------- */
 
@@ -117,25 +117,25 @@ DND5E.hitPointsAbility = "con";
  * The set of skill which can be trained with their default ability scores.
  * @enum {SkillConfiguration}
  */
-DND5E.skills = {
-  acr: { label: "DND5E.SkillAcr", ability: "dex", fullKey: "acrobatics" },
-  ani: { label: "DND5E.SkillAni", ability: "wis", fullKey: "animalHandling" },
-  arc: { label: "DND5E.SkillArc", ability: "int", fullKey: "arcana" },
-  ath: { label: "DND5E.SkillAth", ability: "str", fullKey: "athletics" },
-  dec: { label: "DND5E.SkillDec", ability: "cha", fullKey: "deception" },
-  his: { label: "DND5E.SkillHis", ability: "int", fullKey: "history" },
-  ins: { label: "DND5E.SkillIns", ability: "wis", fullKey: "insight" },
-  itm: { label: "DND5E.SkillItm", ability: "cha", fullKey: "intimidation" },
-  inv: { label: "DND5E.SkillInv", ability: "int", fullKey: "investigation" },
-  med: { label: "DND5E.SkillMed", ability: "wis", fullKey: "medicine" },
-  nat: { label: "DND5E.SkillNat", ability: "int", fullKey: "nature" },
-  prc: { label: "DND5E.SkillPrc", ability: "wis", fullKey: "perception" },
-  prf: { label: "DND5E.SkillPrf", ability: "cha", fullKey: "performance" },
-  per: { label: "DND5E.SkillPer", ability: "cha", fullKey: "persuasion" },
-  rel: { label: "DND5E.SkillRel", ability: "int", fullKey: "religion" },
-  slt: { label: "DND5E.SkillSlt", ability: "dex", fullKey: "sleightOfHand" },
-  ste: { label: "DND5E.SkillSte", ability: "dex", fullKey: "stealth" },
-  sur: { label: "DND5E.SkillSur", ability: "wis", fullKey: "survival" }
+GENEFUNK2090.skills = {
+  acr: { label: "GENEFUNK2090.SkillAcr", ability: "dex", fullKey: "acrobatics" },
+  ani: { label: "GENEFUNK2090.SkillAni", ability: "wis", fullKey: "animalHandling" },
+  arc: { label: "GENEFUNK2090.SkillArc", ability: "int", fullKey: "arcana" },
+  ath: { label: "GENEFUNK2090.SkillAth", ability: "str", fullKey: "athletics" },
+  dec: { label: "GENEFUNK2090.SkillDec", ability: "cha", fullKey: "deception" },
+  his: { label: "GENEFUNK2090.SkillHis", ability: "int", fullKey: "history" },
+  ins: { label: "GENEFUNK2090.SkillIns", ability: "wis", fullKey: "insight" },
+  itm: { label: "GENEFUNK2090.SkillItm", ability: "cha", fullKey: "intimidation" },
+  inv: { label: "GENEFUNK2090.SkillInv", ability: "int", fullKey: "investigation" },
+  med: { label: "GENEFUNK2090.SkillMed", ability: "wis", fullKey: "medicine" },
+  nat: { label: "GENEFUNK2090.SkillNat", ability: "int", fullKey: "nature" },
+  prc: { label: "GENEFUNK2090.SkillPrc", ability: "wis", fullKey: "perception" },
+  prf: { label: "GENEFUNK2090.SkillPrf", ability: "cha", fullKey: "performance" },
+  per: { label: "GENEFUNK2090.SkillPer", ability: "cha", fullKey: "persuasion" },
+  rel: { label: "GENEFUNK2090.SkillRel", ability: "int", fullKey: "religion" },
+  slt: { label: "GENEFUNK2090.SkillSlt", ability: "dex", fullKey: "sleightOfHand" },
+  ste: { label: "GENEFUNK2090.SkillSte", ability: "dex", fullKey: "stealth" },
+  sur: { label: "GENEFUNK2090.SkillSur", ability: "wis", fullKey: "survival" }
 };
 preLocalize("skills", { key: "label", sort: true });
 
@@ -145,16 +145,16 @@ preLocalize("skills", { key: "label", sort: true });
  * Character alignment options.
  * @enum {string}
  */
-DND5E.alignments = {
-  lg: "DND5E.AlignmentLG",
-  ng: "DND5E.AlignmentNG",
-  cg: "DND5E.AlignmentCG",
-  ln: "DND5E.AlignmentLN",
-  tn: "DND5E.AlignmentTN",
-  cn: "DND5E.AlignmentCN",
-  le: "DND5E.AlignmentLE",
-  ne: "DND5E.AlignmentNE",
-  ce: "DND5E.AlignmentCE"
+GENEFUNK2090.alignments = {
+  lg: "GENEFUNK2090.AlignmentLG",
+  ng: "GENEFUNK2090.AlignmentNG",
+  cg: "GENEFUNK2090.AlignmentCG",
+  ln: "GENEFUNK2090.AlignmentLN",
+  tn: "GENEFUNK2090.AlignmentTN",
+  cn: "GENEFUNK2090.AlignmentCN",
+  le: "GENEFUNK2090.AlignmentLE",
+  ne: "GENEFUNK2090.AlignmentNE",
+  ce: "GENEFUNK2090.AlignmentCE"
 };
 preLocalize("alignments");
 
@@ -164,7 +164,7 @@ preLocalize("alignments");
  * An enumeration of item attunement types.
  * @enum {number}
  */
-DND5E.attunementTypes = {
+GENEFUNK2090.attunementTypes = {
   NONE: 0,
   REQUIRED: 1,
   ATTUNED: 2
@@ -174,10 +174,10 @@ DND5E.attunementTypes = {
  * An enumeration of item attunement states.
  * @type {{"0": string, "1": string, "2": string}}
  */
-DND5E.attunements = {
-  0: "DND5E.AttunementNone",
-  1: "DND5E.AttunementRequired",
-  2: "DND5E.AttunementAttuned"
+GENEFUNK2090.attunements = {
+  0: "GENEFUNK2090.AttunementNone",
+  1: "GENEFUNK2090.AttunementRequired",
+  2: "GENEFUNK2090.AttunementAttuned"
 };
 preLocalize("attunements");
 
@@ -187,18 +187,18 @@ preLocalize("attunements");
  * General weapon categories.
  * @enum {string}
  */
-DND5E.weaponProficiencies = {
-  sim: "DND5E.WeaponSimpleProficiency",
-  mar: "DND5E.WeaponMartialProficiency"
+GENEFUNK2090.weaponProficiencies = {
+  sim: "GENEFUNK2090.WeaponSimpleProficiency",
+  mar: "GENEFUNK2090.WeaponMartialProficiency"
 };
 preLocalize("weaponProficiencies");
 
 /**
- * A mapping between `DND5E.weaponTypes` and `DND5E.weaponProficiencies` that
+ * A mapping between `GENEFUNK2090.weaponTypes` and `GENEFUNK2090.weaponProficiencies` that
  * is used to determine if character has proficiency when adding an item.
  * @enum {(boolean|string)}
  */
-DND5E.weaponProficienciesMap = {
+GENEFUNK2090.weaponProficienciesMap = {
   simpleM: "sim",
   simpleR: "sim",
   martialM: "mar",
@@ -210,7 +210,7 @@ DND5E.weaponProficienciesMap = {
  * starting equipment provided by classes and backgrounds.
  * @enum {string}
  */
-DND5E.weaponIds = {
+GENEFUNK2090.weaponIds = {
   battleaxe: "I0WocDSuNpGJayPb",
   blowgun: "wNWK6yJMHG9ANqQV",
   club: "nfIRTECQIG81CvM4",
@@ -256,7 +256,7 @@ DND5E.weaponIds = {
  * The basic ammunition types.
  * @enum {string}
  */
-DND5E.ammoIds = {
+GENEFUNK2090.ammoIds = {
   arrow: "3c7JXOzsv55gqJS5",
   blowgunNeedle: "gBQ8xqTA5f8wP5iu",
   crossbowBolt: "SItCnYBqhzqBoaWG",
@@ -270,10 +270,10 @@ DND5E.ammoIds = {
  *
  * @enum {string}
  */
-DND5E.toolTypes = {
-  art: "DND5E.ToolArtisans",
-  game: "DND5E.ToolGamingSet",
-  music: "DND5E.ToolMusicalInstrument"
+GENEFUNK2090.toolTypes = {
+  art: "GENEFUNK2090.ToolArtisans",
+  game: "GENEFUNK2090.ToolGamingSet",
+  music: "GENEFUNK2090.ToolMusicalInstrument"
 };
 preLocalize("toolTypes", { sort: true });
 
@@ -282,9 +282,9 @@ preLocalize("toolTypes", { sort: true });
  *
  * @enum {string}
  */
-DND5E.toolProficiencies = {
-  ...DND5E.toolTypes,
-  vehicle: "DND5E.ToolVehicle"
+GENEFUNK2090.toolProficiencies = {
+  ...GENEFUNK2090.toolTypes,
+  vehicle: "GENEFUNK2090.ToolVehicle"
 };
 preLocalize("toolProficiencies", { sort: true });
 
@@ -293,7 +293,7 @@ preLocalize("toolProficiencies", { sort: true });
  * starting equipment provided by classes and backgrounds.
  * @enum {string}
  */
-DND5E.toolIds = {
+GENEFUNK2090.toolIds = {
   alchemist: "SztwZhbhZeCqyAes",
   bagpipes: "yxHi57T5mmVt0oDr",
   brewer: "Y9S75go1hLMXUD48",
@@ -338,14 +338,14 @@ DND5E.toolIds = {
  * Time periods that accept a numeric value.
  * @enum {string}
  */
-DND5E.scalarTimePeriods = {
-  turn: "DND5E.TimeTurn",
-  round: "DND5E.TimeRound",
-  minute: "DND5E.TimeMinute",
-  hour: "DND5E.TimeHour",
-  day: "DND5E.TimeDay",
-  month: "DND5E.TimeMonth",
-  year: "DND5E.TimeYear"
+GENEFUNK2090.scalarTimePeriods = {
+  turn: "GENEFUNK2090.TimeTurn",
+  round: "GENEFUNK2090.TimeRound",
+  minute: "GENEFUNK2090.TimeMinute",
+  hour: "GENEFUNK2090.TimeHour",
+  day: "GENEFUNK2090.TimeDay",
+  month: "GENEFUNK2090.TimeMonth",
+  year: "GENEFUNK2090.TimeYear"
 };
 preLocalize("scalarTimePeriods");
 
@@ -355,10 +355,10 @@ preLocalize("scalarTimePeriods");
  * Time periods for spells that don't have a defined ending.
  * @enum {string}
  */
-DND5E.permanentTimePeriods = {
-  disp: "DND5E.TimeDisp",
-  dstr: "DND5E.TimeDispTrig",
-  perm: "DND5E.TimePerm"
+GENEFUNK2090.permanentTimePeriods = {
+  disp: "GENEFUNK2090.TimeDisp",
+  dstr: "GENEFUNK2090.TimeDispTrig",
+  perm: "GENEFUNK2090.TimePerm"
 };
 preLocalize("permanentTimePeriods");
 
@@ -368,9 +368,9 @@ preLocalize("permanentTimePeriods");
  * Time periods that don't accept a numeric value.
  * @enum {string}
  */
-DND5E.specialTimePeriods = {
-  inst: "DND5E.TimeInst",
-  spec: "DND5E.Special"
+GENEFUNK2090.specialTimePeriods = {
+  inst: "GENEFUNK2090.TimeInst",
+  spec: "GENEFUNK2090.Special"
 };
 preLocalize("specialTimePeriods");
 
@@ -380,10 +380,10 @@ preLocalize("specialTimePeriods");
  * The various lengths of time over which effects can occur.
  * @enum {string}
  */
-DND5E.timePeriods = {
-  ...DND5E.specialTimePeriods,
-  ...DND5E.permanentTimePeriods,
-  ...DND5E.scalarTimePeriods
+GENEFUNK2090.timePeriods = {
+  ...GENEFUNK2090.specialTimePeriods,
+  ...GENEFUNK2090.permanentTimePeriods,
+  ...GENEFUNK2090.scalarTimePeriods
 };
 preLocalize("timePeriods");
 
@@ -393,27 +393,27 @@ preLocalize("timePeriods");
  * Ways in which to activate an item that cannot be labeled with a cost.
  * @enum {string}
  */
-DND5E.staticAbilityActivationTypes = {
-  none: "DND5E.NoneActionLabel",
-  special: DND5E.timePeriods.spec
+GENEFUNK2090.staticAbilityActivationTypes = {
+  none: "GENEFUNK2090.NoneActionLabel",
+  special: GENEFUNK2090.timePeriods.spec
 };
 
 /**
  * Various ways in which an item or ability can be activated.
  * @enum {string}
  */
-DND5E.abilityActivationTypes = {
-  ...DND5E.staticAbilityActivationTypes,
-  action: "DND5E.Action",
-  bonus: "DND5E.BonusAction",
-  reaction: "DND5E.Reaction",
-  minute: DND5E.timePeriods.minute,
-  hour: DND5E.timePeriods.hour,
-  day: DND5E.timePeriods.day,
-  legendary: "DND5E.LegendaryActionLabel",
-  mythic: "DND5E.MythicActionLabel",
-  lair: "DND5E.LairActionLabel",
-  crew: "DND5E.VehicleCrewAction"
+GENEFUNK2090.abilityActivationTypes = {
+  ...GENEFUNK2090.staticAbilityActivationTypes,
+  action: "GENEFUNK2090.Action",
+  bonus: "GENEFUNK2090.BonusAction",
+  reaction: "GENEFUNK2090.Reaction",
+  minute: GENEFUNK2090.timePeriods.minute,
+  hour: GENEFUNK2090.timePeriods.hour,
+  day: GENEFUNK2090.timePeriods.day,
+  legendary: "GENEFUNK2090.LegendaryActionLabel",
+  mythic: "GENEFUNK2090.MythicActionLabel",
+  lair: "GENEFUNK2090.LairActionLabel",
+  crew: "GENEFUNK2090.VehicleCrewAction"
 };
 preLocalize("abilityActivationTypes");
 
@@ -423,12 +423,12 @@ preLocalize("abilityActivationTypes");
  * Different things that an ability can consume upon use.
  * @enum {string}
  */
-DND5E.abilityConsumptionTypes = {
-  ammo: "DND5E.ConsumeAmmunition",
-  attribute: "DND5E.ConsumeAttribute",
-  hitDice: "DND5E.ConsumeHitDice",
-  material: "DND5E.ConsumeMaterial",
-  charges: "DND5E.ConsumeCharges"
+GENEFUNK2090.abilityConsumptionTypes = {
+  ammo: "GENEFUNK2090.ConsumeAmmunition",
+  attribute: "GENEFUNK2090.ConsumeAttribute",
+  hitDice: "GENEFUNK2090.ConsumeHitDice",
+  material: "GENEFUNK2090.ConsumeMaterial",
+  charges: "GENEFUNK2090.ConsumeCharges"
 };
 preLocalize("abilityConsumptionTypes", { sort: true });
 
@@ -438,21 +438,21 @@ preLocalize("abilityConsumptionTypes", { sort: true });
  * Creature sizes.
  * @enum {string}
  */
-DND5E.actorSizes = {
-  tiny: "DND5E.SizeTiny",
-  sm: "DND5E.SizeSmall",
-  med: "DND5E.SizeMedium",
-  lg: "DND5E.SizeLarge",
-  huge: "DND5E.SizeHuge",
-  grg: "DND5E.SizeGargantuan"
+GENEFUNK2090.actorSizes = {
+  tiny: "GENEFUNK2090.SizeTiny",
+  sm: "GENEFUNK2090.SizeSmall",
+  med: "GENEFUNK2090.SizeMedium",
+  lg: "GENEFUNK2090.SizeLarge",
+  huge: "GENEFUNK2090.SizeHuge",
+  grg: "GENEFUNK2090.SizeGargantuan"
 };
 preLocalize("actorSizes");
 
 /**
- * Default token image size for the values of `DND5E.actorSizes`.
+ * Default token image size for the values of `GENEFUNK2090.actorSizes`.
  * @enum {number}
  */
-DND5E.tokenSizes = {
+GENEFUNK2090.tokenSizes = {
   tiny: 0.5,
   sm: 1,
   med: 1,
@@ -465,7 +465,7 @@ DND5E.tokenSizes = {
  * Colors used to visualize temporary and temporary maximum HP in token health bars.
  * @enum {number}
  */
-DND5E.tokenHPColors = {
+GENEFUNK2090.tokenHPColors = {
   damage: 0xFF0000,
   healing: 0x00FF00,
   temp: 0x66CCFF,
@@ -480,21 +480,21 @@ DND5E.tokenHPColors = {
  * *Note: Not pre-localized to allow for easy fetching of pluralized forms.*
  * @enum {string}
  */
-DND5E.creatureTypes = {
-  aberration: "DND5E.CreatureAberration",
-  beast: "DND5E.CreatureBeast",
-  celestial: "DND5E.CreatureCelestial",
-  construct: "DND5E.CreatureConstruct",
-  dragon: "DND5E.CreatureDragon",
-  elemental: "DND5E.CreatureElemental",
-  fey: "DND5E.CreatureFey",
-  fiend: "DND5E.CreatureFiend",
-  giant: "DND5E.CreatureGiant",
-  humanoid: "DND5E.CreatureHumanoid",
-  monstrosity: "DND5E.CreatureMonstrosity",
-  ooze: "DND5E.CreatureOoze",
-  plant: "DND5E.CreaturePlant",
-  undead: "DND5E.CreatureUndead"
+GENEFUNK2090.creatureTypes = {
+  aberration: "GENEFUNK2090.CreatureAberration",
+  beast: "GENEFUNK2090.CreatureBeast",
+  celestial: "GENEFUNK2090.CreatureCelestial",
+  construct: "GENEFUNK2090.CreatureConstruct",
+  dragon: "GENEFUNK2090.CreatureDragon",
+  elemental: "GENEFUNK2090.CreatureElemental",
+  fey: "GENEFUNK2090.CreatureFey",
+  fiend: "GENEFUNK2090.CreatureFiend",
+  giant: "GENEFUNK2090.CreatureGiant",
+  humanoid: "GENEFUNK2090.CreatureHumanoid",
+  monstrosity: "GENEFUNK2090.CreatureMonstrosity",
+  ooze: "GENEFUNK2090.CreatureOoze",
+  plant: "GENEFUNK2090.CreaturePlant",
+  undead: "GENEFUNK2090.CreatureUndead"
 };
 
 /* -------------------------------------------- */
@@ -503,16 +503,16 @@ DND5E.creatureTypes = {
  * Classification types for item action types.
  * @enum {string}
  */
-DND5E.itemActionTypes = {
-  mwak: "DND5E.ActionMWAK",
-  rwak: "DND5E.ActionRWAK",
-  msak: "DND5E.ActionMSAK",
-  rsak: "DND5E.ActionRSAK",
-  save: "DND5E.ActionSave",
-  heal: "DND5E.ActionHeal",
-  abil: "DND5E.ActionAbil",
-  util: "DND5E.ActionUtil",
-  other: "DND5E.ActionOther"
+GENEFUNK2090.itemActionTypes = {
+  mwak: "GENEFUNK2090.ActionMWAK",
+  rwak: "GENEFUNK2090.ActionRWAK",
+  msak: "GENEFUNK2090.ActionMSAK",
+  rsak: "GENEFUNK2090.ActionRSAK",
+  save: "GENEFUNK2090.ActionSave",
+  heal: "GENEFUNK2090.ActionHeal",
+  abil: "GENEFUNK2090.ActionAbil",
+  util: "GENEFUNK2090.ActionUtil",
+  other: "GENEFUNK2090.ActionOther"
 };
 preLocalize("itemActionTypes");
 
@@ -522,9 +522,9 @@ preLocalize("itemActionTypes");
  * Different ways in which item capacity can be limited.
  * @enum {string}
  */
-DND5E.itemCapacityTypes = {
-  items: "DND5E.ItemContainerCapacityItems",
-  weight: "DND5E.ItemContainerCapacityWeight"
+GENEFUNK2090.itemCapacityTypes = {
+  items: "GENEFUNK2090.ItemContainerCapacityItems",
+  weight: "GENEFUNK2090.ItemContainerCapacityWeight"
 };
 preLocalize("itemCapacityTypes", { sort: true });
 
@@ -534,13 +534,13 @@ preLocalize("itemCapacityTypes", { sort: true });
  * List of various item rarities.
  * @enum {string}
  */
-DND5E.itemRarity = {
-  common: "DND5E.ItemRarityCommon",
-  uncommon: "DND5E.ItemRarityUncommon",
-  rare: "DND5E.ItemRarityRare",
-  veryRare: "DND5E.ItemRarityVeryRare",
-  legendary: "DND5E.ItemRarityLegendary",
-  artifact: "DND5E.ItemRarityArtifact"
+GENEFUNK2090.itemRarity = {
+  common: "GENEFUNK2090.ItemRarityCommon",
+  uncommon: "GENEFUNK2090.ItemRarityUncommon",
+  rare: "GENEFUNK2090.ItemRarityRare",
+  veryRare: "GENEFUNK2090.ItemRarityVeryRare",
+  legendary: "GENEFUNK2090.ItemRarityLegendary",
+  artifact: "GENEFUNK2090.ItemRarityArtifact"
 };
 preLocalize("itemRarity");
 
@@ -550,10 +550,10 @@ preLocalize("itemRarity");
  * The limited use periods that support a recovery formula.
  * @enum {string}
  */
-DND5E.limitedUseFormulaPeriods = {
-  charges: "DND5E.Charges",
-  dawn: "DND5E.Dawn",
-  dusk: "DND5E.Dusk"
+GENEFUNK2090.limitedUseFormulaPeriods = {
+  charges: "GENEFUNK2090.Charges",
+  dawn: "GENEFUNK2090.Dawn",
+  dusk: "GENEFUNK2090.Dusk"
 };
 
 /* -------------------------------------------- */
@@ -562,11 +562,11 @@ DND5E.limitedUseFormulaPeriods = {
  * Enumerate the lengths of time over which an item can have limited use ability.
  * @enum {string}
  */
-DND5E.limitedUsePeriods = {
-  sr: "DND5E.ShortRest",
-  lr: "DND5E.LongRest",
-  day: "DND5E.Day",
-  ...DND5E.limitedUseFormulaPeriods
+GENEFUNK2090.limitedUsePeriods = {
+  sr: "GENEFUNK2090.ShortRest",
+  lr: "GENEFUNK2090.LongRest",
+  day: "GENEFUNK2090.Day",
+  ...GENEFUNK2090.limitedUseFormulaPeriods
 };
 preLocalize("limitedUsePeriods");
 
@@ -576,12 +576,12 @@ preLocalize("limitedUsePeriods");
  * Specific equipment types that modify base AC.
  * @enum {string}
  */
-DND5E.armorTypes = {
-  light: "DND5E.EquipmentLight",
-  medium: "DND5E.EquipmentMedium",
-  heavy: "DND5E.EquipmentHeavy",
-  natural: "DND5E.EquipmentNatural",
-  shield: "DND5E.EquipmentShield"
+GENEFUNK2090.armorTypes = {
+  light: "GENEFUNK2090.EquipmentLight",
+  medium: "GENEFUNK2090.EquipmentMedium",
+  heavy: "GENEFUNK2090.EquipmentHeavy",
+  natural: "GENEFUNK2090.EquipmentNatural",
+  shield: "GENEFUNK2090.EquipmentShield"
 };
 preLocalize("armorTypes");
 
@@ -591,10 +591,10 @@ preLocalize("armorTypes");
  * Equipment types that aren't armor.
  * @enum {string}
  */
-DND5E.miscEquipmentTypes = {
-  clothing: "DND5E.EquipmentClothing",
-  trinket: "DND5E.EquipmentTrinket",
-  vehicle: "DND5E.EquipmentVehicle"
+GENEFUNK2090.miscEquipmentTypes = {
+  clothing: "GENEFUNK2090.EquipmentClothing",
+  trinket: "GENEFUNK2090.EquipmentTrinket",
+  vehicle: "GENEFUNK2090.EquipmentVehicle"
 };
 preLocalize("miscEquipmentTypes", { sort: true });
 
@@ -604,9 +604,9 @@ preLocalize("miscEquipmentTypes", { sort: true });
  * The set of equipment types for armor, clothing, and other objects which can be worn by the character.
  * @enum {string}
  */
-DND5E.equipmentTypes = {
-  ...DND5E.miscEquipmentTypes,
-  ...DND5E.armorTypes
+GENEFUNK2090.equipmentTypes = {
+  ...GENEFUNK2090.miscEquipmentTypes,
+  ...GENEFUNK2090.armorTypes
 };
 preLocalize("equipmentTypes", { sort: true });
 
@@ -616,11 +616,11 @@ preLocalize("equipmentTypes", { sort: true });
  * The various types of vehicles in which characters can be proficient.
  * @enum {string}
  */
-DND5E.vehicleTypes = {
-  air: "DND5E.VehicleTypeAir",
-  land: "DND5E.VehicleTypeLand",
-  space: "DND5E.VehicleTypeSpace",
-  water: "DND5E.VehicleTypeWater"
+GENEFUNK2090.vehicleTypes = {
+  air: "GENEFUNK2090.VehicleTypeAir",
+  land: "GENEFUNK2090.VehicleTypeLand",
+  space: "GENEFUNK2090.VehicleTypeSpace",
+  water: "GENEFUNK2090.VehicleTypeWater"
 };
 preLocalize("vehicleTypes", { sort: true });
 
@@ -630,20 +630,20 @@ preLocalize("vehicleTypes", { sort: true });
  * The set of Armor Proficiencies which a character may have.
  * @type {object}
  */
-DND5E.armorProficiencies = {
-  lgt: DND5E.equipmentTypes.light,
-  med: DND5E.equipmentTypes.medium,
-  hvy: DND5E.equipmentTypes.heavy,
-  shl: "DND5E.EquipmentShieldProficiency"
+GENEFUNK2090.armorProficiencies = {
+  lgt: GENEFUNK2090.equipmentTypes.light,
+  med: GENEFUNK2090.equipmentTypes.medium,
+  hvy: GENEFUNK2090.equipmentTypes.heavy,
+  shl: "GENEFUNK2090.EquipmentShieldProficiency"
 };
 preLocalize("armorProficiencies");
 
 /**
- * A mapping between `DND5E.equipmentTypes` and `DND5E.armorProficiencies` that
+ * A mapping between `GENEFUNK2090.equipmentTypes` and `GENEFUNK2090.armorProficiencies` that
  * is used to determine if character has proficiency when adding an item.
  * @enum {(boolean|string)}
  */
-DND5E.armorProficienciesMap = {
+GENEFUNK2090.armorProficienciesMap = {
   natural: true,
   clothing: true,
   light: "lgt",
@@ -657,7 +657,7 @@ DND5E.armorProficienciesMap = {
  * automated AC calculation in NPCs, and starting equipment.
  * @enum {string}
  */
-DND5E.armorIds = {
+GENEFUNK2090.armorIds = {
   breastplate: "SK2HATQ4abKUlV8i",
   chainmail: "rLMflzmxpe8JGTOA",
   chainshirt: "p2zChy24ZJdVqMSH",
@@ -676,7 +676,7 @@ DND5E.armorIds = {
  * The basic shield in 5e.
  * @enum {string}
  */
-DND5E.shieldIds = {
+GENEFUNK2090.shieldIds = {
   shield: "sSs3hSzkKBMNBgTs"
 };
 
@@ -684,37 +684,37 @@ DND5E.shieldIds = {
  * Common armor class calculations.
  * @enum {{ label: string, [formula]: string }}
  */
-DND5E.armorClasses = {
+GENEFUNK2090.armorClasses = {
   flat: {
-    label: "DND5E.ArmorClassFlat",
+    label: "GENEFUNK2090.ArmorClassFlat",
     formula: "@attributes.ac.flat"
   },
   natural: {
-    label: "DND5E.ArmorClassNatural",
+    label: "GENEFUNK2090.ArmorClassNatural",
     formula: "@attributes.ac.flat"
   },
   default: {
-    label: "DND5E.ArmorClassEquipment",
+    label: "GENEFUNK2090.ArmorClassEquipment",
     formula: "@attributes.ac.armor + @attributes.ac.dex"
   },
   mage: {
-    label: "DND5E.ArmorClassMage",
+    label: "GENEFUNK2090.ArmorClassMage",
     formula: "13 + @abilities.dex.mod"
   },
   draconic: {
-    label: "DND5E.ArmorClassDraconic",
+    label: "GENEFUNK2090.ArmorClassDraconic",
     formula: "13 + @abilities.dex.mod"
   },
   unarmoredMonk: {
-    label: "DND5E.ArmorClassUnarmoredMonk",
+    label: "GENEFUNK2090.ArmorClassUnarmoredMonk",
     formula: "10 + @abilities.dex.mod + @abilities.wis.mod"
   },
   unarmoredBarb: {
-    label: "DND5E.ArmorClassUnarmoredBarbarian",
+    label: "GENEFUNK2090.ArmorClassUnarmoredBarbarian",
     formula: "10 + @abilities.dex.mod + @abilities.con.mod"
   },
   custom: {
-    label: "DND5E.ArmorClassCustom"
+    label: "GENEFUNK2090.ArmorClassCustom"
   }
 };
 preLocalize("armorClasses", { key: "label" });
@@ -725,15 +725,15 @@ preLocalize("armorClasses", { key: "label" });
  * Enumerate the valid consumable types which are recognized by the system.
  * @enum {string}
  */
-DND5E.consumableTypes = {
-  ammo: "DND5E.ConsumableAmmo",
-  potion: "DND5E.ConsumablePotion",
-  poison: "DND5E.ConsumablePoison",
-  food: "DND5E.ConsumableFood",
-  scroll: "DND5E.ConsumableScroll",
-  wand: "DND5E.ConsumableWand",
-  rod: "DND5E.ConsumableRod",
-  trinket: "DND5E.ConsumableTrinket"
+GENEFUNK2090.consumableTypes = {
+  ammo: "GENEFUNK2090.ConsumableAmmo",
+  potion: "GENEFUNK2090.ConsumablePotion",
+  poison: "GENEFUNK2090.ConsumablePoison",
+  food: "GENEFUNK2090.ConsumableFood",
+  scroll: "GENEFUNK2090.ConsumableScroll",
+  wand: "GENEFUNK2090.ConsumableWand",
+  rod: "GENEFUNK2090.ConsumableRod",
+  trinket: "GENEFUNK2090.ConsumableTrinket"
 };
 preLocalize("consumableTypes", { sort: true });
 
@@ -743,7 +743,7 @@ preLocalize("consumableTypes", { sort: true });
  * Types of containers.
  * @enum {string}
  */
-DND5E.containerTypes = {
+GENEFUNK2090.containerTypes = {
   backpack: "H8YCd689ezlD26aT",
   barrel: "7Yqbqg5EtVW16wfT",
   basket: "Wv7HzD6dv1P0q78N",
@@ -778,9 +778,9 @@ DND5E.containerTypes = {
  * Type of spellcasting foci.
  * @enum {SpellcastingFocusConfiguration}
  */
-DND5E.focusTypes = {
+GENEFUNK2090.focusTypes = {
   arcane: {
-    label: "DND5E.Focus.Arcane",
+    label: "GENEFUNK2090.Focus.Arcane",
     itemIds: {
       crystal: "uXOT4fYbgPY8DGdd",
       orb: "tH5Rn0JVRG1zdmPa",
@@ -790,7 +790,7 @@ DND5E.focusTypes = {
     }
   },
   druidic: {
-    label: "DND5E.Focus.Druidic",
+    label: "GENEFUNK2090.Focus.Druidic",
     itemIds: {
       mistletoe: "xDK9GQd2iqOGH8Sd",
       totem: "PGL6aaM0wE5h0VN5",
@@ -799,7 +799,7 @@ DND5E.focusTypes = {
     }
   },
   holy: {
-    label: "DND5E.Focus.Holy",
+    label: "GENEFUNK2090.Focus.Holy",
     itemIds: {
       amulet: "paqlMjggWkBIAeCe",
       emblem: "laVqttkGMW4B9654",
@@ -822,39 +822,39 @@ DND5E.focusTypes = {
  * Types of "features" items.
  * @enum {FeatureTypeConfiguration}
  */
-DND5E.featureTypes = {
+GENEFUNK2090.featureTypes = {
   background: {
-    label: "DND5E.Feature.Background"
+    label: "GENEFUNK2090.Feature.Background"
   },
   class: {
-    label: "DND5E.Feature.Class",
+    label: "GENEFUNK2090.Feature.Class",
     subtypes: {
-      arcaneShot: "DND5E.ClassFeature.ArcaneShot",
-      artificerInfusion: "DND5E.ClassFeature.ArtificerInfusion",
-      channelDivinity: "DND5E.ClassFeature.ChannelDivinity",
-      defensiveTactic: "DND5E.ClassFeature.DefensiveTactic",
-      eldritchInvocation: "DND5E.ClassFeature.EldritchInvocation",
-      elementalDiscipline: "DND5E.ClassFeature.ElementalDiscipline",
-      fightingStyle: "DND5E.ClassFeature.FightingStyle",
-      huntersPrey: "DND5E.ClassFeature.HuntersPrey",
-      ki: "DND5E.ClassFeature.Ki",
-      maneuver: "DND5E.ClassFeature.Maneuver",
-      metamagic: "DND5E.ClassFeature.Metamagic",
-      multiattack: "DND5E.ClassFeature.Multiattack",
-      pact: "DND5E.ClassFeature.PactBoon",
-      psionicPower: "DND5E.ClassFeature.PsionicPower",
-      rune: "DND5E.ClassFeature.Rune",
-      superiorHuntersDefense: "DND5E.ClassFeature.SuperiorHuntersDefense"
+      arcaneShot: "GENEFUNK2090.ClassFeature.ArcaneShot",
+      artificerInfusion: "GENEFUNK2090.ClassFeature.ArtificerInfusion",
+      channelDivinity: "GENEFUNK2090.ClassFeature.ChannelDivinity",
+      defensiveTactic: "GENEFUNK2090.ClassFeature.DefensiveTactic",
+      eldritchInvocation: "GENEFUNK2090.ClassFeature.EldritchInvocation",
+      elementalDiscipline: "GENEFUNK2090.ClassFeature.ElementalDiscipline",
+      fightingStyle: "GENEFUNK2090.ClassFeature.FightingStyle",
+      huntersPrey: "GENEFUNK2090.ClassFeature.HuntersPrey",
+      ki: "GENEFUNK2090.ClassFeature.Ki",
+      maneuver: "GENEFUNK2090.ClassFeature.Maneuver",
+      metamagic: "GENEFUNK2090.ClassFeature.Metamagic",
+      multiattack: "GENEFUNK2090.ClassFeature.Multiattack",
+      pact: "GENEFUNK2090.ClassFeature.PactBoon",
+      psionicPower: "GENEFUNK2090.ClassFeature.PsionicPower",
+      rune: "GENEFUNK2090.ClassFeature.Rune",
+      superiorHuntersDefense: "GENEFUNK2090.ClassFeature.SuperiorHuntersDefense"
     }
   },
   monster: {
-    label: "DND5E.Feature.Monster"
+    label: "GENEFUNK2090.Feature.Monster"
   },
   race: {
-    label: "DND5E.Feature.Race"
+    label: "GENEFUNK2090.Feature.Race"
   },
   feat: {
-    label: "DND5E.Feature.Feat"
+    label: "GENEFUNK2090.Feature.Feat"
   }
 };
 preLocalize("featureTypes", { key: "label" });
@@ -873,27 +873,27 @@ preLocalize("featureTypes.class.subtypes", { sort: true });
  * Types of "loot" items.
  * @enum {LootTypeConfiguration}
  */
-DND5E.lootTypes = {
+GENEFUNK2090.lootTypes = {
   art: {
-    label: "DND5E.Loot.Art"
+    label: "GENEFUNK2090.Loot.Art"
   },
   gear: {
-    label: "DND5E.Loot.Gear"
+    label: "GENEFUNK2090.Loot.Gear"
   },
   gem: {
-    label: "DND5E.Loot.Gem"
+    label: "GENEFUNK2090.Loot.Gem"
   },
   junk: {
-    label: "DND5E.Loot.Junk"
+    label: "GENEFUNK2090.Loot.Junk"
   },
   material: {
-    label: "DND5E.Loot.Material"
+    label: "GENEFUNK2090.Loot.Material"
   },
   resource: {
-    label: "DND5E.Loot.Resource"
+    label: "GENEFUNK2090.Loot.Resource"
   },
   treasure: {
-    label: "DND5E.Loot.Treasure"
+    label: "GENEFUNK2090.Loot.Treasure"
   }
 };
 preLocalize("lootTypes", { key: "label" });
@@ -912,30 +912,30 @@ preLocalize("lootTypes", { key: "label" });
  * The conversion number defines how many of that currency are equal to one GP.
  * @enum {CurrencyConfiguration}
  */
-DND5E.currencies = {
+GENEFUNK2090.currencies = {
   pp: {
-    label: "DND5E.CurrencyPP",
-    abbreviation: "DND5E.CurrencyAbbrPP",
+    label: "GENEFUNK2090.CurrencyPP",
+    abbreviation: "GENEFUNK2090.CurrencyAbbrPP",
     conversion: 0.1
   },
   gp: {
-    label: "DND5E.CurrencyGP",
-    abbreviation: "DND5E.CurrencyAbbrGP",
+    label: "GENEFUNK2090.CurrencyGP",
+    abbreviation: "GENEFUNK2090.CurrencyAbbrGP",
     conversion: 1
   },
   ep: {
-    label: "DND5E.CurrencyEP",
-    abbreviation: "DND5E.CurrencyAbbrEP",
+    label: "GENEFUNK2090.CurrencyEP",
+    abbreviation: "GENEFUNK2090.CurrencyAbbrEP",
     conversion: 2
   },
   sp: {
-    label: "DND5E.CurrencySP",
-    abbreviation: "DND5E.CurrencyAbbrSP",
+    label: "GENEFUNK2090.CurrencySP",
+    abbreviation: "GENEFUNK2090.CurrencyAbbrSP",
     conversion: 10
   },
   cp: {
-    label: "DND5E.CurrencyCP",
-    abbreviation: "DND5E.CurrencyAbbrCP",
+    label: "GENEFUNK2090.CurrencyCP",
+    abbreviation: "GENEFUNK2090.CurrencyAbbrCP",
     conversion: 100
   }
 };
@@ -949,10 +949,10 @@ preLocalize("currencies", { keys: ["label", "abbreviation"] });
  * Types of damage that are considered physical.
  * @enum {string}
  */
-DND5E.physicalDamageTypes = {
-  bludgeoning: "DND5E.DamageBludgeoning",
-  piercing: "DND5E.DamagePiercing",
-  slashing: "DND5E.DamageSlashing"
+GENEFUNK2090.physicalDamageTypes = {
+  bludgeoning: "GENEFUNK2090.DamageBludgeoning",
+  piercing: "GENEFUNK2090.DamagePiercing",
+  slashing: "GENEFUNK2090.DamageSlashing"
 };
 preLocalize("physicalDamageTypes", { sort: true });
 
@@ -962,18 +962,18 @@ preLocalize("physicalDamageTypes", { sort: true });
  * Types of damage the can be caused by abilities.
  * @enum {string}
  */
-DND5E.damageTypes = {
-  ...DND5E.physicalDamageTypes,
-  acid: "DND5E.DamageAcid",
-  cold: "DND5E.DamageCold",
-  fire: "DND5E.DamageFire",
-  force: "DND5E.DamageForce",
-  lightning: "DND5E.DamageLightning",
-  necrotic: "DND5E.DamageNecrotic",
-  poison: "DND5E.DamagePoison",
-  psychic: "DND5E.DamagePsychic",
-  radiant: "DND5E.DamageRadiant",
-  thunder: "DND5E.DamageThunder"
+GENEFUNK2090.damageTypes = {
+  ...GENEFUNK2090.physicalDamageTypes,
+  acid: "GENEFUNK2090.DamageAcid",
+  cold: "GENEFUNK2090.DamageCold",
+  fire: "GENEFUNK2090.DamageFire",
+  force: "GENEFUNK2090.DamageForce",
+  lightning: "GENEFUNK2090.DamageLightning",
+  necrotic: "GENEFUNK2090.DamageNecrotic",
+  poison: "GENEFUNK2090.DamagePoison",
+  psychic: "GENEFUNK2090.DamagePsychic",
+  radiant: "GENEFUNK2090.DamageRadiant",
+  thunder: "GENEFUNK2090.DamageThunder"
 };
 preLocalize("damageTypes", { sort: true });
 
@@ -984,9 +984,9 @@ preLocalize("damageTypes", { sort: true });
  * @enum {string}
  * @deprecated
  */
-DND5E.damageResistanceTypes = {
-  ...DND5E.damageTypes,
-  physical: "DND5E.DamagePhysical"
+GENEFUNK2090.damageResistanceTypes = {
+  ...GENEFUNK2090.damageTypes,
+  physical: "GENEFUNK2090.DamagePhysical"
 };
 preLocalize("damageResistanceTypes", { sort: true });
 
@@ -998,9 +998,9 @@ preLocalize("damageResistanceTypes", { sort: true });
  * Different types of healing that can be applied using abilities.
  * @enum {string}
  */
-DND5E.healingTypes = {
-  healing: "DND5E.Healing",
-  temphp: "DND5E.HealingTemp"
+GENEFUNK2090.healingTypes = {
+  healing: "GENEFUNK2090.Healing",
+  temphp: "GENEFUNK2090.HealingTemp"
 };
 preLocalize("healingTypes");
 
@@ -1011,12 +1011,12 @@ preLocalize("healingTypes");
  * By default this uses the imperial units of feet and miles.
  * @enum {string}
  */
-DND5E.movementTypes = {
-  burrow: "DND5E.MovementBurrow",
-  climb: "DND5E.MovementClimb",
-  fly: "DND5E.MovementFly",
-  swim: "DND5E.MovementSwim",
-  walk: "DND5E.MovementWalk"
+GENEFUNK2090.movementTypes = {
+  burrow: "GENEFUNK2090.MovementBurrow",
+  climb: "GENEFUNK2090.MovementClimb",
+  fly: "GENEFUNK2090.MovementFly",
+  swim: "GENEFUNK2090.MovementSwim",
+  walk: "GENEFUNK2090.MovementWalk"
 };
 preLocalize("movementTypes", { sort: true });
 
@@ -1029,11 +1029,11 @@ preLocalize("movementTypes", { sort: true });
  * By default this uses the imperial units of feet and miles.
  * @enum {string}
  */
-DND5E.movementUnits = {
-  ft: "DND5E.DistFt",
-  mi: "DND5E.DistMi",
-  m: "DND5E.DistM",
-  km: "DND5E.DistKm"
+GENEFUNK2090.movementUnits = {
+  ft: "GENEFUNK2090.DistFt",
+  mi: "GENEFUNK2090.DistMi",
+  m: "GENEFUNK2090.DistM",
+  km: "GENEFUNK2090.DistKm"
 };
 preLocalize("movementUnits");
 
@@ -1043,24 +1043,24 @@ preLocalize("movementUnits");
  * The types of range that are used for measuring actions and effects.
  * @enum {string}
  */
-DND5E.rangeTypes = {
-  self: "DND5E.DistSelf",
-  touch: "DND5E.DistTouch",
-  spec: "DND5E.Special",
-  any: "DND5E.DistAny"
+GENEFUNK2090.rangeTypes = {
+  self: "GENEFUNK2090.DistSelf",
+  touch: "GENEFUNK2090.DistTouch",
+  spec: "GENEFUNK2090.Special",
+  any: "GENEFUNK2090.DistAny"
 };
 preLocalize("rangeTypes");
 
 /* -------------------------------------------- */
 
 /**
- * The valid units of measure for the range of an action or effect. A combination of `DND5E.movementUnits` and
- * `DND5E.rangeUnits`.
+ * The valid units of measure for the range of an action or effect. A combination of `GENEFUNK2090.movementUnits` and
+ * `GENEFUNK2090.rangeUnits`.
  * @enum {string}
  */
-DND5E.distanceUnits = {
-  ...DND5E.movementUnits,
-  ...DND5E.rangeTypes
+GENEFUNK2090.distanceUnits = {
+  ...GENEFUNK2090.movementUnits,
+  ...GENEFUNK2090.rangeTypes
 };
 preLocalize("distanceUnits");
 
@@ -1070,7 +1070,7 @@ preLocalize("distanceUnits");
  * Configure aspects of encumbrance calculation so that it could be configured by modules.
  * @enum {{ imperial: number, metric: number }}
  */
-DND5E.encumbrance = {
+GENEFUNK2090.encumbrance = {
   currencyPerWeight: {
     imperial: 50,
     metric: 110
@@ -1093,16 +1093,16 @@ DND5E.encumbrance = {
  * Targeting types that apply to one or more distinct targets.
  * @enum {string}
  */
-DND5E.individualTargetTypes = {
-  self: "DND5E.TargetSelf",
-  ally: "DND5E.TargetAlly",
-  enemy: "DND5E.TargetEnemy",
-  creature: "DND5E.TargetCreature",
-  object: "DND5E.TargetObject",
-  space: "DND5E.TargetSpace",
-  creatureOrObject: "DND5E.TargetCreatureOrObject",
-  any: "DND5E.TargetAny",
-  willing: "DND5E.TargetWilling"
+GENEFUNK2090.individualTargetTypes = {
+  self: "GENEFUNK2090.TargetSelf",
+  ally: "GENEFUNK2090.TargetAlly",
+  enemy: "GENEFUNK2090.TargetEnemy",
+  creature: "GENEFUNK2090.TargetCreature",
+  object: "GENEFUNK2090.TargetObject",
+  space: "GENEFUNK2090.TargetSpace",
+  creatureOrObject: "GENEFUNK2090.TargetCreatureOrObject",
+  any: "GENEFUNK2090.TargetAny",
+  willing: "GENEFUNK2090.TargetWilling"
 };
 preLocalize("individualTargetTypes");
 
@@ -1120,37 +1120,37 @@ preLocalize("individualTargetTypes");
  * Targeting types that cover an area.
  * @enum {AreaTargetDefinition}
  */
-DND5E.areaTargetTypes = {
+GENEFUNK2090.areaTargetTypes = {
   radius: {
-    label: "DND5E.TargetRadius",
+    label: "GENEFUNK2090.TargetRadius",
     template: "circle"
   },
   sphere: {
-    label: "DND5E.TargetSphere",
+    label: "GENEFUNK2090.TargetSphere",
     template: "circle"
   },
   cylinder: {
-    label: "DND5E.TargetCylinder",
+    label: "GENEFUNK2090.TargetCylinder",
     template: "circle"
   },
   cone: {
-    label: "DND5E.TargetCone",
+    label: "GENEFUNK2090.TargetCone",
     template: "cone"
   },
   square: {
-    label: "DND5E.TargetSquare",
+    label: "GENEFUNK2090.TargetSquare",
     template: "rect"
   },
   cube: {
-    label: "DND5E.TargetCube",
+    label: "GENEFUNK2090.TargetCube",
     template: "rect"
   },
   line: {
-    label: "DND5E.TargetLine",
+    label: "GENEFUNK2090.TargetLine",
     template: "ray"
   },
   wall: {
-    label: "DND5E.TargetWall",
+    label: "GENEFUNK2090.TargetWall",
     template: "ray"
   }
 };
@@ -1162,9 +1162,9 @@ preLocalize("areaTargetTypes", { key: "label", sort: true });
  * The types of single or area targets which can be applied to abilities.
  * @enum {string}
  */
-DND5E.targetTypes = {
-  ...DND5E.individualTargetTypes,
-  ...Object.fromEntries(Object.entries(DND5E.areaTargetTypes).map(([k, v]) => [k, v.label]))
+GENEFUNK2090.targetTypes = {
+  ...GENEFUNK2090.individualTargetTypes,
+  ...Object.fromEntries(Object.entries(GENEFUNK2090.areaTargetTypes).map(([k, v]) => [k, v.label]))
 };
 preLocalize("targetTypes", { sort: true });
 
@@ -1174,7 +1174,7 @@ preLocalize("targetTypes", { sort: true });
  * Denominations of hit dice which can apply to classes.
  * @type {string[]}
  */
-DND5E.hitDieTypes = ["d4", "d6", "d8", "d10", "d12"];
+GENEFUNK2090.hitDieTypes = ["d4", "d6", "d8", "d10", "d12"];
 
 /* -------------------------------------------- */
 
@@ -1182,11 +1182,11 @@ DND5E.hitDieTypes = ["d4", "d6", "d8", "d10", "d12"];
  * The set of possible sensory perception types which an Actor may have.
  * @enum {string}
  */
-DND5E.senses = {
-  blindsight: "DND5E.SenseBlindsight",
-  darkvision: "DND5E.SenseDarkvision",
-  tremorsense: "DND5E.SenseTremorsense",
-  truesight: "DND5E.SenseTruesight"
+GENEFUNK2090.senses = {
+  blindsight: "GENEFUNK2090.SenseBlindsight",
+  darkvision: "GENEFUNK2090.SenseDarkvision",
+  tremorsense: "GENEFUNK2090.SenseTremorsense",
+  truesight: "GENEFUNK2090.SenseTruesight"
 };
 preLocalize("senses", { sort: true });
 
@@ -1199,7 +1199,7 @@ preLocalize("senses", { sort: true });
  * The entries of this array represent the spell slot progression for a full spell-caster.
  * @type {number[][]}
  */
-DND5E.SPELL_SLOT_TABLE = [
+GENEFUNK2090.SPELL_SLOT_TABLE = [
   [2],
   [3],
   [4, 2],
@@ -1236,7 +1236,7 @@ DND5E.SPELL_SLOT_TABLE = [
  * Define the pact slot & level progression by pact caster level.
  * @enum {PactProgressionConfig}
  */
-DND5E.pactCastingProgression = {
+GENEFUNK2090.pactCastingProgression = {
   1: { slots: 1, level: 1 },
   2: { slots: 2, level: 1 },
   3: { slots: 2, level: 2 },
@@ -1252,22 +1252,22 @@ DND5E.pactCastingProgression = {
 /**
  * Various different ways a spell can be prepared.
  */
-DND5E.spellPreparationModes = {
-  prepared: "DND5E.SpellPrepPrepared",
-  pact: "DND5E.PactMagic",
-  always: "DND5E.SpellPrepAlways",
-  atwill: "DND5E.SpellPrepAtWill",
-  innate: "DND5E.SpellPrepInnate"
+GENEFUNK2090.spellPreparationModes = {
+  prepared: "GENEFUNK2090.SpellPrepPrepared",
+  pact: "GENEFUNK2090.PactMagic",
+  always: "GENEFUNK2090.SpellPrepAlways",
+  atwill: "GENEFUNK2090.SpellPrepAtWill",
+  innate: "GENEFUNK2090.SpellPrepInnate"
 };
 preLocalize("spellPreparationModes");
 
 /* -------------------------------------------- */
 
 /**
- * Subset of `DND5E.spellPreparationModes` that consume spell slots.
+ * Subset of `GENEFUNK2090.spellPreparationModes` that consume spell slots.
  * @type {string[]}
  */
-DND5E.spellUpcastModes = ["always", "pact", "prepared"];
+GENEFUNK2090.spellUpcastModes = ["always", "pact", "prepared"];
 
 /* -------------------------------------------- */
 
@@ -1292,31 +1292,31 @@ DND5E.spellUpcastModes = ["always", "pact", "prepared"];
  * Different spellcasting types and their progression.
  * @type {SpellcastingTypeConfiguration}
  */
-DND5E.spellcastingTypes = {
+GENEFUNK2090.spellcastingTypes = {
   leveled: {
-    label: "DND5E.SpellProgLeveled",
+    label: "GENEFUNK2090.SpellProgLeveled",
     progression: {
       full: {
-        label: "DND5E.SpellProgFull",
+        label: "GENEFUNK2090.SpellProgFull",
         divisor: 1
       },
       half: {
-        label: "DND5E.SpellProgHalf",
+        label: "GENEFUNK2090.SpellProgHalf",
         divisor: 2
       },
       third: {
-        label: "DND5E.SpellProgThird",
+        label: "GENEFUNK2090.SpellProgThird",
         divisor: 3
       },
       artificer: {
-        label: "DND5E.SpellProgArt",
+        label: "GENEFUNK2090.SpellProgArt",
         divisor: 2,
         roundUp: true
       }
     }
   },
   pact: {
-    label: "DND5E.SpellProgPact"
+    label: "GENEFUNK2090.SpellProgPact"
   }
 };
 preLocalize("spellcastingTypes", { key: "label", sort: true });
@@ -1328,13 +1328,13 @@ preLocalize("spellcastingTypes.leveled.progression", { key: "label" });
  * Ways in which a class can contribute to spellcasting levels.
  * @enum {string}
  */
-DND5E.spellProgression = {
-  none: "DND5E.SpellNone",
-  full: "DND5E.SpellProgFull",
-  half: "DND5E.SpellProgHalf",
-  third: "DND5E.SpellProgThird",
-  pact: "DND5E.SpellProgPact",
-  artificer: "DND5E.SpellProgArt"
+GENEFUNK2090.spellProgression = {
+  none: "GENEFUNK2090.SpellNone",
+  full: "GENEFUNK2090.SpellProgFull",
+  half: "GENEFUNK2090.SpellProgHalf",
+  third: "GENEFUNK2090.SpellProgThird",
+  pact: "GENEFUNK2090.SpellProgPact",
+  artificer: "GENEFUNK2090.SpellProgArt"
 };
 preLocalize("spellProgression", { key: "label" });
 
@@ -1344,17 +1344,17 @@ preLocalize("spellProgression", { key: "label" });
  * Valid spell levels.
  * @enum {string}
  */
-DND5E.spellLevels = {
-  0: "DND5E.SpellLevel0",
-  1: "DND5E.SpellLevel1",
-  2: "DND5E.SpellLevel2",
-  3: "DND5E.SpellLevel3",
-  4: "DND5E.SpellLevel4",
-  5: "DND5E.SpellLevel5",
-  6: "DND5E.SpellLevel6",
-  7: "DND5E.SpellLevel7",
-  8: "DND5E.SpellLevel8",
-  9: "DND5E.SpellLevel9"
+GENEFUNK2090.spellLevels = {
+  0: "GENEFUNK2090.SpellLevel0",
+  1: "GENEFUNK2090.SpellLevel1",
+  2: "GENEFUNK2090.SpellLevel2",
+  3: "GENEFUNK2090.SpellLevel3",
+  4: "GENEFUNK2090.SpellLevel4",
+  5: "GENEFUNK2090.SpellLevel5",
+  6: "GENEFUNK2090.SpellLevel6",
+  7: "GENEFUNK2090.SpellLevel7",
+  8: "GENEFUNK2090.SpellLevel8",
+  9: "GENEFUNK2090.SpellLevel9"
 };
 preLocalize("spellLevels");
 
@@ -1364,10 +1364,10 @@ preLocalize("spellLevels");
  * The available choices for how spell damage scaling may be computed.
  * @enum {string}
  */
-DND5E.spellScalingModes = {
-  none: "DND5E.SpellNone",
-  cantrip: "DND5E.SpellCantrip",
-  level: "DND5E.SpellLevel"
+GENEFUNK2090.spellScalingModes = {
+  none: "GENEFUNK2090.SpellNone",
+  cantrip: "GENEFUNK2090.SpellCantrip",
+  level: "GENEFUNK2090.SpellLevel"
 };
 preLocalize("spellScalingModes", { sort: true });
 
@@ -1377,18 +1377,18 @@ preLocalize("spellScalingModes", { sort: true });
  * Types of components that can be required when casting a spell.
  * @enum {object}
  */
-DND5E.spellComponents = {
+GENEFUNK2090.spellComponents = {
   vocal: {
-    label: "DND5E.ComponentVerbal",
-    abbr: "DND5E.ComponentVerbalAbbr"
+    label: "GENEFUNK2090.ComponentVerbal",
+    abbr: "GENEFUNK2090.ComponentVerbalAbbr"
   },
   somatic: {
-    label: "DND5E.ComponentSomatic",
-    abbr: "DND5E.ComponentSomaticAbbr"
+    label: "GENEFUNK2090.ComponentSomatic",
+    abbr: "GENEFUNK2090.ComponentSomaticAbbr"
   },
   material: {
-    label: "DND5E.ComponentMaterial",
-    abbr: "DND5E.ComponentMaterialAbbr"
+    label: "GENEFUNK2090.ComponentMaterial",
+    abbr: "GENEFUNK2090.ComponentMaterialAbbr"
   }
 };
 preLocalize("spellComponents", {keys: ["label", "abbr"]});
@@ -1399,14 +1399,14 @@ preLocalize("spellComponents", {keys: ["label", "abbr"]});
  * Supplementary rules keywords that inform a spell's use.
  * @enum {object}
  */
-DND5E.spellTags = {
+GENEFUNK2090.spellTags = {
   concentration: {
-    label: "DND5E.Concentration",
-    abbr: "DND5E.ConcentrationAbbr"
+    label: "GENEFUNK2090.Concentration",
+    abbr: "GENEFUNK2090.ConcentrationAbbr"
   },
   ritual: {
-    label: "DND5E.Ritual",
-    abbr: "DND5E.RitualAbbr"
+    label: "GENEFUNK2090.Ritual",
+    abbr: "GENEFUNK2090.RitualAbbr"
   }
 };
 preLocalize("spellTags", {keys: ["label", "abbr"]});
@@ -1417,25 +1417,25 @@ preLocalize("spellTags", {keys: ["label", "abbr"]});
  * Schools to which a spell can belong.
  * @enum {string}
  */
-DND5E.spellSchools = {
-  abj: "DND5E.SchoolAbj",
-  con: "DND5E.SchoolCon",
-  div: "DND5E.SchoolDiv",
-  enc: "DND5E.SchoolEnc",
-  evo: "DND5E.SchoolEvo",
-  ill: "DND5E.SchoolIll",
-  nec: "DND5E.SchoolNec",
-  trs: "DND5E.SchoolTrs"
+GENEFUNK2090.spellSchools = {
+  abj: "GENEFUNK2090.SchoolAbj",
+  con: "GENEFUNK2090.SchoolCon",
+  div: "GENEFUNK2090.SchoolDiv",
+  enc: "GENEFUNK2090.SchoolEnc",
+  evo: "GENEFUNK2090.SchoolEvo",
+  ill: "GENEFUNK2090.SchoolIll",
+  nec: "GENEFUNK2090.SchoolNec",
+  trs: "GENEFUNK2090.SchoolTrs"
 };
 preLocalize("spellSchools", { sort: true });
 
 /* -------------------------------------------- */
 
 /**
- * Spell scroll item ID within the `DND5E.sourcePacks` compendium for each level.
+ * Spell scroll item ID within the `GENEFUNK2090.sourcePacks` compendium for each level.
  * @enum {string}
  */
-DND5E.spellScrollIds = {
+GENEFUNK2090.spellScrollIds = {
   0: "rQ6sO7HDWzqMhSI3",
   1: "9GSfMg0VOA2b4uFN",
   2: "XdDp6CKh9qEvPTuS",
@@ -1456,14 +1456,14 @@ DND5E.spellScrollIds = {
  * The set of types which a weapon item can take.
  * @enum {string}
  */
-DND5E.weaponTypes = {
-  simpleM: "DND5E.WeaponSimpleM",
-  simpleR: "DND5E.WeaponSimpleR",
-  martialM: "DND5E.WeaponMartialM",
-  martialR: "DND5E.WeaponMartialR",
-  natural: "DND5E.WeaponNatural",
-  improv: "DND5E.WeaponImprov",
-  siege: "DND5E.WeaponSiege"
+GENEFUNK2090.weaponTypes = {
+  simpleM: "GENEFUNK2090.WeaponSimpleM",
+  simpleR: "GENEFUNK2090.WeaponSimpleR",
+  martialM: "GENEFUNK2090.WeaponMartialM",
+  martialR: "GENEFUNK2090.WeaponMartialR",
+  natural: "GENEFUNK2090.WeaponNatural",
+  improv: "GENEFUNK2090.WeaponImprov",
+  siege: "GENEFUNK2090.WeaponSiege"
 };
 preLocalize("weaponTypes");
 
@@ -1474,10 +1474,10 @@ preLocalize("weaponTypes");
  * These properties are used for determining physical resistance bypasses.
  * @enum {string}
  */
-DND5E.physicalWeaponProperties = {
-  ada: "DND5E.WeaponPropertiesAda",
-  mgc: "DND5E.WeaponPropertiesMgc",
-  sil: "DND5E.WeaponPropertiesSil"
+GENEFUNK2090.physicalWeaponProperties = {
+  ada: "GENEFUNK2090.WeaponPropertiesAda",
+  mgc: "GENEFUNK2090.WeaponPropertiesMgc",
+  sil: "GENEFUNK2090.WeaponPropertiesSil"
 };
 preLocalize("physicalWeaponProperties", { sort: true });
 
@@ -1487,22 +1487,22 @@ preLocalize("physicalWeaponProperties", { sort: true });
  * The set of weapon property flags which can exist on a weapon.
  * @enum {string}
  */
-DND5E.weaponProperties = {
-  ...DND5E.physicalWeaponProperties,
-  amm: "DND5E.WeaponPropertiesAmm",
-  fin: "DND5E.WeaponPropertiesFin",
-  fir: "DND5E.WeaponPropertiesFir",
-  foc: "DND5E.WeaponPropertiesFoc",
-  hvy: "DND5E.WeaponPropertiesHvy",
-  lgt: "DND5E.WeaponPropertiesLgt",
-  lod: "DND5E.WeaponPropertiesLod",
-  rch: "DND5E.WeaponPropertiesRch",
-  rel: "DND5E.WeaponPropertiesRel",
-  ret: "DND5E.WeaponPropertiesRet",
-  spc: "DND5E.WeaponPropertiesSpc",
-  thr: "DND5E.WeaponPropertiesThr",
-  two: "DND5E.WeaponPropertiesTwo",
-  ver: "DND5E.WeaponPropertiesVer"
+GENEFUNK2090.weaponProperties = {
+  ...GENEFUNK2090.physicalWeaponProperties,
+  amm: "GENEFUNK2090.WeaponPropertiesAmm",
+  fin: "GENEFUNK2090.WeaponPropertiesFin",
+  fir: "GENEFUNK2090.WeaponPropertiesFir",
+  foc: "GENEFUNK2090.WeaponPropertiesFoc",
+  hvy: "GENEFUNK2090.WeaponPropertiesHvy",
+  lgt: "GENEFUNK2090.WeaponPropertiesLgt",
+  lod: "GENEFUNK2090.WeaponPropertiesLod",
+  rch: "GENEFUNK2090.WeaponPropertiesRch",
+  rel: "GENEFUNK2090.WeaponPropertiesRel",
+  ret: "GENEFUNK2090.WeaponPropertiesRet",
+  spc: "GENEFUNK2090.WeaponPropertiesSpc",
+  thr: "GENEFUNK2090.WeaponPropertiesThr",
+  two: "GENEFUNK2090.WeaponPropertiesTwo",
+  ver: "GENEFUNK2090.WeaponPropertiesVer"
 };
 preLocalize("weaponProperties", { sort: true });
 
@@ -1512,7 +1512,7 @@ preLocalize("weaponProperties", { sort: true });
  * Compendium packs used for localized items.
  * @enum {string}
  */
-DND5E.sourcePacks = {
+GENEFUNK2090.sourcePacks = {
   ITEMS: "genefunk2090.items"
 };
 
@@ -1522,20 +1522,20 @@ DND5E.sourcePacks = {
  * Settings to configure how actors are merged when polymorphing is applied.
  * @enum {string}
  */
-DND5E.polymorphSettings = {
-  keepPhysical: "DND5E.PolymorphKeepPhysical",
-  keepMental: "DND5E.PolymorphKeepMental",
-  keepSaves: "DND5E.PolymorphKeepSaves",
-  keepSkills: "DND5E.PolymorphKeepSkills",
-  mergeSaves: "DND5E.PolymorphMergeSaves",
-  mergeSkills: "DND5E.PolymorphMergeSkills",
-  keepClass: "DND5E.PolymorphKeepClass",
-  keepFeats: "DND5E.PolymorphKeepFeats",
-  keepSpells: "DND5E.PolymorphKeepSpells",
-  keepItems: "DND5E.PolymorphKeepItems",
-  keepBio: "DND5E.PolymorphKeepBio",
-  keepVision: "DND5E.PolymorphKeepVision",
-  keepSelf: "DND5E.PolymorphKeepSelf"
+GENEFUNK2090.polymorphSettings = {
+  keepPhysical: "GENEFUNK2090.PolymorphKeepPhysical",
+  keepMental: "GENEFUNK2090.PolymorphKeepMental",
+  keepSaves: "GENEFUNK2090.PolymorphKeepSaves",
+  keepSkills: "GENEFUNK2090.PolymorphKeepSkills",
+  mergeSaves: "GENEFUNK2090.PolymorphMergeSaves",
+  mergeSkills: "GENEFUNK2090.PolymorphMergeSkills",
+  keepClass: "GENEFUNK2090.PolymorphKeepClass",
+  keepFeats: "GENEFUNK2090.PolymorphKeepFeats",
+  keepSpells: "GENEFUNK2090.PolymorphKeepSpells",
+  keepItems: "GENEFUNK2090.PolymorphKeepItems",
+  keepBio: "GENEFUNK2090.PolymorphKeepBio",
+  keepVision: "GENEFUNK2090.PolymorphKeepVision",
+  keepSelf: "GENEFUNK2090.PolymorphKeepSelf"
 };
 preLocalize("polymorphSettings", { sort: true });
 
@@ -1543,15 +1543,15 @@ preLocalize("polymorphSettings", { sort: true });
  * Settings to configure how actors are effects are merged when polymorphing is applied.
  * @enum {string}
  */
-DND5E.polymorphEffectSettings = {
-  keepAE: "DND5E.PolymorphKeepAE",
-  keepOtherOriginAE: "DND5E.PolymorphKeepOtherOriginAE",
-  keepOriginAE: "DND5E.PolymorphKeepOriginAE",
-  keepEquipmentAE: "DND5E.PolymorphKeepEquipmentAE",
-  keepFeatAE: "DND5E.PolymorphKeepFeatureAE",
-  keepSpellAE: "DND5E.PolymorphKeepSpellAE",
-  keepClassAE: "DND5E.PolymorphKeepClassAE",
-  keepBackgroundAE: "DND5E.PolymorphKeepBackgroundAE"
+GENEFUNK2090.polymorphEffectSettings = {
+  keepAE: "GENEFUNK2090.PolymorphKeepAE",
+  keepOtherOriginAE: "GENEFUNK2090.PolymorphKeepOtherOriginAE",
+  keepOriginAE: "GENEFUNK2090.PolymorphKeepOriginAE",
+  keepEquipmentAE: "GENEFUNK2090.PolymorphKeepEquipmentAE",
+  keepFeatAE: "GENEFUNK2090.PolymorphKeepFeatureAE",
+  keepSpellAE: "GENEFUNK2090.PolymorphKeepSpellAE",
+  keepClassAE: "GENEFUNK2090.PolymorphKeepClassAE",
+  keepBackgroundAE: "GENEFUNK2090.PolymorphKeepBackgroundAE"
 };
 preLocalize("polymorphEffectSettings", { sort: true });
 
@@ -1559,10 +1559,10 @@ preLocalize("polymorphEffectSettings", { sort: true });
  * Settings to configure how actors are merged when preset polymorphing is applied.
  * @enum {object}
  */
-DND5E.transformationPresets = {
+GENEFUNK2090.transformationPresets = {
   wildshape: {
     icon: '<i class="fas fa-paw"></i>',
-    label: "DND5E.PolymorphWildShape",
+    label: "GENEFUNK2090.PolymorphWildShape",
     options: {
       keepBio: true,
       keepClass: true,
@@ -1574,7 +1574,7 @@ DND5E.transformationPresets = {
   },
   polymorph: {
     icon: '<i class="fas fa-pastafarianism"></i>',
-    label: "DND5E.Polymorph",
+    label: "GENEFUNK2090.Polymorph",
     options: {
       keepEquipmentAE: false,
       keepClassAE: false,
@@ -1584,7 +1584,7 @@ DND5E.transformationPresets = {
   },
   polymorphSelf: {
     icon: '<i class="fas fa-eye"></i>',
-    label: "DND5E.PolymorphSelf",
+    label: "GENEFUNK2090.PolymorphSelf",
     options: {
       keepSelf: true
     }
@@ -1599,11 +1599,11 @@ preLocalize("transformationPresets", { sort: true, keys: ["label"] });
  * The key for each level represents its proficiency multiplier.
  * @enum {string}
  */
-DND5E.proficiencyLevels = {
-  0: "DND5E.NotProficient",
-  1: "DND5E.Proficient",
-  0.5: "DND5E.HalfProficient",
-  2: "DND5E.Expertise"
+GENEFUNK2090.proficiencyLevels = {
+  0: "GENEFUNK2090.NotProficient",
+  1: "GENEFUNK2090.Proficient",
+  0.5: "GENEFUNK2090.HalfProficient",
+  2: "GENEFUNK2090.Expertise"
 };
 preLocalize("proficiencyLevels");
 
@@ -1613,9 +1613,9 @@ preLocalize("proficiencyLevels");
  * Weapon and armor item proficiency levels.
  * @enum {string}
  */
-DND5E.weaponAndArmorProficiencyLevels = {
-  0: "DND5E.NotProficient",
-  1: "DND5E.Proficient"
+GENEFUNK2090.weaponAndArmorProficiencyLevels = {
+  0: "GENEFUNK2090.NotProficient",
+  1: "GENEFUNK2090.Proficient"
 };
 preLocalize("weaponAndArmorProficiencyLevels");
 
@@ -1626,11 +1626,11 @@ preLocalize("weaponAndArmorProficiencyLevels");
  * of cover are in play, we take the highest value.
  * @enum {string}
  */
-DND5E.cover = {
-  0: "DND5E.None",
-  .5: "DND5E.CoverHalf",
-  .75: "DND5E.CoverThreeQuarters",
-  1: "DND5E.CoverTotal"
+GENEFUNK2090.cover = {
+  0: "GENEFUNK2090.None",
+  .5: "GENEFUNK2090.CoverHalf",
+  .75: "GENEFUNK2090.CoverThreeQuarters",
+  1: "GENEFUNK2090.CoverTotal"
 };
 preLocalize("cover");
 
@@ -1641,7 +1641,7 @@ preLocalize("cover");
  * @type {string[]}
  * @deprecated since v10
  */
-DND5E.trackableAttributes = [
+GENEFUNK2090.trackableAttributes = [
   "attributes.ac.value", "attributes.init.bonus", "attributes.movement", "attributes.senses", "attributes.spelldc",
   "attributes.spellLevel", "details.cr", "details.spellLevel", "details.xp.value", "skills.*.passive",
   "abilities.*.value"
@@ -1653,7 +1653,7 @@ DND5E.trackableAttributes = [
  * A selection of actor and item attributes that are valid targets for item resource consumption.
  * @type {string[]}
  */
-DND5E.consumableResources = [
+GENEFUNK2090.consumableResources = [
   // Configured during init.
 ];
 
@@ -1663,23 +1663,23 @@ DND5E.consumableResources = [
  * Conditions that can affect an actor.
  * @enum {string}
  */
-DND5E.conditionTypes = {
-  blinded: "DND5E.ConBlinded",
-  charmed: "DND5E.ConCharmed",
-  deafened: "DND5E.ConDeafened",
-  diseased: "DND5E.ConDiseased",
-  exhaustion: "DND5E.ConExhaustion",
-  frightened: "DND5E.ConFrightened",
-  grappled: "DND5E.ConGrappled",
-  incapacitated: "DND5E.ConIncapacitated",
-  invisible: "DND5E.ConInvisible",
-  paralyzed: "DND5E.ConParalyzed",
-  petrified: "DND5E.ConPetrified",
-  poisoned: "DND5E.ConPoisoned",
-  prone: "DND5E.ConProne",
-  restrained: "DND5E.ConRestrained",
-  stunned: "DND5E.ConStunned",
-  unconscious: "DND5E.ConUnconscious"
+GENEFUNK2090.conditionTypes = {
+  blinded: "GENEFUNK2090.ConBlinded",
+  charmed: "GENEFUNK2090.ConCharmed",
+  deafened: "GENEFUNK2090.ConDeafened",
+  diseased: "GENEFUNK2090.ConDiseased",
+  exhaustion: "GENEFUNK2090.ConExhaustion",
+  frightened: "GENEFUNK2090.ConFrightened",
+  grappled: "GENEFUNK2090.ConGrappled",
+  incapacitated: "GENEFUNK2090.ConIncapacitated",
+  invisible: "GENEFUNK2090.ConInvisible",
+  paralyzed: "GENEFUNK2090.ConParalyzed",
+  petrified: "GENEFUNK2090.ConPetrified",
+  poisoned: "GENEFUNK2090.ConPoisoned",
+  prone: "GENEFUNK2090.ConProne",
+  restrained: "GENEFUNK2090.ConRestrained",
+  stunned: "GENEFUNK2090.ConStunned",
+  unconscious: "GENEFUNK2090.ConUnconscious"
 };
 preLocalize("conditionTypes", { sort: true });
 
@@ -1691,46 +1691,46 @@ preLocalize("conditionTypes", { sort: true });
  * Languages a character can learn.
  * @enum {string}
  */
-DND5E.languages = {
+GENEFUNK2090.languages = {
   standard: {
-    label: "DND5E.LanguagesStandard",
+    label: "GENEFUNK2090.LanguagesStandard",
     children: {
-      common: "DND5E.LanguagesCommon",
-      dwarvish: "DND5E.LanguagesDwarvish",
-      elvish: "DND5E.LanguagesElvish",
-      giant: "DND5E.LanguagesGiant",
-      gnomish: "DND5E.LanguagesGnomish",
-      goblin: "DND5E.LanguagesGoblin",
-      halfling: "DND5E.LanguagesHalfling",
-      orc: "DND5E.LanguagesOrc"
+      common: "GENEFUNK2090.LanguagesCommon",
+      dwarvish: "GENEFUNK2090.LanguagesDwarvish",
+      elvish: "GENEFUNK2090.LanguagesElvish",
+      giant: "GENEFUNK2090.LanguagesGiant",
+      gnomish: "GENEFUNK2090.LanguagesGnomish",
+      goblin: "GENEFUNK2090.LanguagesGoblin",
+      halfling: "GENEFUNK2090.LanguagesHalfling",
+      orc: "GENEFUNK2090.LanguagesOrc"
     }
   },
   exotic: {
-    label: "DND5E.LanguagesExotic",
+    label: "GENEFUNK2090.LanguagesExotic",
     children: {
-      aarakocra: "DND5E.LanguagesAarakocra",
-      abyssal: "DND5E.LanguagesAbyssal",
-      celestial: "DND5E.LanguagesCelestial",
-      deep: "DND5E.LanguagesDeepSpeech",
-      draconic: "DND5E.LanguagesDraconic",
-      gith: "DND5E.LanguagesGith",
-      gnoll: "DND5E.LanguagesGnoll",
-      infernal: "DND5E.LanguagesInfernal",
+      aarakocra: "GENEFUNK2090.LanguagesAarakocra",
+      abyssal: "GENEFUNK2090.LanguagesAbyssal",
+      celestial: "GENEFUNK2090.LanguagesCelestial",
+      deep: "GENEFUNK2090.LanguagesDeepSpeech",
+      draconic: "GENEFUNK2090.LanguagesDraconic",
+      gith: "GENEFUNK2090.LanguagesGith",
+      gnoll: "GENEFUNK2090.LanguagesGnoll",
+      infernal: "GENEFUNK2090.LanguagesInfernal",
       primordial: {
-        label: "DND5E.LanguagesPrimordial",
+        label: "GENEFUNK2090.LanguagesPrimordial",
         children: {
-          aquan: "DND5E.LanguagesAquan",
-          auran: "DND5E.LanguagesAuran",
-          ignan: "DND5E.LanguagesIgnan",
-          terran: "DND5E.LanguagesTerran"
+          aquan: "GENEFUNK2090.LanguagesAquan",
+          auran: "GENEFUNK2090.LanguagesAuran",
+          ignan: "GENEFUNK2090.LanguagesIgnan",
+          terran: "GENEFUNK2090.LanguagesTerran"
         }
       },
-      sylvan: "DND5E.LanguagesSylvan",
-      undercommon: "DND5E.LanguagesUndercommon"
+      sylvan: "GENEFUNK2090.LanguagesSylvan",
+      undercommon: "GENEFUNK2090.LanguagesUndercommon"
     }
   },
-  cant: "DND5E.LanguagesThievesCant",
-  druidic: "DND5E.LanguagesDruidic"
+  cant: "GENEFUNK2090.LanguagesThievesCant",
+  druidic: "GENEFUNK2090.LanguagesDruidic"
 };
 preLocalize("languages", { key: "label" });
 preLocalize("languages.standard.children", { sort: true });
@@ -1744,19 +1744,19 @@ patchConfig("languages", "label", { since: "GeneFunk2090 2.4", until: "GeneFunk2
  * Maximum allowed character level.
  * @type {number}
  */
-DND5E.maxLevel = 20;
+GENEFUNK2090.maxLevel = 20;
 
 /**
  * Maximum ability score value allowed by default.
  * @type {number}
  */
-DND5E.maxAbilityScore = 20;
+GENEFUNK2090.maxAbilityScore = 20;
 
 /**
  * XP required to achieve each character level.
  * @type {number[]}
  */
-DND5E.CHARACTER_EXP_LEVELS = [
+GENEFUNK2090.CHARACTER_EXP_LEVELS = [
   0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000,
   120000, 140000, 165000, 195000, 225000, 265000, 305000, 355000
 ];
@@ -1765,7 +1765,7 @@ DND5E.CHARACTER_EXP_LEVELS = [
  * XP granted for each challenge rating.
  * @type {number[]}
  */
-DND5E.CR_EXP_LEVELS = [
+GENEFUNK2090.CR_EXP_LEVELS = [
   10, 200, 450, 700, 1100, 1800, 2300, 2900, 3900, 5000, 5900, 7200, 8400, 10000, 11500, 13000, 15000, 18000,
   20000, 22000, 25000, 33000, 41000, 50000, 62000, 75000, 90000, 105000, 120000, 135000, 155000
 ];
@@ -1796,11 +1796,11 @@ DND5E.CR_EXP_LEVELS = [
  * @property {string} [actorKeyPath]       If the trait doesn't directly map to an entry as `traits.[key]`, where is
  *                                         this trait's data stored on the actor?
  * @property {string} [configKey]          If the list of trait options doesn't match the name of the trait, where can
- *                                         the options be found within `CONFIG.DND5E`?
+ *                                         the options be found within `CONFIG.GENEFUNK2090`?
  * @property {string} [labelKeyPath]       If config is an enum of objects, where can the label be found?
  * @property {object} [subtypes]           Configuration for traits that take some sort of base item.
  * @property {string} [subtypes.keyPath]   Path to subtype value on base items, should match a category key.
- * @property {string[]} [subtypes.ids]     Key for base item ID objects within `CONFIG.DND5E`.
+ * @property {string[]} [subtypes.ids]     Key for base item ID objects within `CONFIG.GENEFUNK2090`.
  * @property {object} [children]           Mapping of category key to an object defining its children.
  * @property {boolean} [sortCategories]    Whether top-level categories should be sorted.
  * @property {boolean} [expertise]         Can an actor receive expertise in this trait?
@@ -1810,11 +1810,11 @@ DND5E.CR_EXP_LEVELS = [
  * Configurable traits on actors.
  * @enum {TraitConfiguration}
  */
-DND5E.traits = {
+GENEFUNK2090.traits = {
   saves: {
     labels: {
-      title: "DND5E.ClassSaves",
-      localization: "DND5E.TraitSavesPlural"
+      title: "GENEFUNK2090.ClassSaves",
+      localization: "GENEFUNK2090.TraitSavesPlural"
     },
     icon: "systems/genefunk2090/icons/svg/trait-saves.svg",
     actorKeyPath: "system.abilities",
@@ -1823,8 +1823,8 @@ DND5E.traits = {
   },
   skills: {
     labels: {
-      title: "DND5E.Skills",
-      localization: "DND5E.TraitSkillsPlural"
+      title: "GENEFUNK2090.Skills",
+      localization: "GENEFUNK2090.TraitSkillsPlural"
     },
     icon: "systems/genefunk2090/icons/svg/trait-skills.svg",
     actorKeyPath: "system.skills",
@@ -1833,15 +1833,15 @@ DND5E.traits = {
   },
   languages: {
     labels: {
-      title: "DND5E.Languages",
-      localization: "DND5E.TraitLanguagesPlural"
+      title: "GENEFUNK2090.Languages",
+      localization: "GENEFUNK2090.TraitLanguagesPlural"
     },
     icon: "systems/genefunk2090/icons/svg/trait-languages.svg"
   },
   armor: {
     labels: {
-      title: "DND5E.TraitArmorProf",
-      localization: "DND5E.TraitArmorPlural"
+      title: "GENEFUNK2090.TraitArmorProf",
+      localization: "GENEFUNK2090.TraitArmorPlural"
     },
     icon: "systems/genefunk2090/icons/svg/trait-armor-proficiencies.svg",
     actorKeyPath: "system.traits.armorProf",
@@ -1850,8 +1850,8 @@ DND5E.traits = {
   },
   weapon: {
     labels: {
-      title: "DND5E.TraitWeaponProf",
-      localization: "DND5E.TraitWeaponPlural"
+      title: "GENEFUNK2090.TraitWeaponProf",
+      localization: "GENEFUNK2090.TraitWeaponPlural"
     },
     icon: "systems/genefunk2090/icons/svg/trait-weapon-proficiencies.svg",
     actorKeyPath: "system.traits.weaponProf",
@@ -1860,8 +1860,8 @@ DND5E.traits = {
   },
   tool: {
     labels: {
-      title: "DND5E.TraitToolProf",
-      localization: "DND5E.TraitToolPlural"
+      title: "GENEFUNK2090.TraitToolProf",
+      localization: "GENEFUNK2090.TraitToolPlural"
     },
     icon: "systems/genefunk2090/icons/svg/trait-tool-proficiencies.svg",
     actorKeyPath: "system.tools",
@@ -1873,32 +1873,32 @@ DND5E.traits = {
   },
   di: {
     labels: {
-      title: "DND5E.DamImm",
-      localization: "DND5E.TraitDIPlural"
+      title: "GENEFUNK2090.DamImm",
+      localization: "GENEFUNK2090.TraitDIPlural"
     },
     icon: "systems/genefunk2090/icons/svg/trait-damage-immunities.svg",
     configKey: "damageTypes"
   },
   dr: {
     labels: {
-      title: "DND5E.DamRes",
-      localization: "DND5E.TraitDRPlural"
+      title: "GENEFUNK2090.DamRes",
+      localization: "GENEFUNK2090.TraitDRPlural"
     },
     icon: "systems/genefunk2090/icons/svg/trait-damage-resistances.svg",
     configKey: "damageTypes"
   },
   dv: {
     labels: {
-      title: "DND5E.DamVuln",
-      localization: "DND5E.TraitDVPlural"
+      title: "GENEFUNK2090.DamVuln",
+      localization: "GENEFUNK2090.TraitDVPlural"
     },
     icon: "systems/genefunk2090/icons/svg/trait-damage-vulnerabilities.svg",
     configKey: "damageTypes"
   },
   ci: {
     labels: {
-      title: "DND5E.ConImm",
-      localization: "DND5E.TraitCIPlural"
+      title: "GENEFUNK2090.ConImm",
+      localization: "GENEFUNK2090.TraitCIPlural"
     },
     icon: "systems/genefunk2090/icons/svg/trait-condition-immunities.svg",
     configKey: "conditionTypes"
@@ -1912,22 +1912,22 @@ preLocalize("traits", { key: "labels.title" });
  * Modes used within a trait advancement.
  * @enum {object}
  */
-DND5E.traitModes = {
+GENEFUNK2090.traitModes = {
   default: {
-    label: "DND5E.AdvancementTraitModeDefaultLabel",
-    hint: "DND5E.AdvancementTraitModeDefaultHint"
+    label: "GENEFUNK2090.AdvancementTraitModeDefaultLabel",
+    hint: "GENEFUNK2090.AdvancementTraitModeDefaultHint"
   },
   expertise: {
-    label: "DND5E.AdvancementTraitModeExpertiseLabel",
-    hint: "DND5E.AdvancementTraitModeExpertiseHint"
+    label: "GENEFUNK2090.AdvancementTraitModeExpertiseLabel",
+    hint: "GENEFUNK2090.AdvancementTraitModeExpertiseHint"
   },
   forcedExpertise: {
-    label: "DND5E.AdvancementTraitModeForceLabel",
-    hint: "DND5E.AdvancementTraitModeForceHint"
+    label: "GENEFUNK2090.AdvancementTraitModeForceLabel",
+    hint: "GENEFUNK2090.AdvancementTraitModeForceHint"
   },
   upgrade: {
-    label: "DND5E.AdvancementTraitModeUpgradeLabel",
-    hint: "DND5E.AdvancementTraitModeUpgradeHint"
+    label: "GENEFUNK2090.AdvancementTraitModeUpgradeLabel",
+    hint: "GENEFUNK2090.AdvancementTraitModeUpgradeHint"
   }
 };
 preLocalize("traitModes", { keys: ["label", "hint"] });
@@ -1938,94 +1938,94 @@ preLocalize("traitModes", { keys: ["label", "hint"] });
  * Special character flags.
  * @enum {CharacterFlagConfig}
  */
-DND5E.characterFlags = {
+GENEFUNK2090.characterFlags = {
   diamondSoul: {
-    name: "DND5E.FlagsDiamondSoul",
-    hint: "DND5E.FlagsDiamondSoulHint",
-    section: "DND5E.Feats",
+    name: "GENEFUNK2090.FlagsDiamondSoul",
+    hint: "GENEFUNK2090.FlagsDiamondSoulHint",
+    section: "GENEFUNK2090.Feats",
     type: Boolean
   },
   elvenAccuracy: {
-    name: "DND5E.FlagsElvenAccuracy",
-    hint: "DND5E.FlagsElvenAccuracyHint",
-    section: "DND5E.RacialTraits",
+    name: "GENEFUNK2090.FlagsElvenAccuracy",
+    hint: "GENEFUNK2090.FlagsElvenAccuracyHint",
+    section: "GENEFUNK2090.RacialTraits",
     abilities: ["dex", "int", "wis", "cha"],
     type: Boolean
   },
   halflingLucky: {
-    name: "DND5E.FlagsHalflingLucky",
-    hint: "DND5E.FlagsHalflingLuckyHint",
-    section: "DND5E.RacialTraits",
+    name: "GENEFUNK2090.FlagsHalflingLucky",
+    hint: "GENEFUNK2090.FlagsHalflingLuckyHint",
+    section: "GENEFUNK2090.RacialTraits",
     type: Boolean
   },
   initiativeAdv: {
-    name: "DND5E.FlagsInitiativeAdv",
-    hint: "DND5E.FlagsInitiativeAdvHint",
-    section: "DND5E.Feats",
+    name: "GENEFUNK2090.FlagsInitiativeAdv",
+    hint: "GENEFUNK2090.FlagsInitiativeAdvHint",
+    section: "GENEFUNK2090.Feats",
     type: Boolean
   },
   initiativeAlert: {
-    name: "DND5E.FlagsAlert",
-    hint: "DND5E.FlagsAlertHint",
-    section: "DND5E.Feats",
+    name: "GENEFUNK2090.FlagsAlert",
+    hint: "GENEFUNK2090.FlagsAlertHint",
+    section: "GENEFUNK2090.Feats",
     type: Boolean
   },
   jackOfAllTrades: {
-    name: "DND5E.FlagsJOAT",
-    hint: "DND5E.FlagsJOATHint",
-    section: "DND5E.Feats",
+    name: "GENEFUNK2090.FlagsJOAT",
+    hint: "GENEFUNK2090.FlagsJOATHint",
+    section: "GENEFUNK2090.Feats",
     type: Boolean
   },
   observantFeat: {
-    name: "DND5E.FlagsObservant",
-    hint: "DND5E.FlagsObservantHint",
+    name: "GENEFUNK2090.FlagsObservant",
+    hint: "GENEFUNK2090.FlagsObservantHint",
     skills: ["prc", "inv"],
-    section: "DND5E.Feats",
+    section: "GENEFUNK2090.Feats",
     type: Boolean
   },
   tavernBrawlerFeat: {
-    name: "DND5E.FlagsTavernBrawler",
-    hint: "DND5E.FlagsTavernBrawlerHint",
-    section: "DND5E.Feats",
+    name: "GENEFUNK2090.FlagsTavernBrawler",
+    hint: "GENEFUNK2090.FlagsTavernBrawlerHint",
+    section: "GENEFUNK2090.Feats",
     type: Boolean
   },
   powerfulBuild: {
-    name: "DND5E.FlagsPowerfulBuild",
-    hint: "DND5E.FlagsPowerfulBuildHint",
-    section: "DND5E.RacialTraits",
+    name: "GENEFUNK2090.FlagsPowerfulBuild",
+    hint: "GENEFUNK2090.FlagsPowerfulBuildHint",
+    section: "GENEFUNK2090.RacialTraits",
     type: Boolean
   },
   reliableTalent: {
-    name: "DND5E.FlagsReliableTalent",
-    hint: "DND5E.FlagsReliableTalentHint",
-    section: "DND5E.Feats",
+    name: "GENEFUNK2090.FlagsReliableTalent",
+    hint: "GENEFUNK2090.FlagsReliableTalentHint",
+    section: "GENEFUNK2090.Feats",
     type: Boolean
   },
   remarkableAthlete: {
-    name: "DND5E.FlagsRemarkableAthlete",
-    hint: "DND5E.FlagsRemarkableAthleteHint",
+    name: "GENEFUNK2090.FlagsRemarkableAthlete",
+    hint: "GENEFUNK2090.FlagsRemarkableAthleteHint",
     abilities: ["str", "dex", "con"],
-    section: "DND5E.Feats",
+    section: "GENEFUNK2090.Feats",
     type: Boolean
   },
   weaponCriticalThreshold: {
-    name: "DND5E.FlagsWeaponCritThreshold",
-    hint: "DND5E.FlagsWeaponCritThresholdHint",
-    section: "DND5E.Feats",
+    name: "GENEFUNK2090.FlagsWeaponCritThreshold",
+    hint: "GENEFUNK2090.FlagsWeaponCritThresholdHint",
+    section: "GENEFUNK2090.Feats",
     type: Number,
     placeholder: 20
   },
   spellCriticalThreshold: {
-    name: "DND5E.FlagsSpellCritThreshold",
-    hint: "DND5E.FlagsSpellCritThresholdHint",
-    section: "DND5E.Feats",
+    name: "GENEFUNK2090.FlagsSpellCritThreshold",
+    hint: "GENEFUNK2090.FlagsSpellCritThresholdHint",
+    section: "GENEFUNK2090.Feats",
     type: Number,
     placeholder: 20
   },
   meleeCriticalDamageDice: {
-    name: "DND5E.FlagsMeleeCriticalDice",
-    hint: "DND5E.FlagsMeleeCriticalDiceHint",
-    section: "DND5E.Feats",
+    name: "GENEFUNK2090.FlagsMeleeCriticalDice",
+    hint: "GENEFUNK2090.FlagsMeleeCriticalDiceHint",
+    section: "GENEFUNK2090.Feats",
     type: Number,
     placeholder: 0
   }
@@ -2036,7 +2036,7 @@ preLocalize("characterFlags", { keys: ["name", "hint", "section"] });
  * Flags allowed on actors. Any flags not in the list may be deleted during a migration.
  * @type {string[]}
  */
-DND5E.allowedActorFlags = ["isPolymorphed", "originalActor"].concat(Object.keys(DND5E.characterFlags));
+GENEFUNK2090.allowedActorFlags = ["isPolymorphed", "originalActor"].concat(Object.keys(GENEFUNK2090.characterFlags));
 
 /* -------------------------------------------- */
 
@@ -2044,7 +2044,7 @@ DND5E.allowedActorFlags = ["isPolymorphed", "originalActor"].concat(Object.keys(
  * Advancement types that can be added to items.
  * @enum {*}
  */
-DND5E.advancementTypes = {
+GENEFUNK2090.advancementTypes = {
   AbilityScoreImprovement: advancement.AbilityScoreImprovementAdvancement,
   HitPoints: advancement.HitPointsAdvancement,
   ItemChoice: advancement.ItemChoiceAdvancement,
@@ -2062,7 +2062,7 @@ DND5E.advancementTypes = {
  * List of books available as sources.
  * @enum {string}
  */
-DND5E.sourceBooks = {
+GENEFUNK2090.sourceBooks = {
   "SRD 5.1": "SOURCE.BOOK.SRD"
 };
 preLocalize("sourceBooks", { sort: true });
@@ -2072,16 +2072,16 @@ preLocalize("sourceBooks", { sort: true });
 /* -------------------------------------------- */
 
 let _enrichmentLookup;
-Object.defineProperty(DND5E, "enrichmentLookup", {
+Object.defineProperty(GENEFUNK2090, "enrichmentLookup", {
   get() {
     if ( !_enrichmentLookup ) {
       _enrichmentLookup = {
-        abilities: foundry.utils.deepClone(DND5E.abilities),
-        skills: foundry.utils.deepClone(DND5E.skills),
-        tools: foundry.utils.deepClone(DND5E.toolIds)
+        abilities: foundry.utils.deepClone(GENEFUNK2090.abilities),
+        skills: foundry.utils.deepClone(GENEFUNK2090.skills),
+        tools: foundry.utils.deepClone(GENEFUNK2090.toolIds)
       };
-      Object.values(DND5E.abilities).forEach(a => _enrichmentLookup.abilities[a.fullKey] = a);
-      Object.values(DND5E.skills).forEach(s => _enrichmentLookup.skills[s.fullKey] = s);
+      Object.values(GENEFUNK2090.abilities).forEach(a => _enrichmentLookup.abilities[a.fullKey] = a);
+      Object.values(GENEFUNK2090.skills).forEach(s => _enrichmentLookup.skills[s.fullKey] = s);
     }
     return _enrichmentLookup;
   },
@@ -2093,20 +2093,20 @@ Object.defineProperty(DND5E, "enrichmentLookup", {
 /**
  * Patch an existing config enum to allow conversion from string values to object values without
  * breaking existing modules that are expecting strings.
- * @param {string} key          Key within DND5E that has been replaced with an enum of objects.
+ * @param {string} key          Key within GENEFUNK2090 that has been replaced with an enum of objects.
  * @param {string} fallbackKey  Key within the new config object from which to get the fallback value.
  * @param {object} [options]    Additional options passed through to logCompatibilityWarning.
  */
 function patchConfig(key, fallbackKey, options) {
   /** @override */
   function toString() {
-    const message = `The value of CONFIG.DND5E.${key} has been changed to an object.`
+    const message = `The value of CONFIG.GENEFUNK2090.${key} has been changed to an object.`
       +` The former value can be acccessed from .${fallbackKey}.`;
     foundry.utils.logCompatibilityWarning(message, options);
     return this[fallbackKey];
   }
 
-  Object.values(DND5E[key]).forEach(o => {
+  Object.values(GENEFUNK2090[key]).forEach(o => {
     if ( foundry.utils.getType(o) !== "Object" ) return;
     o.toString = toString;
   });
@@ -2114,4 +2114,4 @@ function patchConfig(key, fallbackKey, options) {
 
 /* -------------------------------------------- */
 
-export default DND5E;
+export default GENEFUNK2090;

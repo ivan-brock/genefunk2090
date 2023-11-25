@@ -20,8 +20,8 @@ export default class AbilityScoreImprovementAdvancement extends Advancement {
       },
       order: 20,
       icon: "systems/genefunk2090/icons/svg/ability-score-improvement.svg",
-      title: game.i18n.localize("DND5E.AdvancementAbilityScoreImprovementTitle"),
-      hint: game.i18n.localize("DND5E.AdvancementAbilityScoreImprovementHint"),
+      title: game.i18n.localize("GENEFUNK2090.AdvancementAbilityScoreImprovementTitle"),
+      hint: game.i18n.localize("GENEFUNK2090.AdvancementAbilityScoreImprovementHint"),
       validItemTypes: new Set(["background", "class", "race"]),
       apps: {
         config: AbilityScoreImprovementConfig,
@@ -82,7 +82,7 @@ export default class AbilityScoreImprovementAdvancement extends Advancement {
    * @returns {boolean}
    */
   canImprove(ability) {
-    return CONFIG.DND5E.abilities[ability]?.improvement !== false;
+    return CONFIG.GENEFUNK2090.abilities[ability]?.improvement !== false;
   }
 
   /* -------------------------------------------- */
@@ -92,7 +92,7 @@ export default class AbilityScoreImprovementAdvancement extends Advancement {
   /** @inheritdoc */
   titleForLevel(level, { configMode=false }={}) {
     if ( this.value.selected !== "feat" ) return this.title;
-    return game.i18n.localize("DND5E.Feature.Feat");
+    return game.i18n.localize("GENEFUNK2090.Feature.Feat");
   }
 
   /* -------------------------------------------- */
@@ -103,11 +103,11 @@ export default class AbilityScoreImprovementAdvancement extends Advancement {
     if ( configMode ) {
       const entries = Object.entries(this.configuration.fixed).map(([key, value]) => {
         if ( !value ) return null;
-        const name = CONFIG.DND5E.abilities[key]?.label ?? key;
+        const name = CONFIG.GENEFUNK2090.abilities[key]?.label ?? key;
         return `<span class="tag">${name} <strong>${formatter.format(value)}</strong></span>`;
       });
       if ( this.configuration.points ) entries.push(`<span class="tag">${
-        game.i18n.localize("DND5E.AdvancementAbilityScoreImprovementPoints")}: <strong>${
+        game.i18n.localize("GENEFUNK2090.AdvancementAbilityScoreImprovementPoints")}: <strong>${
         this.configuration.points}</strong></span>`
       );
       return entries.filterJoin("\n");
@@ -121,7 +121,7 @@ export default class AbilityScoreImprovementAdvancement extends Advancement {
 
     else if ( (this.value.type === "asi") && this.value.assignments ) {
       return Object.entries(this.value.assignments).reduce((html, [key, value]) => {
-        const name = CONFIG.DND5E.abilities[key]?.label ?? key;
+        const name = CONFIG.GENEFUNK2090.abilities[key]?.label ?? key;
         html += `<span class="tag">${name} <strong>${formatter.format(value)}</strong></span>\n`;
         return html;
       }, "");

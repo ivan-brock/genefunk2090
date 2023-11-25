@@ -12,9 +12,9 @@ export default class LootData extends SystemDataModel.mixin(ItemDescriptionTempl
     static defineSchema() {
       return this.mergeSchema(super.defineSchema(), {
         type: new foundry.data.fields.SchemaField({
-          value: new foundry.data.fields.StringField({required: true, label: "DND5E.Type"}),
-          subtype: new foundry.data.fields.StringField({required: true, label: "DND5E.Subtype"})
-        }, {label: "DND5E.ItemLootType"})
+          value: new foundry.data.fields.StringField({required: true, label: "GENEFUNK2090.Type"}),
+          subtype: new foundry.data.fields.StringField({required: true, label: "GENEFUNK2090.Subtype"})
+        }, {label: "GENEFUNK2090.ItemLootType"})
       });
     }
 
@@ -29,7 +29,7 @@ export default class LootData extends SystemDataModel.mixin(ItemDescriptionTempl
   get chatProperties() {
     return [
       game.i18n.localize(CONFIG.Item.typeLabels.loot),
-      this.weight ? `${this.weight} ${game.i18n.localize("DND5E.AbbreviationLbs")}` : null,
+      this.weight ? `${this.weight} ${game.i18n.localize("GENEFUNK2090.AbbreviationLbs")}` : null,
       this.priceLabel
     ];
   }

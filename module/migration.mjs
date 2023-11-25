@@ -217,7 +217,7 @@ export const migrateArmorClass = async function(pack) {
   await pack.configure({locked: false});
   const actors = await pack.getDocuments();
   const updates = [];
-  const armor = new Set(Object.keys(CONFIG.DND5E.armorTypes));
+  const armor = new Set(Object.keys(CONFIG.GENEFUNK2090.armorTypes));
 
   for ( const actor of actors ) {
     try {
@@ -532,11 +532,11 @@ function _migrateActorAC(actorData, updateData) {
  */
 function _migrateActorMovementSenses(actorData, updateData) {
   if ( actorData._stats?.systemVersion && foundry.utils.isNewerVersion("2.4.0", actorData._stats.systemVersion) ) {
-    for ( const key of Object.keys(CONFIG.DND5E.movementTypes) ) {
+    for ( const key of Object.keys(CONFIG.GENEFUNK2090.movementTypes) ) {
       const keyPath = `system.attributes.movement.${key}`;
       if ( foundry.utils.getProperty(actorData, keyPath) === 0 ) updateData[keyPath] = null;
     }
-    for ( const key of Object.keys(CONFIG.DND5E.senses) ) {
+    for ( const key of Object.keys(CONFIG.GENEFUNK2090.senses) ) {
       const keyPath = `system.attributes.senses.${key}`;
       if ( foundry.utils.getProperty(actorData, keyPath) === 0 ) updateData[keyPath] = null;
     }

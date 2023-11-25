@@ -174,7 +174,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
    * @returns {number}      The XP required.
    */
   getLevelExp(level) {
-    const levels = CONFIG.DND5E.CHARACTER_EXP_LEVELS;
+    const levels = CONFIG.GENEFUNK2090.CHARACTER_EXP_LEVELS;
     return levels[Math.min(level, levels.length - 1)];
   }
 
@@ -187,7 +187,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
    */
   getCRExp(cr) {
     if ( cr < 1.0 ) return Math.max(200 * cr, 10);
-    return CONFIG.DND5E.CR_EXP_LEVELS[cr];
+    return CONFIG.GENEFUNK2090.CR_EXP_LEVELS[cr];
   }
 
   /* -------------------------------------------- */
@@ -264,7 +264,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
       }
 
       // Attuned items
-      else if ( item.system.attunement === CONFIG.DND5E.attunementTypes.ATTUNED ) {
+      else if ( item.system.attunement === CONFIG.GENEFUNK2090.attunementTypes.ATTUNED ) {
         this.system.attributes.attunement.value += 1;
       }
     }
@@ -293,7 +293,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
 
     // Attuned items
     this.system.attributes.attunement.value = this.items.filter(i => {
-      return i.system.attunement === CONFIG.DND5E.attunementTypes.ATTUNED;
+      return i.system.attunement === CONFIG.GENEFUNK2090.attunementTypes.ATTUNED;
     }).length;
 
     // Kill Experience
@@ -353,7 +353,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
       if ( Number.isNumeric(abl.saveProf.term) ) abl.save += abl.saveProf.flat;
       abl.dc = 8 + abl.mod + this.system.attributes.prof + dcBonus;
 
-      if ( !Number.isFinite(abl.max) ) abl.max = CONFIG.DND5E.maxAbilityScore;
+      if ( !Number.isFinite(abl.max) ) abl.max = CONFIG.GENEFUNK2090.maxAbilityScore;
 
       // If we merged saves when transforming, take the highest bonus here.
       if ( originalSaves && abl.proficient ) abl.save = Math.max(abl.save, originalSaves[id].save);
@@ -375,7 +375,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     const flags = this.flags.genefunk2090 ?? {};
 
     // Skill modifiers
-    const feats = CONFIG.DND5E.characterFlags;
+    const feats = CONFIG.GENEFUNK2090.characterFlags;
     const skillBonus = simplifyBonus(globalBonuses.skill, bonusData);
     for ( const [id, skl] of Object.entries(this.system.skills) ) {
       const ability = this.system.abilities[skl.ability];
@@ -459,15 +459,15 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     const ac = this.system.attributes.ac;
 
     // Apply automatic migrations for older data structures
-    let cfg = CONFIG.DND5E.armorClasses[ac.calc];
+    let cfg = CONFIG.GENEFUNK2090.armorClasses[ac.calc];
     if ( !cfg ) {
       ac.calc = "flat";
       if ( Number.isNumeric(ac.value) ) ac.flat = Number(ac.value);
-      cfg = CONFIG.DND5E.armorClasses.flat;
+      cfg = CONFIG.GENEFUNK2090.armorClasses.flat;
     }
 
     // Identify Equipped Items
-    const armorTypes = new Set(Object.keys(CONFIG.DND5E.armorTypes));
+    const armorTypes = new Set(Object.keys(CONFIG.GENEFUNK2090.armorTypes));
     const {armors, shields} = this.itemTypes.equipment.reduce((obj, equip) => {
       const armor = equip.system.armor;
       if ( !equip.system.equipped || !armorTypes.has(armor?.type) ) return obj;
@@ -494,7 +494,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
         let formula = ac.calc === "custom" ? ac.formula : cfg.formula;
         if ( armors.length ) {
           if ( armors.length > 1 ) this._preparationWarnings.push({
-            message: game.i18n.localize("DND5E.WarnMultipleArmor"), type: "warning"
+            message: game.i18n.localize("GENEFUNK2090.WarnMultipleArmor"), type: "warning"
           });
           const armorData = armors[0].system.armor;
           const isHeavy = armorData.type === "heavy";
@@ -510,9 +510,9 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
           ac.base = Roll.safeEval(replaced);
         } catch(err) {
           this._preparationWarnings.push({
-            message: game.i18n.localize("DND5E.WarnBadACFormula"), link: "armor", type: "error"
+            message: game.i18n.localize("GENEFUNK2090.WarnBadACFormula"), link: "armor", type: "error"
           });
-          const replaced = Roll.replaceFormulaData(CONFIG.DND5E.armorClasses.default.formula, rollData);
+          const replaced = Roll.replaceFormulaData(CONFIG.GENEFUNK2090.armorClasses.default.formula, rollData);
           ac.base = Roll.safeEval(replaced);
         }
         break;
@@ -521,7 +521,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     // Equipped Shield
     if ( shields.length ) {
       if ( shields.length > 1 ) this._preparationWarnings.push({
-        message: game.i18n.localize("DND5E.WarnMultipleShields"), type: "warning"
+        message: game.i18n.localize("GENEFUNK2090.WarnMultipleShields"), type: "warning"
       });
       ac.shield = shields[0].system.armor.value ?? 0;
       ac.equippedShield = shields[0];
@@ -557,8 +557,8 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     if ( game.settings.get("genefunk2090", "currencyWeight") && currency ) {
       const numCoins = Object.values(currency).reduce((val, denom) => val + Math.max(denom, 0), 0);
       const currencyPerWeight = game.settings.get("genefunk2090", "metricWeightUnits")
-        ? CONFIG.DND5E.encumbrance.currencyPerWeight.metric
-        : CONFIG.DND5E.encumbrance.currencyPerWeight.imperial;
+        ? CONFIG.GENEFUNK2090.encumbrance.currencyPerWeight.metric
+        : CONFIG.GENEFUNK2090.encumbrance.currencyPerWeight.imperial;
       weight += numCoins / currencyPerWeight;
     }
 
@@ -567,8 +567,8 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     if ( this.flags.genefunk2090?.powerfulBuild ) mod = Math.min(mod * 2, 8);
 
     const strengthMultiplier = game.settings.get("genefunk2090", "metricWeightUnits")
-      ? CONFIG.DND5E.encumbrance.strMultiplier.metric
-      : CONFIG.DND5E.encumbrance.strMultiplier.imperial;
+      ? CONFIG.GENEFUNK2090.encumbrance.strMultiplier.metric
+      : CONFIG.GENEFUNK2090.encumbrance.strMultiplier.imperial;
 
     // Populate final Encumbrance values
     encumbrance.value = weight.toNearest(0.1);
@@ -588,7 +588,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     if ( this.type !== "character" || (this.system._source.attributes.hp.max !== null) ) return;
     const hp = this.system.attributes.hp;
 
-    const abilityId = CONFIG.DND5E.hitPointsAbility || "con";
+    const abilityId = CONFIG.GENEFUNK2090.hitPointsAbility || "con";
     const abilityMod = (this.system.abilities[abilityId]?.mod ?? 0);
     const base = Object.values(this.classes).reduce((total, item) => {
       const advancement = item.advancement.byType.HitPoints?.[0];
@@ -614,7 +614,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     const flags = this.flags.genefunk2090 || {};
 
     // Compute initiative modifier
-    const abilityId = init.ability || CONFIG.DND5E.initiativeAbility;
+    const abilityId = init.ability || CONFIG.GENEFUNK2090.initiativeAbility;
     const ability = this.system.abilities?.[abilityId] || {};
     init.mod = ability.mod ?? 0;
 
@@ -673,7 +673,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
       );
     }
 
-    for ( const type of Object.keys(CONFIG.DND5E.spellcastingTypes) ) {
+    for ( const type of Object.keys(CONFIG.GENEFUNK2090.spellcastingTypes) ) {
       this.constructor.prepareSpellcastingSlots(this.system.spells, type, progression, { actor: this });
     }
   }
@@ -727,7 +727,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
    * @param {number} count                          Number of classes with this type of spellcasting.
    */
   static computeLeveledProgression(progression, actor, cls, spellcasting, count) {
-    const prog = CONFIG.DND5E.spellcastingTypes.leveled.progression[spellcasting.progression];
+    const prog = CONFIG.GENEFUNK2090.spellcastingTypes.leveled.progression[spellcasting.progression];
     if ( !prog ) return;
     const rounding = prog.roundUp ? Math.ceil : Math.floor;
     progression.slot += rounding(spellcasting.levels / prog.divisor ?? 1);
@@ -787,9 +787,9 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
    * @param {object} progression   Spellcasting progression data.
    */
   static prepareLeveledSlots(spells, actor, progression) {
-    const levels = Math.clamped(progression.slot, 0, CONFIG.DND5E.maxLevel);
-    const slots = CONFIG.DND5E.SPELL_SLOT_TABLE[Math.min(levels, CONFIG.DND5E.SPELL_SLOT_TABLE.length) - 1] ?? [];
-    for ( const level of Array.fromRange(Object.keys(CONFIG.DND5E.spellLevels).length - 1, 1) ) {
+    const levels = Math.clamped(progression.slot, 0, CONFIG.GENEFUNK2090.maxLevel);
+    const slots = CONFIG.GENEFUNK2090.SPELL_SLOT_TABLE[Math.min(levels, CONFIG.GENEFUNK2090.SPELL_SLOT_TABLE.length) - 1] ?? [];
+    for ( const level of Array.fromRange(Object.keys(CONFIG.GENEFUNK2090.spellLevels).length - 1, 1) ) {
       const slot = spells[`spell${level}`] ??= { value: 0 };
       slot.max = Number.isNumeric(slot.override) ? Math.max(parseInt(slot.override), 0) : slots[level - 1] ?? 0;
     }
@@ -810,7 +810,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     // - pact.value: Currently available pact slots
     // - pact.override: Override number of available spell slots
 
-    let pactLevel = Math.clamped(progression.pact, 0, CONFIG.DND5E.maxLevel);
+    let pactLevel = Math.clamped(progression.pact, 0, CONFIG.GENEFUNK2090.maxLevel);
     spells.pact ??= {};
     const override = Number.isNumeric(spells.pact.override) ? parseInt(spells.pact.override) : null;
 
@@ -819,7 +819,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
       pactLevel = actor.system.details.spellLevel;
     }
 
-    const [, pactConfig] = Object.entries(CONFIG.DND5E.pactCastingProgression)
+    const [, pactConfig] = Object.entries(CONFIG.GENEFUNK2090.pactCastingProgression)
       .reverse().find(([l]) => Number(l) <= pactLevel) ?? [];
     if ( pactConfig ) {
       spells.pact.level = pactConfig.level;
@@ -848,7 +848,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     // Configure prototype token settings
     const prototypeToken = {};
     if ( "size" in (this.system.traits || {}) ) {
-      const size = CONFIG.DND5E.tokenSizes[this.system.traits.size || "med"];
+      const size = CONFIG.GENEFUNK2090.tokenSizes[this.system.traits.size || "med"];
       if ( !foundry.utils.hasProperty(data, "prototypeToken.width") ) prototypeToken.width = size;
       if ( !foundry.utils.hasProperty(data, "prototypeToken.height") ) prototypeToken.height = size;
     }
@@ -868,7 +868,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     if ( "size" in (this.system.traits || {}) ) {
       const newSize = foundry.utils.getProperty(changed, "system.traits.size");
       if ( newSize && (newSize !== this.system.traits?.size) ) {
-        let size = CONFIG.DND5E.tokenSizes[newSize];
+        let size = CONFIG.GENEFUNK2090.tokenSizes[newSize];
         if ( !foundry.utils.hasProperty(changed, "prototypeToken.width") ) {
           changed.prototypeToken ||= {};
           changed.prototypeToken.height = size;
@@ -991,7 +991,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
    */
   _isRemarkableAthlete(ability) {
     return this.getFlag("genefunk2090", "remarkableAthlete")
-      && CONFIG.DND5E.characterFlags.remarkableAthlete.abilities.includes(ability);
+      && CONFIG.GENEFUNK2090.characterFlags.remarkableAthlete.abilities.includes(ability);
   }
 
   /* -------------------------------------------- */
@@ -1049,7 +1049,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     const reliableTalent = (skl.value >= 1 && this.getFlag("genefunk2090", "reliableTalent"));
 
     // Roll and return
-    const flavor = game.i18n.format("DND5E.SkillPromptTitle", {skill: CONFIG.DND5E.skills[skillId]?.label ?? ""});
+    const flavor = game.i18n.format("GENEFUNK2090.SkillPromptTitle", {skill: CONFIG.GENEFUNK2090.skills[skillId]?.label ?? ""});
     const rollData = foundry.utils.mergeObject({
       data: data,
       title: `${flavor}: ${this.name}`,
@@ -1070,7 +1070,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
      * @memberof hookEvents
      * @param {Actor5e} actor                Actor for which the skill check is being rolled.
      * @param {D20RollConfiguration} config  Configuration data for the pending roll.
-     * @param {string} skillId               ID of the skill being rolled as defined in `DND5E.skills`.
+     * @param {string} skillId               ID of the skill being rolled as defined in `GENEFUNK2090.skills`.
      * @returns {boolean}                    Explicitly return `false` to prevent skill check from being rolled.
      */
     if ( Hooks.call("genefunk2090.preRollSkill", this, rollData, skillId) === false ) return;
@@ -1083,7 +1083,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
      * @memberof hookEvents
      * @param {Actor5e} actor   Actor for which the skill check has been rolled.
      * @param {D20Roll} roll    The resulting roll.
-     * @param {string} skillId  ID of the skill that was rolled as defined in `DND5E.skills`.
+     * @param {string} skillId  ID of the skill that was rolled as defined in `GENEFUNK2090.skills`.
      */
     if ( roll ) Hooks.callAll("genefunk2090.rollSkill", this, roll, skillId);
 
@@ -1137,7 +1137,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
       data.toolBonus = bonus.join(" + ");
     }
 
-    const flavor = game.i18n.format("DND5E.ToolPromptTitle", {tool: Trait.keyLabel(toolId, {trait: "tool"}) ?? ""});
+    const flavor = game.i18n.format("GENEFUNK2090.ToolPromptTitle", {tool: Trait.keyLabel(toolId, {trait: "tool"}) ?? ""});
     const rollData = foundry.utils.mergeObject({
       data, flavor,
       title: `${flavor}: ${this.name}`,
@@ -1185,17 +1185,17 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
    * @param {object} options      Options which configure how ability tests or saving throws are rolled
    */
   rollAbility(abilityId, options={}) {
-    const label = CONFIG.DND5E.abilities[abilityId]?.label ?? "";
+    const label = CONFIG.GENEFUNK2090.abilities[abilityId]?.label ?? "";
     new Dialog({
-      title: `${game.i18n.format("DND5E.AbilityPromptTitle", {ability: label})}: ${this.name}`,
-      content: `<p>${game.i18n.format("DND5E.AbilityPromptText", {ability: label})}</p>`,
+      title: `${game.i18n.format("GENEFUNK2090.AbilityPromptTitle", {ability: label})}: ${this.name}`,
+      content: `<p>${game.i18n.format("GENEFUNK2090.AbilityPromptText", {ability: label})}</p>`,
       buttons: {
         test: {
-          label: game.i18n.localize("DND5E.ActionAbil"),
+          label: game.i18n.localize("GENEFUNK2090.ActionAbil"),
           callback: () => this.rollAbilityTest(abilityId, options)
         },
         save: {
-          label: game.i18n.localize("DND5E.ActionSave"),
+          label: game.i18n.localize("GENEFUNK2090.ActionSave"),
           callback: () => this.rollAbilitySave(abilityId, options)
         }
       }
@@ -1212,7 +1212,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
    * @returns {Promise<D20Roll>}  A Promise which resolves to the created Roll instance
    */
   async rollAbilityTest(abilityId, options={}) {
-    const label = CONFIG.DND5E.abilities[abilityId]?.label ?? "";
+    const label = CONFIG.GENEFUNK2090.abilities[abilityId]?.label ?? "";
     const abl = this.system.abilities[abilityId];
     const globalBonuses = this.system.bonuses?.abilities ?? {};
     const parts = [];
@@ -1242,7 +1242,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     }
 
     // Roll and return
-    const flavor = game.i18n.format("DND5E.AbilityPromptTitle", {ability: label});
+    const flavor = game.i18n.format("GENEFUNK2090.AbilityPromptTitle", {ability: label});
     const rollData = foundry.utils.mergeObject({
       data,
       title: `${flavor}: ${this.name}`,
@@ -1261,7 +1261,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
      * @memberof hookEvents
      * @param {Actor5e} actor                Actor for which the ability test is being rolled.
      * @param {D20RollConfiguration} config  Configuration data for the pending roll.
-     * @param {string} abilityId             ID of the ability being rolled as defined in `DND5E.abilities`.
+     * @param {string} abilityId             ID of the ability being rolled as defined in `GENEFUNK2090.abilities`.
      * @returns {boolean}                    Explicitly return `false` to prevent ability test from being rolled.
      */
     if ( Hooks.call("genefunk2090.preRollAbilityTest", this, rollData, abilityId) === false ) return;
@@ -1274,7 +1274,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
      * @memberof hookEvents
      * @param {Actor5e} actor     Actor for which the ability test has been rolled.
      * @param {D20Roll} roll      The resulting roll.
-     * @param {string} abilityId  ID of the ability that was rolled as defined in `DND5E.abilities`.
+     * @param {string} abilityId  ID of the ability that was rolled as defined in `GENEFUNK2090.abilities`.
      */
     if ( roll ) Hooks.callAll("genefunk2090.rollAbilityTest", this, roll, abilityId);
 
@@ -1291,7 +1291,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
    * @returns {Promise<D20Roll>}  A Promise which resolves to the created Roll instance
    */
   async rollAbilitySave(abilityId, options={}) {
-    const label = CONFIG.DND5E.abilities[abilityId]?.label ?? "";
+    const label = CONFIG.GENEFUNK2090.abilities[abilityId]?.label ?? "";
     const abl = this.system.abilities[abilityId];
     const globalBonuses = this.system.bonuses?.abilities ?? {};
     const parts = [];
@@ -1321,7 +1321,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     }
 
     // Roll and return
-    const flavor = game.i18n.format("DND5E.SavePromptTitle", {ability: label});
+    const flavor = game.i18n.format("GENEFUNK2090.SavePromptTitle", {ability: label});
     const rollData = foundry.utils.mergeObject({
       data,
       title: `${flavor}: ${this.name}`,
@@ -1340,7 +1340,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
      * @memberof hookEvents
      * @param {Actor5e} actor                Actor for which the ability save is being rolled.
      * @param {D20RollConfiguration} config  Configuration data for the pending roll.
-     * @param {string} abilityId             ID of the ability being rolled as defined in `DND5E.abilities`.
+     * @param {string} abilityId             ID of the ability being rolled as defined in `GENEFUNK2090.abilities`.
      * @returns {boolean}                    Explicitly return `false` to prevent ability save from being rolled.
      */
     if ( Hooks.call("genefunk2090.preRollAbilitySave", this, rollData, abilityId) === false ) return;
@@ -1353,7 +1353,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
      * @memberof hookEvents
      * @param {Actor5e} actor     Actor for which the ability save has been rolled.
      * @param {D20Roll} roll      The resulting roll.
-     * @param {string} abilityId  ID of the ability that was rolled as defined in `DND5E.abilities`.
+     * @param {string} abilityId  ID of the ability that was rolled as defined in `GENEFUNK2090.abilities`.
      */
     if ( roll ) Hooks.callAll("genefunk2090.rollAbilitySave", this, roll, abilityId);
 
@@ -1372,7 +1372,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
 
     // Display a warning if we are not at zero HP or if we already have reached 3
     if ( (this.system.attributes.hp.value > 0) || (death.failure >= 3) || (death.success >= 3) ) {
-      ui.notifications.warn("DND5E.DeathSaveUnnecessary", {localize: true});
+      ui.notifications.warn("GENEFUNK2090.DeathSaveUnnecessary", {localize: true});
       return null;
     }
 
@@ -1395,7 +1395,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     }
 
     // Evaluate the roll
-    const flavor = game.i18n.localize("DND5E.DeathSavingThrow");
+    const flavor = game.i18n.localize("GENEFUNK2090.DeathSavingThrow");
     const rollData = foundry.utils.mergeObject({
       data,
       title: `${flavor}: ${this.name}`,
@@ -1436,7 +1436,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
           "system.attributes.death.failure": 0,
           "system.attributes.hp.value": 1
         };
-        details.chatString = "DND5E.DeathSaveCriticalSuccess";
+        details.chatString = "GENEFUNK2090.DeathSaveCriticalSuccess";
       }
 
       // 3 Successes = survive and reset checks
@@ -1445,7 +1445,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
           "system.attributes.death.success": 0,
           "system.attributes.death.failure": 0
         };
-        details.chatString = "DND5E.DeathSaveSuccess";
+        details.chatString = "GENEFUNK2090.DeathSaveSuccess";
       }
 
       // Increment successes
@@ -1457,7 +1457,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
       let failures = (death.failure || 0) + (roll.isFumble ? 2 : 1);
       details.updates = {"system.attributes.death.failure": Math.clamped(failures, 0, 3)};
       if ( failures >= 3 ) {  // 3 Failures = death
-        details.chatString = "DND5E.DeathSaveFailure";
+        details.chatString = "GENEFUNK2090.DeathSaveFailure";
       }
     }
 
@@ -1505,7 +1505,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
 
     // Obtain required data
     const init = this.system.attributes?.init;
-    const abilityId = init?.ability || CONFIG.DND5E.initiativeAbility;
+    const abilityId = init?.ability || CONFIG.GENEFUNK2090.initiativeAbility;
     const data = this.getRollData();
     const flags = this.flags.genefunk2090 || {};
     if ( flags.initiativeAdv ) options.advantageMode ??= genefunk2090.dice.D20Roll.ADV_MODE.ADVANTAGE;
@@ -1558,7 +1558,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     }
 
     options = foundry.utils.mergeObject({
-      flavor: options.flavor ?? game.i18n.localize("DND5E.Initiative"),
+      flavor: options.flavor ?? game.i18n.localize("GENEFUNK2090.Initiative"),
       halflingLucky: flags.halflingLucky ?? false,
       critical: null,
       fumble: null
@@ -1581,7 +1581,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     const roll = this.getInitiativeRoll(rollOptions);
     const choice = await roll.configureDialog({
       defaultRollMode: game.settings.get("core", "rollMode"),
-      title: `${game.i18n.localize("DND5E.InitiativeRoll")}: ${this.name}`,
+      title: `${game.i18n.localize("GENEFUNK2090.InitiativeRoll")}: ${this.name}`,
       chooseModifier: false,
       defaultAction: rollOptions.advantageMode ?? genefunk2090.dice.D20Roll.ADV_MODE.NORMAL
     });
@@ -1654,12 +1654,12 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
 
     // If no class is available, display an error notification
     if ( !cls ) {
-      ui.notifications.error(game.i18n.format("DND5E.HitDiceWarn", {name: this.name, formula: denomination}));
+      ui.notifications.error(game.i18n.format("GENEFUNK2090.HitDiceWarn", {name: this.name, formula: denomination}));
       return null;
     }
 
     // Prepare roll data
-    const flavor = game.i18n.localize("DND5E.HitDiceRoll");
+    const flavor = game.i18n.localize("GENEFUNK2090.HitDiceRoll");
     const rollConfig = foundry.utils.mergeObject({
       formula: `max(0, 1${denomination} + @abilities.con.mod)`,
       data: this.getRollData(),
@@ -1738,7 +1738,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
       data: item.getRollData(),
       chatMessage
     };
-    const flavor = game.i18n.format("DND5E.AdvancementHitPointsRollMessage", { class: item.name });
+    const flavor = game.i18n.format("GENEFUNK2090.AdvancementHitPointsRollMessage", { class: item.name });
     const messageData = {
       title: `${flavor}: ${this.name}`,
       flavor,
@@ -1791,7 +1791,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
       data: this.getRollData(),
       chatMessage
     };
-    const flavor = game.i18n.format("DND5E.HPFormulaRollMessage");
+    const flavor = game.i18n.format("GENEFUNK2090.HPFormulaRollMessage");
     const messageData = {
       title: `${flavor}: ${this.name}`,
       flavor,
@@ -2022,22 +2022,22 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     let restFlavor;
     switch (game.settings.get("genefunk2090", "restVariant")) {
       case "normal":
-        restFlavor = (longRest && newDay) ? "DND5E.LongRestOvernight" : `DND5E.${length}RestNormal`;
+        restFlavor = (longRest && newDay) ? "GENEFUNK2090.LongRestOvernight" : `GENEFUNK2090.${length}RestNormal`;
         break;
       case "gritty":
-        restFlavor = (!longRest && newDay) ? "DND5E.ShortRestOvernight" : `DND5E.${length}RestGritty`;
+        restFlavor = (!longRest && newDay) ? "GENEFUNK2090.ShortRestOvernight" : `GENEFUNK2090.${length}RestGritty`;
         break;
       case "epic":
-        restFlavor = `DND5E.${length}RestEpic`;
+        restFlavor = `GENEFUNK2090.${length}RestEpic`;
         break;
     }
 
     // Determine the chat message to display
     let message;
-    if ( diceRestored && healthRestored ) message = `DND5E.${length}RestResult`;
-    else if ( longRest && !diceRestored && healthRestored ) message = "DND5E.LongRestResultHitPoints";
-    else if ( longRest && diceRestored && !healthRestored ) message = "DND5E.LongRestResultHitDice";
-    else message = `DND5E.${length}RestResultShort`;
+    if ( diceRestored && healthRestored ) message = `GENEFUNK2090.${length}RestResult`;
+    else if ( longRest && !diceRestored && healthRestored ) message = "GENEFUNK2090.LongRestResultHitPoints";
+    else if ( longRest && diceRestored && !healthRestored ) message = "GENEFUNK2090.LongRestResultHitDice";
+    else message = `GENEFUNK2090.${length}RestResultShort`;
 
     // Create a chat message
     let chatData = {
@@ -2203,7 +2203,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
       }
 
       // Items that roll to gain charges on a new day
-      if ( recoverDailyUses && uses?.recovery && (uses?.per in CONFIG.DND5E.limitedUseFormulaPeriods) ) {
+      if ( recoverDailyUses && uses?.recovery && (uses?.per in CONFIG.GENEFUNK2090.limitedUseFormulaPeriods) ) {
         const roll = new Roll(uses.recovery, item.getRollData());
         if ( recoverLongRestUses && (game.settings.get("genefunk2090", "restVariant") === "gritty") ) {
           roll.alter(7, 0, {multiplyNumeric: true});
@@ -2213,7 +2213,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
         try {
           total = (await roll.evaluate({async: true})).total;
         } catch(err) {
-          ui.notifications.warn(game.i18n.format("DND5E.ItemRecoveryFormulaWarning", {
+          ui.notifications.warn(game.i18n.format("GENEFUNK2090.ItemRecoveryFormulaWarning", {
             name: item.name,
             formula: uses.recovery
           }));
@@ -2223,7 +2223,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
         if ( newValue !== uses.value ) {
           const diff = newValue - uses.value;
           const isMax = newValue === uses.max;
-          const locKey = `DND5E.Item${diff < 0 ? "Loss" : "Recovery"}Roll${isMax ? "Max" : ""}`;
+          const locKey = `GENEFUNK2090.Item${diff < 0 ? "Loss" : "Recovery"}Roll${isMax ? "Max" : ""}`;
           updates.push({_id: item.id, "system.uses.value": newValue});
           rolls.push(roll);
           await roll.toMessage({
@@ -2243,12 +2243,12 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
 
   /**
    * Convert all carried currency to the highest possible denomination using configured conversion rates.
-   * See CONFIG.DND5E.currencies for configuration.
+   * See CONFIG.GENEFUNK2090.currencies for configuration.
    * @returns {Promise<Actor5e>}
    */
   convertCurrency() {
     const currency = foundry.utils.deepClone(this.system.currency);
-    const currencies = Object.entries(CONFIG.DND5E.currencies);
+    const currencies = Object.entries(CONFIG.GENEFUNK2090.currencies);
     currencies.sort((a, b) => a[1].conversion - b[1].conversion);
 
     // Count total converted units of the base currency
@@ -2317,7 +2317,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     // Ensure the player is allowed to polymorph
     const allowed = game.settings.get("genefunk2090", "allowPolymorphing");
     if ( !allowed && !game.user.isGM ) {
-      ui.notifications.warn("DND5E.PolymorphWarn", {localize: true});
+      ui.notifications.warn("GENEFUNK2090.PolymorphWarn", {localize: true});
       return null;
     }
 
@@ -2329,7 +2329,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
 
     if ( keepSelf ) {
       o.img = source.img;
-      o.name = `${o.name} (${game.i18n.localize("DND5E.PolymorphSelf")})`;
+      o.name = `${o.name} (${game.i18n.localize("GENEFUNK2090.PolymorphSelf")})`;
     }
 
     // Prepare new data to merge from the source
@@ -2382,7 +2382,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
       for ( let k of Object.keys(abilities) ) {
         const oa = o.system.abilities[k];
         const prof = abilities[k].proficient;
-        const type = CONFIG.DND5E.abilities[k]?.type;
+        const type = CONFIG.GENEFUNK2090.abilities[k]?.type;
         if ( keepPhysical && (type === "physical") ) abilities[k] = oa;
         else if ( keepMental && (type === "mental") ) abilities[k] = oa;
 
@@ -2413,7 +2413,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
         const cls = new genefunk2090.dataModels.item.ClassData({levels: d.system.details.cr});
         d.items.push({
           type: "class",
-          name: game.i18n.localize("DND5E.PolymorphTmpClass"),
+          name: game.i18n.localize("GENEFUNK2090.PolymorphTmpClass"),
           system: cls.toObject()
         });
       }
@@ -2531,7 +2531,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
   async revertOriginalForm({renderSheet=true}={}) {
     if ( !this.isPolymorphed ) return;
     if ( !this.isOwner ) {
-      ui.notifications.warn("DND5E.PolymorphRevertWarn", {localize: true});
+      ui.notifications.warn("GENEFUNK2090.PolymorphRevertWarn", {localize: true});
       return null;
     }
 
@@ -2554,7 +2554,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     if ( this.isToken ) {
       const baseActor = original ? original : game.actors.get(this.token.actorId);
       if ( !baseActor ) {
-        ui.notifications.warn(game.i18n.format("DND5E.PolymorphRevertNoOriginalActorWarn", {
+        ui.notifications.warn(game.i18n.format("GENEFUNK2090.PolymorphRevertNoOriginalActorWarn", {
           reference: this.getFlag("genefunk2090", "originalActor")
         }));
         return;
@@ -2592,7 +2592,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     }
 
     if ( !original ) {
-      ui.notifications.warn(game.i18n.format("DND5E.PolymorphRevertNoOriginalActorWarn", {
+      ui.notifications.warn(game.i18n.format("GENEFUNK2090.PolymorphRevertNoOriginalActorWarn", {
         reference: this.getFlag("genefunk2090", "originalActor")
       }));
       return;
@@ -2640,7 +2640,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
    */
   static addDirectoryContextOptions(html, entryOptions) {
     entryOptions.push({
-      name: "DND5E.PolymorphRestoreTransformation",
+      name: "GENEFUNK2090.PolymorphRestoreTransformation",
       icon: '<i class="fas fa-backward"></i>',
       callback: li => {
         const actor = game.actors.get(li.data("documentId"));
@@ -2668,13 +2668,13 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
     if ( typeData.value === "custom" ) {
       localizedType = typeData.custom;
     } else {
-      let code = CONFIG.DND5E.creatureTypes[typeData.value];
+      let code = CONFIG.GENEFUNK2090.creatureTypes[typeData.value];
       localizedType = game.i18n.localize(typeData.swarm ? `${code}Pl` : code);
     }
     let type = localizedType;
     if ( typeData.swarm ) {
-      type = game.i18n.format("DND5E.CreatureSwarmPhrase", {
-        size: game.i18n.localize(CONFIG.DND5E.actorSizes[typeData.swarm]),
+      type = game.i18n.format("GENEFUNK2090.CreatureSwarmPhrase", {
+        size: game.i18n.localize(CONFIG.GENEFUNK2090.actorSizes[typeData.swarm]),
         type: localizedType
       });
     }
@@ -2710,7 +2710,7 @@ export default class Actor5e extends SystemDocumentMixin(Actor) {
       canvas.interface.createScrollingText(t.center, dhp.signedString(), {
         anchor: CONST.TEXT_ANCHOR_POINTS.TOP,
         fontSize: 16 + (32 * pct), // Range between [16, 48]
-        fill: CONFIG.DND5E.tokenHPColors[dhp < 0 ? "damage" : "healing"],
+        fill: CONFIG.GENEFUNK2090.tokenHPColors[dhp < 0 ? "damage" : "healing"],
         stroke: 0x000000,
         strokeThickness: 4,
         jitter: 0.25

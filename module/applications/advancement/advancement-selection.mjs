@@ -26,7 +26,7 @@ export default class AdvancementSelection extends Dialog {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["genefunk2090", "sheet", "advancement"],
       template: "systems/genefunk2090/templates/advancement/advancement-selection.hbs",
-      title: "DND5E.AdvancementSelectionTitle",
+      title: "GENEFUNK2090.AdvancementSelectionTitle",
       width: 500,
       height: "auto"
     });
@@ -44,7 +44,7 @@ export default class AdvancementSelection extends Dialog {
   /** @inheritDoc */
   getData() {
     const context = { types: {} };
-    for ( const [name, advancement] of Object.entries(CONFIG.DND5E.advancementTypes) ) {
+    for ( const [name, advancement] of Object.entries(CONFIG.GENEFUNK2090.advancementTypes) ) {
       if ( !(advancement.prototype instanceof Advancement)
         || !advancement.metadata.validItemTypes.has(this.item.type) ) continue;
       context.types[name] = {
@@ -88,7 +88,7 @@ export default class AdvancementSelection extends Dialog {
   static async createDialog(item, { rejectClose=false, options={} }={}) {
     return new Promise((resolve, reject) => {
       const dialog = new this(item, {
-        title: `${game.i18n.localize("DND5E.AdvancementSelectionTitle")}: ${item.name}`,
+        title: `${game.i18n.localize("GENEFUNK2090.AdvancementSelectionTitle")}: ${item.name}`,
         buttons: {
           submit: {
             callback: html => {

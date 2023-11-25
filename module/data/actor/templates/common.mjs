@@ -25,21 +25,21 @@ export default class CommonTemplate extends SystemDataModel.mixin(CurrencyTempla
     return this.mergeSchema(super.defineSchema(), {
       abilities: new MappingField(new foundry.data.fields.SchemaField({
         value: new foundry.data.fields.NumberField({
-          required: true, nullable: false, integer: true, min: 0, initial: 10, label: "DND5E.AbilityScore"
+          required: true, nullable: false, integer: true, min: 0, initial: 10, label: "GENEFUNK2090.AbilityScore"
         }),
         proficient: new foundry.data.fields.NumberField({
-          required: true, integer: true, min: 0, max: 1, initial: 0, label: "DND5E.ProficiencyLevel"
+          required: true, integer: true, min: 0, max: 1, initial: 0, label: "GENEFUNK2090.ProficiencyLevel"
         }),
         max: new foundry.data.fields.NumberField({
-          required: true, integer: true, nullable: true, min: 0, initial: null, label: "DND5E.AbilityScoreMax"
+          required: true, integer: true, nullable: true, min: 0, initial: null, label: "GENEFUNK2090.AbilityScoreMax"
         }),
         bonuses: new foundry.data.fields.SchemaField({
-          check: new FormulaField({required: true, label: "DND5E.AbilityCheckBonus"}),
-          save: new FormulaField({required: true, label: "DND5E.SaveBonus"})
-        }, {label: "DND5E.AbilityBonuses"})
+          check: new FormulaField({required: true, label: "GENEFUNK2090.AbilityCheckBonus"}),
+          save: new FormulaField({required: true, label: "GENEFUNK2090.SaveBonus"})
+        }, {label: "GENEFUNK2090.AbilityBonuses"})
       }), {
-        initialKeys: CONFIG.DND5E.abilities, initialValue: this._initialAbilityValue.bind(this),
-        initialKeysOnly: true, label: "DND5E.Abilities"
+        initialKeys: CONFIG.GENEFUNK2090.abilities, initialValue: this._initialAbilityValue.bind(this),
+        initialKeysOnly: true, label: "GENEFUNK2090.Abilities"
       })
     });
   }
@@ -55,7 +55,7 @@ export default class CommonTemplate extends SystemDataModel.mixin(CurrencyTempla
    * @private
    */
   static _initialAbilityValue(key, initial, existing) {
-    const config = CONFIG.DND5E.abilities[key];
+    const config = CONFIG.GENEFUNK2090.abilities[key];
     if ( config ) {
       let defaultValue = config.defaults?.[this._systemType] ?? initial.value;
       if ( typeof defaultValue === "string" ) defaultValue = existing?.[defaultValue]?.value ?? initial.value;

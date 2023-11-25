@@ -1,8 +1,8 @@
 <form autocomplete="off">
-    <p class="notes">{{localize "DND5E.InitiativeConfigHint"}}</p>
+    <p class="notes">{{localize "GENEFUNK2090.InitiativeConfigHint"}}</p>
 
     <div class="form-group">
-        <label>{{localize "DND5E.AbilityModifier"}}</label>
+        <label>{{localize "GENEFUNK2090.AbilityModifier"}}</label>
         <div class="form-fields">
             <select name="system.attributes.init.ability">
                 {{selectOptions abilities selected=ability blank="" labelAttr="label"}}
@@ -11,19 +11,19 @@
     </div>
 
     <div class="form-group">
-        <label>{{localize "DND5E.InitiativeBonus"}}</label>
+        <label>{{localize "GENEFUNK2090.InitiativeBonus"}}</label>
         <div class="form-fields">
             <input name="system.attributes.init.bonus" type="text" value="{{bonus}}"/>
         </div>
     </div>
 
     <div class="form-group">
-        <label>{{localize "DND5E.FlagsAlert"}}</label>
+        <label>{{localize "GENEFUNK2090.FlagsAlert"}}</label>
         <input type="checkbox" name="flags.genefunk2090.initiativeAlert" {{checked initiativeAlert}}/>
     </div>
 
     <div class="form-group">
-        <label>{{localize "DND5E.FlagsInitiativeAdv"}}</label>
+        <label>{{localize "GENEFUNK2090.FlagsInitiativeAdv"}}</label>
         <input type="checkbox" name="flags.genefunk2090.initiativeAdv" {{checked initiativeAdv}}/>
     </div>
 

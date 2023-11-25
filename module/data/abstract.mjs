@@ -177,7 +177,7 @@ export default class SystemDataModel extends foundry.abstract.DataModel {
     const actor = this.parent.actor;
     if ( (actor?.type !== "character") || !this.metadata?.singleton ) return;
     if ( actor.itemTypes[data.type]?.length ) {
-      ui.notifications.error(game.i18n.format("DND5E.ActorWarningSingleton", {
+      ui.notifications.error(game.i18n.format("GENEFUNK2090.ActorWarningSingleton", {
         itemType: game.i18n.localize(CONFIG.Item.typeLabels[data.type]),
         actorType: game.i18n.localize(CONFIG.Actor.typeLabels[actor.type])
       }));

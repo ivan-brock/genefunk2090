@@ -8,7 +8,7 @@ import SystemDataModel from "../../abstract.mjs";
  * @property {object} price
  * @property {number} price.value         Item's cost in the specified denomination.
  * @property {string} price.denomination  Currency denomination used to determine price.
- * @property {string} rarity              Item rarity as defined in `DND5E.itemRarity`.
+ * @property {string} rarity              Item rarity as defined in `GENEFUNK2090.itemRarity`.
  * @property {boolean} identified         Has this item been identified?
  * @mixin
  */
@@ -17,21 +17,21 @@ export default class PhysicalItemTemplate extends SystemDataModel {
   static defineSchema() {
     return {
       quantity: new foundry.data.fields.NumberField({
-        required: true, nullable: false, integer: true, initial: 1, min: 0, label: "DND5E.Quantity"
+        required: true, nullable: false, integer: true, initial: 1, min: 0, label: "GENEFUNK2090.Quantity"
       }),
       weight: new foundry.data.fields.NumberField({
-        required: true, nullable: false, initial: 0, min: 0, label: "DND5E.Weight"
+        required: true, nullable: false, initial: 0, min: 0, label: "GENEFUNK2090.Weight"
       }),
       price: new foundry.data.fields.SchemaField({
         value: new foundry.data.fields.NumberField({
-          required: true, nullable: false, initial: 0, min: 0, label: "DND5E.Price"
+          required: true, nullable: false, initial: 0, min: 0, label: "GENEFUNK2090.Price"
         }),
         denomination: new foundry.data.fields.StringField({
-          required: true, blank: false, initial: "gp", label: "DND5E.Currency"
+          required: true, blank: false, initial: "gp", label: "GENEFUNK2090.Currency"
         })
-      }, {label: "DND5E.Price"}),
-      rarity: new foundry.data.fields.StringField({required: true, blank: true, label: "DND5E.Rarity"}),
-      identified: new foundry.data.fields.BooleanField({required: true, initial: true, label: "DND5E.Identified"})
+      }, {label: "GENEFUNK2090.Price"}),
+      rarity: new foundry.data.fields.StringField({required: true, blank: true, label: "GENEFUNK2090.Rarity"}),
+      identified: new foundry.data.fields.BooleanField({required: true, initial: true, label: "GENEFUNK2090.Identified"})
     };
   }
 
@@ -45,8 +45,8 @@ export default class PhysicalItemTemplate extends SystemDataModel {
    */
   get priceLabel() {
     const { value, denomination } = this.price;
-    const hasPrice = value && (denomination in CONFIG.DND5E.currencies);
-    return hasPrice ? `${value} ${CONFIG.DND5E.currencies[denomination].label}` : null;
+    const hasPrice = value && (denomination in CONFIG.GENEFUNK2090.currencies);
+    return hasPrice ? `${value} ${CONFIG.GENEFUNK2090.currencies[denomination].label}` : null;
   }
 
   /* -------------------------------------------- */
@@ -82,9 +82,9 @@ export default class PhysicalItemTemplate extends SystemDataModel {
    * @param {object} source  The candidate source data from which the model will be constructed.
    */
   static #migrateRarity(source) {
-    if ( !("rarity" in source) || CONFIG.DND5E.itemRarity[source.rarity] ) return;
-    source.rarity = Object.keys(CONFIG.DND5E.itemRarity).find(key =>
-      CONFIG.DND5E.itemRarity[key].toLowerCase() === source.rarity.toLowerCase()
+    if ( !("rarity" in source) || CONFIG.GENEFUNK2090.itemRarity[source.rarity] ) return;
+    source.rarity = Object.keys(CONFIG.GENEFUNK2090.itemRarity).find(key =>
+      CONFIG.GENEFUNK2090.itemRarity[key].toLowerCase() === source.rarity.toLowerCase()
     ) ?? "";
   }
 

@@ -17,8 +17,8 @@ export default class ItemGrantAdvancement extends Advancement {
       },
       order: 40,
       icon: "systems/genefunk2090/icons/svg/item-grant.svg",
-      title: game.i18n.localize("DND5E.AdvancementItemGrantTitle"),
-      hint: game.i18n.localize("DND5E.AdvancementItemGrantHint"),
+      title: game.i18n.localize("GENEFUNK2090.AdvancementItemGrantTitle"),
+      hint: game.i18n.localize("GENEFUNK2090.AdvancementItemGrantHint"),
       apps: {
         config: ItemGrantConfig,
         flow: ItemGrantFlow
@@ -149,7 +149,7 @@ export default class ItemGrantAdvancement extends Advancement {
   _validateItemType(item, { strict=true }={}) {
     if ( this.constructor.VALID_TYPES.has(item.type) ) return true;
     const type = game.i18n.localize(CONFIG.Item.typeLabels[item.type]);
-    if ( strict ) throw new Error(game.i18n.format("DND5E.AdvancementItemTypeInvalidWarning", {type}));
+    if ( strict ) throw new Error(game.i18n.format("GENEFUNK2090.AdvancementItemTypeInvalidWarning", {type}));
     return false;
   }
 }

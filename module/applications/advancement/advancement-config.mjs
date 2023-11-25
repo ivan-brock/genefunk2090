@@ -60,7 +60,7 @@ export default class AdvancementConfig extends FormApplication {
   /** @inheritDoc */
   get title() {
     const type = this.advancement.constructor.metadata.title;
-    return `${game.i18n.format("DND5E.AdvancementConfigureTitle", { item: this.item.name })}: ${type}`;
+    return `${game.i18n.format("GENEFUNK2090.AdvancementConfigureTitle", { item: this.item.name })}: ${type}`;
   }
 
   /* -------------------------------------------- */
@@ -75,11 +75,11 @@ export default class AdvancementConfig extends FormApplication {
 
   /** @inheritdoc */
   getData() {
-    const levels = Object.fromEntries(Array.fromRange(CONFIG.DND5E.maxLevel + 1).map(l => [l, l]));
+    const levels = Object.fromEntries(Array.fromRange(CONFIG.GENEFUNK2090.maxLevel + 1).map(l => [l, l]));
     if ( ["class", "subclass"].includes(this.item.type) ) delete levels[0];
-    else levels[0] = game.i18n.localize("DND5E.AdvancementLevelAnyHeader");
+    else levels[0] = game.i18n.localize("GENEFUNK2090.AdvancementLevelAnyHeader");
     const context = {
-      CONFIG: CONFIG.DND5E,
+      CONFIG: CONFIG.GENEFUNK2090,
       ...this.advancement.toObject(false),
       src: this.advancement.toObject(),
       default: {
@@ -202,13 +202,13 @@ export default class AdvancementConfig extends FormApplication {
 
     // Abort if this uuid is the parent item
     if ( item.uuid === this.item.uuid ) {
-      ui.notifications.error("DND5E.AdvancementItemGrantRecursiveWarning", {localize: true});
+      ui.notifications.error("GENEFUNK2090.AdvancementItemGrantRecursiveWarning", {localize: true});
       return null;
     }
 
     // Abort if this uuid exists already
     if ( existingItems.includes(item.uuid) ) {
-      ui.notifications.warn("DND5E.AdvancementItemGrantDuplicateWarning", {localize: true});
+      ui.notifications.warn("GENEFUNK2090.AdvancementItemGrantDuplicateWarning", {localize: true});
       return null;
     }
 

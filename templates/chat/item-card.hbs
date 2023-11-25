@@ -12,40 +12,40 @@
             {{{data.description.value}}}
         {{/if}}
         {{#if data.materials.value}}
-        <p><strong>{{ localize "DND5E.RequiredMaterials" }}.</strong> {{data.materials.value}}</p>
+        <p><strong>{{ localize "GENEFUNK2090.RequiredMaterials" }}.</strong> {{data.materials.value}}</p>
         {{/if}}
     </div>
 
     <div class="card-buttons">
-        {{#if hasAttack}}<button data-action="attack">{{ localize "DND5E.Attack" }}</button>{{/if}}
+        {{#if hasAttack}}<button data-action="attack">{{ localize "GENEFUNK2090.Attack" }}</button>{{/if}}
 
         {{#if hasDamage}}
         <button data-action="damage">
-            {{#if isHealing}}{{ localize "DND5E.Healing" }}
-            {{else}}{{localize "DND5E.Damage" }}{{/if}}
+            {{#if isHealing}}{{ localize "GENEFUNK2090.Healing" }}
+            {{else}}{{localize "GENEFUNK2090.Damage" }}{{/if}}
         </button>
         {{/if}}
 
         {{#if isVersatile}}
-        <button data-action="versatile">{{ localize "DND5E.Versatile" }}</button>
+        <button data-action="versatile">{{ localize "GENEFUNK2090.Versatile" }}</button>
         {{/if}}
 
         {{#if hasSave}}
         <button data-action="save" data-ability="{{data.save.ability}}">
-            {{ localize "DND5E.SavingThrow" }} {{labels.save}}
+            {{ localize "GENEFUNK2090.SavingThrow" }} {{labels.save}}
         </button>
         {{/if}}
 
         {{#if data.formula}}
-        <button data-action="formula">{{ localize "DND5E.OtherFormula"}}</button>
+        <button data-action="formula">{{ localize "GENEFUNK2090.OtherFormula"}}</button>
         {{/if}}
 
         {{#if hasAreaTarget}}
-        <button data-action="placeTemplate">{{ localize "DND5E.PlaceTemplate" }}</button>
+        <button data-action="placeTemplate">{{ localize "GENEFUNK2090.PlaceTemplate" }}</button>
         {{/if}}
 
         {{#if isTool}}
-        <button data-action="toolCheck" data-ability="{{data.ability.value}}">{{ localize "DND5E.Use" }} {{item.name}}</button>
+        <button data-action="toolCheck" data-ability="{{data.ability.value}}">{{ localize "GENEFUNK2090.Use" }} {{item.name}}</button>
         {{/if}}
 
         {{#if hasAbilityCheck}}

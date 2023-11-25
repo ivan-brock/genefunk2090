@@ -95,11 +95,11 @@ export default class ShortRestDialog extends Dialog {
   static async shortRestDialog({ actor }={}) {
     return new Promise((resolve, reject) => {
       const dlg = new this(actor, {
-        title: `${game.i18n.localize("DND5E.ShortRest")}: ${actor.name}`,
+        title: `${game.i18n.localize("GENEFUNK2090.ShortRest")}: ${actor.name}`,
         buttons: {
           rest: {
             icon: '<i class="fas fa-bed"></i>',
-            label: game.i18n.localize("DND5E.Rest"),
+            label: game.i18n.localize("GENEFUNK2090.Rest"),
             callback: html => {
               let newDay = false;
               if ( game.settings.get("genefunk2090", "restVariant") !== "epic" ) {

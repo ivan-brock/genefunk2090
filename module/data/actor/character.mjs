@@ -58,66 +58,66 @@ export default class CharacterData extends CreatureTemplate {
         ...AttributesFields.common,
         ...AttributesFields.creature,
         ac: new foundry.data.fields.SchemaField({
-          flat: new foundry.data.fields.NumberField({integer: true, min: 0, label: "DND5E.ArmorClassFlat"}),
-          calc: new foundry.data.fields.StringField({initial: "default", label: "DND5E.ArmorClassCalculation"}),
-          formula: new FormulaField({deterministic: true, label: "DND5E.ArmorClassFormula"})
-        }, {label: "DND5E.ArmorClass"}),
+          flat: new foundry.data.fields.NumberField({integer: true, min: 0, label: "GENEFUNK2090.ArmorClassFlat"}),
+          calc: new foundry.data.fields.StringField({initial: "default", label: "GENEFUNK2090.ArmorClassCalculation"}),
+          formula: new FormulaField({deterministic: true, label: "GENEFUNK2090.ArmorClassFormula"})
+        }, {label: "GENEFUNK2090.ArmorClass"}),
         hp: new foundry.data.fields.SchemaField({
           value: new foundry.data.fields.NumberField({
-            nullable: false, integer: true, min: 0, initial: 0, label: "DND5E.HitPointsCurrent"
+            nullable: false, integer: true, min: 0, initial: 0, label: "GENEFUNK2090.HitPointsCurrent"
           }),
           max: new foundry.data.fields.NumberField({
-            nullable: true, integer: true, min: 0, initial: null, label: "DND5E.HitPointsOverride"
+            nullable: true, integer: true, min: 0, initial: null, label: "GENEFUNK2090.HitPointsOverride"
           }),
-          temp: new foundry.data.fields.NumberField({integer: true, initial: 0, min: 0, label: "DND5E.HitPointsTemp"}),
-          tempmax: new foundry.data.fields.NumberField({integer: true, initial: 0, label: "DND5E.HitPointsTempMax"}),
+          temp: new foundry.data.fields.NumberField({integer: true, initial: 0, min: 0, label: "GENEFUNK2090.HitPointsTemp"}),
+          tempmax: new foundry.data.fields.NumberField({integer: true, initial: 0, label: "GENEFUNK2090.HitPointsTempMax"}),
           bonuses: new foundry.data.fields.SchemaField({
-            level: new FormulaField({deterministic: true, label: "DND5E.HitPointsBonusLevel"}),
-            overall: new FormulaField({deterministic: true, label: "DND5E.HitPointsBonusOverall"})
+            level: new FormulaField({deterministic: true, label: "GENEFUNK2090.HitPointsBonusLevel"}),
+            overall: new FormulaField({deterministic: true, label: "GENEFUNK2090.HitPointsBonusOverall"})
           })
-        }, {label: "DND5E.HitPoints"}),
+        }, {label: "GENEFUNK2090.HitPoints"}),
         death: new foundry.data.fields.SchemaField({
           success: new foundry.data.fields.NumberField({
-            required: true, nullable: false, integer: true, min: 0, initial: 0, label: "DND5E.DeathSaveSuccesses"
+            required: true, nullable: false, integer: true, min: 0, initial: 0, label: "GENEFUNK2090.DeathSaveSuccesses"
           }),
           failure: new foundry.data.fields.NumberField({
-            required: true, nullable: false, integer: true, min: 0, initial: 0, label: "DND5E.DeathSaveFailures"
+            required: true, nullable: false, integer: true, min: 0, initial: 0, label: "GENEFUNK2090.DeathSaveFailures"
           })
-        }, {label: "DND5E.DeathSave"}),
+        }, {label: "GENEFUNK2090.DeathSave"}),
         exhaustion: new foundry.data.fields.NumberField({
-          required: true, nullable: false, integer: true, min: 0, initial: 0, label: "DND5E.Exhaustion"
+          required: true, nullable: false, integer: true, min: 0, initial: 0, label: "GENEFUNK2090.Exhaustion"
         }),
-        inspiration: new foundry.data.fields.BooleanField({required: true, label: "DND5E.Inspiration"})
-      }, {label: "DND5E.Attributes"}),
+        inspiration: new foundry.data.fields.BooleanField({required: true, label: "GENEFUNK2090.Inspiration"})
+      }, {label: "GENEFUNK2090.Attributes"}),
       details: new foundry.data.fields.SchemaField({
         ...DetailsFields.common,
         ...DetailsFields.creature,
         background: new LocalDocumentField(foundry.documents.BaseItem, {
-          required: true, fallback: true, label: "DND5E.Background"
+          required: true, fallback: true, label: "GENEFUNK2090.Background"
         }),
-        originalClass: new foundry.data.fields.StringField({required: true, label: "DND5E.ClassOriginal"}),
+        originalClass: new foundry.data.fields.StringField({required: true, label: "GENEFUNK2090.ClassOriginal"}),
         xp: new foundry.data.fields.SchemaField({
           value: new foundry.data.fields.NumberField({
-            required: true, nullable: false, integer: true, min: 0, initial: 0, label: "DND5E.ExperiencePointsCurrent"
+            required: true, nullable: false, integer: true, min: 0, initial: 0, label: "GENEFUNK2090.ExperiencePointsCurrent"
           })
-        }, {label: "DND5E.ExperiencePoints"}),
-        appearance: new foundry.data.fields.StringField({required: true, label: "DND5E.Appearance"}),
-        trait: new foundry.data.fields.StringField({required: true, label: "DND5E.PersonalityTraits"}),
-        ideal: new foundry.data.fields.StringField({required: true, label: "DND5E.Ideals"}),
-        bond: new foundry.data.fields.StringField({required: true, label: "DND5E.Bonds"}),
-        flaw: new foundry.data.fields.StringField({required: true, label: "DND5E.Flaws"})
-      }, {label: "DND5E.Details"}),
+        }, {label: "GENEFUNK2090.ExperiencePoints"}),
+        appearance: new foundry.data.fields.StringField({required: true, label: "GENEFUNK2090.Appearance"}),
+        trait: new foundry.data.fields.StringField({required: true, label: "GENEFUNK2090.PersonalityTraits"}),
+        ideal: new foundry.data.fields.StringField({required: true, label: "GENEFUNK2090.Ideals"}),
+        bond: new foundry.data.fields.StringField({required: true, label: "GENEFUNK2090.Bonds"}),
+        flaw: new foundry.data.fields.StringField({required: true, label: "GENEFUNK2090.Flaws"})
+      }, {label: "GENEFUNK2090.Details"}),
       traits: new foundry.data.fields.SchemaField({
         ...TraitsFields.common,
         ...TraitsFields.creature,
-        weaponProf: TraitsFields.makeSimpleTrait({label: "DND5E.TraitWeaponProf"}),
-        armorProf: TraitsFields.makeSimpleTrait({label: "DND5E.TraitArmorProf"})
-      }, {label: "DND5E.Traits"}),
+        weaponProf: TraitsFields.makeSimpleTrait({label: "GENEFUNK2090.TraitWeaponProf"}),
+        armorProf: TraitsFields.makeSimpleTrait({label: "GENEFUNK2090.TraitArmorProf"})
+      }, {label: "GENEFUNK2090.Traits"}),
       resources: new foundry.data.fields.SchemaField({
-        primary: makeResourceField({label: "DND5E.ResourcePrimary"}),
-        secondary: makeResourceField({label: "DND5E.ResourceSecondary"}),
-        tertiary: makeResourceField({label: "DND5E.ResourceTertiary"})
-      }, {label: "DND5E.Resources"})
+        primary: makeResourceField({label: "GENEFUNK2090.ResourcePrimary"}),
+        secondary: makeResourceField({label: "GENEFUNK2090.ResourceSecondary"}),
+        tertiary: makeResourceField({label: "GENEFUNK2090.ResourceTertiary"})
+      }, {label: "GENEFUNK2090.Resources"})
     });
   }
 
@@ -145,13 +145,13 @@ export default class CharacterData extends CreatureTemplate {
       return;
     }
 
-    for ( const key of Object.keys(CONFIG.DND5E.movementTypes) ) {
+    for ( const key of Object.keys(CONFIG.GENEFUNK2090.movementTypes) ) {
       if ( raceData.movement[key] ) this.attributes.movement[key] ??= raceData.movement[key];
     }
     if ( raceData.movement.hover ) this.attributes.movement.hover = true;
     this.attributes.movement.units ??= raceData.movement.units;
 
-    for ( const key of Object.keys(CONFIG.DND5E.senses) ) {
+    for ( const key of Object.keys(CONFIG.GENEFUNK2090.senses) ) {
       if ( raceData.senses[key] ) this.attributes.senses[key] ??= raceData.senses[key];
     }
     this.attributes.senses.special = [this.attributes.senses.special, raceData.senses.special].filterJoin(";");
@@ -182,13 +182,13 @@ export default class CharacterData extends CreatureTemplate {
 function makeResourceField(schemaOptions={}) {
   return new foundry.data.fields.SchemaField({
     value: new foundry.data.fields.NumberField({
-      required: true, integer: true, initial: 0, labels: "DND5E.ResourceValue"
+      required: true, integer: true, initial: 0, labels: "GENEFUNK2090.ResourceValue"
     }),
     max: new foundry.data.fields.NumberField({
-      required: true, integer: true, initial: 0, labels: "DND5E.ResourceMax"
+      required: true, integer: true, initial: 0, labels: "GENEFUNK2090.ResourceMax"
     }),
-    sr: new foundry.data.fields.BooleanField({required: true, labels: "DND5E.ShortRestRecovery"}),
-    lr: new foundry.data.fields.BooleanField({required: true, labels: "DND5E.LongRestRecovery"}),
-    label: new foundry.data.fields.StringField({required: true, labels: "DND5E.ResourceLabel"})
+    sr: new foundry.data.fields.BooleanField({required: true, labels: "GENEFUNK2090.ShortRestRecovery"}),
+    lr: new foundry.data.fields.BooleanField({required: true, labels: "GENEFUNK2090.LongRestRecovery"}),
+    label: new foundry.data.fields.StringField({required: true, labels: "GENEFUNK2090.ResourceLabel"})
   }, schemaOptions);
 }

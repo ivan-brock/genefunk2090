@@ -31,7 +31,7 @@ export default class ActorHitPointsConfig extends BaseConfigSheet {
 
   /** @inheritdoc */
   get title() {
-    return `${game.i18n.localize("DND5E.HitPointsConfig")}: ${this.document.name}`;
+    return `${game.i18n.localize("GENEFUNK2090.HitPointsConfig")}: ${this.document.name}`;
   }
 
   /* -------------------------------------------- */
@@ -99,7 +99,7 @@ export default class ActorHitPointsConfig extends BaseConfigSheet {
       this.clone.updateSource({"system.attributes.hp.max": roll.total});
       this.render();
     } catch(error) {
-      ui.notifications.error("DND5E.HPFormulaError", {localize: true});
+      ui.notifications.error("GENEFUNK2090.HPFormulaError", {localize: true});
       throw error;
     }
   }

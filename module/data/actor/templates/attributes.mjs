@@ -25,9 +25,9 @@ export default class AttributesFields {
   static get common() {
     return {
       init: new foundry.data.fields.SchemaField({
-        ability: new foundry.data.fields.StringField({label: "DND5E.AbilityModifier"}),
-        bonus: new FormulaField({label: "DND5E.InitiativeBonus"})
-      }, { label: "DND5E.Initiative" }),
+        ability: new foundry.data.fields.StringField({label: "GENEFUNK2090.AbilityModifier"}),
+        bonus: new FormulaField({label: "GENEFUNK2090.InitiativeBonus"})
+      }, { label: "GENEFUNK2090.Initiative" }),
       movement: new MovementField()
     };
   }
@@ -53,12 +53,12 @@ export default class AttributesFields {
     return {
       attunement: new foundry.data.fields.SchemaField({
         max: new foundry.data.fields.NumberField({
-          required: true, nullable: false, integer: true, min: 0, initial: 3, label: "DND5E.AttunementMax"
+          required: true, nullable: false, integer: true, min: 0, initial: 3, label: "GENEFUNK2090.AttunementMax"
         })
-      }, {label: "DND5E.Attunement"}),
+      }, {label: "GENEFUNK2090.Attunement"}),
       senses: new SensesField(),
       spellcasting: new foundry.data.fields.StringField({
-        required: true, blank: true, initial: "int", label: "DND5E.SpellAbility"
+        required: true, blank: true, initial: "int", label: "GENEFUNK2090.SpellAbility"
       })
     };
   }

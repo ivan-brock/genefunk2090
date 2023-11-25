@@ -14,34 +14,34 @@
 export default class ClassJournalPageData extends foundry.abstract.DataModel {
   static defineSchema() {
     return {
-      item: new foundry.data.fields.StringField({required: true, label: "JOURNALENTRYPAGE.DND5E.Class.Item"}),
+      item: new foundry.data.fields.StringField({required: true, label: "JOURNALENTRYPAGE.GENEFUNK2090.Class.Item"}),
       description: new foundry.data.fields.SchemaField({
         value: new foundry.data.fields.HTMLField({
-          label: "JOURNALENTRYPAGE.DND5E.Class.Description",
-          hint: "JOURNALENTRYPAGE.DND5E.Class.DescriptionHint"
+          label: "JOURNALENTRYPAGE.GENEFUNK2090.Class.Description",
+          hint: "JOURNALENTRYPAGE.GENEFUNK2090.Class.DescriptionHint"
         }),
         additionalHitPoints: new foundry.data.fields.HTMLField({
-          label: "JOURNALENTRYPAGE.DND5E.Class.AdditionalHitPoints",
-          hint: "JOURNALENTRYPAGE.DND5E.Class.AdditionalHitPointsHint"
+          label: "JOURNALENTRYPAGE.GENEFUNK2090.Class.AdditionalHitPoints",
+          hint: "JOURNALENTRYPAGE.GENEFUNK2090.Class.AdditionalHitPointsHint"
         }),
         additionalTraits: new foundry.data.fields.HTMLField({
-          label: "JOURNALENTRYPAGE.DND5E.Class.AdditionalTraits",
-          hint: "JOURNALENTRYPAGE.DND5E.Class.AdditionalTraitsHint"
+          label: "JOURNALENTRYPAGE.GENEFUNK2090.Class.AdditionalTraits",
+          hint: "JOURNALENTRYPAGE.GENEFUNK2090.Class.AdditionalTraitsHint"
         }),
         additionalEquipment: new foundry.data.fields.HTMLField({
-          label: "JOURNALENTRYPAGE.DND5E.Class.AdditionalEquipment",
-          hint: "JOURNALENTRYPAGE.DND5E.Class.AdditionalEquipmentHint"
+          label: "JOURNALENTRYPAGE.GENEFUNK2090.Class.AdditionalEquipment",
+          hint: "JOURNALENTRYPAGE.GENEFUNK2090.Class.AdditionalEquipmentHint"
         }),
         subclass: new foundry.data.fields.HTMLField({
-          label: "JOURNALENTRYPAGE.DND5E.Class.SubclassDescription",
-          hint: "JOURNALENTRYPAGE.DND5E.Class.SubclassDescriptionHint"
+          label: "JOURNALENTRYPAGE.GENEFUNK2090.Class.SubclassDescription",
+          hint: "JOURNALENTRYPAGE.GENEFUNK2090.Class.SubclassDescriptionHint"
         })
       }),
       subclassHeader: new foundry.data.fields.StringField({
-        label: "JOURNALENTRYPAGE.DND5E.Class.SubclassHeader"
+        label: "JOURNALENTRYPAGE.GENEFUNK2090.Class.SubclassHeader"
       }),
       subclassItems: new foundry.data.fields.SetField(new foundry.data.fields.StringField(), {
-        label: "JOURNALENTRYPAGE.DND5E.Class.SubclassItems"
+        label: "JOURNALENTRYPAGE.GENEFUNK2090.Class.SubclassItems"
       })
     };
   }

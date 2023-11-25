@@ -29,26 +29,26 @@ export default class GroupActor extends SystemDataModel.mixin(CurrencyTemplate) 
   static defineSchema() {
     return this.mergeSchema(super.defineSchema(), {
       description: new foundry.data.fields.SchemaField({
-        full: new foundry.data.fields.HTMLField({label: "DND5E.Description"}),
-        summary: new foundry.data.fields.HTMLField({label: "DND5E.DescriptionSummary"})
+        full: new foundry.data.fields.HTMLField({label: "GENEFUNK2090.Description"}),
+        summary: new foundry.data.fields.HTMLField({label: "GENEFUNK2090.DescriptionSummary"})
       }),
       members: new foundry.data.fields.SetField(
         new foundry.data.fields.ForeignDocumentField(foundry.documents.BaseActor, {idOnly: true}),
-        {label: "DND5E.GroupMembers"}
+        {label: "GENEFUNK2090.GroupMembers"}
       ),
       attributes: new foundry.data.fields.SchemaField({
         movement: new foundry.data.fields.SchemaField({
           land: new foundry.data.fields.NumberField({
-            nullable: false, min: 0, step: 0.1, initial: 0, label: "DND5E.MovementLand"
+            nullable: false, min: 0, step: 0.1, initial: 0, label: "GENEFUNK2090.MovementLand"
           }),
           water: new foundry.data.fields.NumberField({
-            nullable: false, min: 0, step: 0.1, initial: 0, label: "DND5E.MovementWater"
+            nullable: false, min: 0, step: 0.1, initial: 0, label: "GENEFUNK2090.MovementWater"
           }),
           air: new foundry.data.fields.NumberField({
-            nullable: false, min: 0, step: 0.1, initial: 0, label: "DND5E.MovementAir"
+            nullable: false, min: 0, step: 0.1, initial: 0, label: "GENEFUNK2090.MovementAir"
           })
         })
-      }, {label: "DND5E.Attributes"})
+      }, {label: "GENEFUNK2090.Attributes"})
     });
   }
 

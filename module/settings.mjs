@@ -232,9 +232,9 @@ export default function registerSystemSettings() {
 
   // Dynamic art.
   game.settings.registerMenu("genefunk2090", "moduleArtConfiguration", {
-    name: "DND5E.ModuleArtConfigN",
-    label: "DND5E.ModuleArtConfigL",
-    hint: "DND5E.ModuleArtConfigH",
+    name: "GENEFUNK2090.ModuleArtConfigN",
+    label: "GENEFUNK2090.ModuleArtConfigL",
+    hint: "GENEFUNK2090.ModuleArtConfigH",
     icon: "fa-solid fa-palette",
     type: ModuleArtConfig,
     restricted: true

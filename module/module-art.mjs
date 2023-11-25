@@ -120,7 +120,7 @@ export class ModuleArtConfig extends FormApplication {
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      title: game.i18n.localize("DND5E.ModuleArtConfigL"),
+      title: game.i18n.localize("GENEFUNK2090.ModuleArtConfigL"),
       id: "module-art-config",
       template: "systems/genefunk2090/templates/apps/module-art-config.html",
       popOut: true,

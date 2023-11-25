@@ -82,11 +82,11 @@ export default class PropertyAttribution extends Application {
   getPropertyLabel(property) {
     const parts = property.split(".");
     if ( parts[0] === "abilities" && parts[1] ) {
-      return CONFIG.DND5E.abilities[parts[1]]?.label ?? property;
-    } else if ( (property === "attributes.ac.dex") && CONFIG.DND5E.abilities.dex ) {
-      return CONFIG.DND5E.abilities.dex.label;
+      return CONFIG.GENEFUNK2090.abilities[parts[1]]?.label ?? property;
+    } else if ( (property === "attributes.ac.dex") && CONFIG.GENEFUNK2090.abilities.dex ) {
+      return CONFIG.GENEFUNK2090.abilities.dex.label;
     } else if ( (parts[0] === "prof") || (property === "attributes.prof") ) {
-      return game.i18n.localize("DND5E.Proficiency");
+      return game.i18n.localize("GENEFUNK2090.Proficiency");
     }
     return property;
   }

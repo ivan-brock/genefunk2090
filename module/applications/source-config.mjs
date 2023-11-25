@@ -19,7 +19,7 @@ export default class SourceConfig extends DocumentSheet {
 
   /** @override */
   get title() {
-    return `${game.i18n.localize("DND5E.SourceConfig")}: ${this.document.name}`;
+    return `${game.i18n.localize("GENEFUNK2090.SourceConfig")}: ${this.document.name}`;
   }
 
   /* -------------------------------------------- */
@@ -30,7 +30,7 @@ export default class SourceConfig extends DocumentSheet {
   getData(options) {
     const context = super.getData(options);
     context.appId = this.id;
-    context.CONFIG = CONFIG.DND5E;
+    context.CONFIG = CONFIG.GENEFUNK2090;
     context.source = foundry.utils.getProperty(this.document, this.options.keyPath);
     context.sourceUuid = foundry.utils.getProperty(this.document, "flags.core.sourceId");
     return context;

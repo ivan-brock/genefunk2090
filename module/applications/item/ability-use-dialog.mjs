@@ -41,7 +41,7 @@ export default class AbilityUseDialog extends Dialog {
       resourceOptions,
       scaling: item.usageScaling,
       note: this._getAbilityUseNote(item, config),
-      title: game.i18n.format("DND5E.AbilityUseHint", {
+      title: game.i18n.format("GENEFUNK2090.AbilityUseHint", {
         type: game.i18n.localize(CONFIG.Item.typeLabels[item.type]),
         name: item.name
       })
@@ -53,10 +53,10 @@ export default class AbilityUseDialog extends Dialog {
 
     // Create the Dialog and return data as a Promise
     const isSpell = item.type === "spell";
-    const label = game.i18n.localize(`DND5E.AbilityUse${isSpell ? "Cast" : "Use"}`);
+    const label = game.i18n.localize(`GENEFUNK2090.AbilityUse${isSpell ? "Cast" : "Use"}`);
     return new Promise(resolve => {
       const dlg = new this(item, {
-        title: `${item.name}: ${game.i18n.localize("DND5E.AbilityUseConfig")}`,
+        title: `${item.name}: ${game.i18n.localize("GENEFUNK2090.AbilityUseConfig")}`,
         content: html,
         buttons: {
           use: {
@@ -89,9 +89,9 @@ export default class AbilityUseDialog extends Dialog {
   static _createSpellSlotOptions(actor, level) {
     // Determine the levels which are feasible
     let lmax = 0;
-    const options = Array.fromRange(Object.keys(CONFIG.DND5E.spellLevels).length).reduce((arr, i) => {
+    const options = Array.fromRange(Object.keys(CONFIG.GENEFUNK2090.spellLevels).length).reduce((arr, i) => {
       if ( i < level ) return arr;
-      const label = CONFIG.DND5E.spellLevels[i];
+      const label = CONFIG.GENEFUNK2090.spellLevels[i];
       const l = actor.system.spells[`spell${i}`] || {max: 0, override: null};
       let max = parseInt(l.override || l.max || 0);
       let slots = Math.clamped(parseInt(l.value || 0), 0, max);
@@ -99,7 +99,7 @@ export default class AbilityUseDialog extends Dialog {
       arr.push({
         key: `spell${i}`,
         level: i,
-        label: i > 0 ? game.i18n.format("DND5E.SpellLevelSlot", {level: label, n: slots}) : label,
+        label: i > 0 ? game.i18n.format("GENEFUNK2090.SpellLevelSlot", {level: label, n: slots}) : label,
         canCast: max > 0,
         hasSlots: slots > 0
       });
@@ -112,7 +112,7 @@ export default class AbilityUseDialog extends Dialog {
       options.push({
         key: "pact",
         level: pact.level,
-        label: `${game.i18n.format("DND5E.SpellLevelPact", {level: pact.level, n: pact.value})}`,
+        label: `${game.i18n.format("GENEFUNK2090.SpellLevelPact", {level: pact.level, n: pact.value})}`,
         canCast: true,
         hasSlots: pact.value > 0
       });
@@ -132,7 +132,7 @@ export default class AbilityUseDialog extends Dialog {
   static _createResourceOptions(item) {
     const consume = item.system.consume || {};
     if ( (item.type !== "spell") || !consume.scale ) return null;
-    const spellLevels = Object.keys(CONFIG.DND5E.spellLevels).length - 1;
+    const spellLevels = Object.keys(CONFIG.GENEFUNK2090.spellLevels).length - 1;
 
     const min = consume.amount || 1;
     const cap = spellLevels + min - item.system.level;
@@ -162,7 +162,7 @@ export default class AbilityUseDialog extends Dialog {
       case "hitDice": {
         target = item.actor;
         if ( ["smallest", "largest"].includes(consume.target) ) {
-          label = game.i18n.localize(`DND5E.ConsumeHitDice${consume.target.capitalize()}Long`);
+          label = game.i18n.localize(`GENEFUNK2090.ConsumeHitDice${consume.target.capitalize()}Long`);
           value = target.system.attributes.hd;
         } else {
           value = Object.values(item.actor.classes ?? {}).reduce((acc, cls) => {
@@ -170,7 +170,7 @@ export default class AbilityUseDialog extends Dialog {
             const hd = cls.system.levels - cls.system.hitDiceUsed;
             return acc + hd;
           }, 0);
-          label = `${game.i18n.localize("DND5E.HitDice")} (${consume.target})`;
+          label = `${game.i18n.localize("GENEFUNK2090.HitDice")} (${consume.target})`;
         }
         break;
       }
@@ -198,11 +198,11 @@ export default class AbilityUseDialog extends Dialog {
     const { quantity, recharge, uses } = item.system;
 
     // Zero quantity
-    if ( quantity <= 0 ) return game.i18n.localize("DND5E.AbilityUseUnavailableHint");
+    if ( quantity <= 0 ) return game.i18n.localize("GENEFUNK2090.AbilityUseUnavailableHint");
 
     // Abilities which use Recharge
     if ( config.consumeUsage && recharge?.value ) {
-      return game.i18n.format(recharge.charged ? "DND5E.AbilityUseChargedHint" : "DND5E.AbilityUseRechargeHint", {
+      return game.i18n.format(recharge.charged ? "GENEFUNK2090.AbilityUseChargedHint" : "GENEFUNK2090.AbilityUseRechargeHint", {
         type: game.i18n.localize(CONFIG.Item.typeLabels[item.type])
       });
     }
@@ -212,25 +212,25 @@ export default class AbilityUseDialog extends Dialog {
 
     // Consumables
     if ( uses.autoDestroy ) {
-      let str = "DND5E.AbilityUseNormalHint";
-      if ( uses.value > 1 ) str = "DND5E.AbilityUseConsumableChargeHint";
-      else if ( quantity > 1 ) str = "DND5E.AbilityUseConsumableQuantityHint";
+      let str = "GENEFUNK2090.AbilityUseNormalHint";
+      if ( uses.value > 1 ) str = "GENEFUNK2090.AbilityUseConsumableChargeHint";
+      else if ( quantity > 1 ) str = "GENEFUNK2090.AbilityUseConsumableQuantityHint";
       return game.i18n.format(str, {
-        type: game.i18n.localize(`DND5E.Consumable${item.system.consumableType.capitalize()}`),
+        type: game.i18n.localize(`GENEFUNK2090.Consumable${item.system.consumableType.capitalize()}`),
         value: uses.value,
         quantity: quantity,
         max: uses.max,
-        per: CONFIG.DND5E.limitedUsePeriods[uses.per]
+        per: CONFIG.GENEFUNK2090.limitedUsePeriods[uses.per]
       });
     }
 
     // Other Items
     else {
-      return game.i18n.format("DND5E.AbilityUseNormalHint", {
+      return game.i18n.format("GENEFUNK2090.AbilityUseNormalHint", {
         type: game.i18n.localize(CONFIG.Item.typeLabels[item.type]),
         value: uses.value,
         max: uses.max,
-        per: CONFIG.DND5E.limitedUsePeriods[uses.per]
+        per: CONFIG.GENEFUNK2090.limitedUsePeriods[uses.per]
       });
     }
   }
@@ -250,20 +250,20 @@ export default class AbilityUseDialog extends Dialog {
 
     if ( (scale === "slot") && data.slotOptions.every(o => !o.hasSlots) ) {
       // Warn that the actor has no spell slots of any level with which to use this item.
-      warnings.push(game.i18n.format("DND5E.SpellCastNoSlotsLeft", {
+      warnings.push(game.i18n.format("GENEFUNK2090.SpellCastNoSlotsLeft", {
         name: item.name
       }));
     } else if ( (scale === "slot") && !data.slotOptions.some(o => (o.level === level) && o.hasSlots) ) {
       // Warn that the actor has no spell slots of this particular level with which to use this item.
-      warnings.push(game.i18n.format("DND5E.SpellCastNoSlots", {
-        level: CONFIG.DND5E.spellLevels[level],
+      warnings.push(game.i18n.format("GENEFUNK2090.SpellCastNoSlots", {
+        level: CONFIG.GENEFUNK2090.spellLevels[level],
         name: item.name
       }));
     } else if ( (scale === "resource") && foundry.utils.isEmpty(data.resourceOptions) ) {
       // Warn that the resource does not have enough left.
-      warnings.push(game.i18n.format("DND5E.ConsumeWarningNoQuantity", {
+      warnings.push(game.i18n.format("GENEFUNK2090.ConsumeWarningNoQuantity", {
         name: item.name,
-        type: CONFIG.DND5E.abilityConsumptionTypes[consume.type]
+        type: CONFIG.GENEFUNK2090.abilityConsumptionTypes[consume.type]
       }));
     }
 
@@ -271,23 +271,23 @@ export default class AbilityUseDialog extends Dialog {
     if ( item.hasResource ) {
       const isItem = ["ammo", "material", "charges"].includes(consume.type);
       if ( isItem && !item.actor.items.get(consume.target) ) {
-        warnings.push(game.i18n.format("DND5E.ConsumeWarningNoSource", {
-          name: item.name, type: CONFIG.DND5E.abilityConsumptionTypes[consume.type]
+        warnings.push(game.i18n.format("GENEFUNK2090.ConsumeWarningNoSource", {
+          name: item.name, type: CONFIG.GENEFUNK2090.abilityConsumptionTypes[consume.type]
         }));
       }
     }
 
     // Display warnings that the item or its resource item will be destroyed.
     if ( item.type === "consumable" ) {
-      const type = game.i18n.localize(`DND5E.Consumable${consumableType.capitalize()}`);
+      const type = game.i18n.localize(`GENEFUNK2090.Consumable${consumableType.capitalize()}`);
       if ( this._willLowerQuantity(item) && (quantity === 1) ) {
-        warnings.push(game.i18n.format("DND5E.AbilityUseConsumableDestroyHint", {type}));
+        warnings.push(game.i18n.format("GENEFUNK2090.AbilityUseConsumableDestroyHint", {type}));
       }
 
       const resource = item.actor.items.get(consume.target);
       const qty = consume.amount || 1;
       if ( resource && (resource.system.quantity === 1) && this._willLowerQuantity(resource, qty) ) {
-        warnings.push(game.i18n.format("DND5E.AbilityUseConsumableDestroyResourceHint", {type, name: resource.name}));
+        warnings.push(game.i18n.format("GENEFUNK2090.AbilityUseConsumableDestroyResourceHint", {type, name: resource.name}));
       }
     }
 

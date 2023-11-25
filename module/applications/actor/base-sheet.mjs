@@ -74,8 +74,8 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
       tabs: [{navSelector: ".tabs", contentSelector: ".sheet-body", initial: "description"}],
       width: 720,
       height: Math.max(680, Math.max(
-        237 + (Object.keys(CONFIG.DND5E.abilities).length * 70),
-        240 + (Object.keys(CONFIG.DND5E.skills).length * 24)
+        237 + (Object.keys(CONFIG.GENEFUNK2090.abilities).length * 70),
+        240 + (Object.keys(CONFIG.GENEFUNK2090.skills).length * 24)
       ))
     });
   }
@@ -130,7 +130,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
       isCharacter: this.actor.type === "character",
       isNPC: this.actor.type === "npc",
       isVehicle: this.actor.type === "vehicle",
-      config: CONFIG.DND5E,
+      config: CONFIG.GENEFUNK2090,
       rollableClass: this.isEditable ? "rollable" : "",
       rollData: this.actor.getRollData(),
       overrides: {
@@ -150,18 +150,18 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
     // Ability Scores
     for ( const [a, abl] of Object.entries(context.abilities) ) {
       abl.icon = this._getProficiencyIcon(abl.proficient);
-      abl.hover = CONFIG.DND5E.proficiencyLevels[abl.proficient];
-      abl.label = CONFIG.DND5E.abilities[a]?.label;
+      abl.hover = CONFIG.GENEFUNK2090.proficiencyLevels[abl.proficient];
+      abl.label = CONFIG.GENEFUNK2090.abilities[a]?.label;
       abl.baseProf = source.system.abilities[a]?.proficient ?? 0;
     }
 
     // Skills & tools.
     ["skills", "tools"].forEach(prop => {
       for ( const [key, entry] of Object.entries(context[prop]) ) {
-        entry.abbreviation = CONFIG.DND5E.abilities[entry.ability]?.abbreviation;
+        entry.abbreviation = CONFIG.GENEFUNK2090.abilities[entry.ability]?.abbreviation;
         entry.icon = this._getProficiencyIcon(entry.value);
-        entry.hover = CONFIG.DND5E.proficiencyLevels[entry.value];
-        entry.label = prop === "skills" ? CONFIG.DND5E.skills[key]?.label : Trait.keyLabel(key, {trait: "tool"});
+        entry.hover = CONFIG.GENEFUNK2090.proficiencyLevels[entry.value];
+        entry.label = prop === "skills" ? CONFIG.GENEFUNK2090.skills[key]?.label : Trait.keyLabel(key, {trait: "tool"});
         entry.baseValue = source.system[prop]?.[key]?.value ?? 0;
       }
     });
@@ -199,7 +199,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
     const labels = {...this.actor.labels};
 
     // Currency Labels
-    labels.currencies = Object.entries(CONFIG.DND5E.currencies).reduce((obj, [k, c]) => {
+    labels.currencies = Object.entries(CONFIG.GENEFUNK2090.currencies).reduce((obj, [k, c]) => {
       obj[k] = c.label;
       return obj;
     }, {});
@@ -226,13 +226,13 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
 
     // Prepare an array of available movement speeds
     let speeds = [
-      [movement.burrow, `${game.i18n.localize("DND5E.MovementBurrow")} ${movement.burrow}`],
-      [movement.climb, `${game.i18n.localize("DND5E.MovementClimb")} ${movement.climb}`],
-      [movement.fly, `${game.i18n.localize("DND5E.MovementFly")} ${movement.fly}${movement.hover ? ` (${game.i18n.localize("DND5E.MovementHover")})` : ""}`],
-      [movement.swim, `${game.i18n.localize("DND5E.MovementSwim")} ${movement.swim}`]
+      [movement.burrow, `${game.i18n.localize("GENEFUNK2090.MovementBurrow")} ${movement.burrow}`],
+      [movement.climb, `${game.i18n.localize("GENEFUNK2090.MovementClimb")} ${movement.climb}`],
+      [movement.fly, `${game.i18n.localize("GENEFUNK2090.MovementFly")} ${movement.fly}${movement.hover ? ` (${game.i18n.localize("GENEFUNK2090.MovementHover")})` : ""}`],
+      [movement.swim, `${game.i18n.localize("GENEFUNK2090.MovementSwim")} ${movement.swim}`]
     ];
     if ( largestPrimary ) {
-      speeds.push([movement.walk, `${game.i18n.localize("DND5E.MovementWalk")} ${movement.walk}`]);
+      speeds.push([movement.walk, `${game.i18n.localize("GENEFUNK2090.MovementWalk")} ${movement.walk}`]);
     }
 
     // Filter and sort speeds on their values
@@ -242,7 +242,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
     if ( largestPrimary ) {
       let primary = speeds.shift();
       return {
-        primary: `${primary ? primary[1] : "0"} ${movement.units || Object.keys(CONFIG.DND5E.movementUnits)[0]}`,
+        primary: `${primary ? primary[1] : "0"} ${movement.units || Object.keys(CONFIG.GENEFUNK2090.movementUnits)[0]}`,
         special: speeds.map(s => s[1]).join(", ")
       };
     }
@@ -250,7 +250,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
     // Case 2: Walk as primary
     else {
       return {
-        primary: `${movement.walk || 0} ${movement.units || Object.keys(CONFIG.DND5E.movementUnits)[0]}`,
+        primary: `${movement.walk || 0} ${movement.units || Object.keys(CONFIG.GENEFUNK2090.movementUnits)[0]}`,
         special: speeds.length ? speeds.map(s => s[1]).join(", ") : ""
       };
     }
@@ -267,7 +267,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
   _getSenses(systemData) {
     const senses = systemData.attributes.senses ?? {};
     const tags = {};
-    for ( let [k, label] of Object.entries(CONFIG.DND5E.senses) ) {
+    for ( let [k, label] of Object.entries(CONFIG.GENEFUNK2090.senses) ) {
       const v = senses[k] ?? 0;
       if ( v === 0 ) continue;
       tags[k] = `${game.i18n.localize(label)} ${v} ${senses.units}`;
@@ -321,7 +321,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
    */
   _prepareArmorClassAttribution(rollData) {
     const ac = rollData.attributes.ac;
-    const cfg = CONFIG.DND5E.armorClasses[ac.calc];
+    const cfg = CONFIG.GENEFUNK2090.armorClasses[ac.calc];
     const attribution = [];
 
     // Base AC Attribution
@@ -330,7 +330,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
       // Flat AC
       case "flat":
         return [{
-          label: game.i18n.localize("DND5E.ArmorClassFlat"),
+          label: game.i18n.localize("GENEFUNK2090.ArmorClassFlat"),
           mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
           value: ac.flat
         }];
@@ -338,7 +338,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
       // Natural armor
       case "natural":
         attribution.push({
-          label: game.i18n.localize("DND5E.ArmorClassNatural"),
+          label: game.i18n.localize("GENEFUNK2090.ArmorClassNatural"),
           mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
           value: ac.flat
         });
@@ -359,8 +359,8 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
           });
         }
         const armorInFormula = formula.includes("@attributes.ac.armor");
-        let label = game.i18n.localize("DND5E.PropertyBase");
-        if ( armorInFormula ) label = this.actor.armor?.name ?? game.i18n.localize("DND5E.ArmorClassUnarmored");
+        let label = game.i18n.localize("GENEFUNK2090.PropertyBase");
+        if ( armorInFormula ) label = this.actor.armor?.name ?? game.i18n.localize("GENEFUNK2090.ArmorClassUnarmored");
         attribution.unshift({
           label,
           mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
@@ -371,7 +371,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
 
     // Shield
     if ( ac.shield !== 0 ) attribution.push({
-      label: this.actor.shield?.name ?? game.i18n.localize("DND5E.EquipmentShield"),
+      label: this.actor.shield?.name ?? game.i18n.localize("GENEFUNK2090.EquipmentShield"),
       mode: CONST.ACTIVE_EFFECT_MODES.ADD,
       value: ac.shield
     });
@@ -381,7 +381,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
 
     // Cover
     if ( ac.cover !== 0 ) attribution.push({
-      label: game.i18n.localize("DND5E.Cover"),
+      label: game.i18n.localize("GENEFUNK2090.Cover"),
       mode: CONST.ACTIVE_EFFECT_MODES.ADD,
       value: ac.cover
     });
@@ -398,7 +398,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
    */
   _prepareTraits(systemData) {
     const traits = {};
-    for ( const [trait, traitConfig] of Object.entries(CONFIG.DND5E.traits) ) {
+    for ( const [trait, traitConfig] of Object.entries(CONFIG.GENEFUNK2090.traits) ) {
       const key = traitConfig.actorKeyPath?.replace("system.", "") ?? `traits.${trait}`;
       const data = foundry.utils.deepClone(foundry.utils.getProperty(systemData, key));
       if ( !data ) continue;
@@ -413,7 +413,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
       const physical = [];
       if ( data.bypasses?.size ) {
         values = values.filter(t => {
-          if ( !CONFIG.DND5E.physicalDamageTypes[t] ) return true;
+          if ( !CONFIG.GENEFUNK2090.physicalDamageTypes[t] ) return true;
           physical.push(t);
           return false;
         });
@@ -428,9 +428,9 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
       if ( physical.length ) {
         const damageTypesFormatter = new Intl.ListFormat(game.i18n.lang, { style: "long", type: "conjunction" });
         const bypassFormatter = new Intl.ListFormat(game.i18n.lang, { style: "long", type: "disjunction" });
-        data.selected.physical = game.i18n.format("DND5E.DamagePhysicalBypasses", {
+        data.selected.physical = game.i18n.format("GENEFUNK2090.DamagePhysicalBypasses", {
           damageTypes: damageTypesFormatter.format(physical.map(t => Trait.keyLabel(t, { trait }))),
-          bypassTypes: bypassFormatter.format(data.bypasses.map(t => CONFIG.DND5E.physicalWeaponProperties[t]))
+          bypassTypes: bypassFormatter.format(data.bypasses.map(t => CONFIG.GENEFUNK2090.physicalWeaponProperties[t]))
         });
       }
 
@@ -488,7 +488,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
     };
 
     // Determine the maximum spell level which has a slot
-    const maxLevel = Array.fromRange(Object.keys(CONFIG.DND5E.spellLevels).length - 1, 1).reduce((max, i) => {
+    const maxLevel = Array.fromRange(Object.keys(CONFIG.GENEFUNK2090.spellLevels).length - 1, 1).reduce((max, i) => {
       const level = levels[`spell${i}`];
       if ( level && (level.max || level.override ) && ( i > max ) ) max = i;
       return max;
@@ -496,19 +496,19 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
 
     // Level-based spellcasters have cantrips and leveled slots
     if ( maxLevel > 0 ) {
-      registerSection("spell0", 0, CONFIG.DND5E.spellLevels[0]);
+      registerSection("spell0", 0, CONFIG.GENEFUNK2090.spellLevels[0]);
       for (let lvl = 1; lvl <= maxLevel; lvl++) {
         const sl = `spell${lvl}`;
-        registerSection(sl, lvl, CONFIG.DND5E.spellLevels[lvl], levels[sl]);
+        registerSection(sl, lvl, CONFIG.GENEFUNK2090.spellLevels[lvl], levels[sl]);
       }
     }
 
     // Pact magic users have cantrips and a pact magic section
     if ( levels.pact && levels.pact.max ) {
-      if ( !spellbook["0"] ) registerSection("spell0", 0, CONFIG.DND5E.spellLevels[0]);
+      if ( !spellbook["0"] ) registerSection("spell0", 0, CONFIG.GENEFUNK2090.spellLevels[0]);
       const l = levels.pact;
-      const config = CONFIG.DND5E.spellPreparationModes.pact;
-      const level = game.i18n.localize(`DND5E.SpellLevel${levels.pact.level}`);
+      const config = CONFIG.GENEFUNK2090.spellPreparationModes.pact;
+      const level = game.i18n.localize(`GENEFUNK2090.SpellLevel${levels.pact.level}`);
       const label = `${config} — ${level}`;
       registerSection("pact", sections.pact, label, {
         prepMode: "pact",
@@ -529,7 +529,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
         s = sections[mode];
         if ( !spellbook[s] ) {
           const l = levels[mode] || {};
-          const config = CONFIG.DND5E.spellPreparationModes[mode];
+          const config = CONFIG.GENEFUNK2090.spellPreparationModes[mode];
           registerSection(mode, s, config, {
             prepMode: mode,
             value: l.value,
@@ -541,7 +541,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
 
       // Sections for higher-level spells which the caster "should not" have, but spell items exist for
       else if ( !spellbook[s] ) {
-        registerSection(sl, s, CONFIG.DND5E.spellLevels[s], {levels: levels[sl]});
+        registerSection(sl, s, CONFIG.GENEFUNK2090.spellLevels[s], {levels: levels[sl]});
       }
 
       // Add the spell to the relevant heading
@@ -590,7 +590,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
 
   /**
    * Get the font-awesome icon used to display a certain level of skill proficiency.
-   * @param {number} level  A proficiency mode defined in `CONFIG.DND5E.proficiencyLevels`.
+   * @param {number} level  A proficiency mode defined in `CONFIG.GENEFUNK2090.proficiencyLevels`.
    * @returns {string}      HTML string for the chosen icon.
    * @private
    */
@@ -709,7 +709,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
     for ( const override of Object.keys(foundry.utils.flattenObject(this.actor.overrides)) ) {
       html.find(`input[name="${override}"],select[name="${override}"]`).each((i, el) => {
         el.disabled = true;
-        el.dataset.tooltip = "DND5E.ActiveEffectOverrideWarning";
+        el.dataset.tooltip = "GENEFUNK2090.ActiveEffectOverrideWarning";
       });
 
       for ( const [key, regex] of Object.entries(proficiencyToggles) ) {
@@ -717,13 +717,13 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
         if ( match ) {
           const toggle = html.find(`li[data-${key}="${match}"] .proficiency-toggle`);
           toggle.addClass("disabled");
-          toggle.attr("data-tooltip", "DND5E.ActiveEffectOverrideWarning");
+          toggle.attr("data-tooltip", "GENEFUNK2090.ActiveEffectOverrideWarning");
         }
       }
 
       const [, spell] = override.match(/system\.spells\.(spell\d)\.override/) || [];
       if ( spell ) {
-        html.find(`.spell-max[data-level="${spell}"]`).attr("data-tooltip", "DND5E.ActiveEffectOverrideWarning");
+        html.find(`.spell-max[data-level="${spell}"]`).attr("data-tooltip", "GENEFUNK2090.ActiveEffectOverrideWarning");
       }
     }
   }
@@ -880,41 +880,41 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
 
     // Create and render the Dialog
     return new Dialog({
-      title: game.i18n.localize("DND5E.PolymorphPromptTitle"),
+      title: game.i18n.localize("GENEFUNK2090.PolymorphPromptTitle"),
       content: {
         options: game.settings.get("genefunk2090", "polymorphSettings"),
-        settings: CONFIG.DND5E.polymorphSettings,
-        effectSettings: CONFIG.DND5E.polymorphEffectSettings,
+        settings: CONFIG.GENEFUNK2090.polymorphSettings,
+        effectSettings: CONFIG.GENEFUNK2090.polymorphEffectSettings,
         isToken: this.actor.isToken
       },
       default: "accept",
       buttons: {
         accept: {
           icon: '<i class="fas fa-check"></i>',
-          label: game.i18n.localize("DND5E.PolymorphAcceptSettings"),
+          label: game.i18n.localize("GENEFUNK2090.PolymorphAcceptSettings"),
           callback: html => this.actor.transformInto(sourceActor, rememberOptions(html))
         },
         wildshape: {
-          icon: CONFIG.DND5E.transformationPresets.wildshape.icon,
-          label: CONFIG.DND5E.transformationPresets.wildshape.label,
+          icon: CONFIG.GENEFUNK2090.transformationPresets.wildshape.icon,
+          label: CONFIG.GENEFUNK2090.transformationPresets.wildshape.label,
           callback: html => this.actor.transformInto(sourceActor, foundry.utils.mergeObject(
-            CONFIG.DND5E.transformationPresets.wildshape.options,
+            CONFIG.GENEFUNK2090.transformationPresets.wildshape.options,
             { transformTokens: rememberOptions(html).transformTokens }
           ))
         },
         polymorph: {
-          icon: CONFIG.DND5E.transformationPresets.polymorph.icon,
-          label: CONFIG.DND5E.transformationPresets.polymorph.label,
+          icon: CONFIG.GENEFUNK2090.transformationPresets.polymorph.icon,
+          label: CONFIG.GENEFUNK2090.transformationPresets.polymorph.label,
           callback: html => this.actor.transformInto(sourceActor, foundry.utils.mergeObject(
-            CONFIG.DND5E.transformationPresets.polymorph.options,
+            CONFIG.GENEFUNK2090.transformationPresets.polymorph.options,
             { transformTokens: rememberOptions(html).transformTokens }
           ))
         },
         self: {
-          icon: CONFIG.DND5E.transformationPresets.polymorphSelf.icon,
-          label: CONFIG.DND5E.transformationPresets.polymorphSelf.label,
+          icon: CONFIG.GENEFUNK2090.transformationPresets.polymorphSelf.icon,
+          label: CONFIG.GENEFUNK2090.transformationPresets.polymorphSelf.label,
           callback: html => this.actor.transformInto(sourceActor, foundry.utils.mergeObject(
-            CONFIG.DND5E.transformationPresets.polymorphSelf.options,
+            CONFIG.GENEFUNK2090.transformationPresets.polymorphSelf.options,
             { transformTokens: rememberOptions(html).transformTokens }
           ))
         },
@@ -946,7 +946,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
     const itemsWithoutAdvancement = items.filter(i => !i.system.advancement?.length);
     const multipleAdvancements = (items.length - itemsWithoutAdvancement.length) > 1;
     if ( multipleAdvancements && !game.settings.get("genefunk2090", "disableAdvancements") ) {
-      ui.notifications.warn(game.i18n.format("DND5E.WarnCantAddMultipleAdvancements"));
+      ui.notifications.warn(game.i18n.format("GENEFUNK2090.WarnCantAddMultipleAdvancements"));
       items = itemsWithoutAdvancement;
     }
 
@@ -972,7 +972,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
   async _onDropSingleItem(itemData) {
     // Check to make sure items of this type are allowed on this actor
     if ( this.constructor.unsupportedItemTypes.has(itemData.type) ) {
-      ui.notifications.warn(game.i18n.format("DND5E.ActorWarningInvalidItem", {
+      ui.notifications.warn(game.i18n.format("GENEFUNK2090.ActorWarningInvalidItem", {
         itemType: game.i18n.localize(CONFIG.Item.typeLabels[itemData.type]),
         actorType: game.i18n.localize(CONFIG.Actor.typeLabels[this.actor.type])
       }));
@@ -1018,7 +1018,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
     if ( !itemData.system ) return;
     ["equipped", "proficient", "prepared"].forEach(k => delete itemData.system[k]);
     if ( "attunement" in itemData.system ) {
-      itemData.system.attunement = Math.min(itemData.system.attunement, CONFIG.DND5E.attunementTypes.REQUIRED);
+      itemData.system.attunement = Math.min(itemData.system.attunement, CONFIG.GENEFUNK2090.attunementTypes.REQUIRED);
     }
   }
 
@@ -1165,14 +1165,14 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
     const type = dataset.type;
 
     // Check to make sure the newly created class doesn't take player over level cap
-    if ( type === "class" && (this.actor.system.details.level + 1 > CONFIG.DND5E.maxLevel) ) {
-      const err = game.i18n.format("DND5E.MaxCharacterLevelExceededWarn", {max: CONFIG.DND5E.maxLevel});
+    if ( type === "class" && (this.actor.system.details.level + 1 > CONFIG.GENEFUNK2090.maxLevel) ) {
+      const err = game.i18n.format("GENEFUNK2090.MaxCharacterLevelExceededWarn", {max: CONFIG.GENEFUNK2090.maxLevel});
       ui.notifications.error(err);
       return null;
     }
 
     const itemData = {
-      name: game.i18n.format("DND5E.ItemNew", {type: game.i18n.localize(CONFIG.Item.typeLabels[type])}),
+      name: game.i18n.format("GENEFUNK2090.ItemNew", {type: game.i18n.localize(CONFIG.Item.typeLabels[type])}),
       type: type,
       system: foundry.utils.expandObject({ ...dataset })
     };
@@ -1361,7 +1361,7 @@ export default class ActorSheet5e extends ActorSheetMixin(ActorSheet) {
     let buttons = super._getHeaderButtons();
     if ( this.actor.isPolymorphed ) {
       buttons.unshift({
-        label: "DND5E.PolymorphRestoreTransformation",
+        label: "GENEFUNK2090.PolymorphRestoreTransformation",
         class: "restore-transformation",
         icon: "fas fa-backward",
         onclick: () => this.actor.revertOriginalForm()

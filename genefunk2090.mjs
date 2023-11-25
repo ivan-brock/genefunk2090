@@ -9,7 +9,7 @@
  */
 
 // Import Configuration
-import DND5E from "./module/config.mjs";
+import GENEFUNK2090 from "./module/config.mjs";
 import registerSystemSettings from "./module/settings.mjs";
 
 // Import Submodules
@@ -30,7 +30,7 @@ import {ModuleArt} from "./module/module-art.mjs";
 globalThis.genefunk2090 = {
   applications,
   canvas,
-  config: DND5E,
+  config: GENEFUNK2090,
   dataModels,
   dice,
   documents,
@@ -45,10 +45,10 @@ globalThis.genefunk2090 = {
 
 Hooks.once("init", function() {
   globalThis.genefunk2090 = game.genefunk2090 = Object.assign(game.system, globalThis.genefunk2090);
-  console.log(`GeneFunk2090 | Initializing the GeneFunk2090 Game System - Version ${genefunk2090.version}\n${DND5E.ASCII}`);
+  console.log(`GeneFunk2090 | Initializing the GeneFunk2090 Game System - Version ${genefunk2090.version}\n${GENEFUNK2090.ASCII}`);
 
   // Record Configuration Values
-  CONFIG.DND5E = DND5E;
+  CONFIG.GENEFUNK2090 = GENEFUNK2090;
   CONFIG.ActiveEffect.documentClass = documents.ActiveEffect5e;
   CONFIG.Actor.documentClass = documents.Actor5e;
   CONFIG.Item.documentClass = documents.Item5e;
@@ -71,8 +71,8 @@ Hooks.once("init", function() {
   game.genefunk2090.moduleArt = new ModuleArt();
 
   // Remove honor & sanity from configuration if they aren't enabled
-  if ( !game.settings.get("genefunk2090", "honorScore") ) delete DND5E.abilities.hon;
-  if ( !game.settings.get("genefunk2090", "sanityScore") ) delete DND5E.abilities.san;
+  if ( !game.settings.get("genefunk2090", "honorScore") ) delete GENEFUNK2090.abilities.hon;
+  if ( !game.settings.get("genefunk2090", "sanityScore") ) delete GENEFUNK2090.abilities.san;
 
   // Configure trackable & consumable attributes.
   _configureTrackableAttributes();
@@ -96,31 +96,31 @@ Hooks.once("init", function() {
   Actors.registerSheet("genefunk2090", applications.actor.ActorSheet5eCharacter, {
     types: ["character"],
     makeDefault: true,
-    label: "DND5E.SheetClassCharacter"
+    label: "GENEFUNK2090.SheetClassCharacter"
   });
   Actors.registerSheet("genefunk2090", applications.actor.ActorSheet5eNPC, {
     types: ["npc"],
     makeDefault: true,
-    label: "DND5E.SheetClassNPC"
+    label: "GENEFUNK2090.SheetClassNPC"
   });
   Actors.registerSheet("genefunk2090", applications.actor.ActorSheet5eVehicle, {
     types: ["vehicle"],
     makeDefault: true,
-    label: "DND5E.SheetClassVehicle"
+    label: "GENEFUNK2090.SheetClassVehicle"
   });
   Actors.registerSheet("genefunk2090", applications.actor.GroupActorSheet, {
     types: ["group"],
     makeDefault: true,
-    label: "DND5E.SheetClassGroup"
+    label: "GENEFUNK2090.SheetClassGroup"
   });
 
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("genefunk2090", applications.item.ItemSheet5e, {
     makeDefault: true,
-    label: "DND5E.SheetClassItem"
+    label: "GENEFUNK2090.SheetClassItem"
   });
   DocumentSheetConfig.registerSheet(JournalEntryPage, "genefunk2090", applications.journal.JournalClassPageSheet, {
-    label: "DND5E.SheetClassClassSummary",
+    label: "GENEFUNK2090.SheetClassClassSummary",
     types: ["class"]
   });
 
@@ -163,8 +163,8 @@ function _configureTrackableAttributes() {
   const common = {
     bar: [],
     value: [
-      ...Object.keys(DND5E.abilities).map(ability => `abilities.${ability}.value`),
-      ...Object.keys(DND5E.movementTypes).map(movement => `attributes.movement.${movement}`),
+      ...Object.keys(GENEFUNK2090.abilities).map(ability => `abilities.${ability}.value`),
+      ...Object.keys(GENEFUNK2090.movementTypes).map(movement => `attributes.movement.${movement}`),
       "attributes.ac.value", "attributes.init.total"
     ]
   };
@@ -173,8 +173,8 @@ function _configureTrackableAttributes() {
     bar: [...common.bar, "attributes.hp", "spells.pact"],
     value: [
       ...common.value,
-      ...Object.keys(DND5E.skills).map(skill => `skills.${skill}.passive`),
-      ...Object.keys(DND5E.senses).map(sense => `attributes.senses.${sense}`),
+      ...Object.keys(GENEFUNK2090.skills).map(skill => `skills.${skill}.passive`),
+      ...Object.keys(GENEFUNK2090.senses).map(sense => `attributes.senses.${sense}`),
       "attributes.spelldc"
     ]
   };
@@ -204,18 +204,18 @@ function _configureTrackableAttributes() {
  * @internal
  */
 function _configureConsumableAttributes() {
-  CONFIG.DND5E.consumableResources = [
-    ...Object.keys(DND5E.abilities).map(ability => `abilities.${ability}.value`),
+  CONFIG.GENEFUNK2090.consumableResources = [
+    ...Object.keys(GENEFUNK2090.abilities).map(ability => `abilities.${ability}.value`),
     "attributes.ac.flat",
     "attributes.hp.value",
-    ...Object.keys(DND5E.senses).map(sense => `attributes.senses.${sense}`),
-    ...Object.keys(DND5E.movementTypes).map(type => `attributes.movement.${type}`),
-    ...Object.keys(DND5E.currencies).map(denom => `currency.${denom}`),
+    ...Object.keys(GENEFUNK2090.senses).map(sense => `attributes.senses.${sense}`),
+    ...Object.keys(GENEFUNK2090.movementTypes).map(type => `attributes.movement.${type}`),
+    ...Object.keys(GENEFUNK2090.currencies).map(denom => `currency.${denom}`),
     "details.xp.value",
     "resources.primary.value", "resources.secondary.value", "resources.tertiary.value",
     "resources.legact.value", "resources.legres.value",
     "spells.pact.value",
-    ...Array.fromRange(Object.keys(DND5E.spellLevels).length - 1, 1).map(level => `spells.spell${level}.value`)
+    ...Array.fromRange(Object.keys(GENEFUNK2090.spellLevels).length - 1, 1).map(level => `spells.spell${level}.value`)
   ];
 }
 
@@ -227,7 +227,7 @@ function _configureConsumableAttributes() {
  * Prepare attribute lists.
  */
 Hooks.once("setup", function() {
-  CONFIG.DND5E.trackableAttributes = expandAttributeList(CONFIG.DND5E.trackableAttributes);
+  CONFIG.GENEFUNK2090.trackableAttributes = expandAttributeList(CONFIG.GENEFUNK2090.trackableAttributes);
   game.genefunk2090.moduleArt.registerModuleArt();
 
   // Apply custom compendium styles to the SRD rules compendium.
@@ -256,7 +256,7 @@ function expandAttributeList(attributes) {
 /**
  * Perform one-time pre-localization and sorting of some configuration objects
  */
-Hooks.once("i18nInit", () => utils.performPreLocalization(CONFIG.DND5E));
+Hooks.once("i18nInit", () => utils.performPreLocalization(CONFIG.GENEFUNK2090));
 
 /* -------------------------------------------- */
 /*  Foundry VTT Ready                           */
@@ -330,5 +330,5 @@ export {
   enrichers,
   migrations,
   utils,
-  DND5E
+  GENEFUNK2090
 };

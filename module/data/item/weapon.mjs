@@ -16,8 +16,8 @@ import MountableTemplate from "./templates/mountable.mjs";
  * @mixes ActionTemplate
  * @mixes MountableTemplate
  *
- * @property {string} weaponType   Weapon category as defined in `DND5E.weaponTypes`.
- * @property {string} baseItem     Base weapon as defined in `DND5E.weaponIds` for determining proficiency.
+ * @property {string} weaponType   Weapon category as defined in `GENEFUNK2090.weaponTypes`.
+ * @property {string} baseItem     Base weapon as defined in `GENEFUNK2090.weaponIds` for determining proficiency.
  * @property {object} properties   Mapping of various weapon property booleans.
  * @property {number} proficient   Does the weapon's owner have proficiency?
  */
@@ -29,14 +29,14 @@ export default class WeaponData extends SystemDataModel.mixin(
   static defineSchema() {
     return this.mergeSchema(super.defineSchema(), {
       weaponType: new foundry.data.fields.StringField({
-        required: true, initial: "simpleM", label: "DND5E.ItemWeaponType"
+        required: true, initial: "simpleM", label: "GENEFUNK2090.ItemWeaponType"
       }),
-      baseItem: new foundry.data.fields.StringField({required: true, blank: true, label: "DND5E.ItemWeaponBase"}),
+      baseItem: new foundry.data.fields.StringField({required: true, blank: true, label: "GENEFUNK2090.ItemWeaponBase"}),
       properties: new MappingField(new foundry.data.fields.BooleanField(), {
-        required: true, initialKeys: CONFIG.DND5E.weaponProperties, label: "DND5E.ItemWeaponProperties"
+        required: true, initialKeys: CONFIG.GENEFUNK2090.weaponProperties, label: "GENEFUNK2090.ItemWeaponProperties"
       }),
       proficient: new foundry.data.fields.NumberField({
-        required: true, min: 0, max: 1, integer: true, initial: null, label: "DND5E.ProficiencyLevel"
+        required: true, min: 0, max: 1, integer: true, initial: null, label: "GENEFUNK2090.ProficiencyLevel"
       })
     });
   }
@@ -95,7 +95,7 @@ export default class WeaponData extends SystemDataModel.mixin(
    * @type {string[]}
    */
   get chatProperties() {
-    return [CONFIG.DND5E.weaponTypes[this.weaponType]];
+    return [CONFIG.GENEFUNK2090.weaponTypes[this.weaponType]];
   }
 
   /* -------------------------------------------- */
@@ -141,7 +141,7 @@ export default class WeaponData extends SystemDataModel.mixin(
     const actor = this.parent.actor;
     if ( !actor ) return 0;
     if ( actor.type === "npc" ) return 1; // NPCs are always considered proficient with any weapon in their stat block.
-    const config = CONFIG.DND5E.weaponProficienciesMap;
+    const config = CONFIG.GENEFUNK2090.weaponProficienciesMap;
     const itemProf = config[this.weaponType];
     const actorProfs = actor.system.traits?.weaponProf?.value ?? new Set();
     const natural = this.weaponType === "natural";

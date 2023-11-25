@@ -21,7 +21,7 @@ export default class ActorMovementConfig extends BaseConfigSheet {
 
   /** @inheritdoc */
   get title() {
-    return `${game.i18n.localize("DND5E.MovementConfig")}: ${this.document.name}`;
+    return `${game.i18n.localize("GENEFUNK2090.MovementConfig")}: ${this.document.name}`;
   }
 
   /* -------------------------------------------- */
@@ -34,15 +34,15 @@ export default class ActorMovementConfig extends BaseConfigSheet {
 
     // Allowed speeds
     const speeds = source.type === "group" ? {
-      land: "DND5E.MovementLand",
-      water: "DND5E.MovementWater",
-      air: "DND5E.MovementAir"
+      land: "GENEFUNK2090.MovementLand",
+      water: "GENEFUNK2090.MovementWater",
+      air: "GENEFUNK2090.MovementAir"
     } : {
-      walk: "DND5E.MovementWalk",
-      burrow: "DND5E.MovementBurrow",
-      climb: "DND5E.MovementClimb",
-      fly: "DND5E.MovementFly",
-      swim: "DND5E.MovementSwim"
+      walk: "GENEFUNK2090.MovementWalk",
+      burrow: "GENEFUNK2090.MovementBurrow",
+      climb: "GENEFUNK2090.MovementClimb",
+      fly: "GENEFUNK2090.MovementFly",
+      swim: "GENEFUNK2090.MovementSwim"
     };
 
     return {
@@ -53,9 +53,9 @@ export default class ActorMovementConfig extends BaseConfigSheet {
       }, {}),
       selectUnits: Object.hasOwn(movement, "units"),
       canHover: Object.hasOwn(movement, "hover"),
-      units: CONFIG.DND5E.movementUnits,
-      unitsPlaceholder: game.i18n.format("DND5E.AutomaticValue", {
-        value: CONFIG.DND5E.movementUnits[raceData.units ?? Object.keys(CONFIG.DND5E.movementUnits)[0]]?.toLowerCase()
+      units: CONFIG.GENEFUNK2090.movementUnits,
+      unitsPlaceholder: game.i18n.format("GENEFUNK2090.AutomaticValue", {
+        value: CONFIG.GENEFUNK2090.movementUnits[raceData.units ?? Object.keys(CONFIG.GENEFUNK2090.movementUnits)[0]]?.toLowerCase()
       }),
       keyPath: this.options.keyPath
     };

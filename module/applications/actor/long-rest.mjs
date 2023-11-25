@@ -44,11 +44,11 @@ export default class LongRestDialog extends Dialog {
   static async longRestDialog({ actor } = {}) {
     return new Promise((resolve, reject) => {
       const dlg = new this(actor, {
-        title: `${game.i18n.localize("DND5E.LongRest")}: ${actor.name}`,
+        title: `${game.i18n.localize("GENEFUNK2090.LongRest")}: ${actor.name}`,
         buttons: {
           rest: {
             icon: '<i class="fas fa-bed"></i>',
-            label: game.i18n.localize("DND5E.Rest"),
+            label: game.i18n.localize("GENEFUNK2090.Rest"),
             callback: html => {
               let newDay = true;
               if (game.settings.get("genefunk2090", "restVariant") !== "gritty") {

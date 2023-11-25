@@ -13,16 +13,16 @@ export class AbilityScoreImprovementConfigurationData extends foundry.abstract.D
     return {
       points: new foundry.data.fields.NumberField({
         integer: true, min: 0, initial: 0,
-        label: "DND5E.AdvancementAbilityScoreImprovementPoints",
-        hint: "DND5E.AdvancementAbilityScoreImprovementPointsHint"
+        label: "GENEFUNK2090.AdvancementAbilityScoreImprovementPoints",
+        hint: "GENEFUNK2090.AdvancementAbilityScoreImprovementPointsHint"
       }),
       fixed: new MappingField(
         new foundry.data.fields.NumberField({nullable: false, integer: true, initial: 0}),
-        {label: "DND5E.AdvancementAbilityScoreImprovementFixed"}
+        {label: "GENEFUNK2090.AdvancementAbilityScoreImprovementFixed"}
       ),
       cap: new foundry.data.fields.NumberField({
-        integer: true, min: 1, initial: 2, label: "DND5E.AdvancementAbilityScoreImprovementCap",
-        hint: "DND5E.AdvancementAbilityScoreImprovementCapHint"
+        integer: true, min: 1, initial: 2, label: "GENEFUNK2090.AdvancementAbilityScoreImprovementCap",
+        hint: "GENEFUNK2090.AdvancementAbilityScoreImprovementCapHint"
       })
     };
   }
@@ -46,7 +46,7 @@ export class AbilityScoreImprovementValueData extends SparseDataModel {
         nullable: false, integer: true
       }), {required: false, initial: undefined}),
       feat: new MappingField(new foundry.data.fields.StringField(), {
-        required: false, initial: undefined, label: "DND5E.Feature.Feat"
+        required: false, initial: undefined, label: "GENEFUNK2090.Feature.Feat"
       })
     };
   }

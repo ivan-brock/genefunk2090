@@ -19,7 +19,7 @@ export default class ActorInitiativeConfig extends BaseConfigSheet {
 
   /** @override */
   get title() {
-    return `${game.i18n.localize("DND5E.InitiativeConfig")}: ${this.document.name}`;
+    return `${game.i18n.localize("GENEFUNK2090.InitiativeConfig")}: ${this.document.name}`;
   }
 
   /* -------------------------------------------- */
@@ -31,7 +31,7 @@ export default class ActorInitiativeConfig extends BaseConfigSheet {
     const flags = source.flags.genefunk2090 || {};
     return {
       ability: init.ability,
-      abilities: CONFIG.DND5E.abilities,
+      abilities: CONFIG.GENEFUNK2090.abilities,
       bonus: init.bonus,
       initiativeAlert: flags.initiativeAlert,
       initiativeAdv: flags.initiativeAdv

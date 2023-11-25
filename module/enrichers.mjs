@@ -118,16 +118,16 @@ function parseConfig(match) {
  */
 async function enrichCheck(config, label, options) {
   for ( const value of config.values ) {
-    if ( value in CONFIG.DND5E.enrichmentLookup.abilities ) config.ability = value;
-    else if ( value in CONFIG.DND5E.enrichmentLookup.skills ) config.skill = value;
-    else if ( value in CONFIG.DND5E.enrichmentLookup.tools ) config.tool = value;
+    if ( value in CONFIG.GENEFUNK2090.enrichmentLookup.abilities ) config.ability = value;
+    else if ( value in CONFIG.GENEFUNK2090.enrichmentLookup.skills ) config.skill = value;
+    else if ( value in CONFIG.GENEFUNK2090.enrichmentLookup.tools ) config.tool = value;
     else if ( Number.isNumeric(value) ) config.dc = Number(value);
     else config[value] = true;
   }
 
   let invalid = false;
 
-  const skillConfig = CONFIG.DND5E.enrichmentLookup.skills[config.skill];
+  const skillConfig = CONFIG.GENEFUNK2090.enrichmentLookup.skills[config.skill];
   if ( config.skill && !skillConfig ) {
     console.warn(`Skill ${config.skill} not found while enriching ${config.input}.`);
     invalid = true;
@@ -135,14 +135,14 @@ async function enrichCheck(config, label, options) {
     config.ability = skillConfig.ability;
   }
 
-  const toolUUID = CONFIG.DND5E.enrichmentLookup.tools[config.tool];
+  const toolUUID = CONFIG.GENEFUNK2090.enrichmentLookup.tools[config.tool];
   const toolIndex = toolUUID ? Trait.getBaseItem(toolUUID, { indexOnly: true }) : null;
   if ( config.tool && !toolIndex ) {
     console.warn(`Tool ${config.tool} not found while enriching ${config.input}.`);
     invalid = true;
   }
 
-  let abilityConfig = CONFIG.DND5E.enrichmentLookup.abilities[config.ability];
+  let abilityConfig = CONFIG.GENEFUNK2090.enrichmentLookup.abilities[config.ability];
   if ( config.ability && !abilityConfig ) {
     console.warn(`Ability ${ability} not found while enriching ${config.input}.`);
     invalid = true;
@@ -161,16 +161,16 @@ async function enrichCheck(config, label, options) {
     const skill = skillConfig?.label;
     const tool = toolIndex?.name;
     if ( ability && (skill || tool) ) {
-      label = game.i18n.format("EDITOR.DND5E.Inline.SpecificCheck", { ability, type: skill ?? tool });
+      label = game.i18n.format("EDITOR.GENEFUNK2090.Inline.SpecificCheck", { ability, type: skill ?? tool });
     } else {
       label = ability;
     }
     const longSuffix = config.format === "long" ? "Long" : "Short";
     if ( config.passive ) {
-      label = game.i18n.format(`EDITOR.DND5E.Inline.DCPassive${longSuffix}`, { dc: config.dc, check: label });
+      label = game.i18n.format(`EDITOR.GENEFUNK2090.Inline.DCPassive${longSuffix}`, { dc: config.dc, check: label });
     } else {
-      if ( config.dc ) label = game.i18n.format("EDITOR.DND5E.Inline.DC", { dc: config.dc, check: label });
-      label = game.i18n.format(`EDITOR.DND5E.Inline.Check${longSuffix}`, { check: label });
+      if ( config.dc ) label = game.i18n.format("EDITOR.GENEFUNK2090.Inline.DC", { dc: config.dc, check: label });
+      label = game.i18n.format(`EDITOR.GENEFUNK2090.Inline.Check${longSuffix}`, { check: label });
     }
   }
 
@@ -219,7 +219,7 @@ async function enrichDamage(config, label, options) {
   const formulaParts = [];
   if ( config.formula ) formulaParts.push(config.formula);
   for ( const value of config.values ) {
-    if ( value in CONFIG.DND5E.damageTypes ) config.type = value;
+    if ( value in CONFIG.GENEFUNK2090.damageTypes ) config.type = value;
     else if ( value === "average" ) config.average = true;
     else formulaParts.push(value);
   }
@@ -232,7 +232,7 @@ async function enrichDamage(config, label, options) {
 
   const localizationData = {
     formula: createRollLink(config.formula, config).outerHTML,
-    type: game.i18n.localize(CONFIG.DND5E.damageTypes[config.damageType] ?? "").toLowerCase()
+    type: game.i18n.localize(CONFIG.GENEFUNK2090.damageTypes[config.damageType] ?? "").toLowerCase()
   };
 
   let localizationType = "Short";
@@ -248,7 +248,7 @@ async function enrichDamage(config, label, options) {
   }
 
   const span = document.createElement("span");
-  span.innerHTML = game.i18n.format(`EDITOR.DND5E.Inline.Damage${localizationType}`, localizationData);
+  span.innerHTML = game.i18n.format(`EDITOR.GENEFUNK2090.Inline.Damage${localizationType}`, localizationData);
   return span;
 }
 
@@ -281,12 +281,12 @@ async function enrichDamage(config, label, options) {
  */
 async function enrichSave(config, label, options) {
   for ( const value of config.values ) {
-    if ( value in CONFIG.DND5E.enrichmentLookup.abilities ) config.ability = value;
+    if ( value in CONFIG.GENEFUNK2090.enrichmentLookup.abilities ) config.ability = value;
     else if ( Number.isNumeric(value) ) config.dc = Number(value);
     else config[value] = true;
   }
 
-  const abilityConfig = CONFIG.DND5E.enrichmentLookup.abilities[config.ability];
+  const abilityConfig = CONFIG.GENEFUNK2090.enrichmentLookup.abilities[config.ability];
   if ( !abilityConfig ) {
     console.warn(`Ability ${config.ability} not found while enriching ${config.input}.`);
     return config.input;
@@ -296,8 +296,8 @@ async function enrichSave(config, label, options) {
 
   if ( !label ) {
     label = abilityConfig.label;
-    if ( config.dc ) label = game.i18n.format("EDITOR.DND5E.Inline.DC", { dc: config.dc, check: label });
-    label = game.i18n.format(`EDITOR.DND5E.Inline.Save${config.format === "long" ? "Long" : "Short"}`, {
+    if ( config.dc ) label = game.i18n.format("EDITOR.GENEFUNK2090.Inline.DC", { dc: config.dc, check: label });
+    label = game.i18n.format(`EDITOR.GENEFUNK2090.Inline.Save${config.format === "long" ? "Long" : "Short"}`, {
       save: label
     });
   }
@@ -375,7 +375,7 @@ function rollAction(event) {
   if ( speaker.token ) actor = game.actors.tokens[speaker.token];
   actor ??= game.actors.get(speaker.actor);
   if ( !actor && (type !== "damage") ) {
-    ui.notifications.warn(game.i18n.localize("EDITOR.DND5E.Inline.NoActorWarning"));
+    ui.notifications.warn(game.i18n.localize("EDITOR.GENEFUNK2090.Inline.NoActorWarning"));
     return;
   }
 
@@ -409,11 +409,11 @@ async function rollDamage(event, speaker) {
   const target = event.target.closest(".roll-link");
   const { formula, damageType } = target.dataset;
 
-  const title = game.i18n.localize("DND5E.DamageRoll");
+  const title = game.i18n.localize("GENEFUNK2090.DamageRoll");
   const messageData = { "flags.genefunk2090.roll.type": "damage", speaker };
   const rollConfig = {
     parts: [formula],
-    flavor: `${title} (${game.i18n.localize(CONFIG.DND5E.damageTypes[damageType] ?? damageType)})`,
+    flavor: `${title} (${game.i18n.localize(CONFIG.GENEFUNK2090.damageTypes[damageType] ?? damageType)})`,
     event,
     title,
     messageData

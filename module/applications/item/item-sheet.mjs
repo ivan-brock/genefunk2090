@@ -95,7 +95,7 @@ export default class ItemSheet5e extends ItemSheet {
     const source = item.toObject();
 
     // Game system configuration
-    context.config = CONFIG.DND5E;
+    context.config = CONFIG.GENEFUNK2090;
 
     // Item rendering data
     foundry.utils.mergeObject(context, {
@@ -117,8 +117,8 @@ export default class ItemSheet5e extends ItemSheet {
       isHealing: item.system.actionType === "heal",
       isFlatDC: item.system.save?.scaling === "flat",
       isLine: ["line", "wall"].includes(item.system.target?.type),
-      isFormulaRecharge: item.system.uses?.per in CONFIG.DND5E.limitedUseFormulaPeriods,
-      isCostlessAction: item.system.activation?.type in CONFIG.DND5E.staticAbilityActivationTypes,
+      isFormulaRecharge: item.system.uses?.per in CONFIG.GENEFUNK2090.limitedUseFormulaPeriods,
+      isCostlessAction: item.system.activation?.type in CONFIG.GENEFUNK2090.staticAbilityActivationTypes,
 
       // Vehicles
       isCrewed: item.system.activation?.type === "crew",
@@ -137,17 +137,17 @@ export default class ItemSheet5e extends ItemSheet {
     // Special handling for specific item types
     switch ( item.type ) {
       case "feat":
-        const featureType = CONFIG.DND5E.featureTypes[item.system.type?.value];
+        const featureType = CONFIG.GENEFUNK2090.featureTypes[item.system.type?.value];
         if ( featureType ) {
           context.itemType = featureType.label;
           context.featureSubtypes = featureType.subtypes;
         }
         break;
       case "spell":
-        context.spellComponents = {...CONFIG.DND5E.spellComponents, ...CONFIG.DND5E.spellTags};
+        context.spellComponents = {...CONFIG.GENEFUNK2090.spellComponents, ...CONFIG.GENEFUNK2090.spellTags};
         break;
       case "loot":
-        const lootType = CONFIG.DND5E.lootTypes[item.system.type?.value];
+        const lootType = CONFIG.GENEFUNK2090.lootTypes[item.system.type?.value];
         if ( lootType ) {
           context.itemType = lootType.label;
           context.lootSubtypes = lootType.subtypes;
@@ -232,7 +232,7 @@ export default class ItemSheet5e extends ItemSheet {
    */
   async _getItemBaseTypes() {
     const type = this.item.type === "equipment" ? "armor" : this.item.type;
-    const baseIds = CONFIG.DND5E[`${type}Ids`];
+    const baseIds = CONFIG.GENEFUNK2090[`${type}Ids`];
     if ( baseIds === undefined ) return {};
 
     const typeProperty = type === "armor" ? "armor.type" : `${type}Type`;
@@ -280,9 +280,9 @@ export default class ItemSheet5e extends ItemSheet {
     // Hit Dice
     else if ( consume.type === "hitDice" ) {
       return {
-        smallest: game.i18n.localize("DND5E.ConsumeHitDiceSmallest"),
-        ...CONFIG.DND5E.hitDieTypes.reduce((obj, hd) => { obj[hd] = hd; return obj; }, {}),
-        largest: game.i18n.localize("DND5E.ConsumeHitDiceLargest")
+        smallest: game.i18n.localize("GENEFUNK2090.ConsumeHitDiceSmallest"),
+        ...CONFIG.GENEFUNK2090.hitDieTypes.reduce((obj, hd) => { obj[hd] = hd; return obj; }, {}),
+        largest: game.i18n.localize("GENEFUNK2090.ConsumeHitDiceLargest")
       };
     }
 
@@ -303,15 +303,15 @@ export default class ItemSheet5e extends ItemSheet {
         // Limited-use items
         const uses = i.system.uses || {};
         if ( uses.per && uses.max ) {
-          const label = (uses.per in CONFIG.DND5E.limitedUseFormulaPeriods)
-            ? ` (${game.i18n.format("DND5E.AbilityUseChargesLabel", {value: uses.value})})`
-            : ` (${game.i18n.format("DND5E.AbilityUseConsumableLabel", {max: uses.max, per: uses.per})})`;
+          const label = (uses.per in CONFIG.GENEFUNK2090.limitedUseFormulaPeriods)
+            ? ` (${game.i18n.format("GENEFUNK2090.AbilityUseChargesLabel", {value: uses.value})})`
+            : ` (${game.i18n.format("GENEFUNK2090.AbilityUseConsumableLabel", {max: uses.max, per: uses.per})})`;
           obj[i.id] = i.name + label;
         }
 
         // Recharging items
         const recharge = i.system.recharge || {};
-        if ( recharge.value ) obj[i.id] = `${i.name} (${game.i18n.format("DND5E.Recharge")})`;
+        if ( recharge.value ) obj[i.id] = `${i.name} (${game.i18n.format("GENEFUNK2090.Recharge")})`;
         return obj;
       }, {});
     }
@@ -328,18 +328,18 @@ export default class ItemSheet5e extends ItemSheet {
   _getItemStatus() {
     switch ( this.item.type ) {
       case "class":
-        return game.i18n.format("DND5E.LevelCount", {ordinal: this.item.system.levels.ordinalString()});
+        return game.i18n.format("GENEFUNK2090.LevelCount", {ordinal: this.item.system.levels.ordinalString()});
       case "equipment":
       case "weapon":
-        return game.i18n.localize(this.item.system.equipped ? "DND5E.Equipped" : "DND5E.Unequipped");
+        return game.i18n.localize(this.item.system.equipped ? "GENEFUNK2090.Equipped" : "GENEFUNK2090.Unequipped");
       case "feat":
-        const typeConfig = CONFIG.DND5E.featureTypes[this.item.system.type.value];
+        const typeConfig = CONFIG.GENEFUNK2090.featureTypes[this.item.system.type.value];
         if ( typeConfig?.subtypes ) return typeConfig.subtypes[this.item.system.type.subtype] ?? null;
         break;
       case "spell":
-        return CONFIG.DND5E.spellPreparationModes[this.item.system.preparation];
+        return CONFIG.GENEFUNK2090.spellPreparationModes[this.item.system.preparation];
       case "tool":
-        return CONFIG.DND5E.proficiencyLevels[this.item.system.prof?.multiplier || 0];
+        return CONFIG.GENEFUNK2090.proficiencyLevels[this.item.system.prof?.multiplier || 0];
     }
     return null;
   }
@@ -357,11 +357,11 @@ export default class ItemSheet5e extends ItemSheet {
     switch ( this.item.type ) {
       case "consumable":
         for ( const [k, v] of Object.entries(this.item.system.properties ?? {}) ) {
-          if ( v === true ) props.push(CONFIG.DND5E.physicalWeaponProperties[k]);
+          if ( v === true ) props.push(CONFIG.GENEFUNK2090.physicalWeaponProperties[k]);
         }
         break;
       case "equipment":
-        props.push(CONFIG.DND5E.equipmentTypes[this.item.system.armor.type]);
+        props.push(CONFIG.GENEFUNK2090.equipmentTypes[this.item.system.armor.type]);
         if ( this.item.isArmor || this.item.isMountable ) props.push(labels.armor);
         break;
       case "feat":
@@ -372,14 +372,14 @@ export default class ItemSheet5e extends ItemSheet {
         break;
       case "weapon":
         for ( const [k, v] of Object.entries(this.item.system.properties) ) {
-          if ( v === true ) props.push(CONFIG.DND5E.weaponProperties[k]);
+          if ( v === true ) props.push(CONFIG.GENEFUNK2090.weaponProperties[k]);
         }
         break;
     }
 
     // Action type
     if ( this.item.system.actionType ) {
-      props.push(CONFIG.DND5E.itemActionTypes[this.item.system.actionType]);
+      props.push(CONFIG.GENEFUNK2090.itemActionTypes[this.item.system.actionType]);
     }
 
     // Action usage
@@ -436,8 +436,8 @@ export default class ItemSheet5e extends ItemSheet {
       if ( !maxRoll.isDeterministic ) {
         uses.max = this.item._source.system.uses.max;
         this.form.querySelector("input[name='system.uses.max']").value = uses.max;
-        ui.notifications.error(game.i18n.format("DND5E.FormulaCannotContainDiceError", {
-          name: game.i18n.localize("DND5E.LimitedUses")
+        ui.notifications.error(game.i18n.format("GENEFUNK2090.FormulaCannotContainDiceError", {
+          name: game.i18n.localize("GENEFUNK2090.LimitedUses")
         }));
         return null;
       }
@@ -450,8 +450,8 @@ export default class ItemSheet5e extends ItemSheet {
       if ( !durationRoll.isDeterministic ) {
         duration.value = this.item._source.system.duration.value;
         this.form.querySelector("input[name='system.duration.value']").value = duration.value;
-        ui.notifications.error(game.i18n.format("DND5E.FormulaCannotContainDiceError", {
-          name: game.i18n.localize("DND5E.Duration")
+        ui.notifications.error(game.i18n.format("GENEFUNK2090.FormulaCannotContainDiceError", {
+          name: game.i18n.localize("GENEFUNK2090.Duration")
         }));
         return null;
       }
@@ -461,7 +461,7 @@ export default class ItemSheet5e extends ItemSheet {
     if ( formData.system?.identifier && !genefunk2090.utils.validators.isValidIdentifier(formData.system.identifier) ) {
       formData.system.identifier = this.item._source.system.identifier;
       this.form.querySelector("input[name='system.identifier']").value = formData.system.identifier;
-      ui.notifications.error("DND5E.IdentifierError", {localize: true});
+      ui.notifications.error("GENEFUNK2090.IdentifierError", {localize: true});
       return null;
     }
 
@@ -517,13 +517,13 @@ export default class ItemSheet5e extends ItemSheet {
     const condition = li => (this.advancementConfigurationMode || !this.isEmbedded) && this.isEditable;
     return [
       {
-        name: "DND5E.AdvancementControlEdit",
+        name: "GENEFUNK2090.AdvancementControlEdit",
         icon: "<i class='fas fa-edit fa-fw'></i>",
         condition,
         callback: li => this._onAdvancementAction(li[0], "edit")
       },
       {
-        name: "DND5E.AdvancementControlDuplicate",
+        name: "GENEFUNK2090.AdvancementControlDuplicate",
         icon: "<i class='fas fa-copy fa-fw'></i>",
         condition: li => {
           const id = li[0].closest(".advancement-item")?.dataset.id;
@@ -533,7 +533,7 @@ export default class ItemSheet5e extends ItemSheet {
         callback: li => this._onAdvancementAction(li[0], "duplicate")
       },
       {
-        name: "DND5E.AdvancementControlDelete",
+        name: "GENEFUNK2090.AdvancementControlDelete",
         icon: "<i class='fas fa-trash fa-fw' style='color: rgb(255, 65, 65);'></i>",
         condition,
         callback: li => this._onAdvancementAction(li[0], "delete")

@@ -24,7 +24,7 @@ export default class TokenDocument5e extends TokenDocument {
     if ( data instanceof foundry.abstract.DataModel ) return this._getTrackedAttributesFromSchema(data.schema, _path);
     const attributes = super.getTrackedAttributes(data, _path);
     if ( _path.length ) return attributes;
-    const allowed = CONFIG.DND5E.trackableAttributes;
+    const allowed = CONFIG.GENEFUNK2090.trackableAttributes;
     attributes.value = attributes.value.filter(attrs => this._isAllowedAttribute(allowed, attrs));
     return attributes;
   }
@@ -70,7 +70,7 @@ export default class TokenDocument5e extends TokenDocument {
    * @returns {string[]}
    */
   static getConsumedAttributes(data) {
-    return CONFIG.DND5E.consumableResources;
+    return CONFIG.GENEFUNK2090.consumableResources;
   }
 
   /* -------------------------------------------- */

@@ -14,7 +14,7 @@ import PhysicalItemTemplate from "./templates/physical-item.mjs";
  * @mixes ActivatedEffectTemplate
  * @mixes ActionTemplate
  *
- * @property {string} consumableType     Type of consumable as defined in `DND5E.consumableTypes`.
+ * @property {string} consumableType     Type of consumable as defined in `GENEFUNK2090.consumableTypes`.
  * @property {object} uses
  * @property {boolean} uses.autoDestroy  Should this item be destroyed when it runs out of uses.
  */
@@ -25,14 +25,14 @@ export default class ConsumableData extends SystemDataModel.mixin(
   static defineSchema() {
     return this.mergeSchema(super.defineSchema(), {
       consumableType: new foundry.data.fields.StringField({
-        required: true, initial: "potion", label: "DND5E.ItemConsumableType"
+        required: true, initial: "potion", label: "GENEFUNK2090.ItemConsumableType"
       }),
       properties: new MappingField(new foundry.data.fields.BooleanField(), {
-        required: false, label: "DND5E.ItemAmmoProperties"
+        required: false, label: "GENEFUNK2090.ItemAmmoProperties"
       }),
       uses: new ActivatedEffectTemplate.ItemUsesField({
-        autoDestroy: new foundry.data.fields.BooleanField({required: true, label: "DND5E.ItemDestroyEmpty"})
-      }, {label: "DND5E.LimitedUses"})
+        autoDestroy: new foundry.data.fields.BooleanField({required: true, label: "GENEFUNK2090.ItemDestroyEmpty"})
+      }, {label: "GENEFUNK2090.LimitedUses"})
     });
   }
 
@@ -46,8 +46,8 @@ export default class ConsumableData extends SystemDataModel.mixin(
    */
   get chatProperties() {
     return [
-      CONFIG.DND5E.consumableTypes[this.consumableType],
-      this.hasLimitedUses ? `${this.uses.value}/${this.uses.max} ${game.i18n.localize("DND5E.Charges")}` : null,
+      CONFIG.GENEFUNK2090.consumableTypes[this.consumableType],
+      this.hasLimitedUses ? `${this.uses.value}/${this.uses.max} ${game.i18n.localize("GENEFUNK2090.Charges")}` : null,
       this.priceLabel
     ];
   }

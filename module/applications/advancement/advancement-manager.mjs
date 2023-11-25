@@ -74,11 +74,11 @@ export default class AdvancementManager extends Application {
   get title() {
     const visibleSteps = this.steps.filter(s => !s.automatic);
     const visibleIndex = visibleSteps.indexOf(this.step);
-    const step = visibleIndex < 0 ? "" : game.i18n.format("DND5E.AdvancementManagerSteps", {
+    const step = visibleIndex < 0 ? "" : game.i18n.format("GENEFUNK2090.AdvancementManagerSteps", {
       current: visibleIndex + 1,
       total: visibleSteps.length
     });
-    return `${game.i18n.localize("DND5E.AdvancementManagerTitle")} ${step}`;
+    return `${game.i18n.localize("GENEFUNK2090.AdvancementManagerTitle")} ${step}`;
   }
 
   /* -------------------------------------------- */
@@ -413,7 +413,7 @@ export default class AdvancementManager extends Application {
       actor: this.clone,
       flowId: this.step.flow.id,
       header: item.name,
-      subheader: level ? game.i18n.format("DND5E.AdvancementLevelHeader", { level }) : "",
+      subheader: level ? game.i18n.format("GENEFUNK2090.AdvancementLevelHeader", { level }) : "",
       steps: {
         current: visibleIndex + 1,
         total: visibleSteps.length,
@@ -504,17 +504,17 @@ export default class AdvancementManager extends Application {
   async close(options={}) {
     if ( !options.skipConfirmation ) {
       return new Dialog({
-        title: `${game.i18n.localize("DND5E.AdvancementManagerCloseTitle")}: ${this.actor.name}`,
-        content: game.i18n.localize("DND5E.AdvancementManagerCloseMessage"),
+        title: `${game.i18n.localize("GENEFUNK2090.AdvancementManagerCloseTitle")}: ${this.actor.name}`,
+        content: game.i18n.localize("GENEFUNK2090.AdvancementManagerCloseMessage"),
         buttons: {
           close: {
             icon: '<i class="fas fa-times"></i>',
-            label: game.i18n.localize("DND5E.AdvancementManagerCloseButtonStop"),
+            label: game.i18n.localize("GENEFUNK2090.AdvancementManagerCloseButtonStop"),
             callback: () => super.close(options)
           },
           continue: {
             icon: '<i class="fas fa-chevron-right"></i>',
-            label: game.i18n.localize("DND5E.AdvancementManagerCloseButtonContinue")
+            label: game.i18n.localize("GENEFUNK2090.AdvancementManagerCloseButtonContinue")
           }
         },
         default: "close"
@@ -624,8 +624,8 @@ export default class AdvancementManager extends Application {
    */
   async _restart(event) {
     const restart = await Dialog.confirm({
-      title: game.i18n.localize("DND5E.AdvancementManagerRestartConfirmTitle"),
-      content: game.i18n.localize("DND5E.AdvancementManagerRestartConfirm")
+      title: game.i18n.localize("GENEFUNK2090.AdvancementManagerRestartConfirmTitle"),
+      content: game.i18n.localize("GENEFUNK2090.AdvancementManagerRestartConfirm")
     });
     if ( !restart ) return;
     // While there is still a renderable step.

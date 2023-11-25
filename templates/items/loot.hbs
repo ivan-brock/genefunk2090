@@ -6,7 +6,7 @@
 
         <div class="header-details flexrow">
             <h1 class="charname">
-                <input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'DND5E.ItemName' }}"/>
+                <input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'GENEFUNK2090.ItemName' }}"/>
             </h1>
 
             <div class="item-subtitle">
@@ -29,8 +29,8 @@
 
     {{!-- Item Sheet Navigation --}}
     <nav class="sheet-navigation tabs" data-group="primary">
-        <a class="item active" data-tab="description">{{ localize "DND5E.Description" }}</a>
-        <a class="item" data-tab="details">{{ localize "DND5E.Details" }}</a>
+        <a class="item active" data-tab="description">{{ localize "GENEFUNK2090.Description" }}</a>
+        <a class="item" data-tab="details">{{ localize "GENEFUNK2090.Details" }}</a>
     </nav>
 
     {{!-- Item Sheet Body --}}
@@ -41,11 +41,11 @@
 
         {{!-- Details Tab --}}
         <div class="tab details" data-group="primary" data-tab="details">
-            <h3 class="form-header">{{ localize "DND5E.ItemLootDetails" }}</h3>
+            <h3 class="form-header">{{ localize "GENEFUNK2090.ItemLootDetails" }}</h3>
 
             {{!-- Loot Type --}}
             <div class="form-group">
-                <label>{{ localize "DND5E.ItemLootType" }}</label>
+                <label>{{ localize "GENEFUNK2090.ItemLootType" }}</label>
                 <select name="system.type.value">
                     {{selectOptions config.lootTypes selected=system.type.value labelAttr="label" blank=""}}
                 </select>
@@ -54,7 +54,7 @@
             {{#if lootSubtypes}}
             <div class="form-group">
                 <label>
-                    {{localize "DND5E.ItemLootSubtype"
+                    {{localize "GENEFUNK2090.ItemLootSubtype"
                         category=(lookup (lookup config.lootTypes system.type.value) "label")}}
                 </label>
                 <select name="system.type.subtype">

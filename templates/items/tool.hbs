@@ -6,7 +6,7 @@
 
         <div class="header-details flexrow">
             <h1 class="charname">
-                <input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'DND5E.ItemName' }}"/>
+                <input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'GENEFUNK2090.ItemName' }}"/>
             </h1>
 
             <div class="item-subtitle">
@@ -36,9 +36,9 @@
 
     {{!-- Item Sheet Navigation --}}
     <nav class="sheet-navigation tabs" data-group="primary">
-        <a class="item active" data-tab="description">{{ localize "DND5E.Description" }}</a>
-        <a class="item" data-tab="details">{{ localize "DND5E.Details" }}</a>
-        <a class="item" data-tab="effects">{{ localize "DND5E.Effects" }}</a>
+        <a class="item active" data-tab="description">{{ localize "GENEFUNK2090.Description" }}</a>
+        <a class="item" data-tab="details">{{ localize "GENEFUNK2090.Details" }}</a>
+        <a class="item" data-tab="effects">{{ localize "GENEFUNK2090.Effects" }}</a>
     </nav>
 
     {{!-- Item Sheet Body --}}
@@ -51,32 +51,32 @@
         <div class="tab details" data-group="primary" data-tab="details">
             {{!-- Tool Status --}}
             <div class="form-group stacked">
-                <label>{{ localize "DND5E.ItemToolStatus" }}</label>
+                <label>{{ localize "GENEFUNK2090.ItemToolStatus" }}</label>
                 <div class="form-fields">
                     <label class="checkbox">
                         <input type="checkbox" name="system.equipped" {{ checked system.equipped }}>
-                        {{ localize "DND5E.Equipped" }}
+                        {{ localize "GENEFUNK2090.Equipped" }}
                     </label>
                 </div>
             </div>
 
             {{!-- Tool Type --}}
             <div class="form-group">
-                <label>{{ localize "DND5E.ItemToolType" }}</label>
+                <label>{{ localize "GENEFUNK2090.ItemToolType" }}</label>
                 <select name="system.toolType">
                     {{selectOptions config.toolTypes selected=system.toolType blank=""}}
                 </select>
             </div>
 
             <div class="form-group">
-                <label>{{ localize "DND5E.ItemToolBase" }}</label>
+                <label>{{ localize "GENEFUNK2090.ItemToolBase" }}</label>
                 <select name="system.baseItem">
                     {{selectOptions baseItems selected=system.baseItem blank=""}}
                 </select>
             </div>
 
             <div class="form-group">
-                <label>{{localize "DND5E.Attunement"}}</label>
+                <label>{{localize "GENEFUNK2090.Attunement"}}</label>
                 <select name="system.attunement" data-dtype="Number">
                     {{selectOptions config.attunements selected=system.attunement}}
                 </select>
@@ -84,31 +84,31 @@
 
             {{!-- Tool Proficiency --}}
             <div class="form-group">
-                <label>{{ localize "DND5E.ItemToolProficiency" }}</label>
+                <label>{{ localize "GENEFUNK2090.ItemToolProficiency" }}</label>
                 <select name="system.proficient" data-dtype="Number">
                     {{selectOptions config.proficiencyLevels selected=system.proficient
-                                    blank=(localize "DND5E.Automatic")}}
+                                    blank=(localize "GENEFUNK2090.Automatic")}}
                 </select>
             </div>
 
             {{!-- Ability Check --}}
             <div class="form-group">
-                <label>{{ localize "DND5E.DefaultAbilityCheck" }}</label>
+                <label>{{ localize "GENEFUNK2090.DefaultAbilityCheck" }}</label>
                 <select name="system.ability">
                     {{selectOptions config.abilities selected=system.ability labelAttr="label"
-                                    blank=(localize "DND5E.Default")}}
+                                    blank=(localize "GENEFUNK2090.Default")}}
                 </select>
             </div>
 
             {{!-- Tool Bonus --}}
             <div class="form-group">
-                <label>{{ localize "DND5E.ItemToolBonus" }}</label>
+                <label>{{ localize "GENEFUNK2090.ItemToolBonus" }}</label>
                 <input type="text" name="system.bonus" value="{{system.bonus}}" data-formula-editor/>
             </div>
 
             {{!-- Chat Message Flavor --}}
             <div class="form-group stacked">
-                <label>{{ localize "DND5E.ChatFlavor" }}</label>
+                <label>{{ localize "GENEFUNK2090.ChatFlavor" }}</label>
                 <input type="text" name="system.chatFlavor" value="{{system.chatFlavor}}"/>
             </div>
         </div>

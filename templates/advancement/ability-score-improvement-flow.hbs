@@ -5,7 +5,7 @@
     {{#unless staticIncrease}}
     <label>
       {{#if feat}}
-        {{localize "DND5E.AdvancementAbilityScoreImprovementLockedHint"}}
+        {{localize "GENEFUNK2090.AdvancementAbilityScoreImprovementLockedHint"}}
       {{else}}
         {{ pointsRemaining }}
         {{#if advancement.configuration.cap}}<p class="cap">{{pointCap}}</p>{{/if}}
@@ -18,7 +18,7 @@
   </ul>
 
   {{#if advancement.allowFeat}}
-    <h3>{{localize "DND5E.Feature.Feat"}}</h3>
+    <h3>{{localize "GENEFUNK2090.Feature.Feat"}}</h3>
 
     <div class="item-name flexrow drop-area {{#unless feat}}empty{{/unless}}">
       {{#if feat}}
@@ -26,11 +26,11 @@
         <h4>
           <a data-uuid="{{feat.uuid}}">{{feat.name}}</a>
         </h4>
-        <a class="item-control" data-action="delete" title="{{localize 'DND5E.ItemDelete'}}">
+        <a class="item-control" data-action="delete" title="{{localize 'GENEFUNK2090.ItemDelete'}}">
           <i class="fas fa-trash"></i>
         </a>
       {{else}}
-        {{localize "DND5E.AdvancementAbilityScoreImprovementFeatHint"}}
+        {{localize "GENEFUNK2090.AdvancementAbilityScoreImprovementFeatHint"}}
       {{/if}}
     </div>
   {{/if}}

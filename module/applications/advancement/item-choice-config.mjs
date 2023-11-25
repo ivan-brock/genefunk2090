@@ -29,11 +29,11 @@ export default class ItemChoiceConfig extends AdvancementConfig {
       }, {})
     };
     if ( this.advancement.configuration.type === "feat" ) {
-      const selectedType = CONFIG.DND5E.featureTypes[this.advancement.configuration.restriction.type];
+      const selectedType = CONFIG.GENEFUNK2090.featureTypes[this.advancement.configuration.restriction.type];
       context.typeRestriction = {
-        typeLabel: game.i18n.localize("DND5E.ItemFeatureType"),
-        typeOptions: CONFIG.DND5E.featureTypes,
-        subtypeLabel: game.i18n.format("DND5E.ItemFeatureSubtype", {category: selectedType?.label}),
+        typeLabel: game.i18n.localize("GENEFUNK2090.ItemFeatureType"),
+        typeOptions: CONFIG.GENEFUNK2090.featureTypes,
+        subtypeLabel: game.i18n.format("GENEFUNK2090.ItemFeatureSubtype", {category: selectedType?.label}),
         subtypeOptions: selectedType?.subtypes
       };
     }

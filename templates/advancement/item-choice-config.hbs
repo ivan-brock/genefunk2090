@@ -2,27 +2,27 @@
   <div class="left-column">
     {{> "genefunk2090.advancement-controls"}}
     <div class="form-group">
-      <label>{{localize "DND5E.AdvancementHint"}}</label>
+      <label>{{localize "GENEFUNK2090.AdvancementHint"}}</label>
       <textarea name="configuration.hint">{{configuration.hint}}</textarea>
     </div>
 
     <div class="form-group">
-      <label>{{localize "DND5E.AdvancementConfigureAllowDrops"}}</label>
+      <label>{{localize "GENEFUNK2090.AdvancementConfigureAllowDrops"}}</label>
       <div class="form-fields">
         <input type="checkbox" name="configuration.allowDrops" {{checked configuration.allowDrops}}>
       </div>
-      <p class="hint">{{localize "DND5E.AdvancementConfigureAllowDropsHint"}}</p>
+      <p class="hint">{{localize "GENEFUNK2090.AdvancementConfigureAllowDropsHint"}}</p>
     </div>
 
     <div class="form-group">
-      <label>{{localize "DND5E.AdvancementItemChoiceType"}}</label>
+      <label>{{localize "GENEFUNK2090.AdvancementItemChoiceType"}}</label>
       <div class="form-fields">
         <select name="configuration.type">
           {{selectOptions validTypes selected=configuration.type
-            blank=(localize "DND5E.AdvancementItemChoiceTypeAny")}}
+            blank=(localize "GENEFUNK2090.AdvancementItemChoiceTypeAny")}}
         </select>
       </div>
-      <p class="hint">{{localize "DND5E.AdvancementItemChoiceTypeHint"}}</p>
+      <p class="hint">{{localize "GENEFUNK2090.AdvancementItemChoiceTypeHint"}}</p>
     </div>
 
     {{#if typeRestriction}}
@@ -50,7 +50,7 @@
 
     {{#if showSpellConfig}}
       <div class="form-group">
-        <label>{{localize "DND5E.SpellLevel"}}</label>
+        <label>{{localize "GENEFUNK2090.SpellLevel"}}</label>
         <div class="form-fields">
           <select name="configuration.restriction.level">
             {{#select configuration.restriction.level}}
@@ -58,11 +58,11 @@
               {{#each CONFIG.spellLevels as |label key|}}
                 <option value="{{key}}">{{label}}</option>
               {{/each}}
-              <option value="available">{{localize "DND5E.AdvancementItemChoiceSpellLevelAvailable"}}</option>
+              <option value="available">{{localize "GENEFUNK2090.AdvancementItemChoiceSpellLevelAvailable"}}</option>
             {{/select}}
           </select>
         </div>
-        <p class="hint">{{localize "DND5E.AdvancementItemChoiceSpellLevelHint"}}</p>
+        <p class="hint">{{localize "GENEFUNK2090.AdvancementItemChoiceSpellLevelHint"}}</p>
       </div>
 
       {{> "genefunk2090.advancement-spell-config"}}
@@ -76,7 +76,7 @@
           <li class="item flexrow" data-item-uuid="{{this}}">
             <div class="item-name">{{{genefunk2090-linkForUuid this}}}</div>
             <div class="item-controls flexrow">
-              <a class="item-control item-action" data-action="delete" title="{{localize 'DND5E.ItemDelete'}}">
+              <a class="item-control item-action" data-action="delete" title="{{localize 'GENEFUNK2090.ItemDelete'}}">
                 <i class="fas fa-trash"></i>
               </a>
             </div>
@@ -85,12 +85,12 @@
         </ol>
       </ol>
 
-      <p class="hint centered">{{localize "DND5E.AdvancementConfigureDropAreaHint"}}</p>
+      <p class="hint centered">{{localize "GENEFUNK2090.AdvancementConfigureDropAreaHint"}}</p>
     </div>
   </div>
 
   <div class="right-column level-list">
-    <p class="hint">{{localize "DND5E.AdvancementItemChoiceLevelsHint"}}</p>
+    <p class="hint">{{localize "GENEFUNK2090.AdvancementItemChoiceLevelsHint"}}</p>
     {{#each levels as |label level|}}
       <div class="form-group">
         <label>{{label}}</label>

@@ -53,7 +53,7 @@ export default class ActiveEffect5e extends ActiveEffect {
    */
   _prepareFlagChange(actor, change) {
     const { key, value } = change;
-    const data = CONFIG.DND5E.characterFlags[key.replace("flags.genefunk2090.", "")];
+    const data = CONFIG.GENEFUNK2090.characterFlags[key.replace("flags.genefunk2090.", "")];
     if ( !data ) return change;
 
     // Set flag to initial value if it isn't present
@@ -121,7 +121,7 @@ export default class ActiveEffect5e extends ActiveEffect {
       case "create":
         const isActor = owner instanceof Actor;
         return owner.createEmbeddedDocuments("ActiveEffect", [{
-          label: isActor ? game.i18n.localize("DND5E.EffectNew") : owner.name,
+          label: isActor ? game.i18n.localize("GENEFUNK2090.EffectNew") : owner.name,
           icon: isActor ? "icons/svg/aura.svg" : owner.img,
           origin: owner.uuid,
           "duration.rounds": li.dataset.effectType === "temporary" ? 1 : undefined,
@@ -148,24 +148,24 @@ export default class ActiveEffect5e extends ActiveEffect {
     const categories = {
       temporary: {
         type: "temporary",
-        label: game.i18n.localize("DND5E.EffectTemporary"),
+        label: game.i18n.localize("GENEFUNK2090.EffectTemporary"),
         effects: []
       },
       passive: {
         type: "passive",
-        label: game.i18n.localize("DND5E.EffectPassive"),
+        label: game.i18n.localize("GENEFUNK2090.EffectPassive"),
         effects: []
       },
       inactive: {
         type: "inactive",
-        label: game.i18n.localize("DND5E.EffectInactive"),
+        label: game.i18n.localize("GENEFUNK2090.EffectInactive"),
         effects: []
       },
       suppressed: {
         type: "suppressed",
-        label: game.i18n.localize("DND5E.EffectUnavailable"),
+        label: game.i18n.localize("GENEFUNK2090.EffectUnavailable"),
         effects: [],
-        info: [game.i18n.localize("DND5E.EffectUnavailableInfo")]
+        info: [game.i18n.localize("GENEFUNK2090.EffectUnavailableInfo")]
       }
     };
 

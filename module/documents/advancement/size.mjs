@@ -17,8 +17,8 @@ export default class SizeAdvancement extends Advancement {
       },
       order: 25,
       icon: "systems/genefunk2090/icons/svg/size.svg",
-      title: game.i18n.localize("DND5E.AdvancementSizeTitle"),
-      hint: game.i18n.localize("DND5E.AdvancementSizeHint"),
+      title: game.i18n.localize("GENEFUNK2090.AdvancementSizeTitle"),
+      hint: game.i18n.localize("GENEFUNK2090.AdvancementSizeHint"),
       validItemTypes: new Set(["race"]),
       apps: {
         config: SizeConfig,
@@ -37,13 +37,13 @@ export default class SizeAdvancement extends Advancement {
    */
   get automaticHint() {
     if ( !this.configuration.sizes.size ) return "";
-    if ( this.configuration.sizes.size === 1 ) return game.i18n.format("DND5E.AdvancementSizeFlowHintSingle", {
-      size: CONFIG.DND5E.actorSizes[this.configuration.sizes.first()]
+    if ( this.configuration.sizes.size === 1 ) return game.i18n.format("GENEFUNK2090.AdvancementSizeFlowHintSingle", {
+      size: CONFIG.GENEFUNK2090.actorSizes[this.configuration.sizes.first()]
     });
 
     const listFormatter = new Intl.ListFormat(game.i18n.lang, { type: "disjunction" });
-    return game.i18n.format("DND5E.AdvancementSizeflowHintMultiple", {
-      sizes: listFormatter.format(this.configuration.sizes.map(s => CONFIG.DND5E.actorSizes[s]))
+    return game.i18n.format("GENEFUNK2090.AdvancementSizeflowHintMultiple", {
+      sizes: listFormatter.format(this.configuration.sizes.map(s => CONFIG.GENEFUNK2090.actorSizes[s]))
     });
   }
 
@@ -61,7 +61,7 @@ export default class SizeAdvancement extends Advancement {
   /** @inheritdoc */
   summaryForLevel(level, { configMode=false }={}) {
     const sizes = configMode ? Array.from(this.configuration.sizes) : this.value.size ? [this.value.size] : [];
-    return sizes.map(s => `<span class="tag">${CONFIG.DND5E.actorSizes[s]}</span>`).join("");
+    return sizes.map(s => `<span class="tag">${CONFIG.GENEFUNK2090.actorSizes[s]}</span>`).join("");
   }
 
   /* -------------------------------------------- */

@@ -49,9 +49,9 @@ export default class ProficiencyConfig extends BaseConfigSheet {
 
   /** @inheritdoc */
   get title() {
-    const label = this.isSkill ? CONFIG.DND5E.skills[this.options.key].label
+    const label = this.isSkill ? CONFIG.GENEFUNK2090.skills[this.options.key].label
       : Trait.keyLabel(this.options.key, { trait: "tool" });
-    return `${game.i18n.format("DND5E.ProficiencyConfigureTitle", {label})}: ${this.document.name}`;
+    return `${game.i18n.format("GENEFUNK2090.ProficiencyConfigureTitle", {label})}: ${this.document.name}`;
   }
 
   /* -------------------------------------------- */
@@ -66,8 +66,8 @@ export default class ProficiencyConfig extends BaseConfigSheet {
   /** @inheritdoc */
   getData(options={}) {
     return {
-      abilities: CONFIG.DND5E.abilities,
-      proficiencyLevels: CONFIG.DND5E.proficiencyLevels,
+      abilities: CONFIG.GENEFUNK2090.abilities,
+      proficiencyLevels: CONFIG.GENEFUNK2090.proficiencyLevels,
       entry: this.document.system[this.options.property]?.[this.options.key],
       isTool: this.isTool,
       isSkill: this.isSkill,
@@ -84,8 +84,8 @@ export default class ProficiencyConfig extends BaseConfigSheet {
     const passive = formData[`system.skills.${this.options.key}.bonuses.passive`];
     const passiveRoll = new Roll(passive);
     if ( !passiveRoll.isDeterministic ) {
-      const message = game.i18n.format("DND5E.FormulaCannotContainDiceError", {
-        name: game.i18n.localize("DND5E.SkillBonusPassive")
+      const message = game.i18n.format("GENEFUNK2090.FormulaCannotContainDiceError", {
+        name: game.i18n.localize("GENEFUNK2090.SkillBonusPassive")
       });
       ui.notifications.error(message);
       throw new Error(message);

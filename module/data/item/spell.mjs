@@ -24,10 +24,10 @@ import ItemDescriptionTemplate from "./templates/item-description.mjs";
  * @property {number} materials.cost             GP cost for the required components.
  * @property {number} materials.supply           Quantity of this component available.
  * @property {object} preparation                Details on how this spell is prepared.
- * @property {string} preparation.mode           Spell preparation mode as defined in `DND5E.spellPreparationModes`.
+ * @property {string} preparation.mode           Spell preparation mode as defined in `GENEFUNK2090.spellPreparationModes`.
  * @property {boolean} preparation.prepared      Is the spell currently prepared?
  * @property {object} scaling                    Details on how casting at higher levels affects this spell.
- * @property {string} scaling.mode               Spell scaling mode as defined in `DND5E.spellScalingModes`.
+ * @property {string} scaling.mode               Spell scaling mode as defined in `GENEFUNK2090.spellScalingModes`.
  * @property {string} scaling.formula            Dice formula used for scaling.
  */
 export default class SpellData extends SystemDataModel.mixin(
@@ -37,33 +37,33 @@ export default class SpellData extends SystemDataModel.mixin(
   static defineSchema() {
     return this.mergeSchema(super.defineSchema(), {
       level: new foundry.data.fields.NumberField({
-        required: true, integer: true, initial: 1, min: 0, label: "DND5E.SpellLevel"
+        required: true, integer: true, initial: 1, min: 0, label: "GENEFUNK2090.SpellLevel"
       }),
-      school: new foundry.data.fields.StringField({required: true, label: "DND5E.SpellSchool"}),
+      school: new foundry.data.fields.StringField({required: true, label: "GENEFUNK2090.SpellSchool"}),
       components: new MappingField(new foundry.data.fields.BooleanField(), {
-        required: true, label: "DND5E.SpellComponents",
-        initialKeys: [...Object.keys(CONFIG.DND5E.spellComponents), ...Object.keys(CONFIG.DND5E.spellTags)]
+        required: true, label: "GENEFUNK2090.SpellComponents",
+        initialKeys: [...Object.keys(CONFIG.GENEFUNK2090.spellComponents), ...Object.keys(CONFIG.GENEFUNK2090.spellTags)]
       }),
       materials: new foundry.data.fields.SchemaField({
-        value: new foundry.data.fields.StringField({required: true, label: "DND5E.SpellMaterialsDescription"}),
-        consumed: new foundry.data.fields.BooleanField({required: true, label: "DND5E.SpellMaterialsConsumed"}),
+        value: new foundry.data.fields.StringField({required: true, label: "GENEFUNK2090.SpellMaterialsDescription"}),
+        consumed: new foundry.data.fields.BooleanField({required: true, label: "GENEFUNK2090.SpellMaterialsConsumed"}),
         cost: new foundry.data.fields.NumberField({
-          required: true, initial: 0, min: 0, label: "DND5E.SpellMaterialsCost"
+          required: true, initial: 0, min: 0, label: "GENEFUNK2090.SpellMaterialsCost"
         }),
         supply: new foundry.data.fields.NumberField({
-          required: true, initial: 0, min: 0, label: "DND5E.SpellMaterialsSupply"
+          required: true, initial: 0, min: 0, label: "GENEFUNK2090.SpellMaterialsSupply"
         })
-      }, {label: "DND5E.SpellMaterials"}),
+      }, {label: "GENEFUNK2090.SpellMaterials"}),
       preparation: new foundry.data.fields.SchemaField({
         mode: new foundry.data.fields.StringField({
-          required: true, initial: "prepared", label: "DND5E.SpellPreparationMode"
+          required: true, initial: "prepared", label: "GENEFUNK2090.SpellPreparationMode"
         }),
-        prepared: new foundry.data.fields.BooleanField({required: true, label: "DND5E.SpellPrepared"})
-      }, {label: "DND5E.SpellPreparation"}),
+        prepared: new foundry.data.fields.BooleanField({required: true, label: "GENEFUNK2090.SpellPrepared"})
+      }, {label: "GENEFUNK2090.SpellPreparation"}),
       scaling: new foundry.data.fields.SchemaField({
-        mode: new foundry.data.fields.StringField({required: true, initial: "none", label: "DND5E.ScalingMode"}),
-        formula: new FormulaField({required: true, nullable: true, initial: null, label: "DND5E.ScalingFormula"})
-      }, {label: "DND5E.LevelScaling"})
+        mode: new foundry.data.fields.StringField({required: true, initial: "none", label: "GENEFUNK2090.ScalingMode"}),
+        formula: new FormulaField({required: true, nullable: true, initial: null, label: "GENEFUNK2090.ScalingFormula"})
+      }, {label: "GENEFUNK2090.LevelScaling"})
     });
   }
 

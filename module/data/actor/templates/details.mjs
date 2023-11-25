@@ -15,9 +15,9 @@ export default class DetailsField {
   static get common() {
     return {
       biography: new foundry.data.fields.SchemaField({
-        value: new foundry.data.fields.HTMLField({label: "DND5E.Biography"}),
-        public: new foundry.data.fields.HTMLField({label: "DND5E.BiographyPublic"})
-      }, {label: "DND5E.Biography"})
+        value: new foundry.data.fields.HTMLField({label: "GENEFUNK2090.Biography"}),
+        public: new foundry.data.fields.HTMLField({label: "GENEFUNK2090.BiographyPublic"})
+      }, {label: "GENEFUNK2090.Biography"})
     };
   }
 
@@ -32,9 +32,9 @@ export default class DetailsField {
    */
   static get creature() {
     return {
-      alignment: new foundry.data.fields.StringField({required: true, label: "DND5E.Alignment"}),
+      alignment: new foundry.data.fields.StringField({required: true, label: "GENEFUNK2090.Alignment"}),
       race: new LocalDocumentField(foundry.documents.BaseItem, {
-        required: true, fallback: true, label: "DND5E.Race"
+        required: true, fallback: true, label: "GENEFUNK2090.Race"
       })
     };
   }

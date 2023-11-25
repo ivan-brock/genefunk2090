@@ -5,17 +5,17 @@ export default class SensesField extends foundry.data.fields.SchemaField {
   constructor(fields={}, options={}) {
     const numberConfig = { required: true, nullable: true, integer: true, min: 0, initial: null };
     fields = {
-      darkvision: new foundry.data.fields.NumberField({ ...numberConfig, label: "DND5E.SenseDarkvision" }),
-      blindsight: new foundry.data.fields.NumberField({ ...numberConfig, label: "DND5E.SenseBlindsight" }),
-      tremorsense: new foundry.data.fields.NumberField({ ...numberConfig, label: "DND5E.SenseTremorsense" }),
-      truesight: new foundry.data.fields.NumberField({ ...numberConfig, label: "DND5E.SenseTruesight" }),
+      darkvision: new foundry.data.fields.NumberField({ ...numberConfig, label: "GENEFUNK2090.SenseDarkvision" }),
+      blindsight: new foundry.data.fields.NumberField({ ...numberConfig, label: "GENEFUNK2090.SenseBlindsight" }),
+      tremorsense: new foundry.data.fields.NumberField({ ...numberConfig, label: "GENEFUNK2090.SenseTremorsense" }),
+      truesight: new foundry.data.fields.NumberField({ ...numberConfig, label: "GENEFUNK2090.SenseTruesight" }),
       units: new foundry.data.fields.StringField({
-        required: true, nullable: true, blank: false, initial: null, label: "DND5E.SenseUnits"
+        required: true, nullable: true, blank: false, initial: null, label: "GENEFUNK2090.SenseUnits"
       }),
-      special: new foundry.data.fields.StringField({required: true, label: "DND5E.SenseSpecial"}),
+      special: new foundry.data.fields.StringField({required: true, label: "GENEFUNK2090.SenseSpecial"}),
       ...fields
     };
     Object.entries(fields).forEach(([k, v]) => !v ? delete fields[k] : null);
-    super(fields, { label: "DND5E.Senses", ...options });
+    super(fields, { label: "GENEFUNK2090.Senses", ...options });
   }
 }
